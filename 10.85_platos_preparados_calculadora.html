@@ -967,9 +967,10 @@ function estadoDescarga(msg){
 }
 async function obtenerDescargas(){
   try{
-    if(typeof claude==="undefined"||!claude.use) return null;
-    return await claude.use("downloads");
-  }catch(e){return null;}
+    if(typeof claude!=="undefined"&&claude.use){const d=await claude.use("downloads");if(d)return d;}
+  }catch(e){}
+  /* fuera de claude.ai (p. ej. GitHub Pages): descarga normal del navegador */
+  return {save:async({filename,data})=>{const u=URL.createObjectURL(data);const a=document.createElement("a");a.href=u;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000);return {status:"saved"};}};
 }
 async function generarExcelBlob(){
   const detalle=generarHojaDetalle(),aux=generarHojaAuxiliares(),tot=generarHojaTotales();
