@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>html{color-scheme:light}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif;background:#fafaf8}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Fuentes Aguas y Refrescos</title>
+<style>
+:root{
+  --c-bg:#f3f7f4;--c-surface:#fff;--c-shadow:rgba(0,0,0,.08);--c-text:#18322a;
+  --c-h1:#225c40;--c-h2:#2c704d;--c-h3:#397b59;--c-border:#b7cabe;--c-focus:#8fc19b;
+  --c-input-bg:#fff;
+  --c-btn-bg:#28734d;--c-btn-bg-hover:#1e593b;--c-btn-secondary-bg:#64786c;
+  --c-explicacion-text:#50675a;--c-fuente-text:#64786c;
+  --c-pequeno-text:#5c6c62;
+  --c-card-bg:#fffdfa;--c-card-border:#ded8ca;
+  --c-th-bg:#e7f1ea;--c-tr-border:#d8e4dc;
+  --c-badge-normativa:#8a6d1a;--c-badge-estudio:#5c8da5;--c-badge-empresa:#28734d;--c-badge-proyecto:#7a6fb0;--c-badge-herramienta:#9b4a3c;
+  --c-chip-bg:#e5f2e8;--c-chip-border:#9dc4a5;--c-chip-text:#225c40;
+  --c-nivel-n1-bg:#d7efe0;--c-nivel-n1-text:#225c40;
+  --c-nivel-n2-bg:#e3eef5;--c-nivel-n2-text:#2e5b73;
+  --c-nivel-n3-bg:#f1ecd9;--c-nivel-n3-text:#6d5a14;
+  --c-nivel-n4-bg:#fbe6d6;--c-nivel-n4-text:#8a4a1a;
+  --c-nivel-n5-bg:#eee;--c-nivel-n5-text:#555;
+  --c-link:#1f6a8a;
+  --c-tab-bg:#e7f1ea;--c-tab-active-bg:#28734d;--c-tab-active-text:#fff;
+  --c-cer-bg:#f1f5f2;--c-cer-border:#c9d8ce;--c-cer-pel-border:#c0392b;--c-cer-pel-text:#8e2a1f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+    --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+    --c-input-bg:#182720;
+    --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;
+    --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+    --c-pequeno-text:#93a49a;
+    --c-card-bg:#182720;--c-card-border:#33362a;
+    --c-th-bg:#1c3227;--c-tr-border:#26392f;
+    --c-badge-normativa:#c9a94f;--c-badge-estudio:#6fa8c4;--c-badge-empresa:#4caf7c;--c-badge-proyecto:#a79bea;--c-badge-herramienta:#c98a76;
+    --c-chip-bg:#1b3226;--c-chip-border:#3a5c48;--c-chip-text:#a6e3c4;
+    --c-nivel-n1-bg:#204331;--c-nivel-n1-text:#a6e3c4;
+    --c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+    --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;
+    --c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;
+    --c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+    --c-link:#6cc2e8;
+    --c-tab-bg:#1c3227;--c-tab-active-bg:#2f8055;--c-tab-active-text:#fff;
+    --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+  --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+  --c-input-bg:#182720;
+  --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;
+  --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+  --c-pequeno-text:#93a49a;
+  --c-card-bg:#182720;--c-card-border:#33362a;
+  --c-th-bg:#1c3227;--c-tr-border:#26392f;
+  --c-badge-normativa:#c9a94f;--c-badge-estudio:#6fa8c4;--c-badge-empresa:#4caf7c;--c-badge-proyecto:#a79bea;--c-badge-herramienta:#c98a76;
+  --c-chip-bg:#1b3226;--c-chip-border:#3a5c48;--c-chip-text:#a6e3c4;
+  --c-nivel-n1-bg:#204331;--c-nivel-n1-text:#a6e3c4;
+  --c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+  --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;
+  --c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;
+  --c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+  --c-link:#6cc2e8;
+  --c-tab-bg:#1c3227;--c-tab-active-bg:#2f8055;--c-tab-active-text:#fff;
+  --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+}
+body{font-family:Arial,sans-serif;margin:0;background:var(--c-bg);color:var(--c-text)}
+main{max-width:1180px;margin:auto;padding:24px}
+section{background:var(--c-surface);padding:22px;margin-bottom:18px;border-radius:14px;box-shadow:0 2px 10px var(--c-shadow)}
+h1{margin-top:0;color:var(--c-h1);font-size:26px}
+h2{color:var(--c-h2);font-size:19px}
+h3{color:var(--c-h3);margin-bottom:6px;font-size:15px}
+p{line-height:1.5}
+.explicacion{color:var(--c-explicacion-text);font-size:14px;line-height:1.5;margin-top:6px}
+.pequeno{font-size:12px;color:var(--c-pequeno-text)}
+.fuente{color:var(--c-fuente-text);font-size:12px}
+label{display:block;font-weight:bold;margin:0 0 5px;font-size:13px}
+input,select{width:100%;box-sizing:border-box;padding:9px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-size:14px}
+input:focus,select:focus{outline:2px solid var(--c-focus)}
+.grid-filtros{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:12px;align-items:end}
+@media(max-width:800px){.grid-filtros{grid-template-columns:1fr}}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tab-btn{padding:9px 16px;border-radius:20px;border:1px solid var(--c-border);background:var(--c-tab-bg);color:var(--c-text);cursor:pointer;font-size:13px;font-weight:bold}
+.tab-btn.activa{background:var(--c-tab-active-bg);color:var(--c-tab-active-text);border-color:transparent}
+.panel{display:none}
+.panel.activa{display:block}
+.resultado-contador{margin:10px 0;font-size:13px;color:var(--c-pequeno-text)}
+.tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.tarjeta{background:var(--c-card-bg);border:1px solid var(--c-card-border);border-radius:10px;padding:14px 16px;line-height:1.45}
+.tarjeta h3{margin-bottom:4px}
+.tarjeta h3 a{color:var(--c-h3);text-decoration:none}
+.tarjeta h3 a:hover{text-decoration:underline}
+.badge{display:inline-block;font-size:11px;font-weight:bold;color:#fff;border-radius:8px;padding:2px 8px;margin-right:6px}
+.badge.Normativa{background:var(--c-badge-normativa)}
+.badge.Estudio{background:var(--c-badge-estudio)}
+.badge.Empresa{background:var(--c-badge-empresa)}
+.badge.Proyecto{background:var(--c-badge-proyecto)}
+.badge.Herramienta{background:var(--c-badge-herramienta)}
+.meta-linea{font-size:12px;color:var(--c-pequeno-text);margin:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
+.chip{font-size:11px;background:var(--c-chip-bg);color:var(--c-chip-text);border:1px solid var(--c-chip-border);border-radius:10px;padding:2px 8px}
+.nota{font-size:12px;color:var(--c-pequeno-text);margin-top:6px;font-style:italic}
+.tabla-contenedor{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+th,td{padding:8px;border-bottom:1px solid var(--c-tr-border);text-align:left;vertical-align:top}
+th{background:var(--c-th-bg)}
+td.num{text-align:right;white-space:nowrap}
+a{color:var(--c-link)}
+.nivel{display:inline-block;font-size:11px;font-weight:bold;padding:3px 8px;border-radius:10px;margin-right:6px}
+.nivel.n1{background:var(--c-nivel-n1-bg);color:var(--c-nivel-n1-text)}
+.nivel.n2{background:var(--c-nivel-n2-bg);color:var(--c-nivel-n2-text)}
+.nivel.n3{background:var(--c-nivel-n3-bg);color:var(--c-nivel-n3-text)}
+.nivel.n4{background:var(--c-nivel-n4-bg);color:var(--c-nivel-n4-text)}
+.nivel.n5{background:var(--c-nivel-n5-bg);color:var(--c-nivel-n5-text)}
+.opcion-val{padding:10px 0;border-bottom:1px dashed var(--c-tr-border)}
+.opcion-val:last-child{border-bottom:0}
+.bloque-real{border:1px solid var(--c-card-border);border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.cer{display:inline-block;background:var(--c-cer-bg);border:1px solid var(--c-cer-border);border-radius:6px;padding:1px 6px;margin:1px 2px;font-size:12px;white-space:nowrap}
+.cer.pel{border-color:var(--c-cer-pel-border);color:var(--c-cer-pel-text)}
+button{padding:9px 15px;color:#fff;background:var(--c-btn-bg);border:0;border-radius:8px;cursor:pointer;font-size:13px}
+button:hover{background:var(--c-btn-bg-hover)}
+button.secundario{background:var(--c-btn-secondary-bg)}
+.oculto{display:none!important}
+textarea{width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-family:monospace;font-size:12px;margin-top:8px}
+</style>
+
+<main>
+
+<section>
+<h1>Fuentes de residuos · CNAE 11.07</h1>
+<p><strong>Base de fuentes, coeficientes y datos reales de planta</strong> para la fabricación de bebidas no alcohólicas y aguas embotelladas (CNAE 11.07): agua mineral natural, de manantial u otra agua embotellada, y refrescos, bebidas carbonatadas, isotónicas/energéticas y aguas aromatizadas. Se excluyen expresamente los zumos y néctares de fruta u hortaliza (CNAE 10.32, ya cubierto en este proyecto). Consulta interna, sin relación con los datos que introduzcas en la calculadora de estimación.</p>
+<p class="explicacion">Extraída de la investigación de fuentes oficiales (normativa, estudios, permisos ambientales de planta real) que respalda la <a href="11.07_aguas_refrescos_calculadora.html" target="_blank" rel="noopener">calculadora de residuos CNAE 11.07</a>. La misma información, en formato de tabla, está disponible como Excel para reutilizar en otros entornos.</p>
+</section>
+
+<section>
+<h2>Filtrar fuentes</h2>
+<div class="grid-filtros">
+<div>
+<label for="fBusqueda">Buscar (título, organismo, corriente, nota)</label>
+<input id="fBusqueda" type="text" placeholder="p. ej. alperujo, MITECO, Andalucía..." oninput="pintarFuentes()">
+</div>
+<div>
+<label for="fTipo">Tipo de fuente</label>
+<select id="fTipo" onchange="pintarFuentes()"><option value="">Todos</option></select>
+</div>
+<div>
+<label for="fZona">Zona</label>
+<select id="fZona" onchange="pintarFuentes()"><option value="">Todas</option></select>
+</div>
+<div>
+<label for="fCorriente">Corriente</label>
+<select id="fCorriente" onchange="pintarFuentes()"><option value="">Todas</option></select>
+</div>
+</div>
+</section>
+
+<section>
+<div class="tabs">
+<button class="tab-btn activa" data-panel="panelFuentes" onclick="cambiarTab('panelFuentes',this)">Fuentes</button>
+<button class="tab-btn" data-panel="panelCoef" onclick="cambiarTab('panelCoef',this)">Coeficientes</button>
+<button class="tab-btn" data-panel="panelReal" onclick="cambiarTab('panelReal',this)">Datos reales de planta</button>
+<button class="tab-btn" data-panel="panelVal" onclick="cambiarTab('panelVal',this)">Valorización</button>
+<button class="tab-btn" data-panel="panelCer" onclick="cambiarTab('panelCer',this)">CER/LER</button>
+</div>
+
+<div id="panelFuentes" class="panel activa">
+<div class="resultado-contador" id="contadorFuentes"></div>
+<div id="tarjetasFuentes" class="tarjetas"></div>
+<div style="margin-top:14px">
+<button class="secundario" onclick="copiarFuentes()">Copiar resultados filtrados (texto)</button>
+<textarea id="areaFuentes" class="oculto" rows="6" onclick="this.select()"></textarea>
+<span id="estadoFuentes" class="pequeno"></span>
+</div>
+</div>
+
+<div id="panelCoef" class="panel">
+<p class="explicacion">Factor de generación de cada corriente por tonelada de materia prima (agua captada en la ruta agua envasada; agua tratada más ingredientes de formulación en la ruta refrescos), por cada una de las 2 rutas de proceso, tal y como se usan en la calculadora. Haz clic en un identificador de fuente para verla en la pestaña «Fuentes».</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Proceso</th><th>Corriente</th><th>Factor</th><th>Unidad</th><th>Confianza</th><th>CER/LER candidatos</th><th>Fuentes</th></tr></thead>
+<tbody id="tablaCoef"></tbody>
+</table>
+</div>
+</div>
+
+<div id="panelReal" class="panel">
+<p class="explicacion">Balances de masa reales declarados en autorizaciones ambientales y estudios de campo.</p>
+<div id="bloquesReal"></div>
+</div>
+
+<div id="panelVal" class="panel">
+<p class="explicacion">Opciones de valorización por corriente, ordenadas según la jerarquía de residuos: <span class="nivel n1">1 · Alimentación humana</span><span class="nivel n2">2 · Alimentación animal</span><span class="nivel n3">3 · Material y bioproductos</span><span class="nivel n4">4 · Energía y biogás</span><span class="nivel n5">5 · Suelo / compost</span></p>
+<div id="bloquesVal"></div>
+</div>
+
+<div id="panelCer" class="panel">
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Código</th><th>Descripción oficial</th><th>Corrientes de este CNAE</th></tr></thead>
+<tbody id="tablaCer"></tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Notas</h2>
+<ul style="line-height:1.6">
+<li>Esta base cubre de momento el CNAE 11.07 (aguas envasadas y refrescos). La columna CNAE de cada hoja/tabla está pensada para apilar aquí los próximos CNAEs sin cambiar la estructura.</li>
+<li>Los identificadores de fuente (F01, F02...) son los mismos en esta página y en el Excel «Base_fuentes_residuos_CNAE_1043.xlsx», para poder cruzar ambos.</li>
+<li>Un coeficiente con confianza «Baja» o marcado como extrapolación no está verificado con un dato de planta real: trátalo como orientativo.</li>
+</ul>
+</section>
+
+</main>
+
+<script>
+const DATA = {
+ "cnae": "11.07",
+ "fuentes": [
+  {
+   "id": "F01",
+   "titulo": "Ley 7/2022 de residuos y suelos contaminados (art. 4, subproductos; art. 8, jerarquía)",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General",
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809",
+   "nota": ""
+  },
+  {
+   "id": "F02",
+   "titulo": "Real Decreto 1798/2010, reglamentación técnico-sanitaria de aguas de bebida envasadas",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2011-1633",
+   "nota": ""
+  },
+  {
+   "id": "F03",
+   "titulo": "Real Decreto 1799/2010, reglamentación técnico-sanitaria de aguas de bebida preparadas envasadas",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2011-1634",
+   "nota": ""
+  },
+  {
+   "id": "F04",
+   "titulo": "Ley 16/2002, prevención y control integrados de la contaminación (IPPC), epígrafe 6.4.b",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-12680",
+   "nota": ""
+  },
+  {
+   "id": "F05",
+   "titulo": "Real Decreto 1055/2022, envases y residuos de envases",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-21266",
+   "nota": ""
+  },
+  {
+   "id": "F06",
+   "titulo": "INE: nota explicativa oficial CNAE-2009 11.07 (fabricación de bebidas no alcohólicas; producción de aguas minerales y otras aguas embotelladas)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.ine.es/daco/daco42/clasificaciones/cnae09/notasex_cnae_09.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F07",
+   "titulo": "Decisión 2014/955/UE, Lista Europea de Residuos",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32014D0955",
+   "nota": ""
+  },
+  {
+   "id": "F08",
+   "titulo": "ANEABE (Asociación Nacional de Empresas de Aguas de Bebida Envasada): el agua mineral",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://aneabe.com/agua-mineral/",
+   "nota": ""
+  },
+  {
+   "id": "F09",
+   "titulo": "Revista Aral: el sector de aguas minerales mantiene el crecimiento, producción de 6.800 millones de litros",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.revistaaral.com/texto-diario/mostrar/5786697/sector-aguas-minerales-mantiene-crecimiento-produccion-6800m-litros-1",
+   "nota": ""
+  },
+  {
+   "id": "F10",
+   "titulo": "Mercasa: Alimentación en España — Aguas envasadas",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.mercasa.es/publicaciones/alimentacion-en-espana/aguas-envasadas/",
+   "nota": ""
+  },
+  {
+   "id": "F11",
+   "titulo": "Asociación de Bebidas Refrescantes (refrescantes.es): sala de prensa e informes del sector",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.refrescantes.es/",
+   "nota": ""
+  },
+  {
+   "id": "F12",
+   "titulo": "Junta de Andalucía: proyecto de planta embotelladora de agua mineral Aguas del Manar (información pública)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.juntadeandalucia.es/export/drupaljda/tramite_informacion_publica/21/02/Proyecto%20Planta%20Embotelladora%20Agua%20Mineral%20AGUAS%20DEL%20MANAR.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F13",
+   "titulo": "Aguasresiduales.info: manual básico de ósmosis inversa en la industria",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "Agua de rechazo del tratamiento (ósmosis inversa/descloración, ruta refrescos)",
+    "General"
+   ],
+   "url": "https://www.aguasresiduales.info/revista/blog/manual-basico-de-osmosis-inversa-en-la-industria",
+   "nota": ""
+  },
+  {
+   "id": "F14",
+   "titulo": "INE: Encuesta Industrial de Productos (EIAP) 2024",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.ine.es/dyngs/Prensa/EIAP2024.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F15",
+   "titulo": "Conversor CNAE: tabla de correspondencia oficial CNAE-2009 → CNAE-2025",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.conversoriaecnae.es/correspondencia-cnae-2025-cnae-2009",
+   "nota": ""
+  }
+ ],
+ "coeficientes": [
+  {
+   "proceso": "Agua mineral natural, de manantial u otra agua embotellada",
+   "corriente": "Agua mineral natural, de manantial u otra agua embotellada",
+   "factor": 0.8,
+   "unidad": "t/t agua captada en manantial",
+   "confianza": "Media",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Agua mineral natural, de manantial u otra agua embotellada",
+   "corriente": "Aguas de limpieza CIP de líneas y envasadora (ruta agua envasada)",
+   "factor": 0.2,
+   "unidad": "m³/t agua captada en manantial",
+   "confianza": "Media",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Agua mineral natural, de manantial u otra agua embotellada",
+   "corriente": "Lodos/residuos de la filtración mínima (arena, cartucho)",
+   "factor": 0.001,
+   "unidad": "t/t agua captada en manantial",
+   "confianza": "Baja",
+   "cer": "02 07 03",
+   "fuentes": []
+  },
+  {
+   "proceso": "Agua mineral natural, de manantial u otra agua embotellada",
+   "corriente": "Lodos de depuradora (EDAR propia o pretratamiento, ruta agua envasada)",
+   "factor": 0.005,
+   "unidad": "t/t agua captada en manantial",
+   "confianza": "Baja",
+   "cer": "02 07 05",
+   "fuentes": []
+  },
+  {
+   "proceso": "Refrescos, bebidas carbonatadas, isotónicas/energéticas y aguas aromatizadas",
+   "corriente": "Refrescos, bebidas carbonatadas, isotónicas/energéticas y aguas aromatizadas",
+   "factor": 0.82,
+   "unidad": "t/t agua tratada más ingredientes de formulación (azúcar/edulcorantes",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Refrescos, bebidas carbonatadas, isotónicas/energéticas y aguas aromatizadas",
+   "corriente": "Agua de rechazo del tratamiento (ósmosis inversa/descloración, ruta refrescos)",
+   "factor": 0.15,
+   "unidad": "m³/t agua tratada más ingredientes de formulación (azúcar/edulcorantes",
+   "confianza": "Baja",
+   "cer": "02 07 03",
+   "fuentes": []
+  },
+  {
+   "proceso": "Refrescos, bebidas carbonatadas, isotónicas/energéticas y aguas aromatizadas",
+   "corriente": "Mermas de formulación (jarabe, concentrado, azúcar/edulcorantes)",
+   "factor": 0.01,
+   "unidad": "t/t agua tratada más ingredientes de formulación (azúcar/edulcorantes",
+   "confianza": "Baja",
+   "cer": "02 07 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Refrescos, bebidas carbonatadas, isotónicas/energéticas y aguas aromatizadas",
+   "corriente": "Aguas de limpieza CIP de líneas de formulación y envasado (ruta refrescos)",
+   "factor": 0.15,
+   "unidad": "m³/t agua tratada más ingredientes de formulación (azúcar/edulcorantes",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Refrescos, bebidas carbonatadas, isotónicas/energéticas y aguas aromatizadas",
+   "corriente": "Lodos de depuradora (EDAR propia o pretratamiento, ruta refrescos)",
+   "factor": 0.008,
+   "unidad": "t/t agua tratada más ingredientes de formulación (azúcar/edulcorantes",
+   "confianza": "Baja",
+   "cer": "02 07 05",
+   "fuentes": []
+  }
+ ],
+ "datos_reales": [
+  {
+   "bloque": "Producción de agua mineral y de manantial envasada en España (ANEABE, 2023)",
+   "intro": "Datos del sector agrupados por la Asociación Nacional de Empresas de Aguas de Bebida Envasada. España es el 4.º productor de agua mineral de la Unión Europea.",
+   "fuente_id": "F08",
+   "fuentes_extra": [
+    "F09"
+   ],
+   "filas": [
+    [
+     "Producción anual",
+     "6.800 millones de litros (2023)"
+    ],
+    [
+     "Manantiales declarados",
+     "Más de 100"
+    ],
+    [
+     "Empleo directo e indirecto",
+     "≈30.000 puestos"
+    ],
+    [
+     "Controles de calidad",
+     "Más de 300 análisis diarios en el sector"
+    ]
+   ]
+  },
+  {
+   "bloque": "Balance de agua de una planta embotelladora real (proyecto Aguas del Manar, Junta de Andalucía)",
+   "intro": "Datos cuantitativos de un proyecto de planta embotelladora de agua mineral sometido a información pública ambiental. Caudal continuo aforado en sondeo de 8 l/s (252.288 m³/año), con tres líneas de envasado (hasta 36.000 botellas/hora en formatos pequeños).",
+   "fuente_id": "F12",
+   "fuentes_extra": [],
+   "filas": [
+    [
+     "Consumo de agua en la sanitización CIP de llenadoras",
+     "«en torno al 20 % del agua extraída»",
+     "0,20 m³/m³ agua captada — usado como factor de la corriente de limpieza CIP de la ruta agua envasada"
+    ],
+    [
+     "Depósitos de regulación previos al envasado",
+     "2 tanques nodriza de 50 m³ cada uno",
+     "—"
+    ]
+   ]
+  },
+  {
+   "bloque": "Sector de bebidas refrescantes en España",
+   "intro": "Datos del sector agrupados por la Asociación de Bebidas Refrescantes (antes ANFABRA/marca refrescantes.es) y por Mercasa. No se ha localizado en esta investigación una cifra de volumen de producción (litros) directamente comparable con la de ANEABE para el agua envasada: las fuentes del sector de refrescos publican principalmente facturación (venta al público), no volumen de fábrica.",
+   "fuente_id": "F11",
+   "fuentes_extra": [],
+   "filas": [
+    [
+     "Ventas del sector (2024)",
+     "≈4.790 millones de euros (venta al público, no facturación ex-fábrica)"
+    ],
+    [
+     "Consumo per cápita de refrescos azucarados (2023)",
+     "93 litros/habitante/año"
+    ]
+   ]
+  }
+ ],
+ "valorizacion": [
+  {
+   "corriente": "Mermas de formulación (jarabe, concentrado, azúcar/edulcorantes)",
+   "nivel": 2,
+   "texto": "Cuando se recoge de forma separada del efluente general (antes de diluirse), el jarabe o concentrado sobrante con alto contenido en azúcar puede valorizarse como aditivo energético en piensos, igual que otros subproductos azucarados agroindustriales.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Mermas de formulación (jarabe, concentrado, azúcar/edulcorantes)",
+   "nivel": 5,
+   "texto": "Cuando se vierte mezclado con el resto del efluente de limpieza, se trata en la EDAR propia o municipal junto con el resto de aguas residuales de proceso.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Aguas de limpieza CIP (ruta agua envasada)",
+   "nivel": 5,
+   "texto": "Vertido a cauce o colector municipal tras tratamiento, cuando cumple los límites de la autorización de vertido; el agua de limpieza de una planta de agua envasada tiene baja carga orgánica al no contener azúcares ni aromas.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Aguas de limpieza CIP (ruta agua envasada)",
+   "nivel": 3,
+   "texto": "Reutilización interna (riego, limpieza de exteriores, torres de refrigeración) tras un tratamiento mínimo, reduciendo la extracción neta del manantial o pozo.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Agua de rechazo del tratamiento (ósmosis inversa/descloración, ruta refrescos)",
+   "nivel": 3,
+   "texto": "Reutilización del rechazo de ósmosis inversa en usos que no requieren agua de alta pureza (limpieza de exteriores, riego de zonas verdes, torres de refrigeración), reduciendo el consumo neto de agua captada o de red.",
+   "fuentes": [
+    "F13"
+   ]
+  },
+  {
+   "corriente": "Agua de rechazo del tratamiento (ósmosis inversa/descloración, ruta refrescos)",
+   "nivel": 5,
+   "texto": "Vertido controlado a cauce o colector municipal cuando no se reutiliza, dentro de los límites de la autorización de vertido.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Aguas de limpieza CIP (ruta refrescos)",
+   "nivel": 4,
+   "texto": "Digestión anaerobia de la fracción de alta carga orgánica (azúcar disuelto) cuando existe depuradora propia con esa tecnología, con recuperación de biogás.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Aguas de limpieza CIP (ruta refrescos)",
+   "nivel": 5,
+   "texto": "Vertido a colector municipal con pretratamiento (desengrasado, homogeneización) cuando no hay digestión propia.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Lodos de depuradora",
+   "nivel": 5,
+   "texto": "Compostaje o aplicación agronómica cuando cumple los requisitos de calidad exigidos; en su defecto, gestor autorizado.",
+   "fuentes": []
+  }
+ ],
+ "niveles": {
+  "1": "Alimentación humana / prevención",
+  "2": "Alimentación animal",
+  "3": "Material y bioproductos",
+  "4": "Energía y biogás",
+  "5": "Suelo / compost"
+ },
+ "cer": [
+  {
+   "codigo": "15 01 01",
+   "desc": "Envases de papel y cartón",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 02",
+   "desc": "Envases de plástico",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 03",
+   "desc": "Envases de madera",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 04",
+   "desc": "Envases metálicos",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 05",
+   "desc": "Envases compuestos",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 06",
+   "desc": "Envases mezclados",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 07",
+   "desc": "Envases de vidrio",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 10*",
+   "desc": "Envases que contienen restos de sustancias peligrosas o están contaminados por ellas",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "13 02 05*",
+   "desc": "Aceites minerales no clorados de motor, de transmisión mecánica y lubricantes",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 02 02*",
+   "desc": "Absorbentes, materiales de filtración, trapos y ropas contaminados por sustancias peligrosas",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "20 01 15*",
+   "desc": "Álcalis",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "16 07 08*",
+   "desc": "Residuos que contienen hidrocarburos",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "20 03 01",
+   "desc": "Mezclas de residuos municipales",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "19 09 04",
+   "desc": "Carbón activo usado",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "19 09 05",
+   "desc": "Resinas de intercambio iónico saturadas o agotadas",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "02 07 01",
+   "desc": "Residuos de lavado, limpieza y reducción mecánica de materias primas",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "02 07 03",
+   "desc": "Residuos del tratamiento químico",
+   "corrientes": "Lodos/residuos de la filtración mínima (arena, cartucho); Agua de rechazo del tratamiento (ósmosis inversa/descloración, ruta refrescos)"
+  },
+  {
+   "codigo": "02 07 04",
+   "desc": "Materiales inadecuados para el consumo o la elaboración",
+   "corrientes": "Mermas de formulación (jarabe, concentrado, azúcar/edulcorantes)"
+  },
+  {
+   "codigo": "02 07 05",
+   "desc": "Lodos del tratamiento in situ de efluentes",
+   "corrientes": "Lodos de depuradora (EDAR propia o pretratamiento, ruta agua envasada); Lodos de depuradora (EDAR propia o pretratamiento, ruta refrescos)"
+  },
+  {
+   "codigo": "02 07 99",
+   "desc": "Residuos no especificados en otra categoría",
+   "corrientes": "Auxiliar / transversal"
+  }
+ ]
+};
+
+function cambiarTab(id, btn){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("activa"));
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("activa"));
+  document.getElementById(id).classList.add("activa");
+  btn.classList.add("activa");
+}
+
+function poblarSelect(id, valores){
+  const sel=document.getElementById(id);
+  [...new Set(valores)].sort((a,b)=>a.localeCompare(b,"es")).forEach(v=>{
+    const o=document.createElement("option");o.value=v;o.textContent=v;sel.appendChild(o);
+  });
+}
+
+function iniciarFiltros(){
+  poblarSelect("fTipo", DATA.fuentes.map(f=>f.tipo));
+  poblarSelect("fZona", DATA.fuentes.map(f=>f.zona));
+  const corrientes=new Set();
+  DATA.fuentes.forEach(f=>f.corrientes.forEach(c=>corrientes.add(c)));
+  poblarSelect("fCorriente",[...corrientes]);
+}
+
+function pintarFuentes(){
+  const q=document.getElementById("fBusqueda").value.trim().toLowerCase();
+  const tipo=document.getElementById("fTipo").value;
+  const zona=document.getElementById("fZona").value;
+  const corr=document.getElementById("fCorriente").value;
+  const res=DATA.fuentes.filter(f=>{
+    if(tipo&&f.tipo!==tipo)return false;
+    if(zona&&f.zona!==zona)return false;
+    if(corr&&!f.corrientes.includes(corr))return false;
+    if(q){
+      const txt=(f.titulo+" "+f.organismo+" "+f.zona+" "+f.corrientes.join(" ")+" "+(f.nota||"")).toLowerCase();
+      if(!txt.includes(q))return false;
+    }
+    return true;
+  });
+  document.getElementById("contadorFuentes").textContent=`${res.length} de ${DATA.fuentes.length} fuentes`;
+  document.getElementById("tarjetasFuentes").innerHTML=res.map(f=>`
+    <div class="tarjeta">
+      <span class="badge ${f.tipo}">${f.tipo}</span>
+      <h3><a href="${f.url}" target="_blank" rel="noopener">${f.titulo}</a></h3>
+      <div class="meta-linea"><b>${f.id}</b> · ${f.organismo} · ${f.zona}</div>
+      <div class="chips">${f.corrientes.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
+      ${f.nota?`<div class="nota">${f.nota}</div>`:""}
+    </div>`).join("")||"<p class='pequeno'>No hay fuentes que coincidan con el filtro.</p>";
+}
+
+function copiarFuentes(){
+  const q=document.getElementById("fBusqueda").value.trim().toLowerCase();
+  const tipo=document.getElementById("fTipo").value;
+  const zona=document.getElementById("fZona").value;
+  const corr=document.getElementById("fCorriente").value;
+  const res=DATA.fuentes.filter(f=>{
+    if(tipo&&f.tipo!==tipo)return false;
+    if(zona&&f.zona!==zona)return false;
+    if(corr&&!f.corrientes.includes(corr))return false;
+    if(q){
+      const txt=(f.titulo+" "+f.organismo+" "+f.zona+" "+f.corrientes.join(" ")+" "+(f.nota||"")).toLowerCase();
+      if(!txt.includes(q))return false;
+    }
+    return true;
+  });
+  const rows=[["id","titulo","tipo","organismo","zona","corrientes","enlace","nota"]];
+  res.forEach(f=>rows.push([f.id,f.titulo,f.tipo,f.organismo,f.zona,f.corrientes.join(" / "),f.url,f.nota||""]));
+  const txt=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(";")).join("\n");
+  const area=document.getElementById("areaFuentes");
+  area.value=txt;area.classList.remove("oculto");area.focus();area.select();
+  const estado=document.getElementById("estadoFuentes");
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(()=>estado.textContent="Copiado al portapapeles.").catch(()=>estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.");
+  } else estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.";
+}
+
+function pintarCoef(){
+  document.getElementById("tablaCoef").innerHTML=DATA.coeficientes.map(c=>`
+    <tr><td>${c.proceso}</td><td>${c.corriente}</td><td class="num">${c.factor}</td><td>${c.unidad}</td><td>${c.confianza}</td><td>${c.cer}</td>
+    <td>${c.fuentes.map(id=>`<span class="chip" style="cursor:pointer" onclick="irAFuente('${id}')">${id}</span>`).join(" ")||"—"}</td></tr>`).join("");
+}
+
+function irAFuente(id){
+  document.querySelector('.tab-btn[data-panel="panelFuentes"]').click();
+  document.getElementById("fBusqueda").value=id;
+  const f=DATA.fuentes.find(x=>x.id===id);
+  document.getElementById("fBusqueda").value=f?f.titulo.slice(0,30):id;
+  pintarFuentes();
+}
+
+function pintarReal(){
+  document.getElementById("bloquesReal").innerHTML=DATA.datos_reales.map(b=>{
+    const fid=b.fuente_id;const f=DATA.fuentes.find(x=>x.id===fid);
+    const extra=(b.fuentes_extra||[]).map(id=>{const g=DATA.fuentes.find(x=>x.id===id);return g?`, <a href="${g.url}" target="_blank" rel="noopener">${id}</a>`:"";}).join("");
+    return `<div class="bloque-real">
+      <h3>${b.bloque}</h3>
+      <p class="explicacion">${b.intro}</p>
+      <div class="tabla-contenedor"><table><thead><tr><th>Dato</th><th>Cantidad declarada</th><th>Ratio</th></tr></thead>
+      <tbody>${b.filas.map(([d,c,r])=>`<tr><td>${d}</td><td>${c}</td><td>${r}</td></tr>`).join("")}</tbody></table></div>
+      <p class="fuente">Fuente: ${f?`<a href="${f.url}" target="_blank" rel="noopener">${f.id} — ${f.titulo}</a>`:""}${extra}</p>
+    </div>`;
+  }).join("");
+}
+
+function pintarVal(){
+  const porCorriente={};
+  DATA.valorizacion.forEach(v=>{(porCorriente[v.corriente]=porCorriente[v.corriente]||[]).push(v);});
+  document.getElementById("bloquesVal").innerHTML=Object.entries(porCorriente).map(([corr,ops])=>`
+    <div class="bloque-real"><h3>${corr}</h3>
+    ${ops.sort((a,b)=>a.nivel-b.nivel).map(o=>`<div class="opcion-val"><span class="nivel n${o.nivel}">${o.nivel} · ${DATA.niveles[o.nivel]}</span>${o.texto}
+      ${o.fuentes.length?`<div class="chips">${o.fuentes.map(id=>{const f=DATA.fuentes.find(x=>x.id===id);return f?`<a class="chip" style="text-decoration:none" href="${f.url}" target="_blank" rel="noopener">${id}</a>`:"";}).join("")}</div>`:""}
+    </div>`).join("")}</div>`).join("");
+}
+
+function pintarCer(){
+  document.getElementById("tablaCer").innerHTML=DATA.cer.map(c=>`
+    <tr><td><span class="cer${c.codigo.includes("*")?" pel":""}">${c.codigo}</span></td><td>${c.desc}</td><td>${c.corrientes}</td></tr>`).join("");
+}
+
+iniciarFiltros();
+pintarFuentes();
+pintarCoef();
+pintarReal();
+pintarVal();
+pintarCer();
+</script>
+
+</body></html>

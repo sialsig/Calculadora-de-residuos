@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>html{color-scheme:light}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif;background:#fafaf8}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Fuentes Especias y Salsas</title>
+<style>
+:root{
+  --c-bg:#f3f7f4;--c-surface:#fff;--c-shadow:rgba(0,0,0,.08);--c-text:#18322a;
+  --c-h1:#225c40;--c-h2:#2c704d;--c-h3:#397b59;--c-border:#b7cabe;--c-focus:#8fc19b;
+  --c-input-bg:#fff;
+  --c-btn-bg:#28734d;--c-btn-bg-hover:#1e593b;--c-btn-secondary-bg:#64786c;
+  --c-explicacion-text:#50675a;--c-fuente-text:#64786c;
+  --c-pequeno-text:#5c6c62;
+  --c-card-bg:#fffdfa;--c-card-border:#ded8ca;
+  --c-th-bg:#e7f1ea;--c-tr-border:#d8e4dc;
+  --c-badge-normativa:#8a6d1a;--c-badge-estudio:#5c8da5;--c-badge-empresa:#28734d;--c-badge-proyecto:#7a6fb0;--c-badge-herramienta:#9b4a3c;
+  --c-chip-bg:#e5f2e8;--c-chip-border:#9dc4a5;--c-chip-text:#225c40;
+  --c-nivel-n1-bg:#d7efe0;--c-nivel-n1-text:#225c40;
+  --c-nivel-n2-bg:#e3eef5;--c-nivel-n2-text:#2e5b73;
+  --c-nivel-n3-bg:#f1ecd9;--c-nivel-n3-text:#6d5a14;
+  --c-nivel-n4-bg:#fbe6d6;--c-nivel-n4-text:#8a4a1a;
+  --c-nivel-n5-bg:#eee;--c-nivel-n5-text:#555;
+  --c-link:#1f6a8a;
+  --c-tab-bg:#e7f1ea;--c-tab-active-bg:#28734d;--c-tab-active-text:#fff;
+  --c-cer-bg:#f1f5f2;--c-cer-border:#c9d8ce;--c-cer-pel-border:#c0392b;--c-cer-pel-text:#8e2a1f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+    --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+    --c-input-bg:#182720;
+    --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;
+    --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+    --c-pequeno-text:#93a49a;
+    --c-card-bg:#182720;--c-card-border:#33362a;
+    --c-th-bg:#1c3227;--c-tr-border:#26392f;
+    --c-badge-normativa:#c9a94f;--c-badge-estudio:#6fa8c4;--c-badge-empresa:#4caf7c;--c-badge-proyecto:#a79bea;--c-badge-herramienta:#c98a76;
+    --c-chip-bg:#1b3226;--c-chip-border:#3a5c48;--c-chip-text:#a6e3c4;
+    --c-nivel-n1-bg:#204331;--c-nivel-n1-text:#a6e3c4;
+    --c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+    --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;
+    --c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;
+    --c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+    --c-link:#6cc2e8;
+    --c-tab-bg:#1c3227;--c-tab-active-bg:#2f8055;--c-tab-active-text:#fff;
+    --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+  --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+  --c-input-bg:#182720;
+  --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;
+  --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+  --c-pequeno-text:#93a49a;
+  --c-card-bg:#182720;--c-card-border:#33362a;
+  --c-th-bg:#1c3227;--c-tr-border:#26392f;
+  --c-badge-normativa:#c9a94f;--c-badge-estudio:#6fa8c4;--c-badge-empresa:#4caf7c;--c-badge-proyecto:#a79bea;--c-badge-herramienta:#c98a76;
+  --c-chip-bg:#1b3226;--c-chip-border:#3a5c48;--c-chip-text:#a6e3c4;
+  --c-nivel-n1-bg:#204331;--c-nivel-n1-text:#a6e3c4;
+  --c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+  --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;
+  --c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;
+  --c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+  --c-link:#6cc2e8;
+  --c-tab-bg:#1c3227;--c-tab-active-bg:#2f8055;--c-tab-active-text:#fff;
+  --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+}
+body{font-family:Arial,sans-serif;margin:0;background:var(--c-bg);color:var(--c-text)}
+main{max-width:1180px;margin:auto;padding:24px}
+section{background:var(--c-surface);padding:22px;margin-bottom:18px;border-radius:14px;box-shadow:0 2px 10px var(--c-shadow)}
+h1{margin-top:0;color:var(--c-h1);font-size:26px}
+h2{color:var(--c-h2);font-size:19px}
+h3{color:var(--c-h3);margin-bottom:6px;font-size:15px}
+p{line-height:1.5}
+.explicacion{color:var(--c-explicacion-text);font-size:14px;line-height:1.5;margin-top:6px}
+.pequeno{font-size:12px;color:var(--c-pequeno-text)}
+.fuente{color:var(--c-fuente-text);font-size:12px}
+label{display:block;font-weight:bold;margin:0 0 5px;font-size:13px}
+input,select{width:100%;box-sizing:border-box;padding:9px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-size:14px}
+input:focus,select:focus{outline:2px solid var(--c-focus)}
+.grid-filtros{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:12px;align-items:end}
+@media(max-width:800px){.grid-filtros{grid-template-columns:1fr}}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tab-btn{padding:9px 16px;border-radius:20px;border:1px solid var(--c-border);background:var(--c-tab-bg);color:var(--c-text);cursor:pointer;font-size:13px;font-weight:bold}
+.tab-btn.activa{background:var(--c-tab-active-bg);color:var(--c-tab-active-text);border-color:transparent}
+.panel{display:none}
+.panel.activa{display:block}
+.resultado-contador{margin:10px 0;font-size:13px;color:var(--c-pequeno-text)}
+.tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.tarjeta{background:var(--c-card-bg);border:1px solid var(--c-card-border);border-radius:10px;padding:14px 16px;line-height:1.45}
+.tarjeta h3{margin-bottom:4px}
+.tarjeta h3 a{color:var(--c-h3);text-decoration:none}
+.tarjeta h3 a:hover{text-decoration:underline}
+.badge{display:inline-block;font-size:11px;font-weight:bold;color:#fff;border-radius:8px;padding:2px 8px;margin-right:6px}
+.badge.Normativa{background:var(--c-badge-normativa)}
+.badge.Estudio{background:var(--c-badge-estudio)}
+.badge.Empresa{background:var(--c-badge-empresa)}
+.badge.Proyecto{background:var(--c-badge-proyecto)}
+.badge.Herramienta{background:var(--c-badge-herramienta)}
+.meta-linea{font-size:12px;color:var(--c-pequeno-text);margin:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
+.chip{font-size:11px;background:var(--c-chip-bg);color:var(--c-chip-text);border:1px solid var(--c-chip-border);border-radius:10px;padding:2px 8px}
+.nota{font-size:12px;color:var(--c-pequeno-text);margin-top:6px;font-style:italic}
+.tabla-contenedor{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+th,td{padding:8px;border-bottom:1px solid var(--c-tr-border);text-align:left;vertical-align:top}
+th{background:var(--c-th-bg)}
+td.num{text-align:right;white-space:nowrap}
+a{color:var(--c-link)}
+.nivel{display:inline-block;font-size:11px;font-weight:bold;padding:3px 8px;border-radius:10px;margin-right:6px}
+.nivel.n1{background:var(--c-nivel-n1-bg);color:var(--c-nivel-n1-text)}
+.nivel.n2{background:var(--c-nivel-n2-bg);color:var(--c-nivel-n2-text)}
+.nivel.n3{background:var(--c-nivel-n3-bg);color:var(--c-nivel-n3-text)}
+.nivel.n4{background:var(--c-nivel-n4-bg);color:var(--c-nivel-n4-text)}
+.nivel.n5{background:var(--c-nivel-n5-bg);color:var(--c-nivel-n5-text)}
+.opcion-val{padding:10px 0;border-bottom:1px dashed var(--c-tr-border)}
+.opcion-val:last-child{border-bottom:0}
+.bloque-real{border:1px solid var(--c-card-border);border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.cer{display:inline-block;background:var(--c-cer-bg);border:1px solid var(--c-cer-border);border-radius:6px;padding:1px 6px;margin:1px 2px;font-size:12px;white-space:nowrap}
+.cer.pel{border-color:var(--c-cer-pel-border);color:var(--c-cer-pel-text)}
+button{padding:9px 15px;color:#fff;background:var(--c-btn-bg);border:0;border-radius:8px;cursor:pointer;font-size:13px}
+button:hover{background:var(--c-btn-bg-hover)}
+button.secundario{background:var(--c-btn-secondary-bg)}
+.oculto{display:none!important}
+textarea{width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-family:monospace;font-size:12px;margin-top:8px}
+</style>
+
+<main>
+
+<section>
+<h1>Fuentes de residuos · CNAE 10.84</h1>
+<p><strong>Base de fuentes, coeficientes y datos reales de planta</strong> para las 3 rutas cubiertas de la elaboración de especias, salsas y condimentos (CNAE 10.84): salsas y condimentos emulsionados (mayonesa, ketchup, mostaza, vinagretas), especias y hierbas aromáticas procesadas (molienda, mezcla, envasado), y vinagre (fermentación acética). Consulta interna, sin relación con los datos que introduzcas en la calculadora de estimación.</p>
+<p class="explicacion">Extraída de la investigación de fuentes oficiales (normativa, estudios, permisos ambientales de planta real) que respalda la <a href="10.84_especias_salsas_condimentos_calculadora.html" target="_blank" rel="noopener">calculadora de residuos CNAE 10.84</a>. La misma información, en formato de tabla, está disponible como Excel para reutilizar en otros entornos.</p>
+</section>
+
+<section>
+<h2>Filtrar fuentes</h2>
+<div class="grid-filtros">
+<div>
+<label for="fBusqueda">Buscar (título, organismo, corriente, nota)</label>
+<input id="fBusqueda" type="text" placeholder="p. ej. alperujo, MITECO, Andalucía..." oninput="pintarFuentes()">
+</div>
+<div>
+<label for="fTipo">Tipo de fuente</label>
+<select id="fTipo" onchange="pintarFuentes()"><option value="">Todos</option></select>
+</div>
+<div>
+<label for="fZona">Zona</label>
+<select id="fZona" onchange="pintarFuentes()"><option value="">Todas</option></select>
+</div>
+<div>
+<label for="fCorriente">Corriente</label>
+<select id="fCorriente" onchange="pintarFuentes()"><option value="">Todas</option></select>
+</div>
+</div>
+</section>
+
+<section>
+<div class="tabs">
+<button class="tab-btn activa" data-panel="panelFuentes" onclick="cambiarTab('panelFuentes',this)">Fuentes</button>
+<button class="tab-btn" data-panel="panelCoef" onclick="cambiarTab('panelCoef',this)">Coeficientes</button>
+<button class="tab-btn" data-panel="panelReal" onclick="cambiarTab('panelReal',this)">Datos reales de planta</button>
+<button class="tab-btn" data-panel="panelVal" onclick="cambiarTab('panelVal',this)">Valorización</button>
+<button class="tab-btn" data-panel="panelCer" onclick="cambiarTab('panelCer',this)">CER/LER</button>
+</div>
+
+<div id="panelFuentes" class="panel activa">
+<div class="resultado-contador" id="contadorFuentes"></div>
+<div id="tarjetasFuentes" class="tarjetas"></div>
+<div style="margin-top:14px">
+<button class="secundario" onclick="copiarFuentes()">Copiar resultados filtrados (texto)</button>
+<textarea id="areaFuentes" class="oculto" rows="6" onclick="this.select()"></textarea>
+<span id="estadoFuentes" class="pequeno"></span>
+</div>
+</div>
+
+<div id="panelCoef" class="panel">
+<p class="explicacion">Factor de generación de cada corriente por tonelada de materia prima (aceite/ovoproducto/vinagre/tomate concentrado, especias en bruto, o vino/alcohol/sidra, según la ruta), por cada una de las 3 rutas de proceso (salsas, especias, vinagre), tal y como se usan en la calculadora. Haz clic en un identificador de fuente para verla en la pestaña «Fuentes».</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Proceso</th><th>Corriente</th><th>Factor</th><th>Unidad</th><th>Confianza</th><th>CER/LER candidatos</th><th>Fuentes</th></tr></thead>
+<tbody id="tablaCoef"></tbody>
+</table>
+</div>
+</div>
+
+<div id="panelReal" class="panel">
+<p class="explicacion">Balances de masa reales declarados en autorizaciones ambientales y estudios de campo.</p>
+<div id="bloquesReal"></div>
+</div>
+
+<div id="panelVal" class="panel">
+<p class="explicacion">Opciones de valorización por corriente, ordenadas según la jerarquía de residuos: <span class="nivel n1">1 · Alimentación humana</span><span class="nivel n2">2 · Alimentación animal</span><span class="nivel n3">3 · Material y bioproductos</span><span class="nivel n4">4 · Energía y biogás</span><span class="nivel n5">5 · Suelo / compost</span></p>
+<div id="bloquesVal"></div>
+</div>
+
+<div id="panelCer" class="panel">
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Código</th><th>Descripción oficial</th><th>Corrientes de este CNAE</th></tr></thead>
+<tbody id="tablaCer"></tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Notas</h2>
+<ul style="line-height:1.6">
+<li>Esta base cubre de momento el CNAE 10.84 (especias, salsas y condimentos), restringido a 3 de las 4 actividades del alcance oficial (salsas y condimentos, especias procesadas y vinagre; queda excluida la preparación de sal para consumo, ver el documento 1084_01_Paquete_completo.md para la justificación). La columna CNAE de cada hoja/tabla está pensada para apilar aquí los próximos CNAEs sin cambiar la estructura.</li>
+<li>Los identificadores de fuente (F01, F02...) son los mismos en esta página y en el Excel «Base_fuentes_residuos_CNAE_1043.xlsx», para poder cruzar ambos.</li>
+<li>Un coeficiente con confianza «Baja» o marcado como extrapolación no está verificado con un dato de planta real: trátalo como orientativo.</li>
+</ul>
+</section>
+
+</main>
+
+<script>
+const DATA = {
+ "cnae": "1084",
+ "fuentes": [
+  {
+   "id": "F01",
+   "titulo": "Ley 7/2022 de residuos y suelos contaminados (art. 4, subproductos; art. 8, jerarquía)",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General",
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809",
+   "nota": ""
+  },
+  {
+   "id": "F02",
+   "titulo": "Reglamento (CE) 852/2004, higiene de los productos alimenticios",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2004-81091",
+   "nota": ""
+  },
+  {
+   "id": "F03",
+   "titulo": "Reglamento (CE) 853/2004, higiene de los alimentos de origen animal (anexo III, aplicable al ovoproducto usado en mayonesa)",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2004-81092",
+   "nota": ""
+  },
+  {
+   "id": "F04",
+   "titulo": "Ley 16/2002, prevención y control integrados de la contaminación (IPPC), epígrafe 9.1.b",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-12680",
+   "nota": ""
+  },
+  {
+   "id": "F05",
+   "titulo": "INE: Notas explicativas CNAE 2025, código 10.84",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.ine.es/daco/daco42/clasificaciones/cnae25/notas_explicativas_CNAE_2025.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F06",
+   "titulo": "INE: Notas explicativas CNAE 2009, código 10.84",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.ine.es/daco/daco42/clasificaciones/cnae09/notasex_cnae_09.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F07",
+   "titulo": "INE: Notas explicativas CPA 2008 (subcódigos 10.84.11/12/21/22/23/30)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.ine.es/clasifi/notascpa08.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F08",
+   "titulo": "conversoriaecnae.es: CNAE 10.84, correspondencia CNAE-2009 → CNAE-2025 (1:1)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.conversoriaecnae.es/cnae/1084/elaboracion-de-especias-salsas-y-condimentos",
+   "nota": ""
+  },
+  {
+   "id": "F09",
+   "titulo": "Alimarket: Informe 2025 del sector de salsas en España",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.alimarket.es/alimentacion/informe/401431/informe-2025-del-sector-de-salsas",
+   "nota": ""
+  },
+  {
+   "id": "F10",
+   "titulo": "Tecnología Alimentaria: proceso industrial de fabricación de mayonesa",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://tecnologiaalimentaria.com/proceso_mayonesa.php",
+   "nota": ""
+  },
+  {
+   "id": "F11",
+   "titulo": "Especias Pedroza: proceso de fabricación y molienda de especias",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://especiaspedroza.es/es/content/12-fabricacion-y-molienda-de-especias",
+   "nota": ""
+  },
+  {
+   "id": "F12",
+   "titulo": "UPM (moodle en abierto): proceso de fabricación de vinagre",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://moodle.upm.es/en-abierto/pluginfile.php/1221/mod_label/intro/Vinagre.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F13",
+   "titulo": "Industria Manufacturera: fabricación de vinagre, rendimientos por método (tradicional, alemán, Acetator Frings)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://industriamanufacturera.com/fabricacion-de-vinagre/",
+   "nota": ""
+  },
+  {
+   "id": "F14",
+   "titulo": "Decisión 2014/955/UE, Lista Europea de Residuos",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32014D0955",
+   "nota": ""
+  }
+ ],
+ "coeficientes": [
+  {
+   "proceso": "Salsas y condimentos emulsionados (mayonesa, ketchup, mostaza, vinagretas)",
+   "corriente": "Salsa o condimento envasado (mayonesa, ketchup, mostaza, vinagreta u otra salsa)",
+   "factor": 0.97,
+   "unidad": "t/t aceite vegetal",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Salsas y condimentos emulsionados (mayonesa, ketchup, mostaza, vinagretas)",
+   "corriente": "Mermas de dosificación, mezclado y emulsificación",
+   "factor": 0.015,
+   "unidad": "t/t aceite vegetal",
+   "confianza": "Baja",
+   "cer": "02 03 04; 02 03 99",
+   "fuentes": []
+  },
+  {
+   "proceso": "Salsas y condimentos emulsionados (mayonesa, ketchup, mostaza, vinagretas)",
+   "corriente": "Aguas de limpieza CIP de tanques, emulsionadores y líneas de envasado",
+   "factor": 0.8,
+   "unidad": "m³/t aceite vegetal",
+   "confianza": "Baja",
+   "cer": "02 03 01",
+   "fuentes": []
+  },
+  {
+   "proceso": "Salsas y condimentos emulsionados (mayonesa, ketchup, mostaza, vinagretas)",
+   "corriente": "Lodos de depuradora (EDAR propia, planta de salsas)",
+   "factor": 0.006,
+   "unidad": "t/t aceite vegetal",
+   "confianza": "Baja",
+   "cer": "02 03 05",
+   "fuentes": []
+  },
+  {
+   "proceso": "Especias y condimentos secos (molienda, mezcla, envasado)",
+   "corriente": "Especia o condimento seco molido/envasado",
+   "factor": 0.9,
+   "unidad": "t/t especias y hierbas aromáticas en bruto (enteras",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Especias y condimentos secos (molienda, mezcla, envasado)",
+   "corriente": "Impurezas de limpieza (tallos, piedras, cuerpos extraños, polvo vegetal)",
+   "factor": 0.08,
+   "unidad": "t/t especias y hierbas aromáticas en bruto (enteras",
+   "confianza": "Baja",
+   "cer": "02 03 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Especias y condimentos secos (molienda, mezcla, envasado)",
+   "corriente": "Finos y polvo de molienda no aptos para envasado",
+   "factor": 0.015,
+   "unidad": "t/t especias y hierbas aromáticas en bruto (enteras",
+   "confianza": "Baja",
+   "cer": "02 03 99",
+   "fuentes": []
+  },
+  {
+   "proceso": "Especias y condimentos secos (molienda, mezcla, envasado)",
+   "corriente": "Mermas de dosificación y envasado de especias molidas",
+   "factor": 0.005,
+   "unidad": "t/t especias y hierbas aromáticas en bruto (enteras",
+   "confianza": "Baja",
+   "cer": "02 03 99",
+   "fuentes": []
+  },
+  {
+   "proceso": "Vinagre (fermentación acética)",
+   "corriente": "Vinagre envasado",
+   "factor": 0.92,
+   "unidad": "t/t vino",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Vinagre (fermentación acética)",
+   "corriente": "Lías y madre del vinagre (biomasa de Acetobacter y sedimentos)",
+   "factor": 0.04,
+   "unidad": "t/t vino",
+   "confianza": "Baja",
+   "cer": "02 07 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Vinagre (fermentación acética)",
+   "corriente": "Aguas de limpieza CIP del acetificador y líneas de envasado",
+   "factor": 0.6,
+   "unidad": "m³/t vino",
+   "confianza": "Baja",
+   "cer": "02 07 01",
+   "fuentes": []
+  },
+  {
+   "proceso": "Vinagre (fermentación acética)",
+   "corriente": "Lodos de depuradora (EDAR propia, planta de vinagre)",
+   "factor": 0.005,
+   "unidad": "t/t vino",
+   "confianza": "Baja",
+   "cer": "02 07 05",
+   "fuentes": []
+  }
+ ],
+ "datos_reales": [
+  {
+   "bloque": "El mercado de salsas en España — Informe Alimarket 2025",
+   "intro": "Datos del informe sectorial de Alimarket sobre el sector de salsas.",
+   "fuente_id": "F09",
+   "fuentes_extra": [],
+   "filas": [
+    [
+     "Crecimiento de ventas en volumen (retail)",
+     "+6,2 % en el último año"
+    ],
+    [
+     "Mayonesa",
+     "+7 % en volumen, con expansión relevante en foodservice"
+    ],
+    [
+     "Segmentos analizados",
+     "Mayonesa, ketchup, mostaza, tomate frito, salsas refrigeradas, salsas de cocinar"
+    ],
+    [
+     "Principales fabricantes y marcas",
+     "Heinz, Unilever, Apis, Hida, Aliminter, Choví, Cidacos, Salsa Rica, IAN, entre otros (40 operadores analizados)"
+    ]
+   ]
+  },
+  {
+   "bloque": "Rendimiento de la fermentación acética según el método de fabricación de vinagre",
+   "intro": "Comparación de métodos industriales de producción de vinagre.",
+   "fuente_id": "F13",
+   "fuentes_extra": [],
+   "filas": [
+    [
+     "Tradicional (superficie)",
+     "Semanas",
+     "Bajo"
+    ],
+    [
+     "Método alemán (generador)",
+     "3 días",
+     "Alto (88-90 %)"
+    ],
+    [
+     "Acetator Frings (sumergido)",
+     "25-30 horas",
+     "Muy alto (95-98 %)"
+    ]
+   ]
+  }
+ ],
+ "valorizacion": [
+  {
+   "corriente": "Mermas de dosificación, mezclado y emulsificación",
+   "nivel": 1,
+   "texto": "Reincorporación directa al mezclado cuando el lote no ha entrado en contacto con superficies no alimentarias ni ha roto la cadena de frío/higiene.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Mermas de dosificación, mezclado y emulsificación",
+   "nivel": 2,
+   "texto": "Venta como ingrediente de piensos cuando conserva condición higiénico-sanitaria adecuada (frecuente por su contenido en aceite y huevo).",
+   "fuentes": []
+  },
+  {
+   "corriente": "Aguas de limpieza CIP de la planta de salsas",
+   "nivel": 4,
+   "texto": "Digestión anaerobia de la fracción de carga orgánica (aceite, huevo, azúcares) cuando existe depuradora propia con esa tecnología.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Aguas de limpieza CIP de la planta de salsas",
+   "nivel": 5,
+   "texto": "Vertido a colector municipal con pretratamiento (desengrasado) cuando no hay digestión propia.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Lodos de depuradora",
+   "nivel": 5,
+   "texto": "Compostaje o aplicación agronómica cuando cumple los requisitos de higienización aplicables.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Lodos de depuradora",
+   "nivel": 4,
+   "texto": "Codigestión anaerobia en planta de biogás externa.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Impurezas de limpieza de especias (tallos, piedras, cuerpos extraños)",
+   "nivel": 5,
+   "texto": "Compostaje conjunto con otros restos vegetales cuando la fracción mineral (piedras) se separa antes.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Impurezas de limpieza de especias (tallos, piedras, cuerpos extraños)",
+   "nivel": 4,
+   "texto": "Valorización energética de la fracción vegetal en instalaciones que aceptan biomasa residual.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Finos y polvo de molienda no aptos",
+   "nivel": 1,
+   "texto": "Reincorporación al mismo lote de molienda cuando la granulometría lo permite.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Finos y polvo de molienda no aptos",
+   "nivel": 2,
+   "texto": "Venta como aditivo aromático de piensos cuando conserva condición higiénico-sanitaria adecuada.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Mermas de dosificación y envasado de especias molidas",
+   "nivel": 1,
+   "texto": "Reincorporación directa a la tolva de dosificación cuando el lote no se ha contaminado.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Mermas de dosificación y envasado de especias molidas",
+   "nivel": 2,
+   "texto": "Venta como ingrediente aromático de piensos cuando conserva condición higiénico-sanitaria adecuada.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Lías y madre del vinagre",
+   "nivel": 2,
+   "texto": "Uso como aditivo o ingrediente proteico-vitamínico de piensos, uso habitual de las lías de procesos de fermentación similares (vinificación, destilerías).",
+   "fuentes": []
+  },
+  {
+   "corriente": "Lías y madre del vinagre",
+   "nivel": 4,
+   "texto": "Digestión anaerobia por su carga orgánica, con recuperación de biogás.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Lías y madre del vinagre",
+   "nivel": 5,
+   "texto": "Compostaje o aplicación agronómica tras tratamiento.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Aguas de limpieza CIP del acetificador y líneas de envasado",
+   "nivel": 4,
+   "texto": "Digestión anaerobia conjunta con las lías cuando existe depuradora propia con esa tecnología.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Aguas de limpieza CIP del acetificador y líneas de envasado",
+   "nivel": 5,
+   "texto": "Vertido a colector municipal con pretratamiento cuando no hay digestión propia.",
+   "fuentes": []
+  }
+ ],
+ "niveles": {
+  "1": "Alimentación humana / prevención",
+  "2": "Alimentación animal",
+  "3": "Material y bioproductos",
+  "4": "Energía y biogás",
+  "5": "Suelo / compost"
+ },
+ "cer": [
+  {
+   "codigo": "15 01 01",
+   "desc": "Envases de papel y cartón",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 02",
+   "desc": "Envases de plástico",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 03",
+   "desc": "Envases de madera",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 04",
+   "desc": "Envases metálicos",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 05",
+   "desc": "Envases compuestos",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 06",
+   "desc": "Envases mezclados",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 07",
+   "desc": "Envases de vidrio",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 10*",
+   "desc": "Envases que contienen restos de sustancias peligrosas o están contaminados por ellas",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "13 02 05*",
+   "desc": "Aceites minerales no clorados de motor, de transmisión mecánica y lubricantes",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 02 02*",
+   "desc": "Absorbentes, materiales de filtración, trapos y ropas contaminados por sustancias peligrosas",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "20 03 01",
+   "desc": "Mezclas de residuos municipales",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "02 03 01",
+   "desc": "Lodos de lavado, limpieza, pelado, centrifugado y separación",
+   "corrientes": "Aguas de limpieza CIP de tanques, emulsionadores y líneas de envasado"
+  },
+  {
+   "codigo": "02 03 04",
+   "desc": "Materiales inadecuados para el consumo o la elaboración",
+   "corrientes": "Mermas de dosificación, mezclado y emulsificación; Impurezas de limpieza (tallos, piedras, cuerpos extraños, polvo vegetal)"
+  },
+  {
+   "codigo": "02 03 05",
+   "desc": "Lodos del tratamiento in situ de efluentes",
+   "corrientes": "Lodos de depuradora (EDAR propia, planta de salsas)"
+  },
+  {
+   "codigo": "02 03 99",
+   "desc": "Residuos no especificados en otra categoría",
+   "corrientes": "Mermas de dosificación, mezclado y emulsificación; Finos y polvo de molienda no aptos para envasado; Mermas de dosificación y envasado de especias molidas"
+  },
+  {
+   "codigo": "02 07 01",
+   "desc": "Residuos de lavado, limpieza y reducción mecánica de materias primas",
+   "corrientes": "Aguas de limpieza CIP del acetificador y líneas de envasado"
+  },
+  {
+   "codigo": "02 07 04",
+   "desc": "Materiales inadecuados para el consumo o la elaboración",
+   "corrientes": "Lías y madre del vinagre (biomasa de Acetobacter y sedimentos)"
+  },
+  {
+   "codigo": "02 07 05",
+   "desc": "Lodos del tratamiento in situ de efluentes",
+   "corrientes": "Lodos de depuradora (EDAR propia, planta de vinagre)"
+  },
+  {
+   "codigo": "02 07 99",
+   "desc": "Residuos no especificados en otra categoría",
+   "corrientes": "Auxiliar / transversal"
+  }
+ ]
+};
+
+function cambiarTab(id, btn){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("activa"));
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("activa"));
+  document.getElementById(id).classList.add("activa");
+  btn.classList.add("activa");
+}
+
+function poblarSelect(id, valores){
+  const sel=document.getElementById(id);
+  [...new Set(valores)].sort((a,b)=>a.localeCompare(b,"es")).forEach(v=>{
+    const o=document.createElement("option");o.value=v;o.textContent=v;sel.appendChild(o);
+  });
+}
+
+function iniciarFiltros(){
+  poblarSelect("fTipo", DATA.fuentes.map(f=>f.tipo));
+  poblarSelect("fZona", DATA.fuentes.map(f=>f.zona));
+  const corrientes=new Set();
+  DATA.fuentes.forEach(f=>f.corrientes.forEach(c=>corrientes.add(c)));
+  poblarSelect("fCorriente",[...corrientes]);
+}
+
+function pintarFuentes(){
+  const q=document.getElementById("fBusqueda").value.trim().toLowerCase();
+  const tipo=document.getElementById("fTipo").value;
+  const zona=document.getElementById("fZona").value;
+  const corr=document.getElementById("fCorriente").value;
+  const res=DATA.fuentes.filter(f=>{
+    if(tipo&&f.tipo!==tipo)return false;
+    if(zona&&f.zona!==zona)return false;
+    if(corr&&!f.corrientes.includes(corr))return false;
+    if(q){
+      const txt=(f.titulo+" "+f.organismo+" "+f.zona+" "+f.corrientes.join(" ")+" "+(f.nota||"")).toLowerCase();
+      if(!txt.includes(q))return false;
+    }
+    return true;
+  });
+  document.getElementById("contadorFuentes").textContent=`${res.length} de ${DATA.fuentes.length} fuentes`;
+  document.getElementById("tarjetasFuentes").innerHTML=res.map(f=>`
+    <div class="tarjeta">
+      <span class="badge ${f.tipo}">${f.tipo}</span>
+      <h3><a href="${f.url}" target="_blank" rel="noopener">${f.titulo}</a></h3>
+      <div class="meta-linea"><b>${f.id}</b> · ${f.organismo} · ${f.zona}</div>
+      <div class="chips">${f.corrientes.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
+      ${f.nota?`<div class="nota">${f.nota}</div>`:""}
+    </div>`).join("")||"<p class='pequeno'>No hay fuentes que coincidan con el filtro.</p>";
+}
+
+function copiarFuentes(){
+  const q=document.getElementById("fBusqueda").value.trim().toLowerCase();
+  const tipo=document.getElementById("fTipo").value;
+  const zona=document.getElementById("fZona").value;
+  const corr=document.getElementById("fCorriente").value;
+  const res=DATA.fuentes.filter(f=>{
+    if(tipo&&f.tipo!==tipo)return false;
+    if(zona&&f.zona!==zona)return false;
+    if(corr&&!f.corrientes.includes(corr))return false;
+    if(q){
+      const txt=(f.titulo+" "+f.organismo+" "+f.zona+" "+f.corrientes.join(" ")+" "+(f.nota||"")).toLowerCase();
+      if(!txt.includes(q))return false;
+    }
+    return true;
+  });
+  const rows=[["id","titulo","tipo","organismo","zona","corrientes","enlace","nota"]];
+  res.forEach(f=>rows.push([f.id,f.titulo,f.tipo,f.organismo,f.zona,f.corrientes.join(" / "),f.url,f.nota||""]));
+  const txt=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(";")).join("\n");
+  const area=document.getElementById("areaFuentes");
+  area.value=txt;area.classList.remove("oculto");area.focus();area.select();
+  const estado=document.getElementById("estadoFuentes");
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(()=>estado.textContent="Copiado al portapapeles.").catch(()=>estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.");
+  } else estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.";
+}
+
+function pintarCoef(){
+  document.getElementById("tablaCoef").innerHTML=DATA.coeficientes.map(c=>`
+    <tr><td>${c.proceso}</td><td>${c.corriente}</td><td class="num">${c.factor}</td><td>${c.unidad}</td><td>${c.confianza}</td><td>${c.cer}</td>
+    <td>${c.fuentes.map(id=>`<span class="chip" style="cursor:pointer" onclick="irAFuente('${id}')">${id}</span>`).join(" ")||"—"}</td></tr>`).join("");
+}
+
+function irAFuente(id){
+  document.querySelector('.tab-btn[data-panel="panelFuentes"]').click();
+  document.getElementById("fBusqueda").value=id;
+  const f=DATA.fuentes.find(x=>x.id===id);
+  document.getElementById("fBusqueda").value=f?f.titulo.slice(0,30):id;
+  pintarFuentes();
+}
+
+function pintarReal(){
+  document.getElementById("bloquesReal").innerHTML=DATA.datos_reales.map(b=>{
+    const fid=b.fuente_id;const f=DATA.fuentes.find(x=>x.id===fid);
+    const extra=(b.fuentes_extra||[]).map(id=>{const g=DATA.fuentes.find(x=>x.id===id);return g?`, <a href="${g.url}" target="_blank" rel="noopener">${id}</a>`:"";}).join("");
+    return `<div class="bloque-real">
+      <h3>${b.bloque}</h3>
+      <p class="explicacion">${b.intro}</p>
+      <div class="tabla-contenedor"><table><thead><tr><th>Dato</th><th>Cantidad declarada</th><th>Ratio</th></tr></thead>
+      <tbody>${b.filas.map(([d,c,r])=>`<tr><td>${d}</td><td>${c}</td><td>${r}</td></tr>`).join("")}</tbody></table></div>
+      <p class="fuente">Fuente: ${f?`<a href="${f.url}" target="_blank" rel="noopener">${f.id} — ${f.titulo}</a>`:""}${extra}</p>
+    </div>`;
+  }).join("");
+}
+
+function pintarVal(){
+  const porCorriente={};
+  DATA.valorizacion.forEach(v=>{(porCorriente[v.corriente]=porCorriente[v.corriente]||[]).push(v);});
+  document.getElementById("bloquesVal").innerHTML=Object.entries(porCorriente).map(([corr,ops])=>`
+    <div class="bloque-real"><h3>${corr}</h3>
+    ${ops.sort((a,b)=>a.nivel-b.nivel).map(o=>`<div class="opcion-val"><span class="nivel n${o.nivel}">${o.nivel} · ${DATA.niveles[o.nivel]}</span>${o.texto}
+      ${o.fuentes.length?`<div class="chips">${o.fuentes.map(id=>{const f=DATA.fuentes.find(x=>x.id===id);return f?`<a class="chip" style="text-decoration:none" href="${f.url}" target="_blank" rel="noopener">${id}</a>`:"";}).join("")}</div>`:""}
+    </div>`).join("")}</div>`).join("");
+}
+
+function pintarCer(){
+  document.getElementById("tablaCer").innerHTML=DATA.cer.map(c=>`
+    <tr><td><span class="cer${c.codigo.includes("*")?" pel":""}">${c.codigo}</span></td><td>${c.desc}</td><td>${c.corrientes}</td></tr>`).join("");
+}
+
+iniciarFiltros();
+pintarFuentes();
+pintarCoef();
+pintarReal();
+pintarVal();
+pintarCer();
+</script>
+
+</body></html>

@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>html{color-scheme:light}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif;background:#fafaf8}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Residuos por CNAE</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap">
+<style>
+/* Paleta Syner (tomada del panel de Looker Studio): verde menta, crema y naranja.
+   Diseño deliberadamente de un solo tema claro, para que el verde se vea igual en cualquier modo. */
+:root{
+  color-scheme: light;
+  --green:#70CCB3;        /* banda verde Syner */
+  --green-soft:#DDF3EC;
+  --green-ink:#1B7A60;    /* texto verde sobre blanco/crema */
+  --cream:#FBF3D9;
+  --cream-2:#FAE9B5;
+  --orange:#ED8537;
+  --orange-ink:#B4500E;
+  --ink:#143A30;          /* verde casi negro, para texto */
+  --ink-soft:#4C6A60;
+  --bg:#FFFFFF;
+  --line:#E9DDB8;
+  --shadow:0 1px 2px rgba(20,58,48,.06), 0 6px 18px rgba(20,58,48,.08);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px;
+}
+
+/* ---- banda verde de cabecera ---- */
+.banner{
+  background:var(--green);
+  padding:44px 16px 40px;
+}
+.banner .inner{max-width:1040px;margin:0 auto}
+.kicker{
+  font-size:13px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink);
+  font-weight:700;
+  margin:0 0 12px;
+  display:flex;align-items:center;gap:10px;
+}
+.kicker::before{
+  content:"";width:26px;height:4px;border-radius:2px;background:var(--orange);flex:none;
+}
+h1{
+  font-size:clamp(28px,5vw,42px);
+  line-height:1.12;
+  margin:0 0 14px;
+  font-weight:900;
+  color:var(--ink);
+  text-wrap:balance;
+  letter-spacing:-.01em;
+}
+p.lede{
+  font-size:16.5px;line-height:1.6;color:var(--ink);
+  max-width:64ch;margin:0;
+}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.stat{
+  display:flex;align-items:baseline;gap:6px;
+  background:#fff;border-radius:999px;padding:8px 16px;
+  font-size:13px;color:var(--ink-soft);
+  box-shadow:0 1px 2px rgba(20,58,48,.12);
+}
+.stat b{font-size:18px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* ---- cuerpo ---- */
+.wrap{max-width:1040px;margin:0 auto;padding:30px 16px 64px}
+
+.legend{
+  display:flex;gap:20px;flex-wrap:wrap;
+  margin:0 0 30px;font-size:13px;color:var(--ink-soft);
+}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.dot{width:10px;height:10px;border-radius:50%;flex:none}
+.dot.leaf{background:var(--orange)}
+.dot.book{background:var(--green)}
+
+.groups{display:flex;flex-direction:column;gap:34px}
+
+.group-header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:16px;padding-bottom:10px;
+  border-bottom:2px solid var(--green);
+}
+.group-header .gicon{
+  width:34px;height:34px;flex:none;border-radius:50%;
+  background:var(--cream-2);color:var(--orange-ink);
+  display:grid;place-items:center;
+}
+.group-header .gicon svg{width:19px;height:19px}
+.group-header h2{
+  font-size:16px;font-weight:700;margin:0;
+  text-transform:uppercase;letter-spacing:.03em;color:var(--green-ink);
+}
+.group-count{
+  font-size:12px;color:var(--ink-soft);
+  background:var(--cream);padding:3px 11px;border-radius:999px;
+  margin-left:2px;white-space:nowrap;font-weight:500;
+}
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(176px,212px));
+  gap:14px;
+}
+.card{
+  min-height:206px;
+  background:var(--cream);
+  border-radius:18px;
+  padding:16px;
+  box-shadow:var(--shadow);
+  display:flex;flex-direction:column;justify-content:space-between;gap:10px;
+}
+.card .top{display:flex;flex-direction:column;gap:8px;flex-shrink:0}
+
+.cnae-badge{
+  align-self:flex-start;
+  font-weight:700;font-size:12.5px;
+  color:var(--ink);background:var(--green);
+  border-radius:8px;padding:4px 10px;white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+}
+.card h3{
+  font-size:14.5px;font-weight:700;margin:0;line-height:1.28;color:var(--ink);
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.tag{
+  align-self:flex-start;
+  font-size:10.5px;font-weight:700;letter-spacing:.01em;
+  color:var(--orange-ink);background:#fff;
+  border:1px solid var(--cream-2);
+  border-radius:6px;padding:2px 7px;
+}
+
+.actions{display:flex;flex-direction:column;gap:6px;flex-shrink:0}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  font-size:12px;font-weight:700;text-decoration:none;
+  padding:8px;border-radius:999px;border:1.5px solid transparent;
+  transition:transform .12s ease, filter .12s ease;line-height:1.15;white-space:nowrap;
+}
+.btn:hover{filter:brightness(.96)}
+.btn:active{transform:scale(.98)}
+.btn:focus-visible{outline:3px solid var(--green-ink);outline-offset:2px}
+.btn svg{flex:none;width:14px;height:14px}
+.btn.primary{background:var(--orange);color:#2B1407}
+.btn.secondary{background:#fff;color:var(--green-ink);border-color:var(--green)}
+
+footer{
+  margin-top:44px;padding:22px 24px;
+  background:var(--cream);border-radius:18px;
+  font-size:13px;color:var(--ink-soft);line-height:1.65;
+}
+footer p{margin:0 0 8px}
+footer p:last-child{margin:0}
+footer code{
+  background:#fff;border-radius:5px;padding:1px 6px;font-size:12px;color:var(--ink);
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+}
+
+/* ===== Variante C · Verde pleno ===== */
+:root{--bg:#70CCB3}
+body{background:var(--bg)}
+.banner{background:transparent;padding:46px 16px 8px}
+.legend{color:var(--ink)}
+.dot.book{background:#fff}
+.group-header{border-bottom:2px solid rgba(255,255,255,.75)}
+.group-header .gicon{background:#fff;color:var(--orange-ink)}
+.group-header h2{color:var(--ink)}
+.group-count{background:rgba(255,255,255,.7);color:var(--ink)}
+.card{background:#fff;box-shadow:0 2px 4px rgba(10,60,45,.12),0 10px 24px rgba(10,60,45,.14)}
+.cnae-badge{background:var(--green-soft);color:var(--green-ink)}
+.tag{background:var(--cream);border-color:var(--cream-2)}
+.btn.secondary{border-color:var(--green);color:var(--green-ink)}
+footer{background:#fff;box-shadow:0 2px 4px rgba(10,60,45,.12)}
+</style>
+
+<div class="banner">
+  <div class="inner">
+    <p class="kicker">Proyecto · Calculadoras de residuos</p>
+    <h1>Residuos por CNAE: calculadoras y fuentes</h1>
+    <p class="lede">Para cada CNAE, una calculadora interactiva de corrientes de residuo y su buscador de fuentes, coeficientes y datos reales de planta. Todo en castellano y con trazabilidad completa a la fuente original de cada dato.</p>
+    <div class="stats">
+      <div class="stat"><b>14</b>&nbsp;subsectores</div>
+      <div class="stat"><b>36</b>&nbsp;CNAE cubiertos</div>
+      <div class="stat"><b>31</b>&nbsp;calculadoras</div>
+      <div class="stat"><b>36</b>&nbsp;tablas BigQuery</div>
+      <div class="stat"><b>1</b>&nbsp;tabla maestra</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="legend">
+    <span><i class="dot leaf"></i> Calculadora interactiva (estimación por planta)</span>
+    <span><i class="dot book"></i> Buscador de fuentes (coeficientes, CER/LER, valorización, Excel)</span>
+  </div>
+
+  <div class="groups" id="groups"></div>
+
+  <footer>
+    <p>Cada calculadora estima corrientes de residuo, subproducto y efluente a partir de datos de una instalación concreta (producción, tipo de producto, ruta de proceso). Cada buscador de fuentes documenta de dónde sale cada coeficiente, con su nivel de confianza, código CER/LER y opciones de valorización — y se entrega también como libro Excel con una o más hojas <code>BigQuery_&lt;cnae&gt;</code> listas para tablas genéricas de empresa (CNAE + facturación).</p>
+    <p>Los 12 paquetes de la ampliación de septiembre de 2026 (marcados «Investigado desde cero») siguen la misma metodología, investigada íntegramente desde fuentes primarias y sectoriales al no existir calculadora previa. El paquete de CNAE 47.11 (comercio minorista) usa además una metodología adaptada a comercio/servicios, distinta de la de fabricación — ver <code>00_Metodologia_paquete_completo.md</code> §11.</p>
+    <p>Las 36 tablas BigQuery se unen en una <strong>tabla maestra</strong> (<code>residuos_cnae_maestro</code>, 309 filas, 39 grupos de cálculo) que es la que se enlaza con la tabla de centros para estimar los residuos por centro. Cuando un centro no tiene facturación, el cálculo usa una <strong>facturación de referencia</strong> (mediana por CNAE y provincia, o por CNAE a nivel nacional si hay menos de 5 centros), siempre marcada como estimada.</p>
+    <p>Metodología completa y prompt maestro reutilizable para nuevos CNAE: documentos del proyecto.</p>
+  </footer>
+
+</div>
+
+<script>
+const ICON_LEAF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13V6a1 1 0 0 1 1-1h7a7 7 0 0 1 7 7 7 7 0 0 1-7 7H4"/><path d="M4 13c3.5-1 6-2.5 8.5-5.5"/></svg>';
+const ICON_BOOK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>';
+
+// iconos de sección (uno por subsector)
+const ICONS = {
+  aceite: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg>',
+  cereal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M12 2c2 1.2 2 3 0 4-2 1-2 2.8 0 4M12 10c2 1.2 2 3 0 4-2 1-2 2.8 0 4M12 18c1.6 1 1.6 2.6 0 4M8 8c0 1.5 1.3 2.5 2.6 2M15.4 10c1.3.5 2.6-.5 2.6-2M8 16c0 1.5 1.3 2.5 2.6 2M15.4 18c1.3.5 2.6-.5 2.6-2"/></svg>',
+  fruta: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="7"/><path d="M12 7c0-2.5 1.5-4 3.5-4.5M9 3.8c1 .5 1.7 1.4 2 2.5"/></svg>',
+  confite: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="3" transform="rotate(45 12 12)"/><path d="M3 6l2.2 2.2M21 6l-2.2 2.2M3 18l2.2-2.2M21 18l-2.2-2.2"/></svg>',
+  bebida: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h10v9a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V8z"/><path d="M16 10h2a2 2 0 0 1 0 4h-2M9 4.5c-.6.6-.6 1.4 0 2s.6 1.4 0 2"/></svg>',
+  lacteo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l1.2 4.2H7.8L9 3z"/><path d="M7.8 7.2h8.4V20a1 1 0 0 1-1 1H8.8a1 1 0 0 1-1-1V7.2z"/><path d="M7.8 7.2L12 10l4.2-2.8"/></svg>',
+  animal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="9.5" r="1.8"/><circle cx="12" cy="6.5" r="1.8"/><circle cx="17" cy="9.5" r="1.8"/><path d="M12 12c-3.2 0-6.2 2.1-6.2 5.4A2.6 2.6 0 0 0 8.4 20c1.3 0 1.9-.6 3.6-.6s2.3.6 3.6.6a2.6 2.6 0 0 0 2.6-2.6C18.2 14.1 15.2 12 12 12z"/></svg>',
+  carnica: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 14.5l7-7 6 6-7 7a4.2 4.2 0 0 1-6-6z"/><path d="M17.5 7.5l2.8-2.8"/><path d="M8.8 15.2l-3 3"/></svg>',
+  pescado: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c3-4 7-6 11-6 3 0 6 2.5 7 6-1 3.5-4 6-7 6-4 0-8-2-11-6z"/><path d="M14 9.5v-2M14 14.5v2M18 10l2.5-2M18 14l2.5 2"/><circle cx="8.3" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>',
+  azucar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h9l7 7v9H11L4 13V4z"/><path d="M4 4l16 16M9 9l6 6"/></svg>',
+  agua: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.2 4.2 6.5 8.3 6.5 12A6.5 6.5 0 0 1 5.5 15c0-3.7 3.3-7.8 6.5-12z"/><path d="M8.7 15.5c0 1.7 1.3 3 3 3.3"/></svg>',
+  plato: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>',
+  especia: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8l1 4H7l1-4z"/><path d="M7 7h10l-1.2 12.2a2 2 0 0 1-2 1.8H10.2a2 2 0 0 1-2-1.8L7 7z"/><path d="M9.5 11.5c1 1 4 1 5 0M9.8 15.2c1 .9 3.4.9 4.4 0"/></svg>',
+  comercio: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16l-1.5 10.5a2 2 0 0 1-2 1.5H7.5a2 2 0 0 1-2-1.5L4 8z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg>',
+};
+
+const GRUPOS = [
+  {
+    id: "aceites",
+    titulo: "Aceites y grasas",
+    icono: ICONS.aceite,
+    items: [
+      {
+        cnae: "10.43",
+        nombre: "Aceite de oliva (almazara)",
+        calc: "10.43_aceite_de_oliva_calculadora.html",
+        fuentes: "10.43_aceite_de_oliva_buscador.html",
+      },
+      {
+        cnae: "10.44",
+        nombre: "Otros aceites y grasas",
+        calc: "10.44_girasol_y_otros_aceites_calculadora.html",
+        fuentes: "10.44_girasol_y_otros_aceites_buscador.html",
+        nota: "Alcance parcial",
+      },
+      {
+        cnae: "10.42",
+        nombre: "Margarina y grasas comestibles",
+        calc: "10.42_margarina_y_grasas_calculadora.html",
+        fuentes: "10.42_margarina_y_grasas_buscador.html",
+      },
+    ],
+  },
+  {
+    id: "cereales",
+    titulo: "Cereales y derivados",
+    icono: ICONS.cereal,
+    items: [
+      {
+        cnae: "10.61 / 10.62",
+        nombre: "Molinería y almidones",
+        calc: "10.61_10.62_cereales_almidon_calculadora.html",
+        fuentes: "10.61_10.62_cereales_almidon_buscador.html",
+        nota: "2 tablas BigQuery",
+      },
+      {
+        cnae: "10.71 / 10.72",
+        nombre: "Panadería, pastelería y galletas",
+        calc: "10.71_10.72_pan_pasteleria_calculadora.html",
+        fuentes: "10.71_10.72_pan_pasteleria_buscador.html",
+        nota: "2 tablas BigQuery",
+      },
+      {
+        cnae: "10.73",
+        nombre: "Pastas alimenticias y cuscús",
+        calc: "10.73_pasta_seca_calculadora.html",
+        fuentes: "10.73_pasta_seca_buscador.html",
+        nota: "Investigado desde cero",
+      },
+    ],
+  },
+  {
+    id: "frutas",
+    titulo: "Frutas, hortalizas y patatas",
+    icono: ICONS.fruta,
+    items: [
+      {
+        cnae: "10.32",
+        nombre: "Zumos de fruta y hortalizas",
+        calc: "10.32_zumos_de_frutas_calculadora.html",
+        fuentes: "10.32_zumos_de_frutas_buscador.html",
+      },
+      {
+        cnae: "10.31",
+        nombre: "Procesado y conservación de patatas",
+        calc: "10.31_patatas_calculadora.html",
+        fuentes: "10.31_patatas_buscador.html",
+      },
+      {
+        cnae: "10.39",
+        nombre: "Aceituna de mesa y otros procesados",
+        calc: "10.39_frutas_hortalizas_aceituna_mesa_calculadora.html",
+        fuentes: "10.39_frutas_hortalizas_aceituna_mesa_buscador.html",
+        nota: "Investigado desde cero",
+      },
+    ],
+  },
+  {
+    id: "confiteria",
+    titulo: "Confitería, café y estimulantes",
+    icono: ICONS.confite,
+    items: [
+      {
+        cnae: "10.82",
+        nombre: "Cacao, chocolate y confitería",
+        calc: "10.82_cacao_chocolate_confiteria_calculadora.html",
+        fuentes: "10.82_cacao_chocolate_confiteria_buscador.html",
+      },
+      {
+        cnae: "10.83",
+        nombre: "Café, té e infusiones",
+        calc: "10.83_cafe_y_te_calculadora.html",
+        fuentes: "10.83_cafe_y_te_buscador.html",
+      },
+    ],
+  },
+  {
+    id: "azucar",
+    titulo: "Azúcar",
+    icono: ICONS.azucar,
+    items: [
+      {
+        cnae: "10.81",
+        nombre: "Fabricación de azúcar (remolacha)",
+        calc: "10.81_fabricacion_azucar_calculadora.html",
+        fuentes: "10.81_fabricacion_azucar_buscador.html",
+        nota: "Investigado desde cero",
+      },
+    ],
+  },
+  {
+    id: "pescado",
+    titulo: "Pescado y marisco",
+    icono: ICONS.pescado,
+    items: [
+      {
+        cnae: "10.21",
+        nombre: "Pescado congelado y fresco/refrigerado",
+        calc: "10.21_pescado_fresco_congelado_calculadora.html",
+        fuentes: "10.21_pescado_fresco_congelado_buscador.html",
+        nota: "Investigado desde cero",
+      },
+      {
+        cnae: "10.22",
+        nombre: "Conservas de pescado",
+        calc: "10.22_conservas_pescado_calculadora.html",
+        fuentes: "10.22_conservas_pescado_buscador.html",
+        nota: "Investigado desde cero",
+      },
+    ],
+  },
+  {
+    id: "bebidas",
+    titulo: "Bebidas",
+    icono: ICONS.bebida,
+    items: [
+      {
+        cnae: "11.05 / 11.06",
+        nombre: "Cerveza y malta",
+        calc: "11.05_11.06_cerveza_malta_calculadora.html",
+        fuentes: "11.05_11.06_cerveza_malta_buscador.html",
+        nota: "2 tablas BigQuery",
+      },
+      {
+        cnae: "11.02",
+        nombre: "Elaboración de vinos",
+        calc: "11.02_elaboracion_de_vinos_calculadora.html",
+        fuentes: "11.02_elaboracion_de_vinos_buscador.html",
+      },
+      {
+        cnae: "11.03",
+        nombre: "Sidra y otras bebidas fermentadas",
+        calc: "11.03_sidra_y_fermentados_calculadora.html",
+        fuentes: "11.03_sidra_y_fermentados_buscador.html",
+      },
+      {
+        cnae: "11.01",
+        nombre: "Destilación de bebidas espirituosas",
+        calc: "11.01_destilacion_bebidas_espirituosas_calculadora.html",
+        fuentes: "11.01_destilacion_bebidas_espirituosas_buscador.html",
+        nota: "Investigado desde cero",
+      },
+      {
+        cnae: "11.04",
+        nombre: "Vermut y bebidas aromatizadas",
+        calc: "11.04_vermut_bebidas_aromatizadas_calculadora.html",
+        fuentes: "11.04_vermut_bebidas_aromatizadas_buscador.html",
+        nota: "Investigado desde cero",
+      },
+    ],
+  },
+  {
+    id: "aguas",
+    titulo: "Aguas y refrescos",
+    icono: ICONS.agua,
+    items: [
+      {
+        cnae: "11.07",
+        nombre: "Aguas embotelladas y refrescos",
+        calc: "11.07_aguas_refrescos_calculadora.html",
+        fuentes: "11.07_aguas_refrescos_buscador.html",
+        nota: "Investigado desde cero",
+      },
+    ],
+  },
+  {
+    id: "lacteos",
+    titulo: "Lácteos y helados",
+    icono: ICONS.lacteo,
+    items: [
+      {
+        cnae: "10.53 / 10.54",
+        nombre: "Lácteos: quesos y derivados",
+        calc: "10.53_10.54_lacteos_y_quesos_calculadora.html",
+        fuentes: "10.53_10.54_lacteos_y_quesos_buscador.html",
+        nota: "Investigado desde cero · 2 tablas",
+      },
+      {
+        cnae: "10.52",
+        nombre: "Helados",
+        calc: "10.52_helados_calculadora.html",
+        fuentes: "10.52_helados_buscador.html",
+      },
+    ],
+  },
+  {
+    id: "platos",
+    titulo: "Platos preparados y alimentación infantil",
+    icono: ICONS.plato,
+    items: [
+      {
+        cnae: "10.85",
+        nombre: "Platos y comidas preparados",
+        calc: "10.85_platos_preparados_calculadora.html",
+        fuentes: "10.85_platos_preparados_buscador.html",
+        nota: "Investigado desde cero",
+      },
+      {
+        cnae: "10.86",
+        nombre: "Alimentación infantil y dietética",
+        calc: "10.86_alimentacion_infantil_dietetica_calculadora.html",
+        fuentes: "10.86_alimentacion_infantil_dietetica_buscador.html",
+        nota: "Investigado desde cero",
+      },
+    ],
+  },
+  {
+    id: "especias",
+    titulo: "Especias, salsas y otros elaborados",
+    icono: ICONS.especia,
+    items: [
+      {
+        cnae: "10.84",
+        nombre: "Especias, salsas y condimentos",
+        calc: "10.84_especias_salsas_condimentos_calculadora.html",
+        fuentes: "10.84_especias_salsas_condimentos_buscador.html",
+        nota: "Investigado desde cero",
+      },
+      {
+        cnae: "10.89",
+        nombre: "Otros alimenticios (ovoproductos)",
+        calc: "10.89_otros_alimenticios_ovoproductos_calculadora.html",
+        fuentes: "10.89_otros_alimenticios_ovoproductos_buscador.html",
+        nota: "Investigado desde cero",
+      },
+    ],
+  },
+  {
+    id: "animal",
+    titulo: "Alimentación animal",
+    icono: ICONS.animal,
+    items: [
+      {
+        cnae: "10.91",
+        nombre: "Alimentación de animales de granja",
+        calc: "10.91_alimentacion_animal_granja_calculadora.html",
+        fuentes: "10.91_alimentacion_animal_granja_buscador.html",
+        nota: "Investigado desde cero",
+      },
+      {
+        cnae: "10.92",
+        nombre: "Alimentación de animales de compañía",
+        calc: "10.92_alimentacion_mascotas_calculadora.html",
+        fuentes: "10.92_alimentacion_mascotas_buscador.html",
+        nota: "Investigado desde cero",
+      },
+    ],
+  },
+  {
+    id: "carnicas",
+    titulo: "Cárnicas y mataderos",
+    icono: ICONS.carnica,
+    items: [
+      {
+        cnae: "10.11 / 10.12",
+        nombre: "Mataderos: carne y aves",
+        calc: "10.11_10.12_mataderos_carnicas_calculadora.html",
+        fuentes: "10.11_10.12_mataderos_carnicas_buscador.html",
+        nota: "Investigado desde cero · 2 tablas",
+      },
+      {
+        cnae: "10.13",
+        nombre: "Elaborados cárnicos y de volatería",
+        calc: "10.13_elaborados_carnicos_calculadora.html",
+        fuentes: "10.13_elaborados_carnicos_buscador.html",
+        nota: "Investigado desde cero",
+      },
+    ],
+  },
+  {
+    id: "comercio",
+    titulo: "Comercio minorista",
+    icono: ICONS.comercio,
+    items: [
+      {
+        cnae: "47.11",
+        nombre: "Comercio alimentario no especializado",
+        calc: "47.11_comercio_alimentario_calculadora.html",
+        fuentes: "47.11_comercio_alimentario_buscador.html",
+        nota: "Metodología adaptada",
+      },
+    ],
+  },
+];
+
+const groupsEl = document.getElementById("groups");
+groupsEl.innerHTML = GRUPOS.map(g => `
+  <section class="group">
+    <div class="group-header">
+      <span class="gicon">${g.icono}</span>
+      <h2>${g.titulo}</h2>
+      <span class="group-count">${g.items.length} ${g.items.length === 1 ? "calculadora" : "calculadoras"}</span>
+    </div>
+    <div class="card-grid">
+      ${g.items.map(c => `
+        <article class="card">
+          <div class="top">
+            <span class="cnae-badge">${c.cnae}</span>
+            <h3>${c.nombre}</h3>
+            ${c.nota ? `<span class="tag">${c.nota}</span>` : ""}
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="${c.calc}" target="_blank" rel="noopener">${ICON_LEAF} Calculadora</a>
+            <a class="btn secondary" href="${c.fuentes}" target="_blank" rel="noopener">${ICON_BOOK} Fuentes</a>
+          </div>
+        </article>
+      `).join("")}
+    </div>
+  </section>
+`).join("");
+</script>
+
+</body></html>

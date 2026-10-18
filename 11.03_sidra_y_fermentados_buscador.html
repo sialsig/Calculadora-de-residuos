@@ -1,0 +1,1073 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>html{color-scheme:light}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif;background:#fafaf8}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Fuentes Sidra y Fermentados</title>
+<style>
+:root{
+  --c-bg:#f3f7f4;--c-surface:#fff;--c-shadow:rgba(0,0,0,.08);--c-text:#18322a;
+  --c-h1:#225c40;--c-h2:#2c704d;--c-h3:#397b59;--c-border:#b7cabe;--c-focus:#8fc19b;
+  --c-input-bg:#fff;
+  --c-btn-bg:#28734d;--c-btn-bg-hover:#1e593b;--c-btn-secondary-bg:#64786c;
+  --c-explicacion-text:#50675a;--c-fuente-text:#64786c;
+  --c-pequeno-text:#5c6c62;
+  --c-card-bg:#fffdfa;--c-card-border:#ded8ca;
+  --c-th-bg:#e7f1ea;--c-tr-border:#d8e4dc;
+  --c-badge-normativa:#8a6d1a;--c-badge-estudio:#5c8da5;--c-badge-empresa:#28734d;--c-badge-proyecto:#7a6fb0;--c-badge-herramienta:#9b4a3c;
+  --c-chip-bg:#e5f2e8;--c-chip-border:#9dc4a5;--c-chip-text:#225c40;
+  --c-nivel-n1-bg:#d7efe0;--c-nivel-n1-text:#225c40;
+  --c-nivel-n2-bg:#e3eef5;--c-nivel-n2-text:#2e5b73;
+  --c-nivel-n3-bg:#f1ecd9;--c-nivel-n3-text:#6d5a14;
+  --c-nivel-n4-bg:#fbe6d6;--c-nivel-n4-text:#8a4a1a;
+  --c-nivel-n5-bg:#eee;--c-nivel-n5-text:#555;
+  --c-link:#1f6a8a;
+  --c-tab-bg:#e7f1ea;--c-tab-active-bg:#28734d;--c-tab-active-text:#fff;
+  --c-cer-bg:#f1f5f2;--c-cer-border:#c9d8ce;--c-cer-pel-border:#c0392b;--c-cer-pel-text:#8e2a1f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+    --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+    --c-input-bg:#182720;
+    --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;
+    --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+    --c-pequeno-text:#93a49a;
+    --c-card-bg:#182720;--c-card-border:#33362a;
+    --c-th-bg:#1c3227;--c-tr-border:#26392f;
+    --c-badge-normativa:#c9a94f;--c-badge-estudio:#6fa8c4;--c-badge-empresa:#4caf7c;--c-badge-proyecto:#a79bea;--c-badge-herramienta:#c98a76;
+    --c-chip-bg:#1b3226;--c-chip-border:#3a5c48;--c-chip-text:#a6e3c4;
+    --c-nivel-n1-bg:#204331;--c-nivel-n1-text:#a6e3c4;
+    --c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+    --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;
+    --c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;
+    --c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+    --c-link:#6cc2e8;
+    --c-tab-bg:#1c3227;--c-tab-active-bg:#2f8055;--c-tab-active-text:#fff;
+    --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+  --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+  --c-input-bg:#182720;
+  --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;
+  --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+  --c-pequeno-text:#93a49a;
+  --c-card-bg:#182720;--c-card-border:#33362a;
+  --c-th-bg:#1c3227;--c-tr-border:#26392f;
+  --c-badge-normativa:#c9a94f;--c-badge-estudio:#6fa8c4;--c-badge-empresa:#4caf7c;--c-badge-proyecto:#a79bea;--c-badge-herramienta:#c98a76;
+  --c-chip-bg:#1b3226;--c-chip-border:#3a5c48;--c-chip-text:#a6e3c4;
+  --c-nivel-n1-bg:#204331;--c-nivel-n1-text:#a6e3c4;
+  --c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+  --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;
+  --c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;
+  --c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+  --c-link:#6cc2e8;
+  --c-tab-bg:#1c3227;--c-tab-active-bg:#2f8055;--c-tab-active-text:#fff;
+  --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+}
+body{font-family:Arial,sans-serif;margin:0;background:var(--c-bg);color:var(--c-text)}
+main{max-width:1180px;margin:auto;padding:24px}
+section{background:var(--c-surface);padding:22px;margin-bottom:18px;border-radius:14px;box-shadow:0 2px 10px var(--c-shadow)}
+h1{margin-top:0;color:var(--c-h1);font-size:26px}
+h2{color:var(--c-h2);font-size:19px}
+h3{color:var(--c-h3);margin-bottom:6px;font-size:15px}
+p{line-height:1.5}
+.explicacion{color:var(--c-explicacion-text);font-size:14px;line-height:1.5;margin-top:6px}
+.pequeno{font-size:12px;color:var(--c-pequeno-text)}
+.fuente{color:var(--c-fuente-text);font-size:12px}
+label{display:block;font-weight:bold;margin:0 0 5px;font-size:13px}
+input,select{width:100%;box-sizing:border-box;padding:9px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-size:14px}
+input:focus,select:focus{outline:2px solid var(--c-focus)}
+.grid-filtros{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:12px;align-items:end}
+@media(max-width:800px){.grid-filtros{grid-template-columns:1fr}}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tab-btn{padding:9px 16px;border-radius:20px;border:1px solid var(--c-border);background:var(--c-tab-bg);color:var(--c-text);cursor:pointer;font-size:13px;font-weight:bold}
+.tab-btn.activa{background:var(--c-tab-active-bg);color:var(--c-tab-active-text);border-color:transparent}
+.panel{display:none}
+.panel.activa{display:block}
+.resultado-contador{margin:10px 0;font-size:13px;color:var(--c-pequeno-text)}
+.tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.tarjeta{background:var(--c-card-bg);border:1px solid var(--c-card-border);border-radius:10px;padding:14px 16px;line-height:1.45}
+.tarjeta h3{margin-bottom:4px}
+.tarjeta h3 a{color:var(--c-h3);text-decoration:none}
+.tarjeta h3 a:hover{text-decoration:underline}
+.badge{display:inline-block;font-size:11px;font-weight:bold;color:#fff;border-radius:8px;padding:2px 8px;margin-right:6px}
+.badge.Normativa{background:var(--c-badge-normativa)}
+.badge.Estudio{background:var(--c-badge-estudio)}
+.badge.Empresa{background:var(--c-badge-empresa)}
+.badge.Proyecto{background:var(--c-badge-proyecto)}
+.badge.Herramienta{background:var(--c-badge-herramienta)}
+.meta-linea{font-size:12px;color:var(--c-pequeno-text);margin:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
+.chip{font-size:11px;background:var(--c-chip-bg);color:var(--c-chip-text);border:1px solid var(--c-chip-border);border-radius:10px;padding:2px 8px}
+.nota{font-size:12px;color:var(--c-pequeno-text);margin-top:6px;font-style:italic}
+.tabla-contenedor{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+th,td{padding:8px;border-bottom:1px solid var(--c-tr-border);text-align:left;vertical-align:top}
+th{background:var(--c-th-bg)}
+td.num{text-align:right;white-space:nowrap}
+a{color:var(--c-link)}
+.nivel{display:inline-block;font-size:11px;font-weight:bold;padding:3px 8px;border-radius:10px;margin-right:6px}
+.nivel.n1{background:var(--c-nivel-n1-bg);color:var(--c-nivel-n1-text)}
+.nivel.n2{background:var(--c-nivel-n2-bg);color:var(--c-nivel-n2-text)}
+.nivel.n3{background:var(--c-nivel-n3-bg);color:var(--c-nivel-n3-text)}
+.nivel.n4{background:var(--c-nivel-n4-bg);color:var(--c-nivel-n4-text)}
+.nivel.n5{background:var(--c-nivel-n5-bg);color:var(--c-nivel-n5-text)}
+.opcion-val{padding:10px 0;border-bottom:1px dashed var(--c-tr-border)}
+.opcion-val:last-child{border-bottom:0}
+.bloque-real{border:1px solid var(--c-card-border);border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.cer{display:inline-block;background:var(--c-cer-bg);border:1px solid var(--c-cer-border);border-radius:6px;padding:1px 6px;margin:1px 2px;font-size:12px;white-space:nowrap}
+.cer.pel{border-color:var(--c-cer-pel-border);color:var(--c-cer-pel-text)}
+button{padding:9px 15px;color:#fff;background:var(--c-btn-bg);border:0;border-radius:8px;cursor:pointer;font-size:13px}
+button:hover{background:var(--c-btn-bg-hover)}
+button.secundario{background:var(--c-btn-secondary-bg)}
+.oculto{display:none!important}
+textarea{width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-family:monospace;font-size:12px;margin-top:8px}
+</style>
+
+<main>
+
+<section>
+<h1>Fuentes de residuos · CNAE 11.03</h1>
+<p><strong>Base de fuentes, coeficientes y datos reales de planta</strong> para la elaboración de sidra y otras bebidas fermentadas (sidra natural de llagar, sidra industrial espumosa/gasificada/sin alcohol, y otras bebidas fermentadas como perada, hidromiel o sangría de base no vínica). Consulta interna, sin relación con los datos que introduzcas en la calculadora de estimación.</p>
+<p class="explicacion">Extraída de la investigación de fuentes oficiales (normativa, estudios, permisos ambientales de planta real) que respalda la <a href="11.03_sidra_y_fermentados_calculadora.html" target="_blank" rel="noopener">calculadora de residuos CNAE 11.03</a>. La misma información, en formato de tabla, está disponible como Excel para reutilizar en otros entornos.</p>
+</section>
+
+<section>
+<h2>Filtrar fuentes</h2>
+<div class="grid-filtros">
+<div>
+<label for="fBusqueda">Buscar (título, organismo, corriente, nota)</label>
+<input id="fBusqueda" type="text" placeholder="p. ej. alperujo, MITECO, Andalucía..." oninput="pintarFuentes()">
+</div>
+<div>
+<label for="fTipo">Tipo de fuente</label>
+<select id="fTipo" onchange="pintarFuentes()"><option value="">Todos</option></select>
+</div>
+<div>
+<label for="fZona">Zona</label>
+<select id="fZona" onchange="pintarFuentes()"><option value="">Todas</option></select>
+</div>
+<div>
+<label for="fCorriente">Corriente</label>
+<select id="fCorriente" onchange="pintarFuentes()"><option value="">Todas</option></select>
+</div>
+</div>
+</section>
+
+<section>
+<div class="tabs">
+<button class="tab-btn activa" data-panel="panelFuentes" onclick="cambiarTab('panelFuentes',this)">Fuentes</button>
+<button class="tab-btn" data-panel="panelCoef" onclick="cambiarTab('panelCoef',this)">Coeficientes</button>
+<button class="tab-btn" data-panel="panelReal" onclick="cambiarTab('panelReal',this)">Datos reales de planta</button>
+<button class="tab-btn" data-panel="panelVal" onclick="cambiarTab('panelVal',this)">Valorización</button>
+<button class="tab-btn" data-panel="panelCer" onclick="cambiarTab('panelCer',this)">CER/LER</button>
+</div>
+
+<div id="panelFuentes" class="panel activa">
+<div class="resultado-contador" id="contadorFuentes"></div>
+<div id="tarjetasFuentes" class="tarjetas"></div>
+<div style="margin-top:14px">
+<button class="secundario" onclick="copiarFuentes()">Copiar resultados filtrados (texto)</button>
+<textarea id="areaFuentes" class="oculto" rows="6" onclick="this.select()"></textarea>
+<span id="estadoFuentes" class="pequeno"></span>
+</div>
+</div>
+
+<div id="panelCoef" class="panel">
+<p class="explicacion">Factor de generación de cada corriente por tonelada de manzana u otra fruta/miel fermentada, por cada una de las 3 rutas de proceso, tal y como se usan en la calculadora. Haz clic en un identificador de fuente para verla en la pestaña «Fuentes».</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Proceso</th><th>Corriente</th><th>Factor</th><th>Unidad</th><th>Confianza</th><th>CER/LER candidatos</th><th>Fuentes</th></tr></thead>
+<tbody id="tablaCoef"></tbody>
+</table>
+</div>
+</div>
+
+<div id="panelReal" class="panel">
+<p class="explicacion">Balances de masa reales declarados en autorizaciones ambientales y estudios de campo.</p>
+<div id="bloquesReal"></div>
+</div>
+
+<div id="panelVal" class="panel">
+<p class="explicacion">Opciones de valorización por corriente, ordenadas según la jerarquía de residuos: <span class="nivel n1">1 · Alimentación humana</span><span class="nivel n2">2 · Alimentación animal</span><span class="nivel n3">3 · Material y bioproductos</span><span class="nivel n4">4 · Energía y biogás</span><span class="nivel n5">5 · Suelo / compost</span></p>
+<div id="bloquesVal"></div>
+</div>
+
+<div id="panelCer" class="panel">
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Código</th><th>Descripción oficial</th><th>Corrientes de este CNAE</th></tr></thead>
+<tbody id="tablaCer"></tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Notas</h2>
+<ul style="line-height:1.6">
+<li>Esta base cubre de momento el CNAE 11.03 (sidra y otras bebidas fermentadas). La columna CNAE de cada hoja/tabla está pensada para apilar aquí los próximos CNAEs sin cambiar la estructura.</li>
+<li>Los identificadores de fuente (F01, F02...) son los mismos en esta página y en el Excel «Base_fuentes_residuos_CNAE_1043.xlsx», para poder cruzar ambos.</li>
+<li>Un coeficiente con confianza «Baja» o marcado como extrapolación no está verificado con un dato de planta real: trátalo como orientativo.</li>
+</ul>
+</section>
+
+</main>
+
+<script>
+const DATA = {
+ "cnae": "1103",
+ "fuentes": [
+  {
+   "id": "F01",
+   "titulo": "Ley 7/2022 de residuos y suelos contaminados (art. 4, subproductos; art. 8, jerarquía)",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General",
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809",
+   "nota": ""
+  },
+  {
+   "id": "F02",
+   "titulo": "Ley 1/2025 de prevención de las pérdidas y el desperdicio alimentario (jerarquía de prioridades obligatoria)",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2025-6597",
+   "nota": ""
+  },
+  {
+   "id": "F03",
+   "titulo": "MITECO: procedimiento de evaluación de subproductos",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.miteco.gob.es/va/calidad-y-evaluacion-ambiental/temas/prevencion-y-gestion-residuos/comision-coordinacion/procedimiento-evaluacion-subproducto.html",
+   "nota": ""
+  },
+  {
+   "id": "F04",
+   "titulo": "Reglamento (UE) 68/2013, catálogo de materias primas para piensos",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:02013R0068-20220724",
+   "nota": ""
+  },
+  {
+   "id": "F05",
+   "titulo": "Decisión 2014/955/UE, Lista Europea de Residuos",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General",
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32014D0955",
+   "nota": ""
+  },
+  {
+   "id": "F06",
+   "titulo": "Borsa de Subproductes de Catalunya",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Herramienta",
+   "corrientes": [
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.residuosprofesional.com/bolsa-de-subproductos-catalunya-porta-residurecurs/",
+   "nota": ""
+  },
+  {
+   "id": "F07",
+   "titulo": "BREF de alimentación, bebidas y leche (FDM, 2019): MTD por sector",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General",
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://fenix.isa.ulisboa.pt/downloadFile/281547991178956/JRC118627_FDM_Bref_2019_published.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F08",
+   "titulo": "Eurostat PRODCOM DS-059358 (precios implícitos ES y UE-27, 2021–2024)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Herramienta",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://ec.europa.eu/eurostat/databrowser/view/ds-059358/default/table?lang=en",
+   "nota": ""
+  },
+  {
+   "id": "F09",
+   "titulo": "INE: CNAE-2025, estructura y notas explicativas",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://ine.es/daco/daco42/clasificaciones/cnae25/CNAE_2025.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F10",
+   "titulo": "Orden MAM/304/2002, operaciones de valorización y eliminación",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-3285",
+   "nota": ""
+  },
+  {
+   "id": "F11",
+   "titulo": "INE: correspondencia CNAE-2009 / CNAE-2025 (11.03 → 11.03, 1:1)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General (clasificación / PRODCOM / plantas reales)"
+   ],
+   "url": "https://www.ine.es/daco/daco42/clasificaciones/cnae25/Correspondencia_CNAE09_CNAE25_conContenido.xlsx",
+   "nota": ""
+  },
+  {
+   "id": "F12",
+   "titulo": "BOE: Real Decreto 10/2025, CNAE-2025",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General (clasificación / PRODCOM / plantas reales)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2025-587",
+   "nota": ""
+  },
+  {
+   "id": "F13",
+   "titulo": "La Nueva España (2023): residuos del llagar y magaya",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General (clasificación / PRODCOM / plantas reales)",
+    "Magaya y manzana de destrío"
+   ],
+   "url": "https://www.lne.es/mas-domingo/2023/04/15/residuos-llagar-son-magaya-innovacion-86040498.html",
+   "nota": ""
+  },
+  {
+   "id": "F14",
+   "titulo": "SERIDA: elaboración de productos sin gluten con magaya",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "Magaya y manzana de destrío"
+   ],
+   "url": "https://serida.asturias.es/documents/99361/0/Elaboraci%C3%B3n+de+productos+sin+gluten+(1).pdf/8d2c353b-eb95-6d67-69d0-f56e8fcb4780?t=1773909589448",
+   "nota": ""
+  },
+  {
+   "id": "F15",
+   "titulo": "Fusión Asturias: la magaya como prebiótico natural",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "Magaya y manzana de destrío"
+   ],
+   "url": "https://fusionasturias.com/otras-secciones/ciencia/la-magaya-de-residuo-a-prebiotico-natural.htm",
+   "nota": ""
+  },
+  {
+   "id": "F16",
+   "titulo": "RIA Asturias: magayas, composición nutricional y antioxidante",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "Magaya y manzana de destrío"
+   ],
+   "url": "https://ria.asturias.es/RIA/handle/123456789/14734",
+   "nota": ""
+  },
+  {
+   "id": "F17",
+   "titulo": "CSIC Asturias: residuos de la sidra en piensos y otros usos",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "Magaya y manzana de destrío"
+   ],
+   "url": "https://delegacion.asturias.csic.es/wp-content/uploads/2023/04/La-Nueva-Espana.-Residuos-de-la-Sidra.docx",
+   "nota": ""
+  },
+  {
+   "id": "F18",
+   "titulo": "El Comercio: nuevos usos de la magaya",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Proyecto",
+   "corrientes": [
+    "Magaya y manzana de destrío"
+   ],
+   "url": "https://www.elcomercio.es/asturias/magaya-sidra-nueva-20200209001033-ntvo.html",
+   "nota": ""
+  },
+  {
+   "id": "F19",
+   "titulo": "RIA Asturias: aprovechamiento de subproductos de la sidra",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "Magaya y manzana de destrío"
+   ],
+   "url": "https://ria.asturias.es/RIA/bitstream/123456789/3121/1/Archivo.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F20",
+   "titulo": "UPV/EHU: reutilización de subproductos de la sidra (magaya o patxa)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "Magaya y manzana de destrío"
+   ],
+   "url": "https://addi.ehu.es/bitstream/handle/10810/60181/TFG_Jim%C3%A9nez.pdf?sequence=1&isAllowed=y",
+   "nota": ""
+  },
+  {
+   "id": "F21",
+   "titulo": "UPNA: caracterización de lías para su revalorización",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "Lías, borras y sidra no conforme"
+   ],
+   "url": "https://academica-e.unavarra.es/entities/publication/b86b2923-1186-4894-843a-0966244769e8",
+   "nota": ""
+  },
+  {
+   "id": "F22",
+   "titulo": "CITOLIVA: digestión anaerobia de subproductos agroalimentarios",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "Lías, borras y sidra no conforme"
+   ],
+   "url": "https://proyectos.citoliva.es/wp-content/uploads/2024/09/DIGESTION-ANAEROBIA.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F23",
+   "titulo": "BREF FDM 2019 (JRC)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "Lodos y aguas residuales"
+   ],
+   "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+   "nota": ""
+  },
+  {
+   "id": "F24",
+   "titulo": "Real Decreto 1310/1990, lodos de depuración en el sector agrario",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "Lodos y aguas residuales"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1990-26744",
+   "nota": ""
+  }
+ ],
+ "coeficientes": [
+  {
+   "proceso": "Llagar de sidra natural",
+   "corriente": "Sidra y otras bebidas fermentadas",
+   "factor": 6.5,
+   "unidad": "hl/t manzana",
+   "confianza": "Media",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Llagar de sidra natural",
+   "corriente": "Magaya (orujo de manzana)",
+   "factor": 0.3,
+   "unidad": "t/t manzana",
+   "confianza": "Media",
+   "cer": "02 07 01; 02 07 04; 02 03 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Llagar de sidra natural",
+   "corriente": "Manzana de destrío, hojas y tierra del lavado",
+   "factor": 0.02,
+   "unidad": "t/t manzana",
+   "confianza": "Baja",
+   "cer": "02 07 01; 02 03 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Llagar de sidra natural",
+   "corriente": "Lías, borras y heces de fermentación",
+   "factor": 0.02,
+   "unidad": "t/t manzana",
+   "confianza": "Baja",
+   "cer": "02 07 04; 02 07 99",
+   "fuentes": []
+  },
+  {
+   "proceso": "Llagar de sidra natural",
+   "corriente": "Sidra no conforme, mermas y restos de limpieza",
+   "factor": 0.004,
+   "unidad": "t/t manzana",
+   "confianza": "Baja",
+   "cer": "02 07 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Llagar de sidra natural",
+   "corriente": "Lodos de depuradora propia",
+   "factor": 0.004,
+   "unidad": "t/t manzana",
+   "confianza": "Baja",
+   "cer": "02 07 05",
+   "fuentes": []
+  },
+  {
+   "proceso": "Llagar de sidra natural",
+   "corriente": "Aguas residuales (lavado de manzana, prensas, toneles y botellas)",
+   "factor": 1.5,
+   "unidad": "m³/t manzana",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Sidrería industrial (espumosa, gasificada y sin alcohol)",
+   "corriente": "Sidra y otras bebidas fermentadas",
+   "factor": 6.8,
+   "unidad": "hl/t manzana",
+   "confianza": "Media",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Sidrería industrial (espumosa, gasificada y sin alcohol)",
+   "corriente": "Magaya (orujo de manzana)",
+   "factor": 0.27,
+   "unidad": "t/t manzana",
+   "confianza": "Media",
+   "cer": "02 07 01; 02 07 04; 02 03 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Sidrería industrial (espumosa, gasificada y sin alcohol)",
+   "corriente": "Manzana de destrío, hojas y tierra del lavado",
+   "factor": 0.02,
+   "unidad": "t/t manzana",
+   "confianza": "Baja",
+   "cer": "02 07 01; 02 03 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Sidrería industrial (espumosa, gasificada y sin alcohol)",
+   "corriente": "Lías, borras y heces de fermentación",
+   "factor": 0.025,
+   "unidad": "t/t manzana",
+   "confianza": "Baja",
+   "cer": "02 07 04; 02 07 99",
+   "fuentes": []
+  },
+  {
+   "proceso": "Sidrería industrial (espumosa, gasificada y sin alcohol)",
+   "corriente": "Sidra no conforme, mermas y restos de limpieza",
+   "factor": 0.005,
+   "unidad": "t/t manzana",
+   "confianza": "Baja",
+   "cer": "02 07 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Sidrería industrial (espumosa, gasificada y sin alcohol)",
+   "corriente": "Tierras y placas de filtración",
+   "factor": 0.0015,
+   "unidad": "t/t manzana",
+   "confianza": "Baja",
+   "cer": "15 02 03; 02 07 99",
+   "fuentes": []
+  },
+  {
+   "proceso": "Sidrería industrial (espumosa, gasificada y sin alcohol)",
+   "corriente": "Lodos de depuradora propia",
+   "factor": 0.006,
+   "unidad": "t/t manzana",
+   "confianza": "Baja",
+   "cer": "02 07 05",
+   "fuentes": []
+  },
+  {
+   "proceso": "Sidrería industrial (espumosa, gasificada y sin alcohol)",
+   "corriente": "Aguas residuales (lavado de manzana, prensas, toneles y botellas)",
+   "factor": 2,
+   "unidad": "m³/t manzana",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Otras bebidas fermentadas (perada, hidromiel, sangría de base no vínica)",
+   "corriente": "Sidra y otras bebidas fermentadas",
+   "factor": 6.5,
+   "unidad": "hl/t fruta",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Otras bebidas fermentadas (perada, hidromiel, sangría de base no vínica)",
+   "corriente": "Magaya (orujo de manzana)",
+   "factor": 0.25,
+   "unidad": "t/t fruta",
+   "confianza": "Baja",
+   "cer": "02 07 01; 02 07 04; 02 03 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Otras bebidas fermentadas (perada, hidromiel, sangría de base no vínica)",
+   "corriente": "Manzana de destrío, hojas y tierra del lavado",
+   "factor": 0.02,
+   "unidad": "t/t fruta",
+   "confianza": "Baja",
+   "cer": "02 07 01; 02 03 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Otras bebidas fermentadas (perada, hidromiel, sangría de base no vínica)",
+   "corriente": "Lías, borras y heces de fermentación",
+   "factor": 0.03,
+   "unidad": "t/t fruta",
+   "confianza": "Baja",
+   "cer": "02 07 04; 02 07 99",
+   "fuentes": []
+  },
+  {
+   "proceso": "Otras bebidas fermentadas (perada, hidromiel, sangría de base no vínica)",
+   "corriente": "Sidra no conforme, mermas y restos de limpieza",
+   "factor": 0.005,
+   "unidad": "t/t fruta",
+   "confianza": "Baja",
+   "cer": "02 07 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Otras bebidas fermentadas (perada, hidromiel, sangría de base no vínica)",
+   "corriente": "Tierras y placas de filtración",
+   "factor": 0.002,
+   "unidad": "t/t fruta",
+   "confianza": "Baja",
+   "cer": "15 02 03; 02 07 99",
+   "fuentes": []
+  },
+  {
+   "proceso": "Otras bebidas fermentadas (perada, hidromiel, sangría de base no vínica)",
+   "corriente": "Lodos de depuradora propia",
+   "factor": 0.005,
+   "unidad": "t/t fruta",
+   "confianza": "Baja",
+   "cer": "02 07 05",
+   "fuentes": []
+  },
+  {
+   "proceso": "Otras bebidas fermentadas (perada, hidromiel, sangría de base no vínica)",
+   "corriente": "Aguas residuales (lavado de manzana, prensas, toneles y botellas)",
+   "factor": 1.8,
+   "unidad": "m³/t fruta",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  }
+ ],
+ "datos_reales": [
+  {
+   "bloque": "Datos sectoriales: la magaya en Asturias",
+   "intro": "No hay sidrerías con datos PRTR. Estos son los datos públicos disponibles.",
+   "fuente_id": "F13",
+   "fuentes_extra": [],
+   "filas": [
+    [
+     "Magaya generada en Asturias",
+     "02 07 01|02 07 04",
+     "9.000–12.000 t/año"
+    ],
+    [
+     "Proporción de magaya sobre la manzana",
+     "02 07 01",
+     "Hasta un tercio del peso"
+    ],
+    [
+     "Destinos actuales",
+     "02 07 04",
+     "Pienso, compost, aguardiente; en estudio harinas, bioplásticos 3D e hidrochar"
+    ]
+   ]
+  }
+ ],
+ "valorizacion": [
+  {
+   "corriente": "Magaya y manzana de destrío",
+   "nivel": 1,
+   "texto": "Harina de magaya para productos sin gluten, fibra y prebióticos; extracción de pectina y aceite de pepita.",
+   "fuentes": [
+    "F14",
+    "F15",
+    "F16"
+   ]
+  },
+  {
+   "corriente": "Magaya y manzana de destrío",
+   "nivel": 2,
+   "texto": "Pienso fresco o ensilado para vacuno y porcino, y piensos que reducen emisiones.",
+   "fuentes": [
+    "F17"
+   ]
+  },
+  {
+   "corriente": "Magaya y manzana de destrío",
+   "nivel": 3,
+   "texto": "Bioplásticos e impresión 3D (Triditive, Gonvarri, AIMPLAS), hidrochar (INCAR-CSIC) y aguardiente de magaya.",
+   "fuentes": [
+    "F13",
+    "F18"
+   ]
+  },
+  {
+   "corriente": "Magaya y manzana de destrío",
+   "nivel": 4,
+   "texto": "Codigestión anaerobia con purines o lodos.",
+   "fuentes": [
+    "F19"
+   ]
+  },
+  {
+   "corriente": "Magaya y manzana de destrío",
+   "nivel": 5,
+   "texto": "Compostaje para el propio pumarada.",
+   "fuentes": [
+    "F20"
+   ]
+  },
+  {
+   "corriente": "Lías, borras y sidra no conforme",
+   "nivel": 3,
+   "texto": "Destilación para aguardiente de sidra y elaboración de vinagre de sidra.",
+   "fuentes": [
+    "F21"
+   ]
+  },
+  {
+   "corriente": "Lías, borras y sidra no conforme",
+   "nivel": 4,
+   "texto": "Digestión anaerobia.",
+   "fuentes": [
+    "F22"
+   ]
+  },
+  {
+   "corriente": "Lodos y aguas residuales",
+   "nivel": 1,
+   "texto": "Separar la magaya y las borras antes de limpiar, limpiar en seco y reutilizar el agua de lavado de manzana.",
+   "fuentes": [
+    "F23"
+   ]
+  },
+  {
+   "corriente": "Lodos y aguas residuales",
+   "nivel": 5,
+   "texto": "Aplicación agrícola si cumplen el RD 1310/1990.",
+   "fuentes": [
+    "F24"
+   ]
+  }
+ ],
+ "niveles": {
+  "1": "Alimentación humana / prevención",
+  "2": "Alimentación animal",
+  "3": "Material y bioproductos",
+  "4": "Energía y biogás",
+  "5": "Suelo / compost"
+ },
+ "cer": [
+  {
+   "codigo": "15 01 01",
+   "desc": "Envases de papel y cartón",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 02",
+   "desc": "Envases de plástico",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 03",
+   "desc": "Envases de madera",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 04",
+   "desc": "Envases metálicos",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 05",
+   "desc": "Envases compuestos",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 06",
+   "desc": "Envases mezclados",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 07",
+   "desc": "Envases de vidrio",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 10*",
+   "desc": "Envases que contienen restos de sustancias peligrosas o están contaminados por ellas",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "13 02 05*",
+   "desc": "Aceites minerales no clorados de motor, de transmisión mecánica y lubricantes",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 02 02*",
+   "desc": "Absorbentes, materiales de filtración, trapos y ropas contaminados por sustancias peligrosas",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "17 04 05",
+   "desc": "Hierro y acero",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "20 01 01",
+   "desc": "Papel y cartón (fracción municipal)",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "20 03 01",
+   "desc": "Mezclas de residuos municipales",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "02 07 01",
+   "desc": "Residuos de lavado, limpieza y reducción mecánica de materias primas",
+   "corrientes": "Manzana de destrío, hojas y tierra del lavado; Magaya (orujo de manzana)"
+  },
+  {
+   "codigo": "02 07 04",
+   "desc": "Materiales inadecuados para el consumo o la elaboración",
+   "corrientes": "Magaya (orujo de manzana); Lías, borras y heces de fermentación; Sidra no conforme, mermas y restos de limpieza"
+  },
+  {
+   "codigo": "02 07 05",
+   "desc": "Lodos del tratamiento in situ de efluentes",
+   "corrientes": "Lodos de depuradora propia"
+  },
+  {
+   "codigo": "02 07 99",
+   "desc": "Residuos no especificados en otra categoría",
+   "corrientes": "Lías, borras y heces de fermentación; Tierras y placas de filtración"
+  },
+  {
+   "codigo": "02 03 04",
+   "desc": "Materiales inadecuados para el consumo o la elaboración (frutas y hortalizas)",
+   "corrientes": "Manzana de destrío, hojas y tierra del lavado; Magaya (orujo de manzana)"
+  },
+  {
+   "codigo": "15 02 03",
+   "desc": "Absorbentes, materiales de filtración, trapos y ropas distintos de 15 02 02",
+   "corrientes": "Tierras y placas de filtración"
+  },
+  {
+   "codigo": "20 01 38",
+   "desc": "Madera distinta de la especificada en 20 01 37",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "20 01 02",
+   "desc": "Vidrio",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "20 01 40",
+   "desc": "Metales",
+   "corrientes": "Auxiliar / transversal"
+  }
+ ]
+};
+
+function cambiarTab(id, btn){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("activa"));
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("activa"));
+  document.getElementById(id).classList.add("activa");
+  btn.classList.add("activa");
+}
+
+function poblarSelect(id, valores){
+  const sel=document.getElementById(id);
+  [...new Set(valores)].sort((a,b)=>a.localeCompare(b,"es")).forEach(v=>{
+    const o=document.createElement("option");o.value=v;o.textContent=v;sel.appendChild(o);
+  });
+}
+
+function iniciarFiltros(){
+  poblarSelect("fTipo", DATA.fuentes.map(f=>f.tipo));
+  poblarSelect("fZona", DATA.fuentes.map(f=>f.zona));
+  const corrientes=new Set();
+  DATA.fuentes.forEach(f=>f.corrientes.forEach(c=>corrientes.add(c)));
+  poblarSelect("fCorriente",[...corrientes]);
+}
+
+function pintarFuentes(){
+  const q=document.getElementById("fBusqueda").value.trim().toLowerCase();
+  const tipo=document.getElementById("fTipo").value;
+  const zona=document.getElementById("fZona").value;
+  const corr=document.getElementById("fCorriente").value;
+  const res=DATA.fuentes.filter(f=>{
+    if(tipo&&f.tipo!==tipo)return false;
+    if(zona&&f.zona!==zona)return false;
+    if(corr&&!f.corrientes.includes(corr))return false;
+    if(q){
+      const txt=(f.titulo+" "+f.organismo+" "+f.zona+" "+f.corrientes.join(" ")+" "+(f.nota||"")).toLowerCase();
+      if(!txt.includes(q))return false;
+    }
+    return true;
+  });
+  document.getElementById("contadorFuentes").textContent=`${res.length} de ${DATA.fuentes.length} fuentes`;
+  document.getElementById("tarjetasFuentes").innerHTML=res.map(f=>`
+    <div class="tarjeta">
+      <span class="badge ${f.tipo}">${f.tipo}</span>
+      <h3><a href="${f.url}" target="_blank" rel="noopener">${f.titulo}</a></h3>
+      <div class="meta-linea"><b>${f.id}</b> · ${f.organismo} · ${f.zona}</div>
+      <div class="chips">${f.corrientes.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
+      ${f.nota?`<div class="nota">${f.nota}</div>`:""}
+    </div>`).join("")||"<p class='pequeno'>No hay fuentes que coincidan con el filtro.</p>";
+}
+
+function copiarFuentes(){
+  const q=document.getElementById("fBusqueda").value.trim().toLowerCase();
+  const tipo=document.getElementById("fTipo").value;
+  const zona=document.getElementById("fZona").value;
+  const corr=document.getElementById("fCorriente").value;
+  const res=DATA.fuentes.filter(f=>{
+    if(tipo&&f.tipo!==tipo)return false;
+    if(zona&&f.zona!==zona)return false;
+    if(corr&&!f.corrientes.includes(corr))return false;
+    if(q){
+      const txt=(f.titulo+" "+f.organismo+" "+f.zona+" "+f.corrientes.join(" ")+" "+(f.nota||"")).toLowerCase();
+      if(!txt.includes(q))return false;
+    }
+    return true;
+  });
+  const rows=[["id","titulo","tipo","organismo","zona","corrientes","enlace","nota"]];
+  res.forEach(f=>rows.push([f.id,f.titulo,f.tipo,f.organismo,f.zona,f.corrientes.join(" / "),f.url,f.nota||""]));
+  const txt=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(";")).join("\n");
+  const area=document.getElementById("areaFuentes");
+  area.value=txt;area.classList.remove("oculto");area.focus();area.select();
+  const estado=document.getElementById("estadoFuentes");
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(()=>estado.textContent="Copiado al portapapeles.").catch(()=>estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.");
+  } else estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.";
+}
+
+function pintarCoef(){
+  document.getElementById("tablaCoef").innerHTML=DATA.coeficientes.map(c=>`
+    <tr><td>${c.proceso}</td><td>${c.corriente}</td><td class="num">${c.factor}</td><td>${c.unidad}</td><td>${c.confianza}</td><td>${c.cer}</td>
+    <td>${c.fuentes.map(id=>`<span class="chip" style="cursor:pointer" onclick="irAFuente('${id}')">${id}</span>`).join(" ")||"—"}</td></tr>`).join("");
+}
+
+function irAFuente(id){
+  document.querySelector('.tab-btn[data-panel="panelFuentes"]').click();
+  document.getElementById("fBusqueda").value=id;
+  const f=DATA.fuentes.find(x=>x.id===id);
+  document.getElementById("fBusqueda").value=f?f.titulo.slice(0,30):id;
+  pintarFuentes();
+}
+
+function pintarReal(){
+  document.getElementById("bloquesReal").innerHTML=DATA.datos_reales.map(b=>{
+    const fid=b.fuente_id;const f=DATA.fuentes.find(x=>x.id===fid);
+    const extra=(b.fuentes_extra||[]).map(id=>{const g=DATA.fuentes.find(x=>x.id===id);return g?`, <a href="${g.url}" target="_blank" rel="noopener">${id}</a>`:"";}).join("");
+    return `<div class="bloque-real">
+      <h3>${b.bloque}</h3>
+      <p class="explicacion">${b.intro}</p>
+      <div class="tabla-contenedor"><table><thead><tr><th>Dato</th><th>Cantidad declarada</th><th>Ratio</th></tr></thead>
+      <tbody>${b.filas.map(([d,c,r])=>`<tr><td>${d}</td><td>${c}</td><td>${r}</td></tr>`).join("")}</tbody></table></div>
+      <p class="fuente">Fuente: ${f?`<a href="${f.url}" target="_blank" rel="noopener">${f.id} — ${f.titulo}</a>`:""}${extra}</p>
+    </div>`;
+  }).join("");
+}
+
+function pintarVal(){
+  const porCorriente={};
+  DATA.valorizacion.forEach(v=>{(porCorriente[v.corriente]=porCorriente[v.corriente]||[]).push(v);});
+  document.getElementById("bloquesVal").innerHTML=Object.entries(porCorriente).map(([corr,ops])=>`
+    <div class="bloque-real"><h3>${corr}</h3>
+    ${ops.sort((a,b)=>a.nivel-b.nivel).map(o=>`<div class="opcion-val"><span class="nivel n${o.nivel}">${o.nivel} · ${DATA.niveles[o.nivel]}</span>${o.texto}
+      ${o.fuentes.length?`<div class="chips">${o.fuentes.map(id=>{const f=DATA.fuentes.find(x=>x.id===id);return f?`<a class="chip" style="text-decoration:none" href="${f.url}" target="_blank" rel="noopener">${id}</a>`:"";}).join("")}</div>`:""}
+    </div>`).join("")}</div>`).join("");
+}
+
+function pintarCer(){
+  document.getElementById("tablaCer").innerHTML=DATA.cer.map(c=>`
+    <tr><td><span class="cer${c.codigo.includes("*")?" pel":""}">${c.codigo}</span></td><td>${c.desc}</td><td>${c.corrientes}</td></tr>`).join("");
+}
+
+iniciarFiltros();
+pintarFuentes();
+pintarCoef();
+pintarReal();
+pintarVal();
+pintarCer();
+</script>
+
+</body></html>

@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>html{color-scheme:light}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif;background:#fafaf8}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Fuentes Comercio Alimentario</title>
+<style>
+:root{
+  --c-bg:#f3f7f4;--c-surface:#fff;--c-shadow:rgba(0,0,0,.08);--c-text:#18322a;
+  --c-h1:#225c40;--c-h2:#2c704d;--c-h3:#397b59;--c-border:#b7cabe;--c-focus:#8fc19b;
+  --c-input-bg:#fff;
+  --c-btn-bg:#28734d;--c-btn-bg-hover:#1e593b;--c-btn-secondary-bg:#64786c;
+  --c-explicacion-text:#50675a;--c-fuente-text:#64786c;
+  --c-pequeno-text:#5c6c62;
+  --c-card-bg:#fffdfa;--c-card-border:#ded8ca;
+  --c-th-bg:#e7f1ea;--c-tr-border:#d8e4dc;
+  --c-badge-normativa:#8a6d1a;--c-badge-estudio:#5c8da5;--c-badge-empresa:#28734d;--c-badge-proyecto:#7a6fb0;--c-badge-herramienta:#9b4a3c;
+  --c-chip-bg:#e5f2e8;--c-chip-border:#9dc4a5;--c-chip-text:#225c40;
+  --c-nivel-n1-bg:#d7efe0;--c-nivel-n1-text:#225c40;
+  --c-nivel-n2-bg:#e3eef5;--c-nivel-n2-text:#2e5b73;
+  --c-nivel-n3-bg:#f1ecd9;--c-nivel-n3-text:#6d5a14;
+  --c-nivel-n4-bg:#fbe6d6;--c-nivel-n4-text:#8a4a1a;
+  --c-nivel-n5-bg:#eee;--c-nivel-n5-text:#555;
+  --c-link:#1f6a8a;
+  --c-tab-bg:#e7f1ea;--c-tab-active-bg:#28734d;--c-tab-active-text:#fff;
+  --c-cer-bg:#f1f5f2;--c-cer-border:#c9d8ce;--c-cer-pel-border:#c0392b;--c-cer-pel-text:#8e2a1f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+    --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+    --c-input-bg:#182720;
+    --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;
+    --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+    --c-pequeno-text:#93a49a;
+    --c-card-bg:#182720;--c-card-border:#33362a;
+    --c-th-bg:#1c3227;--c-tr-border:#26392f;
+    --c-badge-normativa:#c9a94f;--c-badge-estudio:#6fa8c4;--c-badge-empresa:#4caf7c;--c-badge-proyecto:#a79bea;--c-badge-herramienta:#c98a76;
+    --c-chip-bg:#1b3226;--c-chip-border:#3a5c48;--c-chip-text:#a6e3c4;
+    --c-nivel-n1-bg:#204331;--c-nivel-n1-text:#a6e3c4;
+    --c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+    --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;
+    --c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;
+    --c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+    --c-link:#6cc2e8;
+    --c-tab-bg:#1c3227;--c-tab-active-bg:#2f8055;--c-tab-active-text:#fff;
+    --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+  --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+  --c-input-bg:#182720;
+  --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;
+  --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+  --c-pequeno-text:#93a49a;
+  --c-card-bg:#182720;--c-card-border:#33362a;
+  --c-th-bg:#1c3227;--c-tr-border:#26392f;
+  --c-badge-normativa:#c9a94f;--c-badge-estudio:#6fa8c4;--c-badge-empresa:#4caf7c;--c-badge-proyecto:#a79bea;--c-badge-herramienta:#c98a76;
+  --c-chip-bg:#1b3226;--c-chip-border:#3a5c48;--c-chip-text:#a6e3c4;
+  --c-nivel-n1-bg:#204331;--c-nivel-n1-text:#a6e3c4;
+  --c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+  --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;
+  --c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;
+  --c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+  --c-link:#6cc2e8;
+  --c-tab-bg:#1c3227;--c-tab-active-bg:#2f8055;--c-tab-active-text:#fff;
+  --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+}
+body{font-family:Arial,sans-serif;margin:0;background:var(--c-bg);color:var(--c-text)}
+main{max-width:1180px;margin:auto;padding:24px}
+section{background:var(--c-surface);padding:22px;margin-bottom:18px;border-radius:14px;box-shadow:0 2px 10px var(--c-shadow)}
+h1{margin-top:0;color:var(--c-h1);font-size:26px}
+h2{color:var(--c-h2);font-size:19px}
+h3{color:var(--c-h3);margin-bottom:6px;font-size:15px}
+p{line-height:1.5}
+.explicacion{color:var(--c-explicacion-text);font-size:14px;line-height:1.5;margin-top:6px}
+.pequeno{font-size:12px;color:var(--c-pequeno-text)}
+.fuente{color:var(--c-fuente-text);font-size:12px}
+label{display:block;font-weight:bold;margin:0 0 5px;font-size:13px}
+input,select{width:100%;box-sizing:border-box;padding:9px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-size:14px}
+input:focus,select:focus{outline:2px solid var(--c-focus)}
+.grid-filtros{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:12px;align-items:end}
+@media(max-width:800px){.grid-filtros{grid-template-columns:1fr}}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tab-btn{padding:9px 16px;border-radius:20px;border:1px solid var(--c-border);background:var(--c-tab-bg);color:var(--c-text);cursor:pointer;font-size:13px;font-weight:bold}
+.tab-btn.activa{background:var(--c-tab-active-bg);color:var(--c-tab-active-text);border-color:transparent}
+.panel{display:none}
+.panel.activa{display:block}
+.resultado-contador{margin:10px 0;font-size:13px;color:var(--c-pequeno-text)}
+.tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.tarjeta{background:var(--c-card-bg);border:1px solid var(--c-card-border);border-radius:10px;padding:14px 16px;line-height:1.45}
+.tarjeta h3{margin-bottom:4px}
+.tarjeta h3 a{color:var(--c-h3);text-decoration:none}
+.tarjeta h3 a:hover{text-decoration:underline}
+.badge{display:inline-block;font-size:11px;font-weight:bold;color:#fff;border-radius:8px;padding:2px 8px;margin-right:6px}
+.badge.Normativa{background:var(--c-badge-normativa)}
+.badge.Estudio{background:var(--c-badge-estudio)}
+.badge.Empresa{background:var(--c-badge-empresa)}
+.badge.Proyecto{background:var(--c-badge-proyecto)}
+.badge.Herramienta{background:var(--c-badge-herramienta)}
+.meta-linea{font-size:12px;color:var(--c-pequeno-text);margin:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
+.chip{font-size:11px;background:var(--c-chip-bg);color:var(--c-chip-text);border:1px solid var(--c-chip-border);border-radius:10px;padding:2px 8px}
+.nota{font-size:12px;color:var(--c-pequeno-text);margin-top:6px;font-style:italic}
+.tabla-contenedor{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+th,td{padding:8px;border-bottom:1px solid var(--c-tr-border);text-align:left;vertical-align:top}
+th{background:var(--c-th-bg)}
+td.num{text-align:right;white-space:nowrap}
+a{color:var(--c-link)}
+.nivel{display:inline-block;font-size:11px;font-weight:bold;padding:3px 8px;border-radius:10px;margin-right:6px}
+.nivel.n1{background:var(--c-nivel-n1-bg);color:var(--c-nivel-n1-text)}
+.nivel.n2{background:var(--c-nivel-n2-bg);color:var(--c-nivel-n2-text)}
+.nivel.n3{background:var(--c-nivel-n3-bg);color:var(--c-nivel-n3-text)}
+.nivel.n4{background:var(--c-nivel-n4-bg);color:var(--c-nivel-n4-text)}
+.nivel.n5{background:var(--c-nivel-n5-bg);color:var(--c-nivel-n5-text)}
+.opcion-val{padding:10px 0;border-bottom:1px dashed var(--c-tr-border)}
+.opcion-val:last-child{border-bottom:0}
+.bloque-real{border:1px solid var(--c-card-border);border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.cer{display:inline-block;background:var(--c-cer-bg);border:1px solid var(--c-cer-border);border-radius:6px;padding:1px 6px;margin:1px 2px;font-size:12px;white-space:nowrap}
+.cer.pel{border-color:var(--c-cer-pel-border);color:var(--c-cer-pel-text)}
+button{padding:9px 15px;color:#fff;background:var(--c-btn-bg);border:0;border-radius:8px;cursor:pointer;font-size:13px}
+button:hover{background:var(--c-btn-bg-hover)}
+button.secundario{background:var(--c-btn-secondary-bg)}
+.oculto{display:none!important}
+textarea{width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-family:monospace;font-size:12px;margin-top:8px}
+</style>
+
+<main>
+
+<section>
+<h1>Fuentes de residuos · CNAE 47.11</h1>
+<p><strong>Base de fuentes, coeficientes y datos reales de planta</strong> para el comercio al por menor en establecimientos no especializados con predominio alimentario (supermercados, hipermercados y autoservicios): recepción de mercancía, venta de producto fresco y envasado, y elaboración propia en tienda. Consulta interna, sin relación con los datos que introduzcas en la calculadora de estimación.</p>
+<p class="explicacion">Extraída de la investigación de fuentes oficiales (normativa, estudios, permisos ambientales de planta real) que respalda la <a href="47.11_comercio_alimentario_calculadora.html" target="_blank" rel="noopener">calculadora de residuos CNAE 47.11</a>. La misma información, en formato de tabla, está disponible como Excel para reutilizar en otros entornos.</p>
+</section>
+
+<section>
+<h2>Filtrar fuentes</h2>
+<div class="grid-filtros">
+<div>
+<label for="fBusqueda">Buscar (título, organismo, corriente, nota)</label>
+<input id="fBusqueda" type="text" placeholder="p. ej. alperujo, MITECO, Andalucía..." oninput="pintarFuentes()">
+</div>
+<div>
+<label for="fTipo">Tipo de fuente</label>
+<select id="fTipo" onchange="pintarFuentes()"><option value="">Todos</option></select>
+</div>
+<div>
+<label for="fZona">Zona</label>
+<select id="fZona" onchange="pintarFuentes()"><option value="">Todas</option></select>
+</div>
+<div>
+<label for="fCorriente">Corriente</label>
+<select id="fCorriente" onchange="pintarFuentes()"><option value="">Todas</option></select>
+</div>
+</div>
+</section>
+
+<section>
+<div class="tabs">
+<button class="tab-btn activa" data-panel="panelFuentes" onclick="cambiarTab('panelFuentes',this)">Fuentes</button>
+<button class="tab-btn" data-panel="panelCoef" onclick="cambiarTab('panelCoef',this)">Coeficientes</button>
+<button class="tab-btn" data-panel="panelReal" onclick="cambiarTab('panelReal',this)">Datos reales de planta</button>
+<button class="tab-btn" data-panel="panelVal" onclick="cambiarTab('panelVal',this)">Valorización</button>
+<button class="tab-btn" data-panel="panelCer" onclick="cambiarTab('panelCer',this)">CER/LER</button>
+</div>
+
+<div id="panelFuentes" class="panel activa">
+<div class="resultado-contador" id="contadorFuentes"></div>
+<div id="tarjetasFuentes" class="tarjetas"></div>
+<div style="margin-top:14px">
+<button class="secundario" onclick="copiarFuentes()">Copiar resultados filtrados (texto)</button>
+<textarea id="areaFuentes" class="oculto" rows="6" onclick="this.select()"></textarea>
+<span id="estadoFuentes" class="pequeno"></span>
+</div>
+</div>
+
+<div id="panelCoef" class="panel">
+<p class="explicacion">Factor de generación de cada corriente por tonelada de mercancía manipulada de cada categoría (recepción, fresco, envasado, obrador). A diferencia del resto de CNAE de este proyecto, las 4 categorías coexisten siempre en el mismo establecimiento (no son rutas alternativas): el factor de cada corriente está referido a la materia prima de SU PROPIA categoría, no a un único producto medio del CNAE. Haz clic en un identificador de fuente para verla en la pestaña «Fuentes».</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Proceso</th><th>Corriente</th><th>Factor</th><th>Unidad</th><th>Confianza</th><th>CER/LER candidatos</th><th>Fuentes</th></tr></thead>
+<tbody id="tablaCoef"></tbody>
+</table>
+</div>
+</div>
+
+<div id="panelReal" class="panel">
+<p class="explicacion">Balances de masa reales declarados en autorizaciones ambientales y estudios de campo.</p>
+<div id="bloquesReal"></div>
+</div>
+
+<div id="panelVal" class="panel">
+<p class="explicacion">Opciones de valorización por corriente, ordenadas según la jerarquía de residuos: <span class="nivel n1">1 · Alimentación humana</span><span class="nivel n2">2 · Alimentación animal</span><span class="nivel n3">3 · Material y bioproductos</span><span class="nivel n4">4 · Energía y biogás</span><span class="nivel n5">5 · Suelo / compost</span></p>
+<div id="bloquesVal"></div>
+</div>
+
+<div id="panelCer" class="panel">
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Código</th><th>Descripción oficial</th><th>Corrientes de este CNAE</th></tr></thead>
+<tbody id="tablaCer"></tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Notas</h2>
+<ul style="line-height:1.6">
+<li>Esta base cubre de momento el CNAE 47.11 (comercio al por menor no especializado con predominio alimentario: supermercados, hipermercados y autoservicios). Es el primer CNAE de comercio minorista de este proyecto (los 24 anteriores son de fabricación/industria): las categorías de flujo, la unidad de referencia (t de mercancía manipulada en vez de t de materia prima industrial) y el capítulo CER/LER predominante (20, residuos municipales, en vez de 02) son distintos por diseño — ver el documento 4711_01_Paquete_completo.md. La columna CNAE de cada hoja/tabla está pensada para apilar aquí los próximos CNAEs sin cambiar la estructura.</li>
+<li>Los identificadores de fuente (F01, F02...) son los mismos en esta página y en el Excel «Base_fuentes_residuos_CNAE_1043.xlsx», para poder cruzar ambos.</li>
+<li>Un coeficiente con confianza «Baja» o marcado como extrapolación no está verificado con un dato de planta real: trátalo como orientativo.</li>
+</ul>
+</section>
+
+</main>
+
+<script>
+const DATA = {
+ "cnae": "47.11",
+ "fuentes": [
+  {
+   "id": "F01",
+   "titulo": "Ley 7/2022 de residuos y suelos contaminados (art. 4, subproductos; art. 8, jerarquía de residuos)",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General",
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809",
+   "nota": ""
+  },
+  {
+   "id": "F02",
+   "titulo": "Ley 1/2025, de 1 de abril, de prevención de las pérdidas y el desperdicio alimentario (jerarquía específica: prevención, donación a personas, transformación, alimentación animal, otros usos industriales, compost/biogás, eliminación; obligaciones reforzadas para grandes superficies)",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General",
+    "General (marco legal, subproducto vs. residuo)",
+    "Mermas de producto envasado o seco caducado o dañado",
+    "Mermas y caducados de producto fresco"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2025-6597",
+   "nota": ""
+  },
+  {
+   "id": "F03",
+   "titulo": "Real Decreto 293/2018 sobre reducción del consumo de bolsas de plástico",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General",
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-6651",
+   "nota": ""
+  },
+  {
+   "id": "F04",
+   "titulo": "Real Decreto 115/2017, gases fluorados de efecto invernadero (mantenimiento de equipos de frío comercial)",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General",
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-2019",
+   "nota": ""
+  },
+  {
+   "id": "F05",
+   "titulo": "Real Decreto 110/2015, residuos de aparatos eléctricos y electrónicos (RAEE)",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General",
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-1762",
+   "nota": ""
+  },
+  {
+   "id": "F06",
+   "titulo": "Decisión 2014/955/UE, Lista Europea de Residuos (LER/CER)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32014D0955",
+   "nota": ""
+  },
+  {
+   "id": "F07",
+   "titulo": "MAPA: Informe del desperdicio alimentario en la industria y la distribución en España 2024 (datos de campo oct-nov 2024, ejercicio 2023; 150 empresas encuestadas, 50 de distribución)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General",
+    "Mermas y caducados de producto fresco"
+   ],
+   "url": "https://www.mapa.gob.es/dam/mapa/contenido/alimentacion/temas/estrategia-desperdicios/nueva-web-2022/4.-generacion-conocimiento/documentos-estudios/informe-del-desperdicio-alimentario-en-la-industria-y-la-distribucion-en-espana.2024.mapa_.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F08",
+   "titulo": "MAPA: Estrategia \"Más alimento, menos desperdicio\"",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.mapa.gob.es/es/alimentacion/temas/desperdicio",
+   "nota": ""
+  },
+  {
+   "id": "F09",
+   "titulo": "conversoriaecnae.es: ficha CNAE 47.11 y correspondencia CNAE-2025 (fuente secundaria; no se ha podido verificar con la nota explicativa oficial INE primaria en esta investigación, ver advertencia)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.conversoriaecnae.es/cnae/4711/comercio-al-por-menor-no-especializado-con-predominio-de-productos-alimenticios-bebidas-y-tabaco",
+   "nota": ""
+  },
+  {
+   "id": "F10",
+   "titulo": "conversoriaecnae.es: transición de CNAE 4711 (2009) a CNAE-2025",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.conversoriaecnae.es/blog/cnae-4711-comercio-al-por-menor-no-especializado-con-predominio-alimentario-transicion-a-cnae",
+   "nota": ""
+  },
+  {
+   "id": "F11",
+   "titulo": "ASEDAS, Asociación Española de Distribuidores, Autoservicios y Supermercados (referencia sectorial general; no se ha extraído en esta investigación una cifra cuantitativa verificable de residuos por m² o por tienda)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://asedas.org/",
+   "nota": ""
+  }
+ ],
+ "coeficientes": [
+  {
+   "proceso": "Recepción y desempaquetado de mercancía",
+   "corriente": "Mercancía puesta en el lineal (neta, sin embalaje de transporte)",
+   "factor": 0.979,
+   "unidad": "t/t mercancía recibida de proveedores",
+   "confianza": "Media",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Recepción y desempaquetado de mercancía",
+   "corriente": "Cartón compactado de recepción",
+   "factor": 0.014,
+   "unidad": "t/t mercancía recibida de proveedores",
+   "confianza": "Baja",
+   "cer": "15 01 01",
+   "fuentes": []
+  },
+  {
+   "proceso": "Recepción y desempaquetado de mercancía",
+   "corriente": "Film y plástico de paletizado",
+   "factor": 0.005,
+   "unidad": "t/t mercancía recibida de proveedores",
+   "confianza": "Baja",
+   "cer": "15 01 02",
+   "fuentes": []
+  },
+  {
+   "proceso": "Recepción y desempaquetado de mercancía",
+   "corriente": "Envases mixtos o compuestos de recepción no separables",
+   "factor": 0.002,
+   "unidad": "t/t mercancía recibida de proveedores",
+   "confianza": "Baja",
+   "cer": "15 01 06",
+   "fuentes": []
+  },
+  {
+   "proceso": "Frutería, verdulería, panadería, carnicería, pescadería y charcutería (producto fresco)",
+   "corriente": "Producto fresco vendido",
+   "factor": 0.984,
+   "unidad": "t/t producto fresco puesto a la venta",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Frutería, verdulería, panadería, carnicería, pescadería y charcutería (producto fresco)",
+   "corriente": "Mermas y caducados de producto fresco",
+   "factor": 0.016,
+   "unidad": "t/t producto fresco puesto a la venta",
+   "confianza": "Baja",
+   "cer": "20 01 08; 20 03 01",
+   "fuentes": []
+  },
+  {
+   "proceso": "Alimentación seca, bebidas, droguería y perfumería (producto envasado)",
+   "corriente": "Producto envasado o seco vendido",
+   "factor": 0.9975,
+   "unidad": "t/t producto envasado",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Alimentación seca, bebidas, droguería y perfumería (producto envasado)",
+   "corriente": "Mermas de producto envasado o seco caducado o dañado",
+   "factor": 0.0025,
+   "unidad": "t/t producto envasado",
+   "confianza": "Baja",
+   "cer": "20 03 01; 15 01 06",
+   "fuentes": []
+  },
+  {
+   "proceso": "Elaboración propia (panadería/pastelería, charcutería con corte, platos preparados)",
+   "corriente": "Producto de elaboración propia vendido (pan, bollería, platos preparados, charcutería cortada)",
+   "factor": 0.95,
+   "unidad": "t/t materias primas de obrador procesadas en tienda",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Elaboración propia (panadería/pastelería, charcutería con corte, platos preparados)",
+   "corriente": "Mermas de elaboración propia (masa, recortes, producto no vendido)",
+   "factor": 0.03,
+   "unidad": "t/t materias primas de obrador procesadas en tienda",
+   "confianza": "Baja",
+   "cer": "02 06 01; 02 06 03; 20 01 08",
+   "fuentes": []
+  },
+  {
+   "proceso": "Elaboración propia (panadería/pastelería, charcutería con corte, platos preparados)",
+   "corriente": "Aceite de fritura usado",
+   "factor": 0.008,
+   "unidad": "t/t materias primas de obrador procesadas en tienda",
+   "confianza": "Baja",
+   "cer": "20 01 25",
+   "fuentes": []
+  },
+  {
+   "proceso": "Elaboración propia (panadería/pastelería, charcutería con corte, platos preparados)",
+   "corriente": "Aguas residuales de limpieza del obrador",
+   "factor": 0.6,
+   "unidad": "m³/t materias primas de obrador procesadas en tienda",
+   "confianza": "Baja",
+   "cer": "20 03 01",
+   "fuentes": []
+  }
+ ],
+ "datos_reales": [],
+ "valorizacion": [
+  {
+   "corriente": "Cartón compactado de recepción",
+   "nivel": 3,
+   "texto": "Recogida separada con compactadora propia y venta o entrega a gestor/papelera; es la corriente con mayor valor de reciclado y mayor grado de implantación real en la gran distribución española.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Film y plástico de paletizado",
+   "nivel": 3,
+   "texto": "Recogida separada y reciclado mecánico del film de paletizado, habitualmente con compactadora o enfardadora propia.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Envases mixtos de recepción no separables",
+   "nivel": 3,
+   "texto": "Entrega a gestor autorizado para separación y reciclado cuando la tienda no separa por tipo de material en origen.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Mermas y caducados de producto fresco",
+   "nivel": 1,
+   "texto": "Donación a bancos de alimentos, comedores sociales u otras entidades sin ánimo de lucro: destino declarado en el 47,4 % de los casos por las empresas de distribución encuestadas en el Informe MAPA 2024 sobre desperdicio alimentario, la vía más habitual con diferencia. Obligatoria por jerarquía para grandes superficies bajo la Ley 1/2025 cuando el producto sigue siendo apto para consumo.",
+   "fuentes": [
+    "F02",
+    "F07"
+   ]
+  },
+  {
+   "corriente": "Mermas y caducados de producto fresco",
+   "nivel": 3,
+   "texto": "Elaboración de coproductos (zumos, gazpachos, cremas, mermeladas) con producto próximo a caducar pero aún apto: destino declarado en el 13,2 % de los casos (Informe MAPA 2024).",
+   "fuentes": [
+    "F07"
+   ]
+  },
+  {
+   "corriente": "Mermas y caducados de producto fresco",
+   "nivel": 2,
+   "texto": "Entrega a ganaderías o gestores de subproductos para alimentación animal cuando ya no es apto para consumo humano: destino declarado en el 7,9 % de los casos (Informe MAPA 2024).",
+   "fuentes": [
+    "F07"
+   ]
+  },
+  {
+   "corriente": "Mermas y caducados de producto fresco",
+   "nivel": 5,
+   "texto": "Compostaje: destino declarado en el 2,6 % de los casos (Informe MAPA 2024); porcentaje bajo frente a otras vías, con recorrido de crecimiento.",
+   "fuentes": [
+    "F07"
+   ]
+  },
+  {
+   "corriente": "Mermas y caducados de producto fresco",
+   "nivel": 5,
+   "texto": "Entrega a gestor externo de residuos (13,2 % de los casos) o vertedero (7,9 % de los casos) cuando no es viable ninguna de las vías anteriores: última opción según la jerarquía de la Ley 1/2025.",
+   "fuentes": [
+    "F07"
+   ]
+  },
+  {
+   "corriente": "Mermas de producto envasado o seco caducado o dañado",
+   "nivel": 1,
+   "texto": "Donación a bancos de alimentos cuando el producto conserva el envase íntegro y la fecha de consumo preferente/caducidad lo permite.",
+   "fuentes": [
+    "F02"
+   ]
+  },
+  {
+   "corriente": "Mermas de producto envasado o seco caducado o dañado",
+   "nivel": 5,
+   "texto": "Gestor de residuos municipales o comerciales para el producto ya caducado o con el envase dañado.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Mermas de elaboración propia (obrador)",
+   "nivel": 2,
+   "texto": "Venta o entrega como ingrediente de piensos cuando existe recogida específica para subproductos de panadería/pastelería, vía análoga a la de CNAE 10.71/10.72.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Mermas de elaboración propia (obrador)",
+   "nivel": 5,
+   "texto": "Gestor de residuos municipales cuando no hay salida a alimentación animal.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Aceite de fritura usado",
+   "nivel": 4,
+   "texto": "Recogida por gestor autorizado de aceites vegetales usados para producción de biodiésel; circuito muy consolidado en hostelería y restauración organizada de pequeño formato, directamente aplicable a la rotisería de un supermercado.",
+   "fuentes": []
+  }
+ ],
+ "niveles": {
+  "1": "Alimentación humana / prevención",
+  "2": "Alimentación animal",
+  "3": "Material y bioproductos",
+  "4": "Energía y biogás",
+  "5": "Suelo / compost"
+ },
+ "cer": [
+  {
+   "codigo": "15 01 01",
+   "desc": "Envases de papel y cartón",
+   "corrientes": "Cartón compactado de recepción"
+  },
+  {
+   "codigo": "15 01 02",
+   "desc": "Envases de plástico",
+   "corrientes": "Film y plástico de paletizado"
+  },
+  {
+   "codigo": "15 01 03",
+   "desc": "Envases de madera",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 04",
+   "desc": "Envases metálicos",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 05",
+   "desc": "Envases compuestos",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 06",
+   "desc": "Envases mezclados",
+   "corrientes": "Envases mixtos o compuestos de recepción no separables; Mermas de producto envasado o seco caducado o dañado"
+  },
+  {
+   "codigo": "15 01 07",
+   "desc": "Envases de vidrio",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 10*",
+   "desc": "Envases que contienen restos de sustancias peligrosas o están contaminados por ellas",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "13 02 05*",
+   "desc": "Aceites minerales no clorados de motor, de transmisión mecánica y lubricantes",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "14 06 01*",
+   "desc": "Clorofluorocarburos, HCFC, HFC (gases fluorados de equipos de frío)",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "20 01 36",
+   "desc": "Equipos eléctricos y electrónicos desechados, distintos de los mencionados en 20 01 21, 20 01 23 y 20 01 35",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "20 01 35*",
+   "desc": "Equipos eléctricos y electrónicos desechados que contienen componentes peligrosos",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "20 01 08",
+   "desc": "Residuos biodegradables de cocinas y comedores",
+   "corrientes": "Mermas y caducados de producto fresco; Mermas de elaboración propia (masa, recortes, producto no vendido)"
+  },
+  {
+   "codigo": "20 01 25",
+   "desc": "Aceites y grasas comestibles",
+   "corrientes": "Aceite de fritura usado"
+  },
+  {
+   "codigo": "20 03 01",
+   "desc": "Mezcla de residuos municipales",
+   "corrientes": "Mermas y caducados de producto fresco; Mermas de producto envasado o seco caducado o dañado; Aguas residuales de limpieza del obrador"
+  },
+  {
+   "codigo": "02 06 01",
+   "desc": "Materiales inadecuados para el consumo o la elaboración (industria de panificación y pastelería)",
+   "corrientes": "Mermas de elaboración propia (masa, recortes, producto no vendido)"
+  },
+  {
+   "codigo": "02 06 03",
+   "desc": "Lodos del tratamiento in situ de efluentes (industria de panificación y pastelería)",
+   "corrientes": "Mermas de elaboración propia (masa, recortes, producto no vendido)"
+  }
+ ]
+};
+
+function cambiarTab(id, btn){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("activa"));
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("activa"));
+  document.getElementById(id).classList.add("activa");
+  btn.classList.add("activa");
+}
+
+function poblarSelect(id, valores){
+  const sel=document.getElementById(id);
+  [...new Set(valores)].sort((a,b)=>a.localeCompare(b,"es")).forEach(v=>{
+    const o=document.createElement("option");o.value=v;o.textContent=v;sel.appendChild(o);
+  });
+}
+
+function iniciarFiltros(){
+  poblarSelect("fTipo", DATA.fuentes.map(f=>f.tipo));
+  poblarSelect("fZona", DATA.fuentes.map(f=>f.zona));
+  const corrientes=new Set();
+  DATA.fuentes.forEach(f=>f.corrientes.forEach(c=>corrientes.add(c)));
+  poblarSelect("fCorriente",[...corrientes]);
+}
+
+function pintarFuentes(){
+  const q=document.getElementById("fBusqueda").value.trim().toLowerCase();
+  const tipo=document.getElementById("fTipo").value;
+  const zona=document.getElementById("fZona").value;
+  const corr=document.getElementById("fCorriente").value;
+  const res=DATA.fuentes.filter(f=>{
+    if(tipo&&f.tipo!==tipo)return false;
+    if(zona&&f.zona!==zona)return false;
+    if(corr&&!f.corrientes.includes(corr))return false;
+    if(q){
+      const txt=(f.titulo+" "+f.organismo+" "+f.zona+" "+f.corrientes.join(" ")+" "+(f.nota||"")).toLowerCase();
+      if(!txt.includes(q))return false;
+    }
+    return true;
+  });
+  document.getElementById("contadorFuentes").textContent=`${res.length} de ${DATA.fuentes.length} fuentes`;
+  document.getElementById("tarjetasFuentes").innerHTML=res.map(f=>`
+    <div class="tarjeta">
+      <span class="badge ${f.tipo}">${f.tipo}</span>
+      <h3><a href="${f.url}" target="_blank" rel="noopener">${f.titulo}</a></h3>
+      <div class="meta-linea"><b>${f.id}</b> · ${f.organismo} · ${f.zona}</div>
+      <div class="chips">${f.corrientes.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
+      ${f.nota?`<div class="nota">${f.nota}</div>`:""}
+    </div>`).join("")||"<p class='pequeno'>No hay fuentes que coincidan con el filtro.</p>";
+}
+
+function copiarFuentes(){
+  const q=document.getElementById("fBusqueda").value.trim().toLowerCase();
+  const tipo=document.getElementById("fTipo").value;
+  const zona=document.getElementById("fZona").value;
+  const corr=document.getElementById("fCorriente").value;
+  const res=DATA.fuentes.filter(f=>{
+    if(tipo&&f.tipo!==tipo)return false;
+    if(zona&&f.zona!==zona)return false;
+    if(corr&&!f.corrientes.includes(corr))return false;
+    if(q){
+      const txt=(f.titulo+" "+f.organismo+" "+f.zona+" "+f.corrientes.join(" ")+" "+(f.nota||"")).toLowerCase();
+      if(!txt.includes(q))return false;
+    }
+    return true;
+  });
+  const rows=[["id","titulo","tipo","organismo","zona","corrientes","enlace","nota"]];
+  res.forEach(f=>rows.push([f.id,f.titulo,f.tipo,f.organismo,f.zona,f.corrientes.join(" / "),f.url,f.nota||""]));
+  const txt=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(";")).join("\n");
+  const area=document.getElementById("areaFuentes");
+  area.value=txt;area.classList.remove("oculto");area.focus();area.select();
+  const estado=document.getElementById("estadoFuentes");
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(()=>estado.textContent="Copiado al portapapeles.").catch(()=>estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.");
+  } else estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.";
+}
+
+function pintarCoef(){
+  document.getElementById("tablaCoef").innerHTML=DATA.coeficientes.map(c=>`
+    <tr><td>${c.proceso}</td><td>${c.corriente}</td><td class="num">${c.factor}</td><td>${c.unidad}</td><td>${c.confianza}</td><td>${c.cer}</td>
+    <td>${c.fuentes.map(id=>`<span class="chip" style="cursor:pointer" onclick="irAFuente('${id}')">${id}</span>`).join(" ")||"—"}</td></tr>`).join("");
+}
+
+function irAFuente(id){
+  document.querySelector('.tab-btn[data-panel="panelFuentes"]').click();
+  document.getElementById("fBusqueda").value=id;
+  const f=DATA.fuentes.find(x=>x.id===id);
+  document.getElementById("fBusqueda").value=f?f.titulo.slice(0,30):id;
+  pintarFuentes();
+}
+
+function pintarReal(){
+  document.getElementById("bloquesReal").innerHTML=DATA.datos_reales.map(b=>{
+    const fid=b.fuente_id;const f=DATA.fuentes.find(x=>x.id===fid);
+    const extra=(b.fuentes_extra||[]).map(id=>{const g=DATA.fuentes.find(x=>x.id===id);return g?`, <a href="${g.url}" target="_blank" rel="noopener">${id}</a>`:"";}).join("");
+    return `<div class="bloque-real">
+      <h3>${b.bloque}</h3>
+      <p class="explicacion">${b.intro}</p>
+      <div class="tabla-contenedor"><table><thead><tr><th>Dato</th><th>Cantidad declarada</th><th>Ratio</th></tr></thead>
+      <tbody>${b.filas.map(([d,c,r])=>`<tr><td>${d}</td><td>${c}</td><td>${r}</td></tr>`).join("")}</tbody></table></div>
+      <p class="fuente">Fuente: ${f?`<a href="${f.url}" target="_blank" rel="noopener">${f.id} — ${f.titulo}</a>`:""}${extra}</p>
+    </div>`;
+  }).join("");
+}
+
+function pintarVal(){
+  const porCorriente={};
+  DATA.valorizacion.forEach(v=>{(porCorriente[v.corriente]=porCorriente[v.corriente]||[]).push(v);});
+  document.getElementById("bloquesVal").innerHTML=Object.entries(porCorriente).map(([corr,ops])=>`
+    <div class="bloque-real"><h3>${corr}</h3>
+    ${ops.sort((a,b)=>a.nivel-b.nivel).map(o=>`<div class="opcion-val"><span class="nivel n${o.nivel}">${o.nivel} · ${DATA.niveles[o.nivel]}</span>${o.texto}
+      ${o.fuentes.length?`<div class="chips">${o.fuentes.map(id=>{const f=DATA.fuentes.find(x=>x.id===id);return f?`<a class="chip" style="text-decoration:none" href="${f.url}" target="_blank" rel="noopener">${id}</a>`:"";}).join("")}</div>`:""}
+    </div>`).join("")}</div>`).join("");
+}
+
+function pintarCer(){
+  document.getElementById("tablaCer").innerHTML=DATA.cer.map(c=>`
+    <tr><td><span class="cer${c.codigo.includes("*")?" pel":""}">${c.codigo}</span></td><td>${c.desc}</td><td>${c.corrientes}</td></tr>`).join("");
+}
+
+iniciarFiltros();
+pintarFuentes();
+pintarCoef();
+pintarReal();
+pintarVal();
+pintarCer();
+</script>
+
+</body></html>

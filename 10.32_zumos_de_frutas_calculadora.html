@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>html{color-scheme:light}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif;background:#fafaf8}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Residuos Zumos de Fruta</title>
+<style>
+:root{
+  --c-bg:#f3f7f4;--c-surface:#fff;--c-shadow:rgba(0,0,0,.08);--c-text:#18322a;
+  --c-h1:#225c40;--c-h2:#2c704d;--c-h3:#397b59;--c-border:#b7cabe;--c-focus:#8fc19b;
+  --c-input-bg:#fff;
+  --c-btn-bg:#28734d;--c-btn-bg-hover:#1e593b;--c-btn-secondary-bg:#64786c;--c-btn-peligro-bg:#9b4a3c;
+  --c-aviso-bg:#eef7ef;--c-aviso-border:#3e8c5d;--c-advertencia-bg:#fff5d8;--c-advertencia-border:#d3971b;
+  --c-explicacion-text:#50675a;--c-fuente-text:#64786c;
+  --c-indicadores-bg:#edf7ef;--c-indicador-valor:#286b4b;--c-pequeno-text:#5c6c62;
+  --c-nodo-bg:#e5f2e8;--c-nodo-border:#9dc4a5;--c-flecha:#397b59;
+  --c-chip-producto-bg:#dff0e3;--c-chip-producto-border:#3e8c5d;
+  --c-chip-subproducto-bg:#e3eef5;--c-chip-subproducto-border:#5c8da5;
+  --c-chip-residuo-bg:#fbeede;--c-chip-residuo-border:#d3971b;
+  --c-chip-efluente-bg:#eceaf6;--c-chip-efluente-border:#7a6fb0;
+  --c-croquis-border:#d8e4dc;--c-th-bg:#e7f1ea;--c-tr-border:#d8e4dc;
+  --c-fila-producto-bg:#f8fbf9;--c-fila-producto-border:#d8e4dc;--c-fila-producto-meta:#5c6c62;
+  --c-canvas-bg:#fff;--c-leyenda-bg:#edf7ef;
+  --c-tarjeta-bg:#fffdfa;--c-tarjeta-border:#ded8ca;--c-tarjeta-accent1:#3e8c5d;--c-tarjeta-accent2:#5c8da5;--c-tarjeta-accent3:#d3971b;
+  --c-tarjeta-val-bg:#fbfdfb;--c-tarjeta-val-border:#d8e4dc;--c-tarjeta-val-accent:#28734d;
+  --c-nivel-bg:#e5f2e8;--c-nivel-text:#225c40;
+  --c-nivel-n1-bg:#d7efe0;--c-nivel-n2-bg:#e3eef5;--c-nivel-n2-text:#2e5b73;
+  --c-nivel-n3-bg:#f1ecd9;--c-nivel-n3-text:#6d5a14;--c-nivel-n4-bg:#fbe6d6;--c-nivel-n4-text:#8a4a1a;--c-nivel-n5-bg:#eee;--c-nivel-n5-text:#555;
+  --c-opcion-border:#d8e4dc;--c-enlaces-link:#1f6a8a;
+  --c-tipo-enlace-bg:#64786c;--c-tipo-enlace-estudio:#5c8da5;--c-tipo-enlace-empresa:#28734d;--c-tipo-enlace-normativa:#8a6d1a;--c-tipo-enlace-proyecto:#7a6fb0;--c-tipo-enlace-herramienta:#9b4a3c;
+  --c-cer-bg:#f1f5f2;--c-cer-border:#c9d8ce;--c-cer-pel-border:#c0392b;--c-cer-pel-text:#8e2a1f;
+  --c-caja-total-bg:#f4f8fb;--c-caja-total-border:#cddce6;
+  --c-origen-bg:#e6f0f7;--c-origen-text:#24506a;--c-origen-border:#c3d7e5;
+  --c-cantidad-tarjeta-bg:#edf7ef;--c-cantidad-tarjeta-text:#18322a;
+  --c-reparto-bg:#f4f8fb;--c-enlace-boton:#1f6a8a;
+  --c-tr-total-bg:#edf7ef;--c-tr-subtotal-bg:#f7faf8;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+    --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+    --c-input-bg:#182720;
+    --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;--c-btn-peligro-bg:#a85c4c;
+    --c-aviso-bg:#16281f;--c-aviso-border:#3e8c5d;--c-advertencia-bg:#2c2712;--c-advertencia-border:#d3971b;
+    --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+    --c-indicadores-bg:#15281f;--c-indicador-valor:#6fd19c;--c-pequeno-text:#93a49a;
+    --c-nodo-bg:#1b3226;--c-nodo-border:#3a5c48;--c-flecha:#7fcf9e;
+    --c-chip-producto-bg:#1c3b28;--c-chip-producto-border:#4caf7c;
+    --c-chip-subproducto-bg:#1a2f3c;--c-chip-subproducto-border:#5c8da5;
+    --c-chip-residuo-bg:#3a2c14;--c-chip-residuo-border:#d3971b;
+    --c-chip-efluente-bg:#241f3a;--c-chip-efluente-border:#8f7fd6;
+    --c-croquis-border:#2c4438;--c-th-bg:#1c3227;--c-tr-border:#26392f;
+    --c-fila-producto-bg:#182720;--c-fila-producto-border:#2c4438;--c-fila-producto-meta:#93a49a;
+    --c-canvas-bg:#16241d;--c-leyenda-bg:#15281f;
+    --c-tarjeta-bg:#182720;--c-tarjeta-border:#33362a;--c-tarjeta-accent1:#4caf7c;--c-tarjeta-accent2:#5c8da5;--c-tarjeta-accent3:#d3971b;
+    --c-tarjeta-val-bg:#152820;--c-tarjeta-val-border:#26392f;--c-tarjeta-val-accent:#3c9c68;
+    --c-nivel-bg:#1c3227;--c-nivel-text:#a6e3c4;
+    --c-nivel-n1-bg:#204331;--c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+    --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;--c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;--c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+    --c-opcion-border:#26392f;--c-enlaces-link:#6cc2e8;
+    --c-tipo-enlace-bg:#5a6c62;--c-tipo-enlace-estudio:#5c8da5;--c-tipo-enlace-empresa:#2f8055;--c-tipo-enlace-normativa:#a3822f;--c-tipo-enlace-proyecto:#7a6fb0;--c-tipo-enlace-herramienta:#a85c4c;
+    --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+    --c-caja-total-bg:#152830;--c-caja-total-border:#274456;
+    --c-origen-bg:#152a37;--c-origen-text:#8fc2da;--c-origen-border:#274456;
+    --c-cantidad-tarjeta-bg:#15281f;--c-cantidad-tarjeta-text:#dce9e1;
+    --c-reparto-bg:#152830;--c-enlace-boton:#6cc2e8;
+    --c-tr-total-bg:#1a3327;--c-tr-subtotal-bg:#182720;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+  --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+  --c-input-bg:#182720;
+  --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;--c-btn-peligro-bg:#a85c4c;
+  --c-aviso-bg:#16281f;--c-aviso-border:#3e8c5d;--c-advertencia-bg:#2c2712;--c-advertencia-border:#d3971b;
+  --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+  --c-indicadores-bg:#15281f;--c-indicador-valor:#6fd19c;--c-pequeno-text:#93a49a;
+  --c-nodo-bg:#1b3226;--c-nodo-border:#3a5c48;--c-flecha:#7fcf9e;
+  --c-chip-producto-bg:#1c3b28;--c-chip-producto-border:#4caf7c;
+  --c-chip-subproducto-bg:#1a2f3c;--c-chip-subproducto-border:#5c8da5;
+  --c-chip-residuo-bg:#3a2c14;--c-chip-residuo-border:#d3971b;
+  --c-chip-efluente-bg:#241f3a;--c-chip-efluente-border:#8f7fd6;
+  --c-croquis-border:#2c4438;--c-th-bg:#1c3227;--c-tr-border:#26392f;
+  --c-fila-producto-bg:#182720;--c-fila-producto-border:#2c4438;--c-fila-producto-meta:#93a49a;
+  --c-canvas-bg:#16241d;--c-leyenda-bg:#15281f;
+  --c-tarjeta-bg:#182720;--c-tarjeta-border:#33362a;--c-tarjeta-accent1:#4caf7c;--c-tarjeta-accent2:#5c8da5;--c-tarjeta-accent3:#d3971b;
+  --c-tarjeta-val-bg:#152820;--c-tarjeta-val-border:#26392f;--c-tarjeta-val-accent:#3c9c68;
+  --c-nivel-bg:#1c3227;--c-nivel-text:#a6e3c4;
+  --c-nivel-n1-bg:#204331;--c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+  --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;--c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;--c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+  --c-opcion-border:#26392f;--c-enlaces-link:#6cc2e8;
+  --c-tipo-enlace-bg:#5a6c62;--c-tipo-enlace-estudio:#5c8da5;--c-tipo-enlace-empresa:#2f8055;--c-tipo-enlace-normativa:#a3822f;--c-tipo-enlace-proyecto:#7a6fb0;--c-tipo-enlace-herramienta:#a85c4c;
+  --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+  --c-caja-total-bg:#152830;--c-caja-total-border:#274456;
+  --c-origen-bg:#152a37;--c-origen-text:#8fc2da;--c-origen-border:#274456;
+  --c-cantidad-tarjeta-bg:#15281f;--c-cantidad-tarjeta-text:#dce9e1;
+  --c-reparto-bg:#152830;--c-enlace-boton:#6cc2e8;
+  --c-tr-total-bg:#1a3327;--c-tr-subtotal-bg:#182720;
+}
+body{font-family:Arial,sans-serif;margin:0;background:var(--c-bg);color:var(--c-text)}
+main{max-width:1180px;margin:auto;padding:24px}
+section{background:var(--c-surface);padding:22px;margin-bottom:18px;border-radius:14px;box-shadow:0 2px 10px var(--c-shadow)}
+h1{margin-top:0;color:var(--c-h1)}
+h2{color:var(--c-h2)}
+h3{color:var(--c-h3);margin-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+label{display:block;font-weight:bold;margin:8px 0 5px}
+input,select{width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text)}
+input:focus,select:focus{outline:2px solid var(--c-focus)}
+input[type=checkbox]{width:auto;margin-right:8px}
+button{margin-top:15px;margin-right:8px;padding:11px 16px;color:#fff;background:var(--c-btn-bg);border:0;border-radius:8px;cursor:pointer}
+button:hover{background:var(--c-btn-bg-hover)}
+button.secundario{background:var(--c-btn-secondary-bg)}
+button.peligro{background:var(--c-btn-peligro-bg);margin-top:0;padding:8px 12px}
+.aviso{padding:12px;margin-top:12px;background:var(--c-aviso-bg);border-left:5px solid var(--c-aviso-border)}
+.advertencia{padding:12px;margin-top:12px;background:var(--c-advertencia-bg);border-left:5px solid var(--c-advertencia-border)}
+.explicacion{color:var(--c-explicacion-text);font-size:14px;line-height:1.5;margin-top:6px}
+.fuente{color:var(--c-fuente-text);font-size:12px}
+.oculto{display:none!important}
+.indicadores{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.indicador{padding:14px;background:var(--c-indicadores-bg);border-radius:9px}
+.indicador .valor{font-size:23px;font-weight:bold;color:var(--c-indicador-valor)}
+.pequeno{font-size:12px;color:var(--c-pequeno-text)}
+.flujo{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.nodo{padding:11px;background:var(--c-nodo-bg);border:1px solid var(--c-nodo-border);border-radius:9px}
+.flecha{font-size:20px;color:var(--c-flecha)}
+.salidas{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-size:12px;padding:5px 9px;border-radius:12px;border:1px solid var(--c-border)}
+.chip.producto{background:var(--c-chip-producto-bg);border-color:var(--c-chip-producto-border)}
+.chip.subproducto{background:var(--c-chip-subproducto-bg);border-color:var(--c-chip-subproducto-border)}
+.chip.residuo{background:var(--c-chip-residuo-bg);border-color:var(--c-chip-residuo-border)}
+.chip.efluente{background:var(--c-chip-efluente-bg);border-color:var(--c-chip-efluente-border)}
+.croquis-ruta{border:1px solid var(--c-croquis-border);border-radius:10px;padding:14px;margin-bottom:14px}
+.tabla-contenedor{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:14px}
+th,td{padding:9px;border-bottom:1px solid var(--c-tr-border);text-align:left;vertical-align:top}
+th{background:var(--c-th-bg)}
+td.num{text-align:right;white-space:nowrap}
+.fila-producto{display:grid;grid-template-columns:2.2fr 1.6fr 1.3fr 1.1fr auto;gap:10px;align-items:end;padding:12px;margin-bottom:10px;background:var(--c-fila-producto-bg);border:1px solid var(--c-fila-producto-border);border-radius:10px}
+.fila-producto .meta{grid-column:1/-1;font-size:12px;color:var(--c-fila-producto-meta)}
+@media(max-width:800px){.fila-producto{grid-template-columns:1fr}}
+.grafico-contenedor{display:flex;justify-content:center;align-items:center;margin:20px auto;max-width:520px}
+#graficoResiduos{max-width:100%;background:var(--c-canvas-bg);border-radius:14px}
+.leyenda-grafico{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px}
+.leyenda-grafico span{background:var(--c-leyenda-bg);padding:6px 9px;border-radius:12px;font-size:12px}
+.tarjetas-residuos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.tarjeta-residuo{background:var(--c-tarjeta-bg);border:1px solid var(--c-tarjeta-border);border-left:4px solid var(--c-tarjeta-accent1);border-radius:10px;padding:16px;line-height:1.5}
+.tarjeta-residuo:nth-child(2n){border-left-color:var(--c-tarjeta-accent2)}
+.tarjeta-residuo:nth-child(3n){border-left-color:var(--c-tarjeta-accent3)}
+.tarjeta-val{background:var(--c-tarjeta-val-bg);border:1px solid var(--c-tarjeta-val-border);border-left:4px solid var(--c-tarjeta-val-accent);border-radius:10px;padding:16px;margin-bottom:14px;line-height:1.5}
+.nivel{display:inline-block;font-size:11px;font-weight:bold;padding:3px 8px;border-radius:10px;background:var(--c-nivel-bg);color:var(--c-nivel-text);margin-right:6px}
+.nivel.n1{background:var(--c-nivel-n1-bg)}.nivel.n2{background:var(--c-nivel-n2-bg);color:var(--c-nivel-n2-text)}.nivel.n3{background:var(--c-nivel-n3-bg);color:var(--c-nivel-n3-text)}.nivel.n4{background:var(--c-nivel-n4-bg);color:var(--c-nivel-n4-text)}.nivel.n5{background:var(--c-nivel-n5-bg);color:var(--c-nivel-n5-text)}
+.opcion{padding:8px 0;border-bottom:1px dashed var(--c-opcion-border)}
+.opcion:last-child{border-bottom:0}
+.enlaces{margin:4px 0 0 0;padding-left:18px;font-size:13px}
+.enlaces a{color:var(--c-enlaces-link)}
+.tipo-enlace{font-size:11px;color:#fff;background:var(--c-tipo-enlace-bg);border-radius:8px;padding:1px 6px;margin-right:4px}
+.tipo-enlace.Estudio{background:var(--c-tipo-enlace-estudio)}.tipo-enlace.Empresa{background:var(--c-tipo-enlace-empresa)}.tipo-enlace.Normativa{background:var(--c-tipo-enlace-normativa)}.tipo-enlace.Proyecto{background:var(--c-tipo-enlace-proyecto)}.tipo-enlace.Herramienta{background:var(--c-tipo-enlace-herramienta)}
+.cer{display:inline-block;background:var(--c-cer-bg);border:1px solid var(--c-cer-border);border-radius:6px;padding:1px 6px;margin:1px 2px;font-size:12px;white-space:nowrap}
+.cer.pel{border-color:var(--c-cer-pel-border);color:var(--c-cer-pel-text)}
+.factor-input{width:90px;padding:6px}
+details{margin-top:10px}
+summary{cursor:pointer;font-weight:bold;color:var(--c-h2)}
+.caja-total{background:var(--c-caja-total-bg);border:1px solid var(--c-caja-total-border);border-radius:10px;padding:12px 14px;margin-bottom:14px}
+.origen{display:flex;flex-wrap:wrap;gap:5px;margin:4px 0 8px}
+.origen span{background:var(--c-origen-bg);color:var(--c-origen-text);border:1px solid var(--c-origen-border);border-radius:12px;padding:2px 9px;font-size:12px;font-weight:bold}
+.cantidad-tarjeta{font-size:13px;color:var(--c-cantidad-tarjeta-text);background:var(--c-cantidad-tarjeta-bg);border-radius:8px;padding:4px 8px;display:inline-block}
+.reparto{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--c-reparto-bg);border-radius:8px;padding:6px 10px;font-size:13px}
+.reparto input{width:90px;padding:5px}
+.enlace-boton{background:none;border:0;color:var(--c-enlace-boton);text-decoration:underline;cursor:pointer;padding:0;font-size:13px;margin:0}
+tr.total td{font-weight:bold;background:var(--c-tr-total-bg)}
+tr.subtotal td{background:var(--c-tr-subtotal-bg)}
+textarea{width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-family:inherit}
+</style>
+<main>
+
+<section>
+<h1>Calculadora de residuos · CNAE 10.32</h1>
+<p><strong>Elaboración de zumos de frutas y hortalizas (grupo 10.3, procesado de frutas y hortalizas).</strong></p>
+<div class="grid">
+<div>
+<p><strong>10.32 — Elaboración de zumos de frutas y hortalizas</strong><br>
+Zumos exprimidos (NFC), concentrados, mostos de uva sin fermentar, néctares y purés para bebidas, y zumos reconstituidos y mezclas a partir de concentrado.</p>
+<p class="pequeno">CNAE-2009 10.32 → CNAE-2025 10.32. Correspondencia 1:1.</p>
+</div>
+<div>
+<p><strong>Dos tipos de planta</strong><br>
+<b>Desde fruta:</b> exprimidoras y prensadoras. Aquí se genera casi toda la corteza y el orujo.<br>
+<b>Desde concentrado:</b> envasadoras que diluyen concentrados y purés. Generan sobre todo lodos, rechazos y envases.</p>
+</div>
+</div>
+<div class="aviso">
+Esta herramienta proporciona una estimación técnica. Los códigos CER/LER son orientativos: una misma corriente puede corresponder a más de un código según su origen, composición, destino y el criterio de la administración. La corteza de cítricos y el orujo que se venden para pienso se gestionan casi siempre como subproductos y no se declaran como residuo.
+</div>
+</section>
+
+<section>
+<h2>1. Configuración general</h2>
+<div class="grid">
+<div>
+<label for="ambito">Ámbito del cálculo</label>
+<select id="ambito" onchange="actualizarInterfaz()">
+<option value="instalacion">Una instalación / empresa</option>
+<option value="territorio">Comarca o zona</option>
+</select>
+</div>
+<div id="campoNumInstalaciones" class="oculto">
+<label for="numInstalaciones">Número de instalaciones en la zona (opcional)</label>
+<input id="numInstalaciones" type="number" min="0" step="1" value="0" oninput="calcular()">
+<div class="pequeno">Si lo indicas, se muestra también la media por instalación.</div>
+</div>
+<div>
+<label for="gestionSub">Gestión de corteza, orujo, destrío, raspón y huesos</label>
+<select id="gestionSub" onchange="calcular()">
+<option value="subproducto">Como subproducto (pienso, pellets, alcoholera, biomasa)</option>
+<option value="residuo">Como residuo (entrega a gestor)</option>
+</select>
+</div>
+<div>
+<label style="margin-top:34px"><input type="checkbox" id="incluirSub" onchange="calcular()">La facturación incluye la venta de subproductos y coproductos</label>
+<div class="pequeno">Si se marca, la facturación se reparte entre el producto principal y los subproductos vendidos, según sus precios PRODCOM.</div>
+</div>
+</div>
+<div class="explicacion">
+El precio industrial de referencia se carga automáticamente según el producto (valor de producción vendida / cantidad vendida, PRODCOM). Es editable y sin IVA.
+</div>
+</section>
+
+<section>
+<h2 id="tituloEntrada">2. Productos de la instalación</h2>
+<p class="explicacion" id="textoEntrada">Añade una fila por cada producto que fabrique la instalación. En cada fila puedes introducir la facturación, las toneladas de producto o las toneladas de materia prima procesada.</p>
+<div class="caja-total">
+<div class="grid">
+<div>
+<label for="factTotal" id="etiquetaFactTotal">Facturación total de la empresa (€/año, opcional)</label>
+<input id="factTotal" type="number" min="0" step="any" value="" placeholder="Ej.: 25000000" oninput="calcular()">
+</div>
+<div class="pequeno" style="align-self:end">Si solo conoces la facturación total, introdúcela aquí: se reparte entre los productos con «Facturación + precio» según su peso en la producción. El % de producción de cada producto se calcula con la producción media española (PRODCOM) y puedes modificarlo. También puedes fijar a mano la facturación de un producto; el resto se reparte entre los demás.</div>
+</div>
+</div>
+<div id="filasProductos"></div>
+<div id="avisoReparto"></div>
+<button onclick="anadirFila()">+ Añadir producto</button>
+<button class="secundario" onclick="exportarCSV()">Ver / copiar resultados (CSV)</button>
+<p class="pequeno">Los resultados se actualizan automáticamente al modificar cualquier dato.</p>
+<div id="cajaCSV" class="oculto" style="margin-top:12px">
+<label for="areaCSV">Resultados en formato CSV — selecciona y copia, o pulsa «Copiar al portapapeles», y pégalo en tu hoja de cálculo</label>
+<textarea id="areaCSV" readonly rows="8" style="font-family:monospace;font-size:12px" onclick="this.select()"></textarea>
+<button class="secundario" onclick="copiarCSV()">Copiar al portapapeles</button>
+<span id="csvEstado" class="pequeno"></span>
+</div>
+</section>
+
+<section>
+<h2>3. Croquis del proceso</h2>
+<p class="explicacion">Se muestra el croquis de cada proceso utilizado por los productos seleccionados, con sus salidas: <span class="chip producto">producto</span> <span class="chip subproducto">subproducto</span> <span class="chip residuo">residuo</span> <span class="chip efluente">efluente líquido</span></p>
+<div id="croquis"></div>
+</section>
+
+<section>
+<h2>4. Resultados generales</h2>
+<div id="indicadores" class="indicadores"></div>
+<div id="mensajes"></div>
+</section>
+
+<section>
+<h2>5. Producción media estimada por producto</h2>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Producto</th><th>CNAE</th><th>PRODCOM</th><th>Modo de entrada</th><th>Precio usado</th><th>Producto principal (cantidad/año)</th><th>Materia prima procesada (t/año)</th><th>Rendimiento principal</th><th>% de la producción</th></tr></thead>
+<tbody id="tablaProduccion"></tbody>
+</table>
+</div>
+</section>
+
+<section>
+<h2>6. Resultados desglosados por corriente</h2>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Corriente</th><th>Proceso</th><th>Clasificación</th><th>Cantidad</th><th>Factor s/ materia prima</th><th>CER/LER candidatos</th><th>Valorización principal</th><th>Confianza</th></tr></thead>
+<tbody id="tablaResultados"></tbody>
+</table>
+</div>
+<h3 style="margin-top:22px">Residuos auxiliares y transversales</h3>
+<p class="explicacion">No forman parte del gráfico. No hay ratios publicados fiables por tonelada de fruta; se listan los que aparecen en las autorizaciones ambientales y en la calculadora anterior.</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Residuo</th><th>Origen</th><th>Cantidad estimada</th><th>CER/LER</th><th>Gestión habitual</th></tr></thead>
+<tbody id="tablaAuxiliares"></tbody>
+</table>
+</div>
+<h3 style="margin-top:22px" id="tituloTotales">Totales por tipo</h3>
+<p class="explicacion">Suma de todas las corrientes anteriores agrupadas por tipo, para tener la visión global de la empresa o la zona. Los porcentajes se calculan sobre el total de salidas en toneladas (sin efluentes).</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Tipo</th><th>Cantidad</th><th>kg por t de materia prima</th><th>% sobre salidas (t)</th><th>Corrientes incluidas</th></tr></thead>
+<tbody id="tablaTotales"></tbody>
+</table>
+</div>
+</section>
+
+<section>
+<h2>7. Distribución de corrientes</h2>
+<div class="grid">
+<div>
+<label for="filtroGrafico">Mostrar en el gráfico</label>
+<select id="filtroGrafico" onchange="calcular()">
+<option value="balance">Producto, subproductos y residuos (balance de masa)</option>
+<option value="todas">Subproductos y residuos (sin producto principal)</option>
+<option value="residuos">Solo corrientes clasificadas como residuo</option>
+<option value="subproductos">Solo subproductos</option>
+</select>
+</div>
+</div>
+<p class="explicacion" id="notaGrafico"></p>
+<div class="grafico-contenedor"><canvas id="graficoResiduos" width="460" height="460"></canvas></div>
+<div id="leyendaGrafico" class="leyenda-grafico"></div>
+</section>
+
+<section>
+<h2>8. Descripción de las corrientes</h2>
+<p class="explicacion">Se muestran las corrientes presentes en los procesos seleccionados. En cada tarjeta se indica de qué producto fabricado procede y la cantidad estimada.</p>
+<div id="tarjetas" class="tarjetas-residuos"></div>
+<details style="margin-top:16px">
+<summary>Diferencia entre corteza, orujo, finos, celdillas y lodos</summary>
+<p class="explicacion"><strong>Corteza (cítricos):</strong> piel, membranas y semillas que salen de las extractoras; es la corriente más grande.<br>
+<strong>Orujo o pomaza:</strong> torta de prensado de manzana, pera, uva u hortalizas.<br>
+<strong>Celdillas:</strong> sacos de zumo separados en el finisher; se venden como coproducto.<br>
+<strong>Finos:</strong> pulpa fina y fondos de centrífuga y clarificación.<br>
+<strong>Lodos:</strong> fangos de la depuradora propia; no se deben confundir con los finos.</p>
+</details>
+</section>
+
+<section>
+<h2>9. Opciones de valorización</h2>
+<p class="explicacion">Opciones ordenadas según la jerarquía de residuos y el principio de cascada: <span class="nivel n1">Prevención / alimentación humana</span><span class="nivel n2">Alimentación animal</span><span class="nivel n3">Material y bioproductos</span><span class="nivel n4">Energía y biogás</span><span class="nivel n5">Suelo / compost</span>. Cada opción incluye enlaces a estudios, industrias, proyectos o normativa.</p>
+<div class="grid">
+<div>
+<label for="filtroVal">Mostrar opciones para</label>
+<select id="filtroVal" onchange="pintarValorizacion()">
+<option value="presentes">Solo las corrientes de los procesos seleccionados</option>
+<option value="todas">Todas las corrientes de 10.32</option>
+</select>
+</div>
+</div>
+<div id="valorizacion" style="margin-top:14px"></div>
+<h3>Marco para decidir si es subproducto o residuo</h3>
+<ul class="enlaces" id="enlacesMarco"></ul>
+</section>
+
+<section>
+<h2>10. Referencia de códigos CER/LER utilizados</h2>
+<p class="explicacion">Lista Europea de Residuos (Decisión 2014/955/UE). El subcapítulo 02 03 incluye la preparación y elaboración de frutas y hortalizas; algunas autorizaciones usan el 02 07 (bebidas) o el 02 01 03 (tejidos vegetales). Los códigos con asterisco son peligrosos.</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Código</th><th>Descripción oficial</th><th>Corrientes de este CNAE a las que puede aplicarse</th></tr></thead>
+<tbody id="tablaCER"></tbody>
+</table>
+</div>
+<div id="bloqueObservados"></div>
+</section>
+
+<section>
+<h2>11. Precios de referencia PRODCOM</h2>
+<p class="explicacion">Precio implícito = valor de producción vendida / cantidad vendida (precio neto de fábrica, sin IVA), en €/l. Datos de Eurostat PRODCOM (DS-059358) para España (ES) y UE-27. Cuando el dato español es confidencial se utiliza el de la UE-27.</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Producto</th><th>PRODCOM</th><th>ES 2021</th><th>ES 2022</th><th>ES 2023</th><th>ES 2024</th><th>UE 2024</th><th>Valor inicial</th><th>Origen del valor inicial</th></tr></thead>
+<tbody id="tablaPrecios"></tbody>
+</table>
+</div>
+<p class="fuente">Fuente: <a href="https://ec.europa.eu/eurostat/databrowser/view/ds-059358/default/table?lang=en" target="_blank">Eurostat PRODCOM, Sold production, exports and imports (DS-059358)</a>, consulta septiembre 2026.</p>
+</section>
+
+<section>
+<h2>12. Factores técnicos editables</h2>
+<p class="explicacion">Cantidad de cada corriente por tonelada de materia prima (fruta, hortaliza o concentrado): hl/t para el zumo, t/t para los sólidos y m³/t para los efluentes. Valores provisionales basados en bibliografía, en la calculadora anterior y en datos de plantas reales; se pueden modificar y el cálculo se actualiza al instante.</p>
+<button class="secundario" onclick="restablecerFactores()">Restablecer valores iniciales</button>
+<div id="factores"></div>
+</section>
+
+<section>
+<h2>13. Fuentes y supuestos</h2>
+<ul id="listaFuentes" style="line-height:1.6"></ul>
+<p class="fuente">PRODCOM utiliza el valor de producción vendida a precio neto de fábrica. No descuenta los costes de producción ni representa el beneficio. Las producciones estimadas a partir de la facturación son orientativas.</p>
+</section>
+
+</main>
+
+<script>
+const PRECIOS_PRODCOM = {"10321100": {"2021": {"es": 0.614, "ue": 0.583}, "2022": {"es": 0.683, "ue": 0.533}, "2023": {"es": 0.79, "ue": 0.833}, "2024": {"es": 0.838, "ue": 0.9}}, "10321220": {"2021": {"es": 0.629, "ue": 0.757}, "2022": {"es": null, "ue": 0.819}, "2023": {"es": null, "ue": 1.015}, "2024": {"es": 1.031, "ue": 1.258}}, "10321230": {"2021": {"es": 1.607, "ue": 1.083}, "2022": {"es": 1.867, "ue": 1.579}, "2023": {"es": null, "ue": 2.0}, "2024": {"es": null, "ue": 3.231}}, "10321300": {"2021": {"es": 0.913, "ue": 1.011}, "2022": {"es": null, "ue": 1.129}, "2023": {"es": null, "ue": 1.28}, "2024": {"es": null, "ue": 1.348}}, "10321400": {"2021": {"es": 0.939, "ue": 1.0}, "2022": {"es": 1.198, "ue": 1.089}, "2023": {"es": null, "ue": 1.209}, "2024": {"es": null, "ue": 1.256}}, "10321500": {"2021": {"es": null, "ue": 0.533}, "2022": {"es": null, "ue": 0.4}, "2023": {"es": null, "ue": 0.667}, "2024": {"es": null, "ue": 0.745}}, "10321600": {"2021": {"es": 0.672, "ue": 0.714}, "2022": {"es": 0.774, "ue": 0.758}, "2023": {"es": null, "ue": 0.861}, "2024": {"es": 0.994, "ue": 1.029}}, "10321700": {"2021": {"es": null, "ue": 1.001}, "2022": {"es": null, "ue": 1.199}, "2023": {"es": null, "ue": 1.312}, "2024": {"es": 1.288, "ue": 1.549}}, "10321910": {"2021": {"es": 0.657, "ue": 0.822}, "2022": {"es": null, "ue": 1.026}, "2023": {"es": null, "ue": 1.099}, "2024": {"es": null, "ue": 1.255}}, "10321920": {"2021": {"es": 0.57, "ue": 1.024}, "2022": {"es": 0.633, "ue": 1.098}, "2023": {"es": 0.73, "ue": 1.202}, "2024": {"es": 0.674, "ue": 1.203}}, "10321930": {"2021": {"es": 0.995, "ue": 1.048}, "2022": {"es": 0.806, "ue": 1.434}, "2023": {"es": null, "ue": 1.476}, "2024": {"es": 1.211, "ue": 1.389}}};
+const CANT_PRODCOM = {"10611100": {"es": {"2021": 15148000.0, "2022": 59082000.0, "2023": 11346000.0, "2024": 66290000.0}, "ue": {"2021": 150000000.0, "2022": 234000000.0, "2023": 152000000.0, "2024": 189000000.0}}, "10611230": {"es": {"2021": 908547000.0, "2022": 984225000.0}, "ue": {"2021": 2820000000.0, "2022": 2769264834.0, "2023": 2100000000.0, "2024": 2100000000.0}}, "10612200": {"es": {"2021": 148416000.0, "2022": 100376000.0, "2023": 81207000.0, "2024": 152882000.0}, "ue": {"2021": 2820588456.0, "2022": 2520000000.0, "2023": 2400000000.0, "2024": 2340000000.0}}, "10612400": {"es": {"2021": 77909000.0, "2022": 88951000.0, "2023": 121986000.0, "2024": 133016000.0}, "ue": {"2021": 1800000000.0, "2022": 1816681145.0, "2023": 1890000000.0, "2024": 1901052510.0}}, "10613133": {"es": {"2021": 367953000.0, "2022": 367543000.0, "2023": 403485000.0, "2024": 348107000.0}, "ue": {"2021": 3330000000.0, "2022": 2850000000.0, "2023": 3502762589.0, "2024": 4489224759.0}}, "10613230": {"es": {"2021": 124486000.0, "2022": 295421000.0, "2023": 175522000.0, "2024": 204326000.0}, "ue": {"2021": 840000000.0, "2022": 950000000.0, "2023": 960000000.0, "2024": 1080000000.0}}, "10613333": {"es": {"2023": 182124000.0, "2024": 205025000.0}, "ue": {"2021": 1697681389.0, "2022": 1975684781.0, "2023": 2214979205.0, "2024": 1893243243.0}}, "10621111": {"es": {"2021": 0.0, "2022": 0.0, "2023": 0.0, "2024": 0.0}, "ue": {"2021": 1531665564.0, "2022": 1419958089.0, "2023": 1389520668.0, "2024": 1520892735.0}}, "10621113": {"es": {"2021": 505868632.0, "2022": 475284355.0, "2023": 400117803.0, "2024": 371350013.0}, "ue": {"2021": 1710000000.0, "2022": 1800000000.0, "2023": 1260000000.0, "2024": 1400000000.0}}, "10621115": {"es": {"2024": 0.0}, "ue": {"2021": 1200000000.0, "2022": 1260000000.0, "2023": 1000000000.0, "2024": 1130000000.0}}, "10621150": {"es": {"2021": 0.0, "2022": 0.0, "2023": 0.0, "2024": 0.0}, "ue": {"2021": 742604585.0, "2022": 658925008.0, "2023": 567258325.0, "2024": 671469087.0}}, "10621170": {"es": {"2021": 50683223.0, "2022": 57250905.0, "2024": 45160124.0}, "ue": {"2021": 2000000000.0, "2022": 2083453680.0, "2023": 2000000000.0, "2024": 1800000000.0}}, "10621310": {"es": {"2021": 272402098.0, "2022": 286789448.0, "2023": 257957425.0}, "ue": {"2021": 3788849286.0, "2022": 3508701373.0, "2023": 2800000000.0, "2024": 3200000000.0}}, "10621320": {"es": {"2021": 50020943.0, "2022": 64442866.0, "2023": 55679407.0, "2024": 66004872.0}, "ue": {"2021": 1031371669.0, "2022": 940080330.0, "2023": 806843793.0, "2024": 844433296.0}}, "10711200": {"es": {"2021": 799154000.0, "2022": 783733000.0, "2023": 806133000.0, "2024": 812645000.0}, "ue": {"2021": 6600000000.0, "2022": 6859886141.0, "2023": 7080000000.0, "2024": 7470000000.0}}, "10721130": {"es": {"2021": 350000.0, "2022": 197000.0}, "ue": {"2021": 180000000.0, "2022": 180000000.0, "2023": 180000000.0, "2024": 160000000.0}}, "10721150": {"es": {"2021": 234672000.0, "2022": 244208000.0, "2023": 256511000.0, "2024": 259668000.0}, "ue": {"2021": 860000000.0, "2022": 978000000.0, "2023": 1000000000.0, "2024": 1000000000.0}}, "10721230": {"es": {"2021": 1640000.0, "2022": 995000.0, "2023": 1488000.0, "2024": 1002000.0}, "ue": {"2021": 210769024.0, "2022": 212125474.0, "2023": 214430678.0, "2024": 201559801.0}}, "10721253": {"es": {"2021": 200803000.0, "2022": 155051000.0, "2023": 158437000.0, "2024": 150031000.0}, "ue": {"2021": 1600000000.0, "2022": 1617934003.0, "2023": 1600000000.0, "2024": 1594615459.0}}, "10721255": {"es": {"2021": 309205000.0, "2022": 303555000.0, "2023": 309879000.0, "2024": 307023000.0}, "ue": {"2021": 1766835637.0, "2022": 1799226880.0, "2023": 1766832947.0, "2024": 1765117554.0}}, "10721257": {"es": {"2021": 2250511.0, "2022": 4878295.0, "2023": 5349563.0, "2024": 5711449.0}, "ue": {"2021": 102629517.0, "2022": 101646704.0, "2023": 118455453.0, "2024": 118817348.0}}, "10721259": {"es": {"2021": 28046000.0, "2022": 41228000.0, "2023": 91927000.0, "2024": 99549000.0}, "ue": {"2021": 407272041.0, "2022": 459553021.0, "2023": 523260665.0, "2024": 564512015.0}}, "10721940": {"es": {"2021": 11054233.0, "2022": 9984133.0, "2023": 8852931.0, "2024": 9071526.0}, "ue": {"2021": 251609667.0, "2022": 258863213.0, "2023": 268570713.0, "2024": 311357724.0}}, "10721950": {"es": {"2021": 64493864.0, "2022": 75512159.0, "2023": 60007589.0, "2024": 69556623.0}, "ue": {"2021": 800000000.0, "2022": 819084910.0, "2023": 848212142.0, "2024": 820500546.0}}, "10721990": {"es": {"2021": 598019757.0, "2022": 605890354.0, "2023": 643675134.0, "2024": 700882724.0}, "ue": {"2021": 2080000000.0, "2022": 2400000000.0, "2023": 2204961237.0, "2024": 2400000000.0}}, "10821100": {"es": {"2021": 19460000.0, "2022": 20542000.0, "2023": 20975000.0, "2024": 20202000.0}, "ue": {"2021": 319237143.0, "2022": 332689247.0, "2023": 346837111.0, "2024": 354345260.0}}, "10821200": {"es": {"2021": 19533000.0, "2022": 19825000.0, "2023": 19061000.0, "2024": 23281000.0}, "ue": {"2021": 600000000.0, "2022": 400000000.0, "2023": 400000000.0, "2024": 450000000.0}}, "10821300": {"es": {"2021": 112113000.0, "2022": 103353000.0, "2023": 103237000.0, "2024": 116199000.0}, "ue": {"2021": 553877221.0, "2022": 400000000.0, "2023": 400000000.0, "2024": 527618089.0}}, "10821400": {"es": {"2021": 52258000.0, "2022": 55158000.0, "2023": 51899000.0, "2024": 53816000.0}, "ue": {"2021": 128000000.0, "2022": 140000000.0, "2023": 128000000.0, "2024": 119000000.0}}, "10822130": {"es": {"2021": 70203000.0, "2022": 56580000.0, "2023": 55456000.0, "2024": 59119000.0}, "ue": {"2021": 1320000000.0, "2022": 1291173275.0, "2023": 1260000000.0, "2024": 1400000000.0}}, "10822170": {"es": {"2021": 53741000.0, "2022": 49548000.0, "2023": 45153000.0, "2024": 44900000.0}, "ue": {"2021": 120000000.0, "2022": 154964832.0, "2023": 162949906.0, "2024": 157463152.0}}, "10822239": {"es": {"2021": 68604000.0, "2022": 65924000.0, "2023": 68268000.0, "2024": 49558000.0}, "ue": {"2021": 490161617.0, "2022": 488415972.0, "2023": 501994823.0, "2024": 466616020.0}}, "10822245": {"es": {"2021": 13111000.0, "2022": 12523000.0, "2023": 14294000.0, "2024": 13327000.0}, "ue": {"2021": 360000000.0, "2022": 381028282.0, "2023": 397898019.0, "2024": 360000000.0}}, "10822255": {"es": {"2021": 4554000.0, "2022": 4301000.0, "2023": 4976000.0, "2024": 5188000.0}, "ue": {"2021": 276967520.0, "2022": 300000000.0, "2023": 283774884.0, "2024": 279834565.0}}, "10822260": {"es": {"2021": 8244000.0, "2022": 13410000.0, "2023": 8218000.0, "2024": 8414000.0}, "ue": {"2021": 194600000.0, "2022": 202000000.0, "2023": 224000000.0, "2024": 216000000.0}}, "10822270": {"es": {"2021": 11438000.0, "2022": 11102000.0, "2023": 7517000.0, "2024": 11110000.0}, "ue": {"2021": 616042096.0, "2022": 540000000.0, "2023": 800000000.0, "2024": 636515614.0}}, "10822310": {"es": {"2021": 5852000.0, "2022": 6271000.0, "2023": 8970000.0, "2024": 8125000.0}, "ue": {"2021": 50281959.0, "2022": 47153694.0, "2023": 50000925.0, "2024": 46510406.0}}, "10822320": {"es": {"2021": 39055000.0, "2022": 45818000.0, "2023": 42659000.0, "2024": 46371000.0}, "ue": {"2021": 90000000.0, "2022": 96000000.0, "2023": 82698067.0, "2024": 86371693.0}}, "10822330": {"es": {"2021": 8931000.0, "2022": 11859000.0, "2023": 9831000.0, "2024": 11294000.0}, "ue": {"2021": 138000000.0, "2022": 130400000.0, "2023": 161000000.0, "2024": 155000000.0}}, "10822363": {"es": {"2021": 10192000.0, "2022": 10609000.0, "2023": 10899000.0, "2024": 10232000.0}, "ue": {"2021": 150000000.0, "2022": 154000000.0, "2023": 150000000.0, "2024": 152000000.0}}, "10822365": {"es": {"2021": 226662000.0, "2022": 264273000.0, "2023": 270110000.0, "2024": 256625000.0}, "ue": {"2021": 1011000000.0, "2022": 1060000000.0, "2023": 1081523367.0, "2024": 1096627391.0}}, "10822375": {"es": {"2021": 2637000.0, "2022": 3361000.0, "2023": 4529000.0, "2024": 4416000.0}, "ue": {"2021": 200000000.0, "2022": 207000000.0, "2023": 240000000.0, "2024": 240000000.0}}, "10822391": {"es": {"2022": 706000.0, "2024": 933000.0}, "ue": {"2022": 280000000.0, "2023": 330822669.0, "2024": 331275447.0}}, "10822400": {"es": {"2021": 8806000.0, "2022": 7931000.0, "2023": 8586000.0, "2024": 10079000.0}, "ue": {"2021": 95000000.0, "2022": 90000000.0, "2023": 88000000.0, "2024": 96000000.0}}, "11051000": {"es": {"2021": 3658490000.0, "2022": 3934860000.0, "2023": 4025402000.0, "2024": 4037001000.0}, "ue": {"2021": 32000000000.0, "2022": 34205238969.0, "2023": 32472673759.0, "2024": 32617044821.0}}, "11051010": {"es": {"2021": 264697000.0, "2022": 298692000.0, "2023": 253598000.0, "2024": 267418000.0}, "ue": {"2021": 1600000000.0, "2022": 1600000000.0, "2023": 1817127425.0, "2024": 1979766261.0}}, "11061030": {"es": {"2024": 439559000.0}, "ue": {"2021": 7200000000.0, "2022": 7443338107.0, "2023": 7459710258.0, "2024": 7558254505.0}}, "10612100": {"ue": {"2021": 26000000000.0, "2022": 25000000000.0, "2023": 26479206462.0, "2024": 30000000000.0}}, "10711100": {"ue": {"2021": 18000000000.0, "2022": 20000000000.0, "2023": 20262501428.0, "2024": 17537576583.0}}, "11061050": {"ue": {"2021": 243381990.0, "2022": 242470164.0, "2023": 241377641.0, "2024": 244760549.0}}, "10321100": {"es": {"2021": 4504681.0, "2022": 6296599.0, "2023": 5437751.0, "2024": 9912304.0}, "ue": {"2021": 120000000.0, "2022": 150000000.0, "2023": 120000000.0, "2024": 100000000.0}}, "10321210": {"es": {"2021": 666265.0, "2022": 1150589.0, "2023": 684081.0, "2024": 783187.0}, "ue": {"2021": 7440000000.0, "2022": 120000000.0, "2023": 90000000.0, "2024": 60000000.0}}, "10321220": {"es": {"2021": 360220781.0, "2024": 333056681.0}, "ue": {"2021": 2100000000.0, "2022": 2129101054.0, "2023": 1875102365.0, "2024": 1550000000.0}}, "10321230": {"es": {"2021": 33214121.0, "2022": 48054334.0}, "ue": {"2021": 120000000.0, "2022": 168976434.0, "2023": 120000000.0, "2024": 100000000.0}}, "10321300": {"es": {"2021": 9152649.0}, "ue": {"2021": 68360162.0, "2022": 66414868.0, "2023": 56261694.0, "2024": 55620355.0}}, "10321400": {"es": {"2021": 36389213.0, "2022": 36947806.0}, "ue": {"2021": 172000000.0, "2022": 180000000.0, "2023": 174608493.0, "2024": 156829726.0}}, "10321500": {"es": {}, "ue": {"2021": 1500000000.0, "2022": 1500000000.0, "2023": 1200000000.0, "2024": 1057129807.0}}, "10321600": {"es": {"2021": 124389276.0, "2022": 137019302.0, "2024": 161238021.0}, "ue": {"2021": 1950246284.0, "2022": 2142961940.0, "2023": 2170149205.0, "2024": 1920000000.0}}, "10321700": {"es": {"2024": 298013260.0}, "ue": {"2021": 1735045338.0, "2022": 1834124530.0, "2023": 1600000000.0, "2024": 1742964981.0}}, "10321910": {"es": {"2021": 126566878.0}, "ue": {"2021": 233375715.0, "2022": 265807197.0, "2023": 251303526.0, "2024": 258680318.0}}, "10321920": {"es": {"2021": 148394439.0, "2022": 155248268.0, "2023": 165879715.0, "2024": 199324503.0}, "ue": {"2021": 815181779.0, "2022": 876672028.0, "2023": 850817230.0, "2024": 878694041.0}}, "10321930": {"es": {"2021": 199362192.0, "2022": 255607726.0, "2024": 226162154.0}, "ue": {"2021": 1785415646.0, "2022": 1743522869.0, "2023": 1400000000.0, "2024": 1360000000.0}}, "10412210": {"es": {"2021": 1756881000.0, "2022": 1569669000.0, "2023": 968966000.0, "2024": 998790000.0}, "ue": {"2021": 2434779588.0, "2022": 2694483039.0, "2023": 1897402929.0, "2024": 1803300000.0}}, "10412220": {"es": {}, "ue": {"2021": 200000000.0}}, "10412221": {"es": {}, "ue": {"2022": 300000000.0, "2023": 210000000.0, "2024": 270000000.0}}, "10415310": {"es": {}, "ue": {"2021": 400000000.0, "2022": 800000000.0, "2023": 600000000.0, "2024": 450000000.0}}, "10415330": {"es": {}, "ue": {"2021": 200000000.0}}, "10415331": {"es": {"2022": 193452000.0, "2023": 128749000.0, "2024": 72329000.0}, "ue": {"2022": 244000000.0, "2023": 188400000.0, "2024": 116100000.0}}, "10414190": {"es": {"2021": 3886988000.0, "2023": 7167192000.0, "2024": 8617081000.0}, "ue": {"2021": 5588265593.0, "2022": 5848210235.0, "2023": 8920000000.0, "2024": 10094369558.0}}, "10414130": {"es": {"2024": 66235000.0}, "ue": {"2021": 4000000000.0, "2022": 4000000000.0, "2023": 5600000000.0, "2024": 5743589869.0}}, "10415100": {"es": {"2021": 98487000.0, "2022": 126060000.0, "2023": 79093000.0, "2024": 104907000.0}, "ue": {"2021": 1163662249.0, "2022": 1120698818.0, "2023": 1013644533.0, "2024": 1000000000.0}}};
+const L = (t,u,tipo)=>({t,u,tipo});
+const MARCO_COMUN = [
+  L("Ley 7/2022 de residuos y suelos contaminados (art. 4, subproductos; art. 8, jerarquía)","https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809","Normativa"),
+  L("Ley 1/2025 de prevención de las pérdidas y el desperdicio alimentario (jerarquía de prioridades obligatoria)","https://www.boe.es/buscar/act.php?id=BOE-A-2025-6597","Normativa"),
+  L("MITECO: procedimiento de evaluación de subproductos","https://www.miteco.gob.es/va/calidad-y-evaluacion-ambiental/temas/prevencion-y-gestion-residuos/comision-coordinacion/procedimiento-evaluacion-subproducto.html","Normativa"),
+  L("Reglamento (UE) 68/2013, catálogo de materias primas para piensos","https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:02013R0068-20220724","Normativa"),
+  L("Decisión 2014/955/UE, Lista Europea de Residuos","https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32014D0955","Normativa"),
+  L("Borsa de Subproductes de Catalunya","https://www.residuosprofesional.com/bolsa-de-subproductos-catalunya-porta-residurecurs/","Herramienta"),
+  L("BREF de alimentación, bebidas y leche (FDM, 2019): MTD por sector","https://fenix.isa.ulisboa.pt/downloadFile/281547991178956/JRC118627_FDM_Bref_2019_published.pdf","Normativa")
+];
+const CER_COMUN = {
+  "15 01 01":"Envases de papel y cartón","15 01 02":"Envases de plástico","15 01 03":"Envases de madera","15 01 04":"Envases metálicos",
+  "15 01 05":"Envases compuestos","15 01 06":"Envases mezclados","15 01 07":"Envases de vidrio","15 01 10*":"Envases que contienen restos de sustancias peligrosas o están contaminados por ellas",
+  "13 02 05*":"Aceites minerales no clorados de motor, de transmisión mecánica y lubricantes","15 02 02*":"Absorbentes, materiales de filtración, trapos y ropas contaminados por sustancias peligrosas",
+  "17 04 05":"Hierro y acero","20 01 01":"Papel y cartón (fracción municipal)","20 03 01":"Mezclas de residuos municipales"
+};
+const FUENTES_COMUNES = [
+  ["Eurostat PRODCOM DS-059358 (precios implícitos ES y UE-27, 2021–2024)","https://ec.europa.eu/eurostat/databrowser/view/ds-059358/default/table?lang=en"],
+  ["INE: CNAE-2025, estructura y notas explicativas","https://ine.es/daco/daco42/clasificaciones/cnae25/CNAE_2025.pdf"],
+  ["Decisión 2014/955/UE, Lista Europea de Residuos","https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32014D0955"],
+  ["Orden MAM/304/2002, operaciones de valorización y eliminación","https://www.boe.es/buscar/act.php?id=BOE-A-2002-3285"],
+  ["Ley 7/2022 de residuos y suelos contaminados","https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809"],
+  ["BREF FDM 2019 (JRC)","https://fenix.isa.ulisboa.pt/downloadFile/281547991178956/JRC118627_FDM_Bref_2019_published.pdf"]
+];
+
+const CORR = {
+  zumo:{nombre:"Zumo, mosto o néctar",tipo:"producto",unidad:"hl"},
+  concentrado:{nombre:"Zumo concentrado",tipo:"producto",unidad:"hl"},
+  aceite_esencial:{nombre:"Aceite esencial y d-limoneno",tipo:"producto"},
+  celdillas:{nombre:"Celdillas (pulpa de zumo) vendidas",tipo:"producto"},
+  corteza:{nombre:"Corteza de cítricos (piel, membranas y semillas)",tipo:"subproducto",cer:["02 03 04","02 01 03","02 03 99"],val:"corteza",
+    desc:"Lo que queda del fruto tras la extracción: piel, albedo, membranas y semillas, con un 80 % de humedad. Es el 40–50 % del peso de la naranja. Se seca y granula como pulpa de cítricos para piensos, o se vende en fresco a ganaderías.",
+    obs:"En las declaraciones catalanas (DARI) las corrientes vegetales de transformadoras aparecen a menudo como 02 01 03; conceptualmente encaja mejor 02 03 04."},
+  orujo_pom:{nombre:"Orujo o pomaza de prensado (manzana, pera, hortalizas)",tipo:"subproducto",cer:["02 03 04","02 03 99","02 01 03"],val:"pomaza",
+    desc:"Torta de piel, pulpa, pepitas y rabillos que sale de la prensa. En manzana es el 25–30 % de la fruta; en pera y zanahoria algo más. Rica en fibra y pectina."},
+  orujo_uva:{nombre:"Orujo de uva (hollejos y pepitas)",tipo:"subproducto",cer:["02 03 04","02 07 04","02 03 99"],val:"uva",
+    desc:"Hollejos y pepitas tras prensar la uva para mosto. Como en bodega, suele venderse a alcoholeras para destilar y extraer aceite de pepita y tartratos."},
+  raspon:{nombre:"Raspón (escobajo)",tipo:"residuo",sub:true,cer:["02 01 03","02 07 01"],val:"uva",
+    desc:"Estructura leñosa del racimo separada en la despalilladora. Se composta o se usa como biomasa."},
+  piel_trop:{nombre:"Cáscara, corazón y hueso de frutas tropicales",tipo:"subproducto",cer:["02 03 04","02 03 99","02 01 03"],val:"tropical",
+    desc:"En piña: cáscara, corona y corazón (≈ 50 % del fruto). En mango: piel y hueso (35–45 %). Se usan para pienso, bromelina o compost."},
+  hueso_fruta:{nombre:"Huesos de melocotón y albaricoque",tipo:"subproducto",cer:["02 03 99","02 03 04"],val:"hueso",
+    desc:"Huesos separados en la deshuesadora antes del refinado del puré. Biomasa de alto poder calorífico; la almendra puede aprovecharse."},
+  piel_hueso:{nombre:"Piel y restos de refinado (fruta de hueso)",tipo:"subproducto",cer:["02 03 04","02 03 99"],val:"pomaza",
+    desc:"Piel, fibras y pulpa retenidas en las refinadoras al obtener el puré o néctar."},
+  orujo_tom:{nombre:"Orujo de tomate (piel y semillas)",tipo:"subproducto",cer:["02 03 04","02 03 99"],val:"tomate",
+    desc:"Pieles y semillas separadas en las refinadoras (3–5 % del tomate). Rico en licopeno y aceite de semilla."},
+  destrio:{nombre:"Destrío (fruta rechazada en recepción y selección)",tipo:"residuo",sub:true,cer:["02 03 04","02 03 01"],val:"pomaza",
+    desc:"Fruta podrida, dañada o fuera de especificación retirada en las mesas de selección. Suele mezclarse con la corteza u orujo para pienso o compost."},
+  finos:{nombre:"Finos de proceso (pulpa de finisher, fondos de centrífuga y clarificación)",tipo:"residuo",cer:["02 03 04","02 03 99"],val:"pomaza",
+    desc:"Pulpa fina, sólidos de centrífuga, fondos de depósitos y restos de ultrafiltración. No confundir con los lodos de depuradora ni con la corteza u orujo de extracción.",
+    obs:"En la calculadora anterior: 5–112 kg por 1.000 l de zumo según fruta y proceso."},
+  hojas:{nombre:"Hojas, ramas y restos vegetales de recepción",tipo:"residuo",cer:["02 01 03","02 03 01"],val:null,
+    desc:"Restos vegetales que llegan con la fruta y se separan en la descarga y el lavado."},
+  tierras:{nombre:"Tierra y piedras de lavado",tipo:"residuo",inorg:true,cer:["02 03 01","20 02 02"],val:null,
+    desc:"Fracción mineral de las balsas de descarga y lavado; relevante en tomate y zanahoria."},
+  rechazos:{nombre:"Zumo rechazado y producto fuera de especificación",tipo:"residuo",cer:["02 03 04","02 07 04"],val:"aguas",
+    desc:"Arranques y cambios de producto, envases rechazados y lotes no conformes. Si no se recupera acaba en el efluente o se entrega para biogás."},
+  lodos:{nombre:"Lodos de depuradora (EDAR propia)",tipo:"residuo",cer:["02 03 05","02 07 05"],val:"aguas",
+    desc:"Lodos biológicos del tratamiento de las aguas de lavado y limpieza (≈ 20 % de materia seca). Solo en plantas con depuradora propia."},
+  condensados:{nombre:"Condensados de evaporación",tipo:"efluente",unidad:"m³",cer:[],val:"aguas",
+    desc:"Agua evaporada del zumo al concentrarlo (≈ 0,4 m³/t de naranja). Se reutiliza en limpiezas y torres; tras recuperar los aromas es agua casi limpia."},
+  efluente:{nombre:"Aguas residuales (lavado de fruta, CIP, limpiezas)",tipo:"efluente",unidad:"m³",cer:[],val:"aguas",
+    desc:"Agua de descarga y lavado de fruta, limpiezas CIP y enjuagues. Carga orgánica alta y pH ácido. Se expresa en m³ y no se suma a las toneladas. La calculadora anterior daba estos «líquidos de limpieza» como 12 03 01, código poco adecuado; si se gestionan como residuo líquido encaja mejor 02 03 99 o 02 07 99."}
+};
+const E_CIT=["Recepción y descarga","Lavado y selección (destrío)","Calibrado","Extracción con recuperación de aceite esencial","Finisher (celdillas)","Centrifugado","Pasteurización","Almacén aséptico o envasado"];
+const RUTAS = {
+  citricos:{nombre:"Zumo de cítricos exprimido (NFC)",cnae:"10.32",mp:"naranja, pomelo, limón o mandarina",etapas:E_CIT,
+    f:{zumo:4.8,aceite_esencial:0.003,celdillas:0.02,corteza:0.40,destrio:0.02,finos:0.03,hojas:0.003,lodos:0.015,efluente:2.0},
+    conf:{zumo:"Alta",aceite_esencial:"Media",celdillas:"Baja",corteza:"Alta",destrio:"Media",finos:"Media",hojas:"Baja",lodos:"Baja",efluente:"Media"}},
+  citricos_conc:{nombre:"Concentrado de cítricos",cnae:"10.32",mp:"naranja o mandarina",etapas:E_CIT.slice(0,6).concat(["Recuperación de aromas","Evaporación (65 °Brix)","Congelado o aséptico en bidones"]),
+    f:{concentrado:0.67,aceite_esencial:0.003,celdillas:0.02,corteza:0.40,destrio:0.02,finos:0.03,hojas:0.003,lodos:0.015,condensados:0.41,efluente:2.0},
+    conf:{concentrado:"Media",aceite_esencial:"Media",celdillas:"Baja",corteza:"Alta",destrio:"Media",finos:"Media",hojas:"Baja",lodos:"Baja",condensados:"Media",efluente:"Media"}},
+  pomaceas:{nombre:"Zumo de manzana (prensado)",cnae:"10.32",mp:"manzana",etapas:["Recepción y lavado","Selección","Molienda","Maceración enzimática","Prensado","Clarificación y filtración","Pasteurización","Envasado o concentración"],
+    f:{zumo:7.0,orujo_pom:0.25,destrio:0.02,finos:0.02,lodos:0.02,efluente:1.5},
+    conf:{zumo:"Alta",orujo_pom:"Alta",destrio:"Media",finos:"Media",lodos:"Baja",efluente:"Media"}},
+  pera:{nombre:"Zumo de pera (prensado)",cnae:"10.32",mp:"pera",etapas:["Recepción y lavado","Selección","Molienda","Maceración enzimática","Prensado","Clarificación y filtración","Pasteurización","Envasado o concentración"],
+    f:{zumo:6.3,orujo_pom:0.33,destrio:0.02,finos:0.02,lodos:0.02,efluente:1.5},
+    conf:{zumo:"Media",orujo_pom:"Media",destrio:"Media",finos:"Media",lodos:"Baja",efluente:"Baja"}},
+  uva:{nombre:"Mosto y zumo de uva",cnae:"10.32",mp:"uva",etapas:["Recepción","Despalillado","Estrujado","Maceración en caliente","Prensado","Desfangado y clarificación","Pasteurización o sulfitado","Almacén o concentración"],
+    f:{zumo:8.1,orujo_uva:0.12,raspon:0.04,finos:0.03,lodos:0.015,efluente:1.0},
+    conf:{zumo:"Media",orujo_uva:"Media",raspon:"Media",finos:"Baja",lodos:"Baja",efluente:"Baja"}},
+  tropical:{nombre:"Zumo de piña, mango y otras tropicales",cnae:"10.32",mp:"fruta tropical",etapas:["Recepción y lavado","Selección","Pelado y descorazonado o deshuesado","Triturado","Refinado o prensado","Centrifugado","Pasteurización","Envasado"],
+    f:{zumo:4.8,piel_trop:0.45,destrio:0.02,finos:0.03,lodos:0.015,efluente:2.0},
+    conf:{zumo:"Media",piel_trop:"Media",destrio:"Baja",finos:"Baja",lodos:"Baja",efluente:"Baja"}},
+  hueso:{nombre:"Néctar y puré de fruta de hueso",cnae:"10.32",mp:"melocotón o albaricoque",etapas:["Recepción y lavado","Selección","Deshuesado","Escaldado","Refinado (tamizado)","Formulación del néctar","Pasteurización","Envasado"],
+    f:{zumo:7.3,hueso_fruta:0.08,piel_hueso:0.13,destrio:0.02,finos:0.02,lodos:0.015,efluente:1.5},
+    conf:{zumo:"Media",hueso_fruta:"Media",piel_hueso:"Media",destrio:"Media",finos:"Baja",lodos:"Baja",efluente:"Baja"}},
+  tomate:{nombre:"Zumo de tomate",cnae:"10.32",mp:"tomate",etapas:["Descarga en canal de agua","Lavado y selección","Triturado","Escaldado (hot break)","Refinado","Homogeneizado","Pasteurización","Envasado"],
+    f:{zumo:9.0,orujo_tom:0.05,destrio:0.03,tierras:0.005,lodos:0.015,efluente:2.5},
+    conf:{zumo:"Media",orujo_tom:"Media",destrio:"Media",tierras:"Baja",lodos:"Baja",efluente:"Baja"}},
+  hortalizas:{nombre:"Zumo de zanahoria y otras hortalizas",cnae:"10.32",mp:"zanahoria u hortaliza",etapas:["Recepción","Lavado y pelado","Selección","Triturado","Escaldado","Prensado o decantación","Pasteurización","Envasado"],
+    f:{zumo:6.3,orujo_pom:0.33,destrio:0.02,tierras:0.01,lodos:0.015,efluente:2.0},
+    conf:{zumo:"Media",orujo_pom:"Media",destrio:"Baja",tierras:"Baja",lodos:"Baja",efluente:"Baja"}},
+  reconstitucion:{nombre:"Reconstitución y mezclas desde concentrado",cnae:"10.32",mp:"zumo concentrado y purés",etapas:["Recepción de concentrados y purés","Almacén frigorífico","Dilución con agua tratada","Mezcla y formulación","Desaireado","Pasteurización","Envasado"],
+    f:{zumo:54,finos:0.03,rechazos:0.10,lodos:0.20,efluente:10},
+    conf:{zumo:"Media",finos:"Baja",rechazos:"Baja",lodos:"Baja",efluente:"Baja"}}
+};
+const PRODUCTOS = {
+  naranja:{nombre:"Zumo de naranja exprimido (NFC)",cnae:"10.32",prodcom:"10.32.12.20",ruta:"citricos",principal:"zumo",unidad:"hl",precio:1.031,anio:"2024",fuente:"PRODCOM España"},
+  naranja_conc:{nombre:"Zumo de naranja concentrado",cnae:"10.32",prodcom:"10.32.12.30",ruta:"citricos_conc",principal:"concentrado",unidad:"hl",precio:3.231,anio:"2024",fuente:"PRODCOM UE-27; ES confidencial (ES 2022: 1,867 €/l)"},
+  pomelo:{nombre:"Zumo de pomelo",cnae:"10.32",prodcom:"10.32.13.00",ruta:"citricos",principal:"zumo",unidad:"hl",precio:1.348,anio:"2024",fuente:"PRODCOM UE-27; ES confidencial"},
+  limon:{nombre:"Zumo de limón y otros cítricos",cnae:"10.32",prodcom:"10.32.19.10",ruta:"citricos",principal:"zumo",unidad:"hl",precio:1.255,anio:"2024",fuente:"PRODCOM UE-27; ES confidencial"},
+  pina:{nombre:"Zumo de piña",cnae:"10.32",prodcom:"10.32.14.00",ruta:"tropical",principal:"zumo",unidad:"hl",precio:1.256,anio:"2024",fuente:"PRODCOM UE-27; ES confidencial"},
+  uva:{nombre:"Zumo y mosto de uva",cnae:"10.32",prodcom:"10.32.15.00",ruta:"uva",principal:"zumo",unidad:"hl",precio:0.745,anio:"2024",fuente:"PRODCOM UE-27; ES confidencial"},
+  manzana:{nombre:"Zumo de manzana",cnae:"10.32",prodcom:"10.32.16.00",ruta:"pomaceas",principal:"zumo",unidad:"hl",precio:0.994,anio:"2024",fuente:"PRODCOM España"},
+  mezclas:{nombre:"Mezclas de zumos y néctares (desde concentrado)",cnae:"10.32",prodcom:"10.32.17.00",ruta:"reconstitucion",principal:"zumo",unidad:"hl",precio:1.288,anio:"2024",fuente:"PRODCOM España"},
+  pera:{nombre:"Zumo de pera",cnae:"10.32",prodcom:"10.32.19.20",ruta:"pera",principal:"zumo",unidad:"hl",precio:0.674,anio:"2024",fuente:"PRODCOM España (código de otras frutas)"},
+  melocoton:{nombre:"Néctar de melocotón y albaricoque",cnae:"10.32",prodcom:"10.32.19.20",ruta:"hueso",principal:"zumo",unidad:"hl",precio:0.674,anio:"2024",fuente:"PRODCOM España (código de otras frutas)"},
+  zanahoria:{nombre:"Zumo de zanahoria y otras hortalizas",cnae:"10.32",prodcom:"10.32.19.20",ruta:"hortalizas",principal:"zumo",unidad:"hl",precio:0.674,anio:"2024",fuente:"PRODCOM España (código de otras frutas y hortalizas)"},
+  mango:{nombre:"Zumo de mango, maracuyá y otros n.c.o.p.",cnae:"10.32",prodcom:"10.32.19.30",ruta:"tropical",principal:"zumo",unidad:"hl",precio:1.211,anio:"2024",fuente:"PRODCOM España"},
+  tomate:{nombre:"Zumo de tomate",cnae:"10.32",prodcom:"10.32.11.00",ruta:"tomate",principal:"zumo",unidad:"hl",precio:0.838,anio:"2024",fuente:"PRODCOM España"}
+};
+const AUX = [
+  {n:"Envases asépticos y bidones de concentrado",o:"Recepción de concentrados y purés (bag-in-box, bidones de acero)",kg:null,rutas:["reconstitucion"],cer:["15 01 02","15 01 04","15 01 05"],g:"Reutilización / reciclado"},
+  {n:"Papel y cartón",o:"Embalajes, cajas y etiquetas",kg:null,cer:["15 01 01"],g:"Reciclado (R3)"},
+  {n:"Plástico (film, PET, tapones)",o:"Envasado y paletizado",kg:null,cer:["15 01 02"],g:"Reciclado (R3)"},
+  {n:"Envases tipo brik rechazados",o:"Línea de envasado",kg:null,cer:["15 01 05"],g:"Reciclado (R3)"},
+  {n:"Vidrio",o:"Envasado en botella",kg:null,cer:["15 01 07"],g:"Reciclado (R5)"},
+  {n:"Palés y cajas de madera",o:"Recepción de fruta y expedición",kg:null,cer:["15 01 03"],g:"Reparación / reciclado"},
+  {n:"Tierras filtrantes y membranas agotadas",o:"Clarificación y ultrafiltración",kg:null,cer:["15 02 03","02 03 99"],g:"Gestor / compost"},
+  {n:"Envases de productos de limpieza y químicos",o:"CIP, depuradora",kg:null,cer:["15 01 10*"],g:"Gestor autorizado"},
+  {n:"Aceites usados",o:"Mantenimiento",kg:null,cer:["13 02 05*"],g:"Regeneración (R9)"}
+];
+const CER_DESC = Object.assign({
+  "02 01 03":"Residuos de tejidos de vegetales",
+  "02 03 01":"Lodos de lavado, limpieza, pelado, centrifugado y separación",
+  "02 03 04":"Materiales inadecuados para el consumo o la elaboración",
+  "02 03 05":"Lodos del tratamiento in situ de efluentes",
+  "02 03 99":"Residuos no especificados en otra categoría (frutas, hortalizas)",
+  "02 07 01":"Residuos de lavado, limpieza y reducción mecánica de materias primas (bebidas)",
+  "02 07 04":"Materiales inadecuados para el consumo o la elaboración (bebidas)",
+  "02 07 05":"Lodos del tratamiento in situ de efluentes (bebidas)",
+  "20 02 02":"Tierra y piedras",
+  "15 02 03":"Absorbentes, materiales de filtración, trapos y ropas distintos de 15 02 02"},CER_COMUN);
+const U_AMC="https://www.carm.es/web/descarga?ARCHIVO=Res%20IIA%20%28COPIA%29%20%282%29.pdf&ALIAS=ARCH&IDCONTENIDO=174297";
+const U_GC="https://www.carm.es/web/pagina?IDCONTENIDO=16911&IDTIPO=100&RASTRO=c511$m4688,5180";
+const U_ZUV="https://www.zuvamesa.com/es/productos/";
+const U_ZUVP="https://www.zuvamesa.com/es/pellets/";
+const U_DOGV="https://dogv.gva.es/datos/2024/05/15/pdf/2024_3775.pdf";
+const U_FEDNA="https://www.fundacionfedna.org/ingredientes_para_piensos/pulpa-de-c%C3%ADtricos";
+const U_ZEMA="https://iris.unirc.it//retrieve/handle/20.500.12318/51688/62826/Zema_2019_Water_Wastewater.pdf";
+const VAL = {
+  corteza:{titulo:"Corteza de cítricos",principal:"Pulpa de cítricos para pienso (fresca, ensilada o deshidratada en pellets)",opciones:[
+    {n:1,nivel:"Alimentación humana",txt:"Extracción de pectina, fibra dietética, flavonoides (hesperidina) y aceites esenciales; el d-limoneno se recupera ya en muchas plantas.",l:[
+      L("Zuvamesa (Sagunt): aceites esenciales, d-limoneno y celdillas como coproductos",U_ZUV,"Empresa"),
+      L("Revisión: aceites esenciales, pectina y nutracéuticos de residuos cítricos (Food Science and Biotechnology)","https://link.springer.com/article/10.1007/s10068-021-00984-y","Estudio"),
+      L("MDPI: subproductos del finishing de cítricos","https://www.mdpi.com/2673-8783/4/1/6","Estudio")]},
+    {n:2,nivel:"Alimentación animal",txt:"Destino mayoritario en España. La pulpa se seca y granula; la fresca se usa en vacuno cercano.",l:[
+      L("Zuvamesa: pellets de cítricos a partir de cáscaras, pulpa y destrío",U_ZUVP,"Empresa"),
+      L("FEDNA: ficha de la pulpa de cítricos como ingrediente de piensos",U_FEDNA,"Estudio"),
+      L("UPM: subproductos deshidratados en alimentación animal","https://oa.upm.es/56899/1/INVE_MEM_2019_306041.pdf","Estudio"),
+      L("UPA, Anuario 2023: la pulpa de cítricos en ganadería","https://www.upa.es/Anuario2023/025-Anuario-2023-Carro-Molina.pdf","Estudio")]},
+    {n:3,nivel:"Material y bioproductos",txt:"Biorrefinería de la corteza: bioetanol, ácido láctico, biopolímeros y enzimas.",l:[
+      L("Revisión: valorización biológica de la corteza de cítricos en combustibles y químicos (Bioresource Technology)","https://www.sciencedirect.com/science/article/pii/S0960852420318770","Estudio")]},
+    {n:4,nivel:"Energía y biogás",txt:"Digestión anaerobia tras eliminar el limoneno, que inhibe a las bacterias.",l:[]},
+    {n:5,nivel:"Suelo / compost",txt:"Compostaje con estructurante cuando no hay salida ganadera.",l:[]}]},
+  pomaza:{titulo:"Orujo de manzana, pera, hortalizas y fruta de hueso; finos y destrío",principal:"Pienso para ganado o biogás",opciones:[
+    {n:1,nivel:"Alimentación humana",txt:"Harina de orujo de manzana como fibra alimentaria y extracción de pectina y polifenoles.",l:[
+      L("Revisión: valorización del orujo de manzana por extracción de compuestos (Comprehensive Reviews in Food Science)","https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1541-4337.12290","Estudio"),
+      L("ScienceDirect: orujo de manzana como ingrediente","https://www.sciencedirect.com/science/article/pii/S002364381730600X","Estudio"),
+      L("MDPI: subproductos de pera","https://www.mdpi.com/2304-8158/12/23/4325","Estudio"),
+      L("MDPI: subproductos de melocotón","https://www.mdpi.com/2071-1050/16/3/1289","Estudio")]},
+    {n:2,nivel:"Alimentación animal",txt:"Orujo fresco o ensilado para vacuno y porcino.",l:[
+      L("MDPI: revisión de subproductos de frutas y hortalizas","https://www.mdpi.com/1420-3049/26/2/515","Estudio")]},
+    {n:3,nivel:"Material y bioproductos",txt:"Materiales y químicos a partir del orujo de manzana (carbones, biopolímeros).",l:[
+      L("CSIC: multivalorización del orujo de manzana en materiales y químicos","https://digital.csic.es/bitstream/10261/141921/1/Multivalorization_of_apple_pomace_towards_materials_and_chemicals.pdf","Estudio"),
+      L("MDPI Sustainability: orujo de manzana como materia prima","https://www.mdpi.com/2071-1050/15/1/830","Estudio")]},
+    {n:4,nivel:"Energía y biogás",txt:"Biogás en la propia planta.",l:[
+      L("Indulleida (Alguaire): reactor de biogás y aprovechamiento de fruta no apta","https://www.indulleida.com/","Empresa")]}]},
+  uva:{titulo:"Orujo de uva y raspón",principal:"Alcoholera (destilación, aceite de pepita, tartratos)",opciones:[
+    {n:1,nivel:"Alimentación humana",txt:"Aceite de pepita de uva, polifenoles y fibra de hollejo.",l:[
+      L("MDPI: revisión de subproductos de frutas y hortalizas","https://www.mdpi.com/1420-3049/26/2/515","Estudio")]},
+    {n:4,nivel:"Energía y biogás",txt:"El orujo agotado y el raspón se usan como biomasa en las alcoholeras.",l:[]},
+    {n:5,nivel:"Suelo / compost",txt:"Compostaje del raspón.",l:[]}]},
+  tropical:{titulo:"Cáscara y corazón de piña, piel y hueso de mango",principal:"Pienso o compost",opciones:[
+    {n:1,nivel:"Alimentación humana",txt:"Extracción de bromelina de cáscara y corazón de piña; polifenoles y grasa de la almendra de mango.",l:[
+      L("PMC: recuperación de bromelina de subproductos de piña","https://pmc.ncbi.nlm.nih.gov/articles/PMC10888004/","Estudio"),
+      L("Revisión: usos de los residuos de mango (Biomass Conversion and Biorefinery)","https://link.springer.com/article/10.1007/s13399-026-07087-w","Estudio")]},
+    {n:2,nivel:"Alimentación animal",txt:"Cáscara de piña ensilada para rumiantes.",l:[
+      L("PMC: cáscara de piña con bromelina para mejorar piensos","https://pmc.ncbi.nlm.nih.gov/articles/PMC12878712/","Estudio")]},
+    {n:4,nivel:"Energía y biogás",txt:"Nutrición, medicina y bioenergía a partir de residuos de piña.",l:[
+      L("Natural Product Communications: aplicaciones de los residuos de piña","https://journals.sagepub.com/doi/10.1177/1934578X251348402","Estudio")]}]},
+  hueso:{titulo:"Huesos de fruta",principal:"Biomasa",opciones:[
+    {n:3,nivel:"Material y bioproductos",txt:"Aceite y amigdalina de la almendra; carbón activo de la cáscara.",l:[
+      L("MDPI: subproductos de melocotón","https://www.mdpi.com/2071-1050/16/3/1289","Estudio")]},
+    {n:4,nivel:"Energía y biogás",txt:"Combustible sólido en calderas, similar al hueso de aceituna.",l:[]}]},
+  tomate:{titulo:"Orujo de tomate",principal:"Pienso o compost",opciones:[
+    {n:1,nivel:"Alimentación humana",txt:"Licopeno, fibra y aceite de semilla de tomate.",l:[
+      L("Revisión: valorización sostenible del orujo de tomate (Trends in Food Science & Technology)","https://www.sciencedirect.com/science/article/abs/pii/S0924224418304485","Estudio"),
+      L("MDPI Molecules: subproductos de tomate como fuente de licopeno","https://www.mdpi.com/1420-3049/31/15/2589","Estudio")]},
+    {n:2,nivel:"Alimentación animal",txt:"Orujo fresco o seco en piensos.",l:[]}]},
+  aguas:{titulo:"Aguas residuales, lodos y rechazos",principal:"Depuradora propia o vertido a colector",opciones:[
+    {n:1,nivel:"Prevención / alimentación humana",txt:"Reutilizar condensados de evaporación y agua de lavado, recuperar zumo de arranques y fondos.",l:[
+      L("Revisión: gestión de aguas residuales en la industria de cítricos (Water)",U_ZEMA,"Estudio")]},
+    {n:4,nivel:"Energía y biogás",txt:"Depuración anaerobia (UASB) de las aguas de zumería con aprovechamiento del biogás.",l:[
+      L("Tratamiento de aguas de zumo de cítricos con UASB y biogás","https://dergipark.org.tr/tr/download/article-file/2883180","Estudio")]},
+    {n:5,nivel:"Suelo / compost",txt:"Aplicación agrícola o compostaje de lodos que cumplan la normativa.",l:[]}]}
+};
+const MARCO = MARCO_COMUN.slice();
+const FUENTES = FUENTES_COMUNES.concat([
+  ["INE: correspondencia CNAE-2009 / CNAE-2025 con contenido","https://www.ine.es/daco/daco42/clasificaciones/cnae25/Correspondencia_CNAE09_CNAE25_conContenido.xlsx"],
+  ["Lista PRODCOM 2026 (CBS): códigos 10.32","https://www.cbs.nl/-/media/_excel/2026/04/prodcom_list_en.xlsx"],
+  ["INE: lista PRODCOM 2025","https://www.ine.es/metodologia/t05/PRODCOM2025.xlsx"],
+  ["AAI AMC Juices y Fruit Tech Natural, Espinardo (CARM)",U_AMC],
+  ["AAI García Carrión Jumilla (CARM)",U_GC],
+  ["DOGV: modificación de la AAI de Zumos Valencianos del Mediterráneo (Sagunt)",U_DOGV],
+  ["Nutrinews: 30–50 % del fruto de cítricos acaba como residuo","https://nutrinews.com/materias-primas-pulpa-de-citricos-2/"],
+  ["MDPI: finishing de cítricos","https://www.mdpi.com/2673-8783/4/1/6"],
+  ["Revisión: aguas residuales de la industria de cítricos",U_ZEMA]]);
+const a=(t,u)=>`<a href="${u}" target="_blank" rel="noopener">${t}</a>`;
+const CFG = {
+  grupos:[["10.32","CNAE 10.32 · Zumos de frutas y hortalizas"]],
+  filaInicial:{prod:"naranja",valor:5000000},
+  textoZona:"Añade una fila por producto con el total de la zona (facturación, hectolitros de zumo o toneladas de fruta). Puedes combinar exprimidoras de cítricos, plantas de prensado y envasadoras desde concentrado.",
+  sub:{mp:"Fruta u hortaliza fresca, o concentrado en plantas de reconstitución",co:"Aceite esencial, d-limoneno y celdillas (cítricos)",sub:"Corteza, orujo de prensado, huesos, orujo de tomate",aux:"Envases, cartón, plástico, bidones",efl:"Lavado de fruta, CIP, condensados"},
+  mensajes:(res,g)=>{let m="";
+    if(res.prod.length) m+=`<div class="aviso">El zumo se expresa en hectolitros y el precio en €/l. Los factores se refieren a toneladas de fruta: 4,8 hl/t en naranja equivale a un rendimiento de zumo del 50 %.</div>`;
+    const rs=new Set(res.prod.map(x=>x.rk));
+    if(rs.has("reconstitucion")) m+=`<div class="aviso">En las plantas que envasan desde concentrado la materia prima es el concentrado (≈ 54 hl de zumo por t a 65 °Brix) y no se genera corteza ni orujo: esos residuos se quedan en la planta que exprimió la fruta.</div>`;
+    if(rs.has("citricos_conc")) m+=`<div class="aviso">El precio del concentrado es por litro de concentrado (≈ 1,3 kg/l), no por litro de zumo reconstituido.</div>`;
+    if(rs.size>1&&rs.has("reconstitucion")&&[...rs].some(r=>r!=="reconstitucion")) m+=`<div class="advertencia">Planta mixta: si parte del zumo se elabora desde fruta y parte desde concentrado, pon una fila para cada uno para no inflar la corteza u orujo.</div>`;
+    return m;},
+  sumaMsg:(r,s)=>{const hl=(r.f.zumo||0)+(r.f.concentrado||0)*1.3;const tot=s*100+hl*10;return `El zumo se mide en hl y no entra en esta suma; con ≈ 0,1 t/hl el balance completo es ≈ ${fmt(tot,0)} %.`+(r.nombre.includes("Reconstitución")?" Supera el 100 % porque se añade agua para reconstituir el zumo.":r.nombre.includes("Concentrado")?" El resto es el agua evaporada (condensados, en m³).":"");},
+  preciosExtra:[],
+  obs:[
+   {titulo:"Planta real: AMC Juices y Fruit Tech Natural (Espinardo, Murcia)",intro:"Autorización ambiental integrada de 2021 para envasado de zumos y tratamiento de materia prima vegetal.",cols:["Dato","Valor declarado","Observación"],
+    filas:[["Capacidad de producción","1.221 t/día (721 AMC + 400 FTN)","Umbral IPPC: > 300 t/día de materia prima vegetal"],["Capacidad de envasado AMC","225.000 t/año de producto acabado","—"],["Depuradora propia","140.000 habitantes-equivalentes","Genera lodos 02 03 05"],["Residuos","> 1.000 t/año no peligrosos y < 10 t/año peligrosos por planta","—"]],
+    fuente:"Fuente: "+a("CARM, AAI20150004",U_AMC)+"."},
+   {titulo:"Planta real: García Carrión Jumilla (Murcia)",intro:"AAI de planta de vinos, zumos y refrescos.",cols:["Dato","Valor declarado"],
+    filas:[["Capacidad máxima de producción","761,12 t/día"],["Depuradora propia","72.500 habitantes-equivalentes"]],
+    fuente:"Fuente: "+a("CARM, AAI20160014",U_GC)+"."},
+   {titulo:"Planta real: Zumos Valencianos del Mediterráneo (Sagunt, Valencia)",intro:"Industria de extracción y envasado de zumos cítricos con AAI. Aprovecha todas las fracciones del fruto.",cols:["Fracción","Destino"],
+    filas:[["Zumo NFC de naranja y mandarina","Producto (aséptico refrigerado)"],["Celdillas","Coproducto"],["Aceites esenciales (prensado de piel, winterizado)","Coproducto"],["D-limoneno (licores de prensado)","Coproducto"],["Piel, pulpa y membranas deshidratadas","Pellets para pienso"]],
+    fuente:"Fuentes: "+a("Zuvamesa, productos",U_ZUV)+", "+a("Zuvamesa, pellets",U_ZUVP)+" y "+a("DOGV 2024",U_DOGV)+"."},
+   {titulo:"Códigos observados",intro:"Codificación habitual en autorizaciones y declaraciones.",cols:["Corriente","LER"],cer:1,
+    filas:[["Corteza, orujo y restos vegetales (DARI Cataluña)","02 01 03"],["Materiales inadecuados (fruta, orujo, finos)","02 03 04"],["Lodos de depuradora","02 03 05"],["Envases de papel, plástico, brik","15 01 01 / 15 01 02 / 15 01 05"],["Envases contaminados","15 01 10*"]],
+    fuente:"Fuente: calculadora anterior (DARI) y autorizaciones consultadas."}],
+  notasFuentes:`<li>Rendimientos de zumo por t de fruta: naranja y pomelo 50 %, manzana 70–72 %, pera 65 %, uva 84 %, piña 41 %, melocotón 76 %, mango 57 %, zanahoria 65 %, tomate 93 % (calculadora anterior y bibliografía).</li>
+  <li>Los factores de la calculadora anterior (kg por 1.000 l de zumo) se han pasado a t por t de fruta; por ejemplo, 1.000 kg de pomaza por 1.000 l en naranja equivalen a 0,48 t/t.</li>
+  <li>Corteza de cítricos 0,40 t/t (bibliografía: 30–50 % del fruto). Efluente de 1–2,5 m³/t según fruta, provisional.</li>
+  <li>PRODCOM: los códigos 10.32.19.10/20/30 corresponden a las listas 2021–2024; en la lista 2026 pasan a 10.32.18.10/20/30. El código 10.32.19.20 se reparte entre pera, melocotón y zanahoria.</li>
+  <li>Correspondencia CNAE-2009 → CNAE-2025: 10.32 se mantiene 1:1 (INE).</li>`,
+  csv:"residuos_cnae_1032.csv"
+};
+
+</script>
+<script>
+// ================== MOTOR GENÉRICO (usa CFG, CORR, RUTAS, PRODUCTOS, AUX, CER_DESC, VAL, MARCO, FUENTES, PRECIOS_PRODCOM) ==================
+const FACTORES_INICIALES = JSON.parse(JSON.stringify(Object.fromEntries(Object.entries(RUTAS).map(([k,r])=>[k,r.f]))));
+const fmt=(v,d=1)=>isFinite(v)?v.toLocaleString("es-ES",{minimumFractionDigits:d,maximumFractionDigits:d,useGrouping:"always"}):"—";
+const fmtP=v=>isFinite(v)?(v*100).toLocaleString("es-ES",{maximumFractionDigits:2})+" %":"—";
+const fmtF=(k,v)=>CORR[k].unidad?fmt(v,v<10?2:1)+" "+CORR[k].unidad+"/t":fmtP(v);
+const cerHTML=a=>a.map(c=>`<span class="cer${c.includes("*")?" pel":""}" title="${CER_DESC[c]||""}">${c}</span>`).join(" ");
+const COLORES=["#2f7d52","#5c8da5","#d3971b","#9b4a3c","#7a6fb0","#8fb84a","#c7663a","#3d9ea0","#b58bb5","#6b7a3a","#e0b84e","#4f6d8a","#a3a3a3","#d17b9b"];
+const uProd=p=>p.unidad||"t";
+const uPrecio=p=>p.unidad==="hl"?"€/l":"€/kg";
+const multP=p=>p.unidad==="hl"?100:1000;
+const T_HL=0.1; // t por hl (densidad ≈ 1)
+const aT=(q,u)=>u==="hl"?q*T_HL:q;
+let filas=[];let ultimo=null;let sigId=1;let reparto={activo:false};
+
+// ---------- Pesos de producción (PRODCOM España) y producto medio "Lo desconocemos" ----------
+const codP=c=>(c||"").replace(/\./g,"");
+const PESOS={};
+(function(){
+  const cods={};Object.entries(PRODUCTOS).forEach(([k,p])=>{(cods[p.prodcom]=cods[p.prodcom]||[]).push(k);});
+  const Y=["2024","2023","2022","2021"];
+  CFG.grupos.forEach(([cn])=>{
+    const ks=Object.keys(PRODUCTOS).filter(k=>PRODUCTOS[k].cnae===cn);
+    const rat=[];
+    ks.forEach(k=>{const d=CANT_PRODCOM[codP(PRODUCTOS[k].prodcom)];if(!d||!d.es||!d.ue)return;
+      for(const y of Y){if(d.es[y]>0&&d.ue[y]>0){rat.push(d.es[y]/d.ue[y]);break;}}});
+    rat.sort((a,b)=>a-b);const med=rat.length?rat[Math.floor(rat.length/2)]:null;
+    ks.forEach(k=>{const p=PRODUCTOS[k];const d=CANT_PRODCOM[codP(p.prodcom)];let q=null,txt="Sin dato de producción";
+      if(d&&d.es){for(const y of Y){if(d.es[y]!=null){q=d.es[y]/1000;txt=`PRODCOM España ${y}`;break;}}}
+      if(q===null&&d&&d.ue&&med){for(const y of Y){if(d.ue[y]!=null){q=d.ue[y]*med/1000;txt=`estimada con UE-27 ${y} × proporción España/UE del grupo (dato español confidencial)`;break;}}}
+      const n=(cods[p.prodcom]||[k]).length;if(q!==null&&n>1){if(p.cuota!=null){q=q*p.cuota;txt+=`, ${fmt(p.cuota*100,0)} % del código (${p.cuotaTxt||"cuota estimada"})`;}else{q=q/n;txt+=`, repartida entre ${n} productos con el mismo código`;}}
+      PESOS[k]={q,txt};});
+    const pos=ks.map(k=>PESOS[k].q).filter(q=>q>0);const mn=pos.length?Math.min(...pos):1;
+    ks.forEach(k=>{const w=PESOS[k];w.usar=w.q>0?w.q:mn;if(!(w.q>0))w.txt+=" · sin producción publicada en España: para el reparto se usa el valor mínimo del grupo";});
+    // producto medio del grupo
+    const cand=ks.filter(k=>PESOS[k].q>0);if(!cand.length)return;
+    const uMax=uProd(PRODUCTOS[cand.reduce((a,b)=>PESOS[a].q>=PESOS[b].q?a:b)]);
+    const comp=cand.filter(k=>uProd(PRODUCTOS[k])===uMax);const Q=comp.reduce((s,k)=>s+PESOS[k].q,0);
+    const mezcla=comp.map(k=>({k,s:PESOS[k].q/Q})).sort((a,b)=>b.s-a.s);
+    const precio=mezcla.reduce((s,c)=>s+c.s*PRODUCTOS[c.k].precio,0);
+    PRODUCTOS["_desc_"+cn.replace(".","")]={nombre:`Lo desconocemos (producto medio del CNAE ${cn})`,cnae:cn,prodcom:"—",mezcla,qTotal:Q,unidad:uMax==="t"?undefined:uMax,
+      precio:Math.round(precio*1000)/1000,anio:"2024",fuente:"precio medio ponderado por la producción española PRODCOM de los productos del grupo"};
+  });
+})();
+const esMezcla=k=>!!PRODUCTOS[k].mezcla;
+function componentes(k){return esMezcla(k)?PRODUCTOS[k].mezcla:[{k,s:1}];}
+function pesoFila(f){const p=PRODUCTOS[f.prod];return p.mezcla?p.qTotal:(PESOS[f.prod]?PESOS[f.prod].usar:1);}
+function notaPesos(){
+  return `<li>Producto «Lo desconocemos» y reparto de la facturación total: se usa el peso de cada producto en la producción española (cantidad PRODCOM, t/año o miles de litros). ${Object.entries(PRODUCTOS).filter(([k,p])=>p.mezcla).map(([k,p])=>`<br><b>CNAE ${p.cnae}:</b> ${p.mezcla.map(c=>`${PRODUCTOS[c.k].nombre} ${fmt(c.s*100,1)} %`).join("; ")}. Precio medio ponderado: ${fmt(p.precio,3)} ${uPrecio(p)}.`).join("")}</li>`;
+}
+
+function clasif(key){
+  const c=CORR[key];const g=document.getElementById("gestionSub").value;
+  if(c.tipo==="subproducto") return g==="residuo"?"residuo":"subproducto";
+  if(c.tipo==="residuo" && c.sub && g==="subproducto") return "subproducto";
+  return c.tipo;
+}
+function opcionesProducto(sel){
+  let h="";CFG.grupos.forEach(([cn,et])=>{
+    h+=`<optgroup label="${et}">`;
+    Object.entries(PRODUCTOS).filter(([k,p])=>p.cnae===cn).sort((a,b)=>(b[1].mezcla?1:0)-(a[1].mezcla?1:0)).forEach(([k,p])=>h+=`<option value="${k}" ${k===sel?"selected":""}>${p.nombre}</option>`);
+    h+="</optgroup>";});
+  return h;
+}
+function anadirFila(prod=CFG.filaInicial.prod,modo="facturacion",valor=""){
+  filas.push({id:sigId++,prod,modo,valor,precio:PRODUCTOS[prod].precio});
+  pintarFilas();calcular();
+}
+function quitarFila(id){filas=filas.filter(f=>f.id!==id);pintarFilas();calcular();}
+function cambiarFila(id,campo,val){
+  const f=filas.find(x=>x.id===id);if(!f)return;
+  if(campo==="prod"){f.prod=val;f.precio=PRODUCTOS[val].precio;f.pctManual=false;pintarFilas();}
+  else if(campo==="modo"){f.modo=val;f.factManual=false;pintarFilas();}
+  else if(campo==="valor"){f.valor=val;if(reparto.activo&&f.modo==="facturacion")f.factManual=val!=="";}
+  else f[campo]=val;
+  calcular();
+}
+function cambiarPct(id,val){const f=filas.find(x=>x.id===id);if(!f)return;f.pct=val;f.pctManual=val!=="";calcular();}
+function soltarPct(id){const f=filas.find(x=>x.id===id);if(!f)return;f.pctManual=false;calcular();refrescarReparto(true);}
+function soltarFact(id){const f=filas.find(x=>x.id===id);if(!f)return;f.factManual=false;calcular();refrescarReparto(true);}
+function composicionTxt(p){return p.mezcla.slice(0,8).map(c=>`${PRODUCTOS[c.k].nombre} ${fmt(c.s*100,1)} %`).join(", ")+(p.mezcla.length>8?`… (${p.mezcla.length} productos)`:"");}
+function pintarFilas(){
+  const terr=document.getElementById("ambito").value==="territorio";
+  const act=reparto.activo;
+  const c=document.getElementById("filasProductos");
+  c.innerHTML=filas.map(f=>{
+    const p=PRODUCTOS[f.prod];const mz=!!p.mezcla;const r=mz?null:RUTAS[p.ruta];
+    const mpTxt=mz?"materia prima (media del grupo)":r.mp;
+    const lab=f.modo==="facturacion"?(act?"Facturación asignada (€)":`Facturación ${terr?"total de la zona":"anual"} (€)`):f.modo==="producto"?`Producción de ${mz?"producto":p.nombre.toLowerCase()} (${uProd(p)}/año)`:`Materia prima: ${mpTxt} (t/año)`;
+    const rep=act&&f.modo==="facturacion"?`<div class="reparto" id="rep_${f.id}"></div>`:"";
+    const meta=mz?`CNAE ${p.cnae} · producto desconocido: se calcula con la composición media de la producción española (PRODCOM): ${composicionTxt(p)} · precio medio ponderado ${fmt(p.precio,3)} ${uPrecio(p)}`
+      :`CNAE ${p.cnae} · PRODCOM ${p.prodcom} · precio inicial ${fmt(p.precio,3)} ${uPrecio(p)} (${p.anio}; ${p.fuente}) · proceso: ${r.nombre}`;
+    return `<div class="fila-producto">
+      <div><label>Producto</label><select onchange="cambiarFila(${f.id},'prod',this.value)">${opcionesProducto(f.prod)}</select></div>
+      <div><label>Dato disponible</label><select onchange="cambiarFila(${f.id},'modo',this.value)">
+        <option value="facturacion" ${f.modo==="facturacion"?"selected":""}>Facturación + precio</option>
+        <option value="producto" ${f.modo==="producto"?"selected":""}>${p.unidad==="hl"?"Hectolitros de producto":"Toneladas de producto"}</option>
+        <option value="mp" ${f.modo==="mp"?"selected":""}>Toneladas de materia prima</option></select></div>
+      <div><label>${lab}</label><input id="v_${f.id}" type="number" min="0" step="any" value="${f.valor}" oninput="cambiarFila(${f.id},'valor',this.value)"></div>
+      <div class="${f.modo==="facturacion"?"":"oculto"}"><label>Precio (${uPrecio(p)})</label><input type="number" min="0" step="0.001" value="${f.precio}" oninput="cambiarFila(${f.id},'precio',this.value)"></div>
+      <div><button class="peligro" onclick="quitarFila(${f.id})" title="Eliminar fila">Quitar</button></div>
+      ${rep}
+      <div class="meta">${meta}</div>
+    </div>`;}).join("");
+  refrescarReparto(true);
+}
+function refrescarReparto(forzar){
+  const ae=document.activeElement;
+  filas.forEach(f=>{
+    const v=document.getElementById("v_"+f.id);
+    if(v&&(forzar||v!==ae)&&reparto.activo&&f.modo==="facturacion"&&!f.factManual) v.value=f.valor;
+    const b=document.getElementById("rep_"+f.id);if(!b)return;
+    const pc=document.getElementById("pct_"+f.id);
+    if(pc&&pc===ae&&!forzar){ // no repintar la casilla que se está editando
+      const s=document.getElementById("pfs_"+f.id);if(s)s.innerHTML=textoRepartoFila(f);return;}
+    b.innerHTML=f.factManual
+      ?`<span>Facturación fijada a mano: se descuenta del total y el resto se reparte entre los demás productos.</span> <span id="pfs_${f.id}">${textoRepartoFila(f)}</span> <button class="enlace-boton" onclick="soltarFact(${f.id})">Volver al reparto automático</button>`
+      :`<label style="margin:0">% de la producción</label><input id="pct_${f.id}" type="number" min="0" max="100" step="0.1" value="${isFinite(parseFloat(f.pct))?Math.round(parseFloat(f.pct)*10)/10:""}" oninput="cambiarPct(${f.id},this.value)">
+        <span>${f.pctManual?"valor introducido":"valor medio (producción española PRODCOM)"}</span>
+        ${f.pctManual?`<button class="enlace-boton" onclick="soltarPct(${f.id})">Volver al valor medio</button>`:""}
+        <span id="pfs_${f.id}">${textoRepartoFila(f)}</span>`;
+  });
+  const av=document.getElementById("avisoReparto");
+  if(av) av.innerHTML=reparto.activo?`<div class="aviso">Reparto de la facturación total (${fmt(reparto.T,0)} €): ${reparto.lineas.join(" · ")}${reparto.avisos.length?"<br>"+reparto.avisos.join("<br>"):""}</div>`:"";
+}
+function textoRepartoFila(f){const v=parseFloat(f.valor)||0;return `→ <b>${fmt(v,0)} €</b> (${reparto.T>0?fmt(v/reparto.T*100,1):"—"} % de la facturación)`;}
+function actualizarInterfaz(){
+  const terr=document.getElementById("ambito").value==="territorio";
+  document.getElementById("campoNumInstalaciones").classList.toggle("oculto",!terr);
+  document.getElementById("tituloEntrada").textContent=terr?"2. Productos de la comarca o zona":"2. Productos de la instalación";
+  document.getElementById("etiquetaFactTotal").textContent=terr?"Facturación total de la zona (€/año, opcional)":"Facturación total de la empresa (€/año, opcional)";
+  document.getElementById("textoEntrada").textContent=terr?CFG.textoZona
+    :"Añade una fila por cada producto que fabrique la instalación. En cada fila puedes introducir la facturación, la cantidad de producto o las toneladas de materia prima procesada. Si no sabes qué producto fabrica, elige «Lo desconocemos» y se usará el producto medio del CNAE.";
+  pintarFilas();calcular();
+}
+// cálculo de un producto concreto (componente)
+function calcUno(res,f,k,modo,v,precio,s){
+  const p=PRODUCTOS[k];const r=RUTAS[p.ruta];const fm=r.f[p.principal];const incl=document.getElementById("incluirSub").checked;
+  if(!(v>0)||!(fm>0)) return 0;
+  let tmain=0;
+  if(modo==="facturacion"){
+    if(!(precio>0)){res.msgs.push(`Falta el precio de ${p.nombre}.`);return 0;}
+    let denom=precio*multP(p);
+    if(incl){Object.entries(r.f).forEach(([kk,fk])=>{if(kk===p.principal)return;const c=CORR[kk];
+      if((c.tipo==="producto"||c.tipo==="subproducto")&&c.precio>0&&!c.unidad) denom+=(fk/fm)*c.precio*1000;});}
+    tmain=v/denom;res.fact+=v;
+  } else if(modo==="producto") tmain=v; else tmain=v*fm;
+  const tmp=tmain/fm;const fila=PRODUCTOS[f.prod];const mz=!!fila.mezcla;
+  const origen=mz?`${p.nombre} (en «Lo desconocemos» ${fila.cnae})`:p.nombre;
+  res.tmp+=tmp;res.tmain[uProd(p)]=(res.tmain[uProd(p)]||0)+tmain;
+  res.prod.push({p,f,r,tmain,tmp,fm,precio,rk:p.ruta,mz,s,origen,fid:f.id});
+  Object.entries(r.f).forEach(([kk,fk])=>{
+    if(kk===p.principal)return;
+    const c=CORR[kk];const cl=c.tipo==="producto"?"coproducto":clasif(kk);
+    res.corr.push({k:kk,c,ruta:r.nombre,cl,q:tmp*fk,pct:fk,conf:r.conf[kk]||"Baja",unidad:c.unidad||"t",origen,fid:f.id,mz});
+  });
+  return tmain*precio*multP(p);
+}
+// expande una fila (producto o "Lo desconocemos") en componentes
+function calcFila(res,f){
+  const p=PRODUCTOS[f.prod];const v=parseFloat(f.valor);if(!(v>0))return 0;const precio=parseFloat(f.precio);
+  if(!p.mezcla) return calcUno(res,f,f.prod,f.modo,v,precio,1);
+  const esc=p.precio>0&&precio>0?precio/p.precio:1;let ing=0;
+  if(f.modo==="facturacion"){
+    if(!(precio>0)){res.msgs.push(`Falta el precio de ${p.nombre}.`);return 0;}
+    const D=p.mezcla.reduce((a,c)=>a+c.s*PRODUCTOS[c.k].precio,0);
+    p.mezcla.forEach(c=>{const pc=PRODUCTOS[c.k];ing+=calcUno(res,f,c.k,"facturacion",v*c.s*pc.precio/D,pc.precio*esc,c.s);});
+  } else if(f.modo==="producto"){
+    p.mezcla.forEach(c=>{ing+=calcUno(res,f,c.k,"producto",v*c.s,PRODUCTOS[c.k].precio*esc,c.s);});
+  } else {
+    const fmOf=k=>{const q=PRODUCTOS[k];return RUTAS[q.ruta].f[q.principal]||1;};
+    const D=p.mezcla.reduce((a,c)=>a+c.s/fmOf(c.k),0);
+    p.mezcla.forEach(c=>{ing+=calcUno(res,f,c.k,"mp",v*(c.s/fmOf(c.k))/D,PRODUCTOS[c.k].precio*esc,c.s);});
+  }
+  return ing;
+}
+function repartir(ingOtros){
+  const T=parseFloat(document.getElementById("factTotal").value);
+  const antes=reparto.activo;
+  reparto={activo:T>0,T,avisos:[],lineas:[]};
+  const R=filas.filter(f=>f.modo==="facturacion");
+  if(!(T>0)) return antes!==reparto.activo;
+  const man=R.filter(f=>f.factManual),auto=R.filter(f=>!f.factManual);
+  const fijo=man.reduce((s,f)=>s+(parseFloat(f.valor)||0),0);
+  let rem=T-fijo-ingOtros;
+  if(ingOtros>0) reparto.avisos.push(`Las filas introducidas en toneladas no entran en el reparto; su facturación estimada (${fmt(ingOtros,0)} €) se descuenta del total.`);
+  if(fijo>0) reparto.lineas.push(`fijada a mano ${fmt(fijo,0)} €`);
+  if(rem<0){reparto.avisos.push(`La facturación fijada a mano o estimada (${fmt(fijo+ingOtros,0)} €) supera el total indicado.`);rem=0;}
+  const pm=auto.filter(f=>f.pctManual),libres=auto.filter(f=>!f.pctManual);
+  const sm=pm.reduce((s,f)=>s+(parseFloat(f.pct)||0),0);
+  let resto=100-sm;if(resto<0){reparto.avisos.push(`Los % de producción introducidos suman ${fmt(sm,1)} %; se reescalan a 100 %.`);resto=0;}
+  const W=libres.reduce((s,f)=>s+pesoFila(f),0);
+  libres.forEach(f=>{f.pct=W>0?resto*pesoFila(f)/W:0;});
+  if(!libres.length&&pm.length&&Math.abs(sm-100)>0.05&&sm<=100) reparto.avisos.push(`Los % de producción introducidos suman ${fmt(sm,1)} %; se reescalan a 100 %.`);
+  const pT=f=>(parseFloat(f.precio)||0)*1000; // €/t (en cerveza €/l × 1000 l ≈ €/t)
+  const D=auto.reduce((s,f)=>s+(parseFloat(f.pct)||0)*pT(f),0);
+  auto.forEach(f=>{f.valor=D>0?String(Math.round(rem*(parseFloat(f.pct)||0)*pT(f)/D)):"0";});
+  if(auto.length) reparto.lineas.push(`${fmt(rem,0)} € repartidos entre ${auto.length} producto(s) según su % de producción y su precio`);
+  else if(Math.abs(rem)>1) reparto.avisos.push(`Queda ${fmt(rem,0)} € del total sin asignar a ningún producto.`);
+  if(!R.length) reparto.avisos.push("Ninguna fila usa «Facturación + precio»: el total no se aplica.");
+  return antes!==reparto.activo;
+}
+function calcular(){
+  const res={prod:[],corr:[],tmp:0,tmain:{},fact:0,msgs:[]};
+  let ingOtros=0;
+  filas.filter(f=>f.modo!=="facturacion").forEach(f=>{ingOtros+=calcFila(res,f);});
+  const cambio=repartir(ingOtros);
+  filas.filter(f=>f.modo==="facturacion").forEach(f=>calcFila(res,f));
+  const orden=new Map(filas.map((f,i)=>[f.id,i]));
+  res.prod.sort((a,b)=>orden.get(a.fid)-orden.get(b.fid));res.corr.sort((a,b)=>orden.get(a.fid)-orden.get(b.fid));
+  ultimo=res;
+  if(cambio) pintarFilas(); else refrescarReparto(false);
+  pintarResultados(res);pintarCroquis();pintarTarjetas();pintarValorizacion();
+}
+function tAuxItem(res,a){if(!a.kg)return null;return res.prod.filter(x=>!a.rutas||a.rutas.includes(x.rk)).reduce((s,x)=>s+x.tmp,0)*a.kg/1000;}
+function totales(res){
+  const t=res.corr.filter(x=>x.unidad==="t");
+  const grupo=fn=>{const xs=t.filter(fn);const agg={};xs.forEach(x=>agg[x.c.nombre]=(agg[x.c.nombre]||0)+x.q);return {q:xs.reduce((a,b)=>a+b.q,0),det:Object.entries(agg).sort((a,b)=>b[1]-a[1])};};
+  const prodT=Object.entries(res.tmain).reduce((s,[u,v])=>s+aT(v,u),0);
+  const auxDet=AUX.map(a=>[a.n,tAuxItem(res,a)]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);
+  const aux=auxDet.reduce((s,x)=>s+x[1],0);
+  const m3=res.corr.filter(x=>x.unidad==="m³").reduce((a,b)=>a+b.q,0);
+  return {prodT,co:grupo(x=>x.cl==="coproducto"),sub:grupo(x=>x.cl==="subproducto"),resOrg:grupo(x=>x.cl==="residuo"&&!x.c.inorg),resInorg:grupo(x=>x.cl==="residuo"&&x.c.inorg),aux:{q:aux,det:auxDet},m3};
+}
+function pintarResultados(res){
+  const terr=document.getElementById("ambito").value==="territorio";
+  const nI=parseInt(document.getElementById("numInstalaciones").value)||0;
+  const T=totales(res);
+  const tSub=T.sub.q,tRes=T.resOrg.q+T.resInorg.q,tCo=T.co.q,m3=T.m3,tAux=T.aux.q;
+  const pm=Object.entries(res.tmain).map(([u,v])=>fmt(v,0)+" "+u+"/año").join(" + ")||"0 t/año";
+  let ind=[
+    ["Materia prima procesada",fmt(res.tmp,0)+" t/año",CFG.sub.mp||""],
+    ["Productos principales",pm,""],
+    ["Coproductos vendidos",fmt(tCo,0)+" t/año",CFG.sub.co],
+    ["Subproductos",fmt(tSub,0)+" t/año",CFG.sub.sub],
+    ["Residuos de proceso",fmt(tRes,1)+" t/año",res.tmp>0?fmt(tRes/res.tmp*1000,1)+" kg/t materia prima":""],
+    ["Residuos auxiliares estimados",fmt(tAux,1)+" t/año",CFG.sub.aux],
+    ["Efluentes líquidos",fmt(m3,0)+" m³/año",CFG.sub.efl]
+  ];
+  if(res.fact>0) ind.unshift(["Facturación analizada",fmt(res.fact,0)+" €",""]);
+  if(terr&&nI>0){ind.push(["Media por instalación",fmt(res.tmp/nI,0)+" t materia prima",fmt(tRes/nI,1)+" t residuos de proceso"]);}
+  document.getElementById("indicadores").innerHTML=ind.map(i=>`<div class="indicador"><div>${i[0]}</div><div class="valor">${i[1]}</div><div class="pequeno">${i[2]}</div></div>`).join("");
+  let m="";
+  if(!res.prod.length) m+=`<div class="advertencia">Introduce al menos un producto con un valor mayor que cero.</div>`;
+  res.msgs.forEach(x=>m+=`<div class="advertencia">${x}</div>`);
+  if(res.prod.some(x=>x.mz)) m+=`<div class="aviso">Hay filas con «Lo desconocemos»: se calculan con la composición media de la producción española del CNAE (PRODCOM). Es una aproximación; si conoces el producto real, selecciónalo.</div>`;
+  if(res.prod.length) m+=CFG.mensajes(res,document.getElementById("gestionSub").value);
+  document.getElementById("mensajes").innerHTML=m;
+  const totP=T.prodT;
+  document.getElementById("tablaProduccion").innerHTML=res.prod.map(x=>`<tr><td>${x.mz?`${x.p.nombre}<div class="pequeno">Parte de «Lo desconocemos» (${fmt(x.s*100,1)} % de la producción media)</div>`:x.p.nombre}</td><td>${x.p.cnae}</td><td>${x.p.prodcom}</td><td>${{facturacion:"Facturación + precio",producto:uProd(x.p)+" de producto",mp:"t de materia prima"}[x.f.modo]}</td><td class="num">${x.f.modo==="facturacion"?fmt(x.precio,3)+" "+uPrecio(x.p):"—"}</td><td class="num">${fmt(x.tmain,1)} ${uProd(x.p)}</td><td class="num">${fmt(x.tmp,1)}</td><td class="num">${fmtF(x.p.principal,x.fm)}</td><td class="num">${totP>0?fmt(aT(x.tmain,uProd(x.p))/totP*100,1)+" %":"—"}</td></tr>`).join("")||`<tr><td colspan="9">Sin datos</td></tr>`;
+  const et={coproducto:"Coproducto",subproducto:"Subproducto",residuo:"Residuo",efluente:"Efluente"};
+  document.getElementById("tablaResultados").innerHTML=res.corr.map(x=>{
+    const cer=x.cl==="coproducto"?"— (producto)":cerHTML(x.c.cer||[])+(x.cl==="subproducto"?`<div class="pequeno">Subproducto (art. 4 Ley 7/2022): no se declara como residuo. Códigos si se gestiona como residuo.</div>`:"")+(x.c.obs?`<div class="pequeno">Observado: ${x.c.obs}</div>`:"");
+    const v=x.c.val&&VAL[x.c.val]?VAL[x.c.val].principal:(x.cl==="coproducto"?"Venta":"—");
+    return `<tr><td>${x.c.nombre}<div class="origen"><span>${x.origen}</span></div></td><td>${x.ruta}</td><td>${et[x.cl]}</td><td class="num">${fmt(x.q,x.q<10?2:1)} ${x.unidad}</td><td class="num">${fmtF(x.k,x.pct)}</td><td>${cer}</td><td>${v}</td><td>${x.conf}</td></tr>`;}).join("")||`<tr><td colspan="8">Sin datos</td></tr>`;
+  document.getElementById("tablaAuxiliares").innerHTML=AUX.map(a=>{const q=tAuxItem(res,a);return `<tr><td>${a.n}</td><td>${a.o}</td><td class="num">${q!==null?fmt(q,2)+" t/año":"Según inventario"}</td><td>${cerHTML(a.cer)}</td><td>${a.g}</td></tr>`;}).join("");
+  pintarTotales(res,T);
+  pintarGrafico(res,T);
+}
+function pintarTotales(res,T){
+  const salidas=T.prodT+T.co.q+T.sub.q+T.resOrg.q+T.resInorg.q+T.aux.q;
+  const kg=q=>res.tmp>0?fmt(q/res.tmp*1000,1):"—";const pc=q=>salidas>0?fmt(q/salidas*100,1)+" %":"—";
+  const det=d=>d.length?d.slice(0,6).map(([n,q])=>`${n} (${fmt(q,q<10?2:0)} t)`).join("; ")+(d.length>6?"…":""):"—";
+  const q=v=>fmt(v,v<10?2:1)+" t/año";
+  const pmTxt=Object.entries(res.tmain).map(([u,v])=>u==="hl"?`${fmt(v,0)} hl/año (≈ ${fmt(aT(v,u),0)} t)`:`${fmt(v,v<10?2:1)} t/año`).join(" + ")||"0 t/año";
+  const prods=[...new Set(res.prod.map(x=>x.p.nombre))];
+  const rows=[
+    ["Materia prima procesada",fmt(res.tmp,res.tmp<10?2:1)+" t/año","1.000","—",CFG.sub.mp||"",""],
+    ["Producto principal",pmTxt,kg(T.prodT),pc(T.prodT),prods.slice(0,6).join("; ")+(prods.length>6?"…":""),""],
+    ["Coproductos",q(T.co.q),kg(T.co.q),pc(T.co.q),det(T.co.det),""],
+    ["Subproductos",q(T.sub.q),kg(T.sub.q),pc(T.sub.q),det(T.sub.det),""],
+    ["Residuos de proceso orgánicos",q(T.resOrg.q),kg(T.resOrg.q),pc(T.resOrg.q),det(T.resOrg.det),""],
+    ["Residuos de proceso inorgánicos",q(T.resInorg.q),kg(T.resInorg.q),pc(T.resInorg.q),det(T.resInorg.det),""],
+    ["Residuos auxiliares (estimados)",q(T.aux.q),kg(T.aux.q),pc(T.aux.q),det(T.aux.det),""],
+    ["Total subproductos y residuos",q(T.sub.q+T.resOrg.q+T.resInorg.q+T.aux.q),kg(T.sub.q+T.resOrg.q+T.resInorg.q+T.aux.q),pc(T.sub.q+T.resOrg.q+T.resInorg.q+T.aux.q),"Subproductos + residuos de proceso + auxiliares","subtotal"],
+    ["Total residuos (proceso + auxiliares)",q(T.resOrg.q+T.resInorg.q+T.aux.q),kg(T.resOrg.q+T.resInorg.q+T.aux.q),pc(T.resOrg.q+T.resInorg.q+T.aux.q),"Lo que se declararía como residuo con la gestión seleccionada","subtotal"],
+    ["Total de salidas en toneladas",q(salidas),kg(salidas),salidas>0?"100 %":"—","Producto + coproductos + subproductos + residuos. Puede diferir de la materia prima por el agua y los ingredientes incorporados o las pérdidas de humedad.","total"],
+    ["Efluentes líquidos",fmt(T.m3,0)+" m³/año",res.tmp>0?fmt(T.m3/res.tmp,2)+" m³/t":"—","No se suman",CFG.sub.efl||"",""]
+  ];
+  document.getElementById("tablaTotales").innerHTML=rows.map(r=>`<tr class="${r[5]}"><td>${r[0]}</td><td class="num">${r[1]}</td><td class="num">${r[2]}</td><td class="num">${r[3]}</td><td class="pequeno">${r[4]}</td></tr>`).join("");
+}
+function pintarGrafico(res,T){
+  T=T||totales(res);
+  const filtro=document.getElementById("filtroGrafico").value;
+  let d,notaU="t";
+  const nota=document.getElementById("notaGrafico");
+  if(filtro==="balance"){
+    d=[["Producto principal",T.prodT],["Coproductos",T.co.q],["Subproductos",T.sub.q],["Residuos de proceso",T.resOrg.q+T.resInorg.q],["Residuos auxiliares (estimados)",T.aux.q]].filter(e=>e[1]>0);
+    if(nota) nota.innerHTML="Balance de masa de las salidas en toneladas: producto principal, coproductos, subproductos y residuos (incluidos los inorgánicos y los auxiliares estimados). No incluye efluentes líquidos (m³)."+(res.tmain.hl?" Los productos medidos en hectolitros se convierten a toneladas con 0,1 t/hl.":"")+" La clasificación entre subproducto y residuo depende de la gestión seleccionada en el apartado 1.";
+  } else {
+    const agg={};
+    res.corr.filter(x=>x.unidad==="t"&&!x.c.inorg&&x.cl!=="coproducto"&&(filtro==="todas"?(x.cl==="subproducto"||x.cl==="residuo"):filtro==="residuos"?x.cl==="residuo":x.cl==="subproducto"))
+      .forEach(x=>agg[x.c.nombre]=(agg[x.c.nombre]||0)+x.q);
+    d=Object.entries(agg).filter(e=>e[1]>0).sort((a,b)=>b[1]-a[1]);
+    if(nota) nota.innerHTML="Gráfico de quesito basado en las toneladas calculadas. No incluye productos principales ni coproductos vendidos, efluentes líquidos (m³), residuos inorgánicos ni residuos auxiliares.";
+  }
+  const cv=document.getElementById("graficoResiduos");const ctx=cv.getContext("2d");
+  ctx.clearRect(0,0,cv.width,cv.height);
+  const tot=d.reduce((a,b)=>a+b[1],0);
+  const cx=230,cy=230,R=200;
+  const col=filtro==="balance"?["#2f7d52","#7a6fb0","#5c8da5","#9b4a3c","#d3971b"]:COLORES;
+  if(!tot){ctx.fillStyle="#64786c";ctx.font="15px Arial";ctx.textAlign="center";ctx.fillText("Sin datos para el gráfico",cx,cy);document.getElementById("leyendaGrafico").innerHTML="";return;}
+  let a0=-Math.PI/2;
+  d.forEach((e,i)=>{const a1=a0+e[1]/tot*2*Math.PI;ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,R,a0,a1);ctx.closePath();ctx.fillStyle=col[i%col.length];ctx.fill();ctx.strokeStyle="#fff";ctx.lineWidth=2;ctx.stroke();
+    const p=e[1]/tot;if(p>0.04){const am=(a0+a1)/2;ctx.fillStyle="#fff";ctx.font="bold 14px Arial";ctx.textAlign="center";ctx.fillText(fmt(p*100,1)+" %",cx+Math.cos(am)*R*0.65,cy+Math.sin(am)*R*0.65);}
+    a0=a1;});
+  document.getElementById("leyendaGrafico").innerHTML=d.map((e,i)=>`<span><b style="color:${col[i%col.length]}">■</b> ${e[0]}: ${fmt(e[1],e[1]<10?2:0)} ${notaU} (${fmt(e[1]/tot*100,1)} %)</span>`).join("");
+}
+function rutasUsadas(){const s=new Set();filas.forEach(f=>componentes(f.prod).forEach(c=>s.add(PRODUCTOS[c.k].ruta)));return [...s];}
+function corrientesPresentes(){const s=new Set();rutasUsadas().forEach(r=>Object.keys(RUTAS[r].f).forEach(k=>s.add(k)));return s;}
+function pintarCroquis(){
+  document.getElementById("croquis").innerHTML=rutasUsadas().map(rk=>{
+    const r=RUTAS[rk];
+    const nodos=[`<div class="nodo"><b>Entrada:</b> ${r.mp}</div>`].concat(r.etapas.map(e=>`<div class="nodo">${e}</div>`)).join('<span class="flecha">→</span>');
+    const sal=Object.keys(r.f).map(k=>{const c=CORR[k];const cl=c.tipo==="producto"?"producto":clasif(k);return `<span class="chip ${cl}">${c.nombre} · ${fmtF(k,r.f[k])}</span>`;}).join("");
+    return `<div class="croquis-ruta"><h3>${r.nombre} <span class="pequeno">(CNAE ${r.cnae})</span></h3><div class="flujo">${nodos}</div><div class="salidas">${sal}</div></div>`;}).join("")||"<p>Añade un producto para ver el croquis.</p>";
+}
+function origenesCorriente(k){
+  const out=[];const vistos=new Set();
+  filas.forEach(f=>{const p=PRODUCTOS[f.prod];
+    if(p.mezcla){const via=p.mezcla.filter(c=>k in RUTAS[PRODUCTOS[c.k].ruta].f).map(c=>PRODUCTOS[c.k].nombre);
+      if(via.length){const t=`${p.nombre}`;if(!vistos.has(t)){vistos.add(t);out.push({t,via});}}}
+    else if(k in RUTAS[p.ruta].f&&!vistos.has(p.nombre)){vistos.add(p.nombre);out.push({t:p.nombre});}});
+  return out;
+}
+function pintarTarjetas(){
+  const s=[...corrientesPresentes()].filter(k=>CORR[k].tipo!=="producto");
+  const cant={};(ultimo?ultimo.corr:[]).forEach(x=>{cant[x.k]=(cant[x.k]||0)+x.q;});
+  document.getElementById("tarjetas").innerHTML=s.map(k=>{const c=CORR[k];const o=origenesCorriente(k);const u=c.unidad||"t";
+    return `<div class="tarjeta-residuo"><h3>${c.nombre}</h3>
+    <div class="pequeno"><b>Procede de:</b></div><div class="origen">${o.map(x=>`<span title="${x.via?"Productos del grupo que la generan: "+x.via.join(", "):""}">${x.t}</span>`).join("")}</div>
+    ${o.some(x=>x.via)?`<p class="pequeno">En «Lo desconocemos» la generan: ${o.filter(x=>x.via).map(x=>x.via.join(", ")).join("; ")}.</p>`:""}
+    ${cant[k]>0?`<span class="cantidad-tarjeta">Cantidad estimada: <b>${fmt(cant[k],cant[k]<10?2:1)} ${u}/año</b></span>`:""}
+    <p>${c.desc}</p><p><b>Clasificación actual:</b> ${clasif(k)}</p><p><b>CER/LER candidatos:</b> ${cerHTML(c.cer||[])||"—"}</p>${c.obs?`<p class="pequeno">${c.obs}</p>`:""}</div>`;}).join("");
+}
+function pintarValorizacion(){
+  const todas=document.getElementById("filtroVal").value==="todas";
+  const pres=corrientesPresentes();
+  const claves=todas?Object.keys(VAL):[...new Set([...pres].map(k=>CORR[k].val).filter(Boolean))];
+  const clase={1:"n1",2:"n2",3:"n3",4:"n4",5:"n5"};
+  document.getElementById("valorizacion").innerHTML=claves.map(v=>{const o=VAL[v];if(!o)return"";
+    return `<div class="tarjeta-val"><h3>${o.titulo}</h3><p class="pequeno"><b>Destino más habitual:</b> ${o.principal}</p>${o.opciones.map(op=>`<div class="opcion"><span class="nivel ${clase[op.n]}">${op.nivel}</span>${op.txt}${op.l.length?`<ul class="enlaces">${op.l.map(x=>`<li><span class="tipo-enlace ${x.tipo}">${x.tipo}</span><a href="${x.u}" target="_blank" rel="noopener">${x.t}</a></li>`).join("")}</ul>`:""}</div>`).join("")}</div>`;}).join("")||"<p>Añade un producto para ver las opciones.</p>";
+}
+function pintarEstaticas(){
+  document.getElementById("enlacesMarco").innerHTML=MARCO.map(x=>`<li><span class="tipo-enlace ${x.tipo}">${x.tipo}</span><a href="${x.u}" target="_blank" rel="noopener">${x.t}</a></li>`).join("");
+  const uso={};Object.values(CORR).forEach(c=>(c.cer||[]).forEach(k=>{(uso[k]=uso[k]||[]).push(c.nombre);}));AUX.forEach(a=>a.cer.forEach(k=>{(uso[k]=uso[k]||[]).push(a.n);}));
+  document.getElementById("tablaCER").innerHTML=Object.keys(CER_DESC).map(k=>`<tr><td>${cerHTML([k])}</td><td>${CER_DESC[k]}</td><td>${[...new Set(uso[k]||[])].join("; ")||"Observado en instalaciones reales"}</td></tr>`).join("");
+  document.getElementById("bloqueObservados").innerHTML=CFG.obs.map(o=>`<h3 style="margin-top:22px">${o.titulo}</h3><p class="explicacion">${o.intro}</p><div class="tabla-contenedor"><table><thead><tr>${o.cols.map(c=>`<th>${c}</th>`).join("")}</tr></thead><tbody>${o.filas.map(f=>`<tr>${f.map((v,i)=>`<td${typeof v==="number"?' class="num"':""}>${o.cer===i?cerHTML(String(v).split("|")):typeof v==="number"?fmt(v,v<10?3:0):v}</td>`).join("")}</tr>`).join("")}</tbody></table></div><p class="fuente">${o.fuente}</p>`).join("");
+  const filasP=[];const vistos=new Set();
+  Object.values(PRODUCTOS).filter(p=>!p.mezcla).forEach(p=>{if(vistos.has(p.prodcom))return;vistos.add(p.prodcom);filasP.push([p.nombre,p.prodcom,p.precio,uPrecio(p)+" · "+p.anio+" · "+p.fuente]);});
+  Object.values(CORR).filter(c=>c.tipo!=="producto"&&c.precio>0).forEach(c=>{if(vistos.has(c.prodcom))return;vistos.add(c.prodcom);filasP.push([c.nombre,c.prodcom,c.precio,"€/kg · PRODCOM"]);});
+  (CFG.preciosExtra||[]).forEach(x=>{if(!vistos.has(x[1])){vistos.add(x[1]);filasP.push(x);}});
+  document.getElementById("tablaPrecios").innerHTML=filasP.map(x=>{const d=PRECIOS_PRODCOM[x[1].replace(/\./g,"")]||{};const g=(y,z)=>d[y]&&d[y][z]!=null?fmt(d[y][z],3):"—";
+    return `<tr><td>${x[0]}</td><td>${x[1]}</td><td class="num">${g("2021","es")}</td><td class="num">${g("2022","es")}</td><td class="num">${g("2023","es")}</td><td class="num">${g("2024","es")}</td><td class="num">${g("2024","ue")}</td><td class="num"><b>${fmt(x[2],3)}</b></td><td class="pequeno">${x[3]}</td></tr>`;}).join("");
+  document.getElementById("listaFuentes").innerHTML=FUENTES.map(f=>`<li><a href="${f[1]}" target="_blank" rel="noopener">${f[0]}</a></li>`).join("")+CFG.notasFuentes+notaPesos();
+}
+function pintarFactores(){
+  document.getElementById("factores").innerHTML=Object.entries(RUTAS).map(([rk,r])=>`<details><summary>${r.nombre} (CNAE ${r.cnae}) · materia prima: ${r.mp}</summary><div class="tabla-contenedor"><table><thead><tr><th>Corriente</th><th>Tipo</th><th>Factor</th><th>Confianza</th></tr></thead><tbody>${
+    Object.entries(r.f).map(([k,v])=>`<tr><td>${CORR[k].nombre}</td><td>${CORR[k].tipo}</td><td><input class="factor-input" type="number" step="0.001" min="0" value="${v}" oninput="RUTAS['${rk}'].f['${k}']=parseFloat(this.value)||0;sumaRuta('${rk}');calcular()"> ${CORR[k].unidad?CORR[k].unidad+"/t":"t/t"}</td><td>${r.conf[k]||""}</td></tr>`).join("")
+  }</tbody></table></div><p class="pequeno" id="suma_${rk}"></p></details>`).join("");
+  Object.keys(RUTAS).forEach(sumaRuta);
+}
+function sumaRuta(rk){const r=RUTAS[rk];const s=Object.entries(r.f).filter(([k])=>!CORR[k].unidad).reduce((a,[k,v])=>a+v,0);
+  const el=document.getElementById("suma_"+rk);if(el)el.textContent=`Suma de corrientes en toneladas: ${fmtP(s)}. ${CFG.sumaMsg(r,s)}`;}
+function restablecerFactores(){Object.keys(RUTAS).forEach(k=>RUTAS[k].f=JSON.parse(JSON.stringify(FACTORES_INICIALES[k])));pintarFactores();calcular();}
+function generarCSV(){
+  const r=ultimo;const rows=[["Tipo","Nombre","Producto de origen","Proceso","Clasificación","Cantidad","Unidad","CER/LER candidatos"]];
+  r.prod.forEach(x=>rows.push(["Producto",x.p.nombre,x.origen,x.r.nombre,"Producto principal",x.tmain.toFixed(2),uProd(x.p),""]));
+  r.corr.forEach(x=>rows.push(["Corriente",x.c.nombre,x.origen,x.ruta,x.cl,x.q.toFixed(3),x.unidad,(x.c.cer||[]).join(" / ")]));
+  AUX.forEach(a=>{const q=tAuxItem(r,a);rows.push(["Auxiliar",a.n,"","","residuo",q!==null?q.toFixed(3):"",q!==null?"t":"",a.cer.join(" / ")]);});
+  const T=totales(r);[["Producto principal (t eq.)",T.prodT],["Coproductos",T.co.q],["Subproductos",T.sub.q],["Residuos de proceso orgánicos",T.resOrg.q],["Residuos de proceso inorgánicos",T.resInorg.q],["Residuos auxiliares",T.aux.q]].forEach(([n,q])=>rows.push(["Total por tipo",n,"","","",q.toFixed(3),"t",""]));
+  rows.push(["Total por tipo","Efluentes","","","",T.m3.toFixed(1),"m³",""]);
+  return rows.map(x=>x.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(";")).join("\n");
+}
+function exportarCSV(){
+  if(!ultimo)return;
+  const area=document.getElementById("areaCSV");
+  area.value=generarCSV();
+  document.getElementById("cajaCSV").classList.remove("oculto");
+  document.getElementById("csvEstado").textContent="";
+  area.focus();area.select();
+}
+function copiarCSV(){
+  const area=document.getElementById("areaCSV");const estado=document.getElementById("csvEstado");
+  area.select();
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(area.value).then(()=>{estado.textContent="Copiado al portapapeles.";}).catch(()=>{estado.textContent="No se pudo copiar automáticamente: el texto ya está seleccionado, usa Ctrl/Cmd+C.";});
+  } else {estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.";}
+}
+pintarEstaticas();pintarFactores();
+filas.push({id:sigId++,prod:CFG.filaInicial.prod,modo:"facturacion",valor:String(CFG.filaInicial.valor),precio:PRODUCTOS[CFG.filaInicial.prod].precio});
+actualizarInterfaz();
+
+</script>
+</body></html>

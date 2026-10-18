@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>html{color-scheme:light}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif;background:#fafaf8}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Fuentes Platos Preparados</title>
+<style>
+:root{
+  --c-bg:#f3f7f4;--c-surface:#fff;--c-shadow:rgba(0,0,0,.08);--c-text:#18322a;
+  --c-h1:#225c40;--c-h2:#2c704d;--c-h3:#397b59;--c-border:#b7cabe;--c-focus:#8fc19b;
+  --c-input-bg:#fff;
+  --c-btn-bg:#28734d;--c-btn-bg-hover:#1e593b;--c-btn-secondary-bg:#64786c;
+  --c-explicacion-text:#50675a;--c-fuente-text:#64786c;
+  --c-pequeno-text:#5c6c62;
+  --c-card-bg:#fffdfa;--c-card-border:#ded8ca;
+  --c-th-bg:#e7f1ea;--c-tr-border:#d8e4dc;
+  --c-badge-normativa:#8a6d1a;--c-badge-estudio:#5c8da5;--c-badge-empresa:#28734d;--c-badge-proyecto:#7a6fb0;--c-badge-herramienta:#9b4a3c;
+  --c-chip-bg:#e5f2e8;--c-chip-border:#9dc4a5;--c-chip-text:#225c40;
+  --c-nivel-n1-bg:#d7efe0;--c-nivel-n1-text:#225c40;
+  --c-nivel-n2-bg:#e3eef5;--c-nivel-n2-text:#2e5b73;
+  --c-nivel-n3-bg:#f1ecd9;--c-nivel-n3-text:#6d5a14;
+  --c-nivel-n4-bg:#fbe6d6;--c-nivel-n4-text:#8a4a1a;
+  --c-nivel-n5-bg:#eee;--c-nivel-n5-text:#555;
+  --c-link:#1f6a8a;
+  --c-tab-bg:#e7f1ea;--c-tab-active-bg:#28734d;--c-tab-active-text:#fff;
+  --c-cer-bg:#f1f5f2;--c-cer-border:#c9d8ce;--c-cer-pel-border:#c0392b;--c-cer-pel-text:#8e2a1f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+    --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+    --c-input-bg:#182720;
+    --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;
+    --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+    --c-pequeno-text:#93a49a;
+    --c-card-bg:#182720;--c-card-border:#33362a;
+    --c-th-bg:#1c3227;--c-tr-border:#26392f;
+    --c-badge-normativa:#c9a94f;--c-badge-estudio:#6fa8c4;--c-badge-empresa:#4caf7c;--c-badge-proyecto:#a79bea;--c-badge-herramienta:#c98a76;
+    --c-chip-bg:#1b3226;--c-chip-border:#3a5c48;--c-chip-text:#a6e3c4;
+    --c-nivel-n1-bg:#204331;--c-nivel-n1-text:#a6e3c4;
+    --c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+    --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;
+    --c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;
+    --c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+    --c-link:#6cc2e8;
+    --c-tab-bg:#1c3227;--c-tab-active-bg:#2f8055;--c-tab-active-text:#fff;
+    --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+  --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+  --c-input-bg:#182720;
+  --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;
+  --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+  --c-pequeno-text:#93a49a;
+  --c-card-bg:#182720;--c-card-border:#33362a;
+  --c-th-bg:#1c3227;--c-tr-border:#26392f;
+  --c-badge-normativa:#c9a94f;--c-badge-estudio:#6fa8c4;--c-badge-empresa:#4caf7c;--c-badge-proyecto:#a79bea;--c-badge-herramienta:#c98a76;
+  --c-chip-bg:#1b3226;--c-chip-border:#3a5c48;--c-chip-text:#a6e3c4;
+  --c-nivel-n1-bg:#204331;--c-nivel-n1-text:#a6e3c4;
+  --c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+  --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;
+  --c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;
+  --c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+  --c-link:#6cc2e8;
+  --c-tab-bg:#1c3227;--c-tab-active-bg:#2f8055;--c-tab-active-text:#fff;
+  --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+}
+body{font-family:Arial,sans-serif;margin:0;background:var(--c-bg);color:var(--c-text)}
+main{max-width:1180px;margin:auto;padding:24px}
+section{background:var(--c-surface);padding:22px;margin-bottom:18px;border-radius:14px;box-shadow:0 2px 10px var(--c-shadow)}
+h1{margin-top:0;color:var(--c-h1);font-size:26px}
+h2{color:var(--c-h2);font-size:19px}
+h3{color:var(--c-h3);margin-bottom:6px;font-size:15px}
+p{line-height:1.5}
+.explicacion{color:var(--c-explicacion-text);font-size:14px;line-height:1.5;margin-top:6px}
+.pequeno{font-size:12px;color:var(--c-pequeno-text)}
+.fuente{color:var(--c-fuente-text);font-size:12px}
+label{display:block;font-weight:bold;margin:0 0 5px;font-size:13px}
+input,select{width:100%;box-sizing:border-box;padding:9px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-size:14px}
+input:focus,select:focus{outline:2px solid var(--c-focus)}
+.grid-filtros{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:12px;align-items:end}
+@media(max-width:800px){.grid-filtros{grid-template-columns:1fr}}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tab-btn{padding:9px 16px;border-radius:20px;border:1px solid var(--c-border);background:var(--c-tab-bg);color:var(--c-text);cursor:pointer;font-size:13px;font-weight:bold}
+.tab-btn.activa{background:var(--c-tab-active-bg);color:var(--c-tab-active-text);border-color:transparent}
+.panel{display:none}
+.panel.activa{display:block}
+.resultado-contador{margin:10px 0;font-size:13px;color:var(--c-pequeno-text)}
+.tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.tarjeta{background:var(--c-card-bg);border:1px solid var(--c-card-border);border-radius:10px;padding:14px 16px;line-height:1.45}
+.tarjeta h3{margin-bottom:4px}
+.tarjeta h3 a{color:var(--c-h3);text-decoration:none}
+.tarjeta h3 a:hover{text-decoration:underline}
+.badge{display:inline-block;font-size:11px;font-weight:bold;color:#fff;border-radius:8px;padding:2px 8px;margin-right:6px}
+.badge.Normativa{background:var(--c-badge-normativa)}
+.badge.Estudio{background:var(--c-badge-estudio)}
+.badge.Empresa{background:var(--c-badge-empresa)}
+.badge.Proyecto{background:var(--c-badge-proyecto)}
+.badge.Herramienta{background:var(--c-badge-herramienta)}
+.meta-linea{font-size:12px;color:var(--c-pequeno-text);margin:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
+.chip{font-size:11px;background:var(--c-chip-bg);color:var(--c-chip-text);border:1px solid var(--c-chip-border);border-radius:10px;padding:2px 8px}
+.nota{font-size:12px;color:var(--c-pequeno-text);margin-top:6px;font-style:italic}
+.tabla-contenedor{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+th,td{padding:8px;border-bottom:1px solid var(--c-tr-border);text-align:left;vertical-align:top}
+th{background:var(--c-th-bg)}
+td.num{text-align:right;white-space:nowrap}
+a{color:var(--c-link)}
+.nivel{display:inline-block;font-size:11px;font-weight:bold;padding:3px 8px;border-radius:10px;margin-right:6px}
+.nivel.n1{background:var(--c-nivel-n1-bg);color:var(--c-nivel-n1-text)}
+.nivel.n2{background:var(--c-nivel-n2-bg);color:var(--c-nivel-n2-text)}
+.nivel.n3{background:var(--c-nivel-n3-bg);color:var(--c-nivel-n3-text)}
+.nivel.n4{background:var(--c-nivel-n4-bg);color:var(--c-nivel-n4-text)}
+.nivel.n5{background:var(--c-nivel-n5-bg);color:var(--c-nivel-n5-text)}
+.opcion-val{padding:10px 0;border-bottom:1px dashed var(--c-tr-border)}
+.opcion-val:last-child{border-bottom:0}
+.bloque-real{border:1px solid var(--c-card-border);border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.cer{display:inline-block;background:var(--c-cer-bg);border:1px solid var(--c-cer-border);border-radius:6px;padding:1px 6px;margin:1px 2px;font-size:12px;white-space:nowrap}
+.cer.pel{border-color:var(--c-cer-pel-border);color:var(--c-cer-pel-text)}
+button{padding:9px 15px;color:#fff;background:var(--c-btn-bg);border:0;border-radius:8px;cursor:pointer;font-size:13px}
+button:hover{background:var(--c-btn-bg-hover)}
+button.secundario{background:var(--c-btn-secondary-bg)}
+.oculto{display:none!important}
+textarea{width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-family:monospace;font-size:12px;margin-top:8px}
+</style>
+
+<main>
+
+<section>
+<h1>Fuentes de residuos · CNAE 10.85</h1>
+<p><strong>Base de fuentes, coeficientes y datos reales de planta</strong> para la elaboración de platos y comidas preparados (CNAE 10.85): platos preparados refrigerados, platos preparados congelados y pizza fresca/refrigerada o congelada. Consulta interna, sin relación con los datos que introduzcas en la calculadora de estimación.</p>
+<p class="explicacion">Extraída de la investigación de fuentes oficiales (normativa, guía de Mejores Técnicas Disponibles, informes sectoriales) que respalda la <a href="10.85_platos_preparados_calculadora.html" target="_blank" rel="noopener">calculadora de residuos CNAE 10.85</a>. La misma información, en formato de tabla, está disponible como Excel para reutilizar en otros entornos.</p>
+</section>
+
+<section>
+<h2>Filtrar fuentes</h2>
+<div class="grid-filtros">
+<div>
+<label for="fBusqueda">Buscar (título, organismo, corriente, nota)</label>
+<input id="fBusqueda" type="text" placeholder="p. ej. alperujo, MITECO, Andalucía..." oninput="pintarFuentes()">
+</div>
+<div>
+<label for="fTipo">Tipo de fuente</label>
+<select id="fTipo" onchange="pintarFuentes()"><option value="">Todos</option></select>
+</div>
+<div>
+<label for="fZona">Zona</label>
+<select id="fZona" onchange="pintarFuentes()"><option value="">Todas</option></select>
+</div>
+<div>
+<label for="fCorriente">Corriente</label>
+<select id="fCorriente" onchange="pintarFuentes()"><option value="">Todas</option></select>
+</div>
+</div>
+</section>
+
+<section>
+<div class="tabs">
+<button class="tab-btn activa" data-panel="panelFuentes" onclick="cambiarTab('panelFuentes',this)">Fuentes</button>
+<button class="tab-btn" data-panel="panelCoef" onclick="cambiarTab('panelCoef',this)">Coeficientes</button>
+<button class="tab-btn" data-panel="panelReal" onclick="cambiarTab('panelReal',this)">Datos reales de planta</button>
+<button class="tab-btn" data-panel="panelVal" onclick="cambiarTab('panelVal',this)">Valorización</button>
+<button class="tab-btn" data-panel="panelCer" onclick="cambiarTab('panelCer',this)">CER/LER</button>
+</div>
+
+<div id="panelFuentes" class="panel activa">
+<div class="resultado-contador" id="contadorFuentes"></div>
+<div id="tarjetasFuentes" class="tarjetas"></div>
+<div style="margin-top:14px">
+<button class="secundario" onclick="copiarFuentes()">Copiar resultados filtrados (texto)</button>
+<textarea id="areaFuentes" class="oculto" rows="6" onclick="this.select()"></textarea>
+<span id="estadoFuentes" class="pequeno"></span>
+</div>
+</div>
+
+<div id="panelCoef" class="panel">
+<p class="explicacion">Factor de generación de cada corriente por tonelada de materia prima (carne, pescado, hortalizas, pasta, salsas o ingredientes de pizza), por cada una de las 3 rutas de proceso (refrigerado, congelado, pizza), tal y como se usan en la calculadora. Haz clic en un identificador de fuente para verla en la pestaña «Fuentes».</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Proceso</th><th>Corriente</th><th>Factor</th><th>Unidad</th><th>Confianza</th><th>CER/LER candidatos</th><th>Fuentes</th></tr></thead>
+<tbody id="tablaCoef"></tbody>
+</table>
+</div>
+</div>
+
+<div id="panelReal" class="panel">
+<p class="explicacion">Balances de masa reales declarados en autorizaciones ambientales y estudios de campo.</p>
+<div id="bloquesReal"></div>
+</div>
+
+<div id="panelVal" class="panel">
+<p class="explicacion">Opciones de valorización por corriente, ordenadas según la jerarquía de residuos: <span class="nivel n1">1 · Alimentación humana</span><span class="nivel n2">2 · Alimentación animal</span><span class="nivel n3">3 · Material y bioproductos</span><span class="nivel n4">4 · Energía y biogás</span><span class="nivel n5">5 · Suelo / compost</span></p>
+<div id="bloquesVal"></div>
+</div>
+
+<div id="panelCer" class="panel">
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Código</th><th>Descripción oficial</th><th>Corrientes de este CNAE</th></tr></thead>
+<tbody id="tablaCer"></tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Notas</h2>
+<ul style="line-height:1.6">
+<li>Esta base cubre de momento el CNAE 10.85 (platos y comidas preparados). La columna CNAE de cada hoja/tabla está pensada para apilar aquí los próximos CNAEs sin cambiar la estructura.</li>
+<li>Los identificadores de fuente (F01, F02...) son los mismos en esta página y en el Excel «Base_fuentes_residuos_CNAE_1043.xlsx», para poder cruzar ambos.</li>
+<li>Un coeficiente con confianza «Baja» o marcado como extrapolación no está verificado con un dato de planta real: trátalo como orientativo.</li>
+</ul>
+</section>
+
+</main>
+
+<script>
+const DATA = {
+ "cnae": "1085",
+ "fuentes": [
+  {
+   "id": "F01",
+   "titulo": "Ley 7/2022 de residuos y suelos contaminados (art. 4, subproductos; art. 8, jerarquía)",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General",
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809",
+   "nota": ""
+  },
+  {
+   "id": "F02",
+   "titulo": "Reglamento (CE) 852/2004, higiene de los productos alimenticios (HACCP)",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32004R0852",
+   "nota": ""
+  },
+  {
+   "id": "F03",
+   "titulo": "Reglamento (CE) 853/2004, normas específicas de higiene de alimentos de origen animal",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32004R0853",
+   "nota": ""
+  },
+  {
+   "id": "F04",
+   "titulo": "Guía de Mejores Técnicas Disponibles en España del sector de platos preparados ultracongelados (MITECO/PRTR-España)",
+   "organismo": "Marco legal general",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "Aguas residuales de limpieza CIP y de proceso",
+    "General",
+    "General (marco legal, subproducto vs. residuo)"
+   ],
+   "url": "https://prtr-es.miteco.gob.es/Data/images//PLATOS-ULTRACONGELADOS-COMPLETO.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F05",
+   "titulo": "INE: notas explicativas CNAE-2009 y CNAE-2025 (10.85)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://ine.es/daco/daco42/clasificaciones/cnae09/notas.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F06",
+   "titulo": "Naciones Unidas, ISIC Rev.4, código 1075 (equivalente internacional de NACE/CNAE 10.85): nota explicativa completa (incluye/excluye)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://unstats.un.org/unsd/classifications/Econ/Structure/Detail/EN/27/1075",
+   "nota": ""
+  },
+  {
+   "id": "F07",
+   "titulo": "Decisión 2014/955/UE, Lista Europea de Residuos",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Normativa",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32014D0955",
+   "nota": ""
+  },
+  {
+   "id": "F08",
+   "titulo": "Mercasa: informe sectorial «Platos precocinados y preparados» (Alimentación en España), con producción INE y consumo del Panel MAPA 2024",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.mercasa.es/wp-content/uploads/2026/02/Platos-precocinados-y-preparados.pdf",
+   "nota": ""
+  },
+  {
+   "id": "F09",
+   "titulo": "Foodretail.es / datos ASEFAPRE: consumo de platos preparados en España 2024, desglose por formato (refrigerado/congelado/ambiente) y por producto (pizza, pasta, patata...)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://www.foodretail.es/fabricantes/el-consumo-de-platos-preparados-crecio-el-66-en-2024-con-ventas-de-4200-millones.html",
+   "nota": ""
+  },
+  {
+   "id": "F10",
+   "titulo": "Distribución Actualidad: informe de mercado D/ARetail, platos preparados 2023-2024 (producción, exportación, top productos)",
+   "organismo": "—",
+   "zona": "España",
+   "tipo": "Estudio",
+   "corrientes": [
+    "General"
+   ],
+   "url": "https://distribucionactualidad.com/informes/informe-de-mercado-d-aretail-platos-preparados-2024/",
+   "nota": ""
+  }
+ ],
+ "coeficientes": [
+  {
+   "proceso": "Plato preparado refrigerado listo para consumir",
+   "corriente": "Plato preparado refrigerado listo para consumir",
+   "factor": 0.9,
+   "unidad": "t/t carne",
+   "confianza": "Media",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Plato preparado refrigerado listo para consumir",
+   "corriente": "Recortes y restos orgánicos de preparación",
+   "factor": 0.055,
+   "unidad": "t/t carne",
+   "confianza": "Baja",
+   "cer": "02 03 04; 02 02 03; 20 01 08",
+   "fuentes": []
+  },
+  {
+   "proceso": "Plato preparado refrigerado listo para consumir",
+   "corriente": "Producto no conforme retirado de línea (fuera de peso, mal sellado, mal formado)",
+   "factor": 0.012,
+   "unidad": "t/t carne",
+   "confianza": "Baja",
+   "cer": "02 03 04; 02 02 03",
+   "fuentes": []
+  },
+  {
+   "proceso": "Plato preparado refrigerado listo para consumir",
+   "corriente": "Lodos de depuradora (EDAR propia o pretratamiento)",
+   "factor": 0.035,
+   "unidad": "t/t carne",
+   "confianza": "Baja",
+   "cer": "02 02 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Plato preparado refrigerado listo para consumir",
+   "corriente": "Aguas residuales de limpieza CIP y de proceso",
+   "factor": 4.8,
+   "unidad": "m³/t carne",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Plato preparado congelado",
+   "corriente": "Plato preparado congelado",
+   "factor": 0.89,
+   "unidad": "t/t carne",
+   "confianza": "Media",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Plato preparado congelado",
+   "corriente": "Recortes y restos orgánicos de preparación",
+   "factor": 0.071,
+   "unidad": "t/t carne",
+   "confianza": "Baja",
+   "cer": "02 03 04; 02 02 03; 20 01 08",
+   "fuentes": []
+  },
+  {
+   "proceso": "Plato preparado congelado",
+   "corriente": "Aceites de fritura usados",
+   "factor": 0.0017,
+   "unidad": "t/t carne",
+   "confianza": "Media",
+   "cer": "20 01 25",
+   "fuentes": []
+  },
+  {
+   "proceso": "Plato preparado congelado",
+   "corriente": "Lodos de depuradora (EDAR propia o pretratamiento)",
+   "factor": 0.044,
+   "unidad": "t/t carne",
+   "confianza": "Media",
+   "cer": "02 02 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Plato preparado congelado",
+   "corriente": "Aguas residuales de limpieza CIP y de proceso",
+   "factor": 5.4,
+   "unidad": "m³/t carne",
+   "confianza": "Media",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Pizza fresca/refrigerada o congelada",
+   "corriente": "Pizza fresca/refrigerada o congelada",
+   "factor": 0.92,
+   "unidad": "t/t harina",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  },
+  {
+   "proceso": "Pizza fresca/refrigerada o congelada",
+   "corriente": "Recortes de masa y sobrantes de ingredientes de pizza",
+   "factor": 0.03,
+   "unidad": "t/t harina",
+   "confianza": "Baja",
+   "cer": "02 06 01; 20 01 08",
+   "fuentes": []
+  },
+  {
+   "proceso": "Pizza fresca/refrigerada o congelada",
+   "corriente": "Recortes y restos orgánicos de preparación",
+   "factor": 0.015,
+   "unidad": "t/t harina",
+   "confianza": "Baja",
+   "cer": "02 03 04; 02 02 03; 20 01 08",
+   "fuentes": []
+  },
+  {
+   "proceso": "Pizza fresca/refrigerada o congelada",
+   "corriente": "Lodos de depuradora (EDAR propia o pretratamiento)",
+   "factor": 0.02,
+   "unidad": "t/t harina",
+   "confianza": "Baja",
+   "cer": "02 02 04",
+   "fuentes": []
+  },
+  {
+   "proceso": "Pizza fresca/refrigerada o congelada",
+   "corriente": "Aguas residuales de limpieza CIP y de proceso",
+   "factor": 3,
+   "unidad": "m³/t harina",
+   "confianza": "Baja",
+   "cer": "-",
+   "fuentes": []
+  }
+ ],
+ "datos_reales": [
+  {
+   "bloque": "Guía de Mejores Técnicas Disponibles: platos preparados ultracongelados (MITECO/PRTR-España)",
+   "intro": "Valores medios del sector español, sin desglose por tipo de plato (carne/pescado/vegetal) ni por instalación concreta; se han aplicado a la ruta «congelado» de esta calculadora.",
+   "fuente_id": "F04",
+   "fuentes_extra": [],
+   "filas": [
+    [
+     "Consumo de agua",
+     "9,4",
+     "m³/t de producto"
+    ],
+    [
+     "Generación de aguas residuales",
+     "6",
+     "m³/t de producto"
+    ],
+    [
+     "Residuo orgánico",
+     "80",
+     "kg/t de producto"
+    ],
+    [
+     "Residuos asimilables a urbanos",
+     "56,5",
+     "kg/t de producto"
+    ],
+    [
+     "Lodos de depuradora",
+     "50",
+     "kg/t de producto"
+    ],
+    [
+     "Papel y cartón",
+     "23,5",
+     "kg/t de producto"
+    ],
+    [
+     "Madera",
+     "7",
+     "kg/t de producto"
+    ],
+    [
+     "Metales",
+     "5,3",
+     "kg/t de producto"
+    ],
+    [
+     "Aceites vegetales de fritura",
+     "1,9",
+     "kg/t de producto"
+    ],
+    [
+     "Aceites minerales",
+     "0,3",
+     "kg/t de producto"
+    ]
+   ]
+  },
+  {
+   "bloque": "Mercado español de platos preparados 2024 (Mercasa/INE, Panel MAPA, ASEFAPRE)",
+   "intro": "Datos usados para el reparto entre rutas y para contextualizar el tamaño del sector.",
+   "fuente_id": "F08",
+   "fuentes_extra": [
+    "F09",
+    "F10"
+   ],
+   "filas": [
+    [
+     "Producción industrial (INE)",
+     "652.400 t / 2.796 M€",
+     "2024"
+    ],
+    [
+     "Consumo en hogares (Panel MAPA)",
+     "806.098 t / 4.424 M€",
+     "2024"
+    ],
+    [
+     "Ventas ASEFAPRE (18 empresas, ~90 % del sector)",
+     "702,27 Mkg / 4.197 M€",
+     "2024"
+    ],
+    [
+     "Reparto por formato (ASEFAPRE): refrigerado / congelado / ambiente",
+     "46 % / 41 % / 13 % (volumen)",
+     "2024"
+    ],
+    [
+     "Pizza refrigerada",
+     "100,05 Mkg (+5,2 %)",
+     "2024"
+    ],
+    [
+     "Pizza congelada",
+     "32,80 Mkg",
+     "2024"
+    ]
+   ]
+  }
+ ],
+ "valorizacion": [
+  {
+   "corriente": "Recortes y restos orgánicos de preparación",
+   "nivel": 2,
+   "texto": "Los recortes cárnicos o de pescado sin transformación patógena, gestionados como subproducto animal categoría 3, pueden destinarse a fabricación de piensos o alimento para mascotas (CNAE 10.91/10.92) manteniendo la trazabilidad SANDACH.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Recortes y restos orgánicos de preparación",
+   "nivel": 4,
+   "texto": "Codigestión anaerobia junto con otros residuos orgánicos de la industria alimentaria.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Recortes y restos orgánicos de preparación",
+   "nivel": 5,
+   "texto": "Compostaje de la fracción vegetal cuando no procede la vía SANDACH.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Producto no conforme retirado de línea",
+   "nivel": 1,
+   "texto": "Donación a bancos de alimentos cuando el defecto es únicamente de envasado o etiquetado y el producto conserva la cadena de frío y la seguridad alimentaria.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Producto no conforme retirado de línea",
+   "nivel": 2,
+   "texto": "Vía SANDACH cuando el defecto no permite la donación.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Aceites de fritura usados",
+   "nivel": 3,
+   "texto": "El aceite vegetal usado de fritura es una de las materias primas más consolidadas para biodiésel (HVO/FAME) en España, con red de recogida específica en la industria alimentaria.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Recortes de masa y sobrantes de ingredientes de pizza",
+   "nivel": 2,
+   "texto": "Los recortes de masa, queso y vegetales sin contacto con alérgenos incompatibles pueden incorporarse a piensos.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Recortes de masa y sobrantes de ingredientes de pizza",
+   "nivel": 4,
+   "texto": "Codigestión anaerobia cuando no procede la vía de alimentación animal.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Aguas residuales de limpieza CIP y de proceso",
+   "nivel": 4,
+   "texto": "Digestión anaerobia cuando la carga orgánica y grasa lo permite; la Guía MTD del sector cita un consumo medio de agua de 9,4 m³/t de producto y una generación de vertido de 6 m³/t, con depuradora propia en aproximadamente el 80 % de las instalaciones del sector.",
+   "fuentes": [
+    "F04"
+   ]
+  },
+  {
+   "corriente": "Aguas residuales de limpieza CIP y de proceso",
+   "nivel": 5,
+   "texto": "Vertido a colector con pretratamiento cuando no hay depuración propia.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Lodos de depuradora",
+   "nivel": 5,
+   "texto": "Compostaje cuando cumple los requisitos de higienización.",
+   "fuentes": []
+  },
+  {
+   "corriente": "Lodos de depuradora",
+   "nivel": 4,
+   "texto": "Codigestión anaerobia en planta de biogás externa.",
+   "fuentes": []
+  }
+ ],
+ "niveles": {
+  "1": "Alimentación humana / prevención",
+  "2": "Alimentación animal",
+  "3": "Material y bioproductos",
+  "4": "Energía y biogás",
+  "5": "Suelo / compost"
+ },
+ "cer": [
+  {
+   "codigo": "15 01 01",
+   "desc": "Envases de papel y cartón",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 02",
+   "desc": "Envases de plástico",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 03",
+   "desc": "Envases de madera",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 04",
+   "desc": "Envases metálicos",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 05",
+   "desc": "Envases compuestos",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 06",
+   "desc": "Envases mezclados",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 07",
+   "desc": "Envases de vidrio",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 01 10*",
+   "desc": "Envases que contienen restos de sustancias peligrosas o están contaminados por ellas",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "13 02 05*",
+   "desc": "Aceites minerales no clorados de motor, de transmisión mecánica y lubricantes",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 02 02*",
+   "desc": "Absorbentes, materiales de filtración, trapos y ropas contaminados por sustancias peligrosas",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "15 02 03",
+   "desc": "Absorbentes, materiales de filtración, trapos y ropas distintos de 15 02 02",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "17 04 05",
+   "desc": "Hierro y acero",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "02 02 01",
+   "desc": "Lodos de lavado y limpieza (industria alimentaria de origen animal)",
+   "corrientes": "Auxiliar / transversal"
+  },
+  {
+   "codigo": "02 02 03",
+   "desc": "Materiales inadecuados para el consumo o la elaboración (industria cárnica y de pescado)",
+   "corrientes": "Recortes y restos orgánicos de preparación; Producto no conforme retirado de línea (fuera de peso, mal sellado, mal formado)"
+  },
+  {
+   "codigo": "02 02 04",
+   "desc": "Lodos del tratamiento in situ de efluentes",
+   "corrientes": "Lodos de depuradora (EDAR propia o pretratamiento)"
+  },
+  {
+   "codigo": "02 03 04",
+   "desc": "Materiales inadecuados para el consumo o la elaboración (frutas, hortalizas, cereales, aceites, cacao, café, té y tabaco; conservas; producción de levadura y extracto de levadura, melaza)",
+   "corrientes": "Recortes y restos orgánicos de preparación; Producto no conforme retirado de línea (fuera de peso, mal sellado, mal formado)"
+  },
+  {
+   "codigo": "02 06 01",
+   "desc": "Materiales inadecuados para el consumo o la elaboración (industria de panadería, pastelería y confitería)",
+   "corrientes": "Recortes de masa y sobrantes de ingredientes de pizza"
+  },
+  {
+   "codigo": "20 01 08",
+   "desc": "Residuos biodegradables de cocinas y restaurantes",
+   "corrientes": "Recortes y restos orgánicos de preparación; Recortes de masa y sobrantes de ingredientes de pizza"
+  },
+  {
+   "codigo": "20 01 25",
+   "desc": "Aceites y grasas comestibles",
+   "corrientes": "Aceites de fritura usados"
+  },
+  {
+   "codigo": "20 03 01",
+   "desc": "Mezclas de residuos municipales",
+   "corrientes": "Auxiliar / transversal"
+  }
+ ]
+};
+
+function cambiarTab(id, btn){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("activa"));
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("activa"));
+  document.getElementById(id).classList.add("activa");
+  btn.classList.add("activa");
+}
+
+function poblarSelect(id, valores){
+  const sel=document.getElementById(id);
+  [...new Set(valores)].sort((a,b)=>a.localeCompare(b,"es")).forEach(v=>{
+    const o=document.createElement("option");o.value=v;o.textContent=v;sel.appendChild(o);
+  });
+}
+
+function iniciarFiltros(){
+  poblarSelect("fTipo", DATA.fuentes.map(f=>f.tipo));
+  poblarSelect("fZona", DATA.fuentes.map(f=>f.zona));
+  const corrientes=new Set();
+  DATA.fuentes.forEach(f=>f.corrientes.forEach(c=>corrientes.add(c)));
+  poblarSelect("fCorriente",[...corrientes]);
+}
+
+function pintarFuentes(){
+  const q=document.getElementById("fBusqueda").value.trim().toLowerCase();
+  const tipo=document.getElementById("fTipo").value;
+  const zona=document.getElementById("fZona").value;
+  const corr=document.getElementById("fCorriente").value;
+  const res=DATA.fuentes.filter(f=>{
+    if(tipo&&f.tipo!==tipo)return false;
+    if(zona&&f.zona!==zona)return false;
+    if(corr&&!f.corrientes.includes(corr))return false;
+    if(q){
+      const txt=(f.titulo+" "+f.organismo+" "+f.zona+" "+f.corrientes.join(" ")+" "+(f.nota||"")).toLowerCase();
+      if(!txt.includes(q))return false;
+    }
+    return true;
+  });
+  document.getElementById("contadorFuentes").textContent=`${res.length} de ${DATA.fuentes.length} fuentes`;
+  document.getElementById("tarjetasFuentes").innerHTML=res.map(f=>`
+    <div class="tarjeta">
+      <span class="badge ${f.tipo}">${f.tipo}</span>
+      <h3><a href="${f.url}" target="_blank" rel="noopener">${f.titulo}</a></h3>
+      <div class="meta-linea"><b>${f.id}</b> · ${f.organismo} · ${f.zona}</div>
+      <div class="chips">${f.corrientes.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
+      ${f.nota?`<div class="nota">${f.nota}</div>`:""}
+    </div>`).join("")||"<p class='pequeno'>No hay fuentes que coincidan con el filtro.</p>";
+}
+
+function copiarFuentes(){
+  const q=document.getElementById("fBusqueda").value.trim().toLowerCase();
+  const tipo=document.getElementById("fTipo").value;
+  const zona=document.getElementById("fZona").value;
+  const corr=document.getElementById("fCorriente").value;
+  const res=DATA.fuentes.filter(f=>{
+    if(tipo&&f.tipo!==tipo)return false;
+    if(zona&&f.zona!==zona)return false;
+    if(corr&&!f.corrientes.includes(corr))return false;
+    if(q){
+      const txt=(f.titulo+" "+f.organismo+" "+f.zona+" "+f.corrientes.join(" ")+" "+(f.nota||"")).toLowerCase();
+      if(!txt.includes(q))return false;
+    }
+    return true;
+  });
+  const rows=[["id","titulo","tipo","organismo","zona","corrientes","enlace","nota"]];
+  res.forEach(f=>rows.push([f.id,f.titulo,f.tipo,f.organismo,f.zona,f.corrientes.join(" / "),f.url,f.nota||""]));
+  const txt=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(";")).join("\n");
+  const area=document.getElementById("areaFuentes");
+  area.value=txt;area.classList.remove("oculto");area.focus();area.select();
+  const estado=document.getElementById("estadoFuentes");
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(()=>estado.textContent="Copiado al portapapeles.").catch(()=>estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.");
+  } else estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.";
+}
+
+function pintarCoef(){
+  document.getElementById("tablaCoef").innerHTML=DATA.coeficientes.map(c=>`
+    <tr><td>${c.proceso}</td><td>${c.corriente}</td><td class="num">${c.factor}</td><td>${c.unidad}</td><td>${c.confianza}</td><td>${c.cer}</td>
+    <td>${c.fuentes.map(id=>`<span class="chip" style="cursor:pointer" onclick="irAFuente('${id}')">${id}</span>`).join(" ")||"—"}</td></tr>`).join("");
+}
+
+function irAFuente(id){
+  document.querySelector('.tab-btn[data-panel="panelFuentes"]').click();
+  document.getElementById("fBusqueda").value=id;
+  const f=DATA.fuentes.find(x=>x.id===id);
+  document.getElementById("fBusqueda").value=f?f.titulo.slice(0,30):id;
+  pintarFuentes();
+}
+
+function pintarReal(){
+  document.getElementById("bloquesReal").innerHTML=DATA.datos_reales.map(b=>{
+    const fid=b.fuente_id;const f=DATA.fuentes.find(x=>x.id===fid);
+    const extra=(b.fuentes_extra||[]).map(id=>{const g=DATA.fuentes.find(x=>x.id===id);return g?`, <a href="${g.url}" target="_blank" rel="noopener">${id}</a>`:"";}).join("");
+    return `<div class="bloque-real">
+      <h3>${b.bloque}</h3>
+      <p class="explicacion">${b.intro}</p>
+      <div class="tabla-contenedor"><table><thead><tr><th>Dato</th><th>Cantidad declarada</th><th>Ratio</th></tr></thead>
+      <tbody>${b.filas.map(([d,c,r])=>`<tr><td>${d}</td><td>${c}</td><td>${r}</td></tr>`).join("")}</tbody></table></div>
+      <p class="fuente">Fuente: ${f?`<a href="${f.url}" target="_blank" rel="noopener">${f.id} — ${f.titulo}</a>`:""}${extra}</p>
+    </div>`;
+  }).join("");
+}
+
+function pintarVal(){
+  const porCorriente={};
+  DATA.valorizacion.forEach(v=>{(porCorriente[v.corriente]=porCorriente[v.corriente]||[]).push(v);});
+  document.getElementById("bloquesVal").innerHTML=Object.entries(porCorriente).map(([corr,ops])=>`
+    <div class="bloque-real"><h3>${corr}</h3>
+    ${ops.sort((a,b)=>a.nivel-b.nivel).map(o=>`<div class="opcion-val"><span class="nivel n${o.nivel}">${o.nivel} · ${DATA.niveles[o.nivel]}</span>${o.texto}
+      ${o.fuentes.length?`<div class="chips">${o.fuentes.map(id=>{const f=DATA.fuentes.find(x=>x.id===id);return f?`<a class="chip" style="text-decoration:none" href="${f.url}" target="_blank" rel="noopener">${id}</a>`:"";}).join("")}</div>`:""}
+    </div>`).join("")}</div>`).join("");
+}
+
+function pintarCer(){
+  document.getElementById("tablaCer").innerHTML=DATA.cer.map(c=>`
+    <tr><td><span class="cer${c.codigo.includes("*")?" pel":""}">${c.codigo}</span></td><td>${c.desc}</td><td>${c.corrientes}</td></tr>`).join("");
+}
+
+iniciarFiltros();
+pintarFuentes();
+pintarCoef();
+pintarReal();
+pintarVal();
+pintarCer();
+</script>
+
+</body></html>

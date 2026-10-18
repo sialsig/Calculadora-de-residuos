@@ -1,0 +1,1060 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Residuos Elaboración de Vinos</title>
+<style>
+:root{
+  --c-bg:#f3f7f4;--c-surface:#fff;--c-shadow:rgba(0,0,0,.08);--c-text:#18322a;
+  --c-h1:#225c40;--c-h2:#2c704d;--c-h3:#397b59;--c-border:#b7cabe;--c-focus:#8fc19b;
+  --c-input-bg:#fff;
+  --c-btn-bg:#28734d;--c-btn-bg-hover:#1e593b;--c-btn-secondary-bg:#64786c;--c-btn-peligro-bg:#9b4a3c;
+  --c-aviso-bg:#eef7ef;--c-aviso-border:#3e8c5d;--c-advertencia-bg:#fff5d8;--c-advertencia-border:#d3971b;
+  --c-explicacion-text:#50675a;--c-fuente-text:#64786c;
+  --c-indicadores-bg:#edf7ef;--c-indicador-valor:#286b4b;--c-pequeno-text:#5c6c62;
+  --c-nodo-bg:#e5f2e8;--c-nodo-border:#9dc4a5;--c-flecha:#397b59;
+  --c-chip-producto-bg:#dff0e3;--c-chip-producto-border:#3e8c5d;
+  --c-chip-subproducto-bg:#e3eef5;--c-chip-subproducto-border:#5c8da5;
+  --c-chip-residuo-bg:#fbeede;--c-chip-residuo-border:#d3971b;
+  --c-chip-efluente-bg:#eceaf6;--c-chip-efluente-border:#7a6fb0;
+  --c-croquis-border:#d8e4dc;--c-th-bg:#e7f1ea;--c-tr-border:#d8e4dc;
+  --c-fila-producto-bg:#f8fbf9;--c-fila-producto-border:#d8e4dc;--c-fila-producto-meta:#5c6c62;
+  --c-canvas-bg:#fff;--c-leyenda-bg:#edf7ef;
+  --c-tarjeta-bg:#fffdfa;--c-tarjeta-border:#ded8ca;--c-tarjeta-accent1:#3e8c5d;--c-tarjeta-accent2:#5c8da5;--c-tarjeta-accent3:#d3971b;
+  --c-tarjeta-val-bg:#fbfdfb;--c-tarjeta-val-border:#d8e4dc;--c-tarjeta-val-accent:#28734d;
+  --c-nivel-bg:#e5f2e8;--c-nivel-text:#225c40;
+  --c-nivel-n1-bg:#d7efe0;--c-nivel-n2-bg:#e3eef5;--c-nivel-n2-text:#2e5b73;
+  --c-nivel-n3-bg:#f1ecd9;--c-nivel-n3-text:#6d5a14;--c-nivel-n4-bg:#fbe6d6;--c-nivel-n4-text:#8a4a1a;--c-nivel-n5-bg:#eee;--c-nivel-n5-text:#555;
+  --c-opcion-border:#d8e4dc;--c-enlaces-link:#1f6a8a;
+  --c-tipo-enlace-bg:#64786c;--c-tipo-enlace-estudio:#5c8da5;--c-tipo-enlace-empresa:#28734d;--c-tipo-enlace-normativa:#8a6d1a;--c-tipo-enlace-proyecto:#7a6fb0;--c-tipo-enlace-herramienta:#9b4a3c;
+  --c-cer-bg:#f1f5f2;--c-cer-border:#c9d8ce;--c-cer-pel-border:#c0392b;--c-cer-pel-text:#8e2a1f;
+  --c-caja-total-bg:#f4f8fb;--c-caja-total-border:#cddce6;
+  --c-origen-bg:#e6f0f7;--c-origen-text:#24506a;--c-origen-border:#c3d7e5;
+  --c-cantidad-tarjeta-bg:#edf7ef;--c-cantidad-tarjeta-text:#18322a;
+  --c-reparto-bg:#f4f8fb;--c-enlace-boton:#1f6a8a;
+  --c-tr-total-bg:#edf7ef;--c-tr-subtotal-bg:#f7faf8;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+    --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+    --c-input-bg:#182720;
+    --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;--c-btn-peligro-bg:#a85c4c;
+    --c-aviso-bg:#16281f;--c-aviso-border:#3e8c5d;--c-advertencia-bg:#2c2712;--c-advertencia-border:#d3971b;
+    --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+    --c-indicadores-bg:#15281f;--c-indicador-valor:#6fd19c;--c-pequeno-text:#93a49a;
+    --c-nodo-bg:#1b3226;--c-nodo-border:#3a5c48;--c-flecha:#7fcf9e;
+    --c-chip-producto-bg:#1c3b28;--c-chip-producto-border:#4caf7c;
+    --c-chip-subproducto-bg:#1a2f3c;--c-chip-subproducto-border:#5c8da5;
+    --c-chip-residuo-bg:#3a2c14;--c-chip-residuo-border:#d3971b;
+    --c-chip-efluente-bg:#241f3a;--c-chip-efluente-border:#8f7fd6;
+    --c-croquis-border:#2c4438;--c-th-bg:#1c3227;--c-tr-border:#26392f;
+    --c-fila-producto-bg:#182720;--c-fila-producto-border:#2c4438;--c-fila-producto-meta:#93a49a;
+    --c-canvas-bg:#16241d;--c-leyenda-bg:#15281f;
+    --c-tarjeta-bg:#182720;--c-tarjeta-border:#33362a;--c-tarjeta-accent1:#4caf7c;--c-tarjeta-accent2:#5c8da5;--c-tarjeta-accent3:#d3971b;
+    --c-tarjeta-val-bg:#152820;--c-tarjeta-val-border:#26392f;--c-tarjeta-val-accent:#3c9c68;
+    --c-nivel-bg:#1c3227;--c-nivel-text:#a6e3c4;
+    --c-nivel-n1-bg:#204331;--c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+    --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;--c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;--c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+    --c-opcion-border:#26392f;--c-enlaces-link:#6cc2e8;
+    --c-tipo-enlace-bg:#5a6c62;--c-tipo-enlace-estudio:#5c8da5;--c-tipo-enlace-empresa:#2f8055;--c-tipo-enlace-normativa:#a3822f;--c-tipo-enlace-proyecto:#7a6fb0;--c-tipo-enlace-herramienta:#a85c4c;
+    --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+    --c-caja-total-bg:#152830;--c-caja-total-border:#274456;
+    --c-origen-bg:#152a37;--c-origen-text:#8fc2da;--c-origen-border:#274456;
+    --c-cantidad-tarjeta-bg:#15281f;--c-cantidad-tarjeta-text:#dce9e1;
+    --c-reparto-bg:#152830;--c-enlace-boton:#6cc2e8;
+    --c-tr-total-bg:#1a3327;--c-tr-subtotal-bg:#182720;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+  --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+  --c-input-bg:#182720;
+  --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;--c-btn-peligro-bg:#a85c4c;
+  --c-aviso-bg:#16281f;--c-aviso-border:#3e8c5d;--c-advertencia-bg:#2c2712;--c-advertencia-border:#d3971b;
+  --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+  --c-indicadores-bg:#15281f;--c-indicador-valor:#6fd19c;--c-pequeno-text:#93a49a;
+  --c-nodo-bg:#1b3226;--c-nodo-border:#3a5c48;--c-flecha:#7fcf9e;
+  --c-chip-producto-bg:#1c3b28;--c-chip-producto-border:#4caf7c;
+  --c-chip-subproducto-bg:#1a2f3c;--c-chip-subproducto-border:#5c8da5;
+  --c-chip-residuo-bg:#3a2c14;--c-chip-residuo-border:#d3971b;
+  --c-chip-efluente-bg:#241f3a;--c-chip-efluente-border:#8f7fd6;
+  --c-croquis-border:#2c4438;--c-th-bg:#1c3227;--c-tr-border:#26392f;
+  --c-fila-producto-bg:#182720;--c-fila-producto-border:#2c4438;--c-fila-producto-meta:#93a49a;
+  --c-canvas-bg:#16241d;--c-leyenda-bg:#15281f;
+  --c-tarjeta-bg:#182720;--c-tarjeta-border:#33362a;--c-tarjeta-accent1:#4caf7c;--c-tarjeta-accent2:#5c8da5;--c-tarjeta-accent3:#d3971b;
+  --c-tarjeta-val-bg:#152820;--c-tarjeta-val-border:#26392f;--c-tarjeta-val-accent:#3c9c68;
+  --c-nivel-bg:#1c3227;--c-nivel-text:#a6e3c4;
+  --c-nivel-n1-bg:#204331;--c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+  --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;--c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;--c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+  --c-opcion-border:#26392f;--c-enlaces-link:#6cc2e8;
+  --c-tipo-enlace-bg:#5a6c62;--c-tipo-enlace-estudio:#5c8da5;--c-tipo-enlace-empresa:#2f8055;--c-tipo-enlace-normativa:#a3822f;--c-tipo-enlace-proyecto:#7a6fb0;--c-tipo-enlace-herramienta:#a85c4c;
+  --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+  --c-caja-total-bg:#152830;--c-caja-total-border:#274456;
+  --c-origen-bg:#152a37;--c-origen-text:#8fc2da;--c-origen-border:#274456;
+  --c-cantidad-tarjeta-bg:#15281f;--c-cantidad-tarjeta-text:#dce9e1;
+  --c-reparto-bg:#152830;--c-enlace-boton:#6cc2e8;
+  --c-tr-total-bg:#1a3327;--c-tr-subtotal-bg:#182720;
+}
+body{font-family:Arial,sans-serif;margin:0;background:var(--c-bg);color:var(--c-text)}
+main{max-width:1180px;margin:auto;padding:24px}
+section{background:var(--c-surface);padding:22px;margin-bottom:18px;border-radius:14px;box-shadow:0 2px 10px var(--c-shadow)}
+h1{margin-top:0;color:var(--c-h1)}
+h2{color:var(--c-h2)}
+h3{color:var(--c-h3);margin-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+label{display:block;font-weight:bold;margin:8px 0 5px}
+input,select{width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text)}
+input:focus,select:focus{outline:2px solid var(--c-focus)}
+input[type=checkbox]{width:auto;margin-right:8px}
+button{margin-top:15px;margin-right:8px;padding:11px 16px;color:#fff;background:var(--c-btn-bg);border:0;border-radius:8px;cursor:pointer}
+button:hover{background:var(--c-btn-bg-hover)}
+button.secundario{background:var(--c-btn-secondary-bg)}
+button.peligro{background:var(--c-btn-peligro-bg);margin-top:0;padding:8px 12px}
+.aviso{padding:12px;margin-top:12px;background:var(--c-aviso-bg);border-left:5px solid var(--c-aviso-border)}
+.advertencia{padding:12px;margin-top:12px;background:var(--c-advertencia-bg);border-left:5px solid var(--c-advertencia-border)}
+.explicacion{color:var(--c-explicacion-text);font-size:14px;line-height:1.5;margin-top:6px}
+.fuente{color:var(--c-fuente-text);font-size:12px}
+.oculto{display:none!important}
+.indicadores{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.indicador{padding:14px;background:var(--c-indicadores-bg);border-radius:9px}
+.indicador .valor{font-size:23px;font-weight:bold;color:var(--c-indicador-valor)}
+.pequeno{font-size:12px;color:var(--c-pequeno-text)}
+.flujo{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.nodo{padding:11px;background:var(--c-nodo-bg);border:1px solid var(--c-nodo-border);border-radius:9px}
+.flecha{font-size:20px;color:var(--c-flecha)}
+.salidas{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-size:12px;padding:5px 9px;border-radius:12px;border:1px solid var(--c-border)}
+.chip.producto{background:var(--c-chip-producto-bg);border-color:var(--c-chip-producto-border)}
+.chip.subproducto{background:var(--c-chip-subproducto-bg);border-color:var(--c-chip-subproducto-border)}
+.chip.residuo{background:var(--c-chip-residuo-bg);border-color:var(--c-chip-residuo-border)}
+.chip.efluente{background:var(--c-chip-efluente-bg);border-color:var(--c-chip-efluente-border)}
+.croquis-ruta{border:1px solid var(--c-croquis-border);border-radius:10px;padding:14px;margin-bottom:14px}
+.tabla-contenedor{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:14px}
+th,td{padding:9px;border-bottom:1px solid var(--c-tr-border);text-align:left;vertical-align:top}
+th{background:var(--c-th-bg)}
+td.num{text-align:right;white-space:nowrap}
+.fila-producto{display:grid;grid-template-columns:2.2fr 1.6fr 1.3fr 1.1fr auto;gap:10px;align-items:end;padding:12px;margin-bottom:10px;background:var(--c-fila-producto-bg);border:1px solid var(--c-fila-producto-border);border-radius:10px}
+.fila-producto .meta{grid-column:1/-1;font-size:12px;color:var(--c-fila-producto-meta)}
+@media(max-width:800px){.fila-producto{grid-template-columns:1fr}}
+.grafico-contenedor{display:flex;justify-content:center;align-items:center;margin:20px auto;max-width:520px}
+#graficoResiduos{max-width:100%;background:var(--c-canvas-bg);border-radius:14px}
+.leyenda-grafico{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px}
+.leyenda-grafico span{background:var(--c-leyenda-bg);padding:6px 9px;border-radius:12px;font-size:12px}
+.tarjetas-residuos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.tarjeta-residuo{background:var(--c-tarjeta-bg);border:1px solid var(--c-tarjeta-border);border-left:4px solid var(--c-tarjeta-accent1);border-radius:10px;padding:16px;line-height:1.5}
+.tarjeta-residuo:nth-child(2n){border-left-color:var(--c-tarjeta-accent2)}
+.tarjeta-residuo:nth-child(3n){border-left-color:var(--c-tarjeta-accent3)}
+.tarjeta-val{background:var(--c-tarjeta-val-bg);border:1px solid var(--c-tarjeta-val-border);border-left:4px solid var(--c-tarjeta-val-accent);border-radius:10px;padding:16px;margin-bottom:14px;line-height:1.5}
+.nivel{display:inline-block;font-size:11px;font-weight:bold;padding:3px 8px;border-radius:10px;background:var(--c-nivel-bg);color:var(--c-nivel-text);margin-right:6px}
+.nivel.n1{background:var(--c-nivel-n1-bg)}.nivel.n2{background:var(--c-nivel-n2-bg);color:var(--c-nivel-n2-text)}.nivel.n3{background:var(--c-nivel-n3-bg);color:var(--c-nivel-n3-text)}.nivel.n4{background:var(--c-nivel-n4-bg);color:var(--c-nivel-n4-text)}.nivel.n5{background:var(--c-nivel-n5-bg);color:var(--c-nivel-n5-text)}
+.opcion{padding:8px 0;border-bottom:1px dashed var(--c-opcion-border)}
+.opcion:last-child{border-bottom:0}
+.enlaces{margin:4px 0 0 0;padding-left:18px;font-size:13px}
+.enlaces a{color:var(--c-enlaces-link)}
+.tipo-enlace{font-size:11px;color:#fff;background:var(--c-tipo-enlace-bg);border-radius:8px;padding:1px 6px;margin-right:4px}
+.tipo-enlace.Estudio{background:var(--c-tipo-enlace-estudio)}.tipo-enlace.Empresa{background:var(--c-tipo-enlace-empresa)}.tipo-enlace.Normativa{background:var(--c-tipo-enlace-normativa)}.tipo-enlace.Proyecto{background:var(--c-tipo-enlace-proyecto)}.tipo-enlace.Herramienta{background:var(--c-tipo-enlace-herramienta)}
+.cer{display:inline-block;background:var(--c-cer-bg);border:1px solid var(--c-cer-border);border-radius:6px;padding:1px 6px;margin:1px 2px;font-size:12px;white-space:nowrap}
+.cer.pel{border-color:var(--c-cer-pel-border);color:var(--c-cer-pel-text)}
+.factor-input{width:90px;padding:6px}
+details{margin-top:10px}
+summary{cursor:pointer;font-weight:bold;color:var(--c-h2)}
+.caja-total{background:var(--c-caja-total-bg);border:1px solid var(--c-caja-total-border);border-radius:10px;padding:12px 14px;margin-bottom:14px}
+.origen{display:flex;flex-wrap:wrap;gap:5px;margin:4px 0 8px}
+.origen span{background:var(--c-origen-bg);color:var(--c-origen-text);border:1px solid var(--c-origen-border);border-radius:12px;padding:2px 9px;font-size:12px;font-weight:bold}
+.cantidad-tarjeta{font-size:13px;color:var(--c-cantidad-tarjeta-text);background:var(--c-cantidad-tarjeta-bg);border-radius:8px;padding:4px 8px;display:inline-block}
+.reparto{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--c-reparto-bg);border-radius:8px;padding:6px 10px;font-size:13px}
+.reparto input{width:90px;padding:5px}
+.enlace-boton{background:none;border:0;color:var(--c-enlace-boton);text-decoration:underline;cursor:pointer;padding:0;font-size:13px;margin:0}
+tr.total td{font-weight:bold;background:var(--c-tr-total-bg)}
+tr.subtotal td{background:var(--c-tr-subtotal-bg)}
+textarea{width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-family:inherit}
+</style>
+<main>
+
+<section>
+<h1>Calculadora de residuos · CNAE 11.02</h1>
+<p><strong>Elaboración de vinos (grupo 11.0, fabricación de bebidas).</strong></p>
+<div class="grid">
+<div><p><strong>11.02 — Elaboración de vinos</strong><br>Vinos tranquilos tintos, rosados y blancos, con y sin DOP; cava y espumosos; vinos de aguja; generosos y de licor; mosto de uva.</p>
+<p class="pequeno">CNAE-2009 11.02 → CNAE-2025 11.02. Correspondencia 1:1 (INE). PRODCOM 11.02.11 y 11.02.12.</p></div>
+<div><p><strong>Tipos de bodega</strong><br><b>Tinto y rosado:</b> despalillado, maceración, fermentación y prensado del orujo.<br><b>Blanco:</b> prensado inmediato y desfangado.<br><b>Cava:</b> segunda fermentación en botella, removido y degüelle.<br><b>Generosos:</b> encabezado y crianza en soleras.<br><b>Mosto:</b> prensado y apagado o concentración.</p></div>
+</div>
+<div class="aviso">Esta herramienta proporciona una estimación técnica. Los códigos CER/LER son orientativos: una misma corriente puede corresponder a más de un código según su origen, composición, destino y el criterio de la administración. El vinagre de vino pertenece al CNAE 10.84 y el alcohol vínico al 11.01.</div>
+</section>
+
+<section>
+<h2>1. Configuración general</h2>
+<div class="grid">
+<div>
+<label for="ambito">Ámbito del cálculo</label>
+<select id="ambito" onchange="actualizarInterfaz()">
+<option value="instalacion">Una instalación / empresa</option>
+<option value="territorio">Comarca o zona</option>
+</select>
+</div>
+<div id="campoNumInstalaciones" class="oculto">
+<label for="numInstalaciones">Número de instalaciones en la zona (opcional)</label>
+<input id="numInstalaciones" type="number" min="0" step="1" value="0" oninput="calcular()">
+<div class="pequeno">Si lo indicas, se muestra también la media por instalación.</div>
+</div>
+<div>
+<label for="gestionSub">Gestión de raspón y vino no conforme</label>
+<select id="gestionSub" onchange="calcular()">
+<option value="subproducto">Como subproducto (compost, destilería)</option>
+<option value="residuo">Como residuo (entrega a gestor)</option>
+</select>
+</div>
+<div>
+<label style="margin-top:34px"><input type="checkbox" id="incluirSub" onchange="calcular()">La facturación incluye la venta de subproductos y coproductos</label>
+<div class="pequeno">Si se marca, la facturación se reparte entre el producto principal y los subproductos vendidos, según sus precios PRODCOM.</div>
+</div>
+</div>
+<div class="explicacion">
+El precio industrial de referencia se carga automáticamente según el producto (valor de producción vendida / cantidad vendida, PRODCOM). Es editable y sin IVA.
+</div>
+</section>
+
+<section>
+<h2 id="tituloEntrada">2. Productos de la instalación</h2>
+<p class="explicacion" id="textoEntrada">Añade una fila por cada producto que fabrique la instalación. En cada fila puedes introducir la facturación, las toneladas de producto o las toneladas de materia prima procesada.</p>
+<div class="caja-total">
+<div class="grid">
+<div>
+<label for="factTotal" id="etiquetaFactTotal">Facturación total de la empresa (€/año, opcional)</label>
+<input id="factTotal" type="number" min="0" step="any" value="" placeholder="Ej.: 25000000" oninput="calcular()">
+</div>
+<div class="pequeno" style="align-self:end">Si solo conoces la facturación total, introdúcela aquí: se reparte entre los productos con «Facturación + precio» según su peso en la producción. El % de producción de cada producto se calcula con la producción media española (PRODCOM) y puedes modificarlo. También puedes fijar a mano la facturación de un producto; el resto se reparte entre los demás.</div>
+</div>
+</div>
+<div id="filasProductos"></div>
+<div id="avisoReparto"></div>
+<button onclick="anadirFila()">+ Añadir producto</button>
+<button class="secundario" onclick="descargarArchivo('xlsx')">Descargar Excel</button>
+<button class="secundario" onclick="descargarArchivo('pdf')">Descargar PDF</button>
+<p class="pequeno">Los resultados se actualizan automáticamente al modificar cualquier dato. <span id="descargaEstado"></span></p>
+</section>
+
+<section>
+<h2>3. Croquis del proceso</h2>
+<p class="explicacion">Se muestra el croquis de cada proceso utilizado por los productos seleccionados, con sus salidas: <span class="chip producto">producto</span> <span class="chip subproducto">subproducto</span> <span class="chip residuo">residuo</span> <span class="chip efluente">efluente líquido</span></p>
+<div id="croquis"></div>
+</section>
+
+<section>
+<h2>4. Resultados generales</h2>
+<div id="indicadores" class="indicadores"></div>
+<div id="mensajes"></div>
+</section>
+
+<section>
+<h2>5. Producción media estimada por producto</h2>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Producto</th><th>CNAE</th><th>PRODCOM</th><th>Modo de entrada</th><th>Precio usado</th><th>Producto principal (cantidad/año)</th><th>Materia prima procesada (t/año)</th><th>Rendimiento principal</th><th>% de la producción</th></tr></thead>
+<tbody id="tablaProduccion"></tbody>
+</table>
+</div>
+</section>
+
+<section>
+<h2>6. Resultados desglosados por corriente</h2>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Corriente</th><th>Proceso</th><th>Clasificación</th><th>Cantidad</th><th>Factor s/ materia prima</th><th>CER/LER candidatos</th><th>Valorización principal</th><th>Confianza</th></tr></thead>
+<tbody id="tablaResultados"></tbody>
+</table>
+</div>
+<h3 style="margin-top:22px">Residuos auxiliares y transversales</h3>
+<p class="explicacion">No forman parte del gráfico. Cuando hay cantidad, se estima por tonelada de uva con los datos PRTR 2024 de Félix Solís (Valdepeñas).</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Residuo</th><th>Origen</th><th>Cantidad estimada</th><th>CER/LER</th><th>Gestión habitual</th></tr></thead>
+<tbody id="tablaAuxiliares"></tbody>
+</table>
+</div>
+<h3 style="margin-top:22px" id="tituloTotales">Totales por tipo</h3>
+<p class="explicacion">Suma de todas las corrientes anteriores agrupadas por tipo, para tener la visión global de la empresa o la zona. Los porcentajes se calculan sobre el total de salidas en toneladas (sin efluentes).</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Tipo</th><th>Cantidad</th><th>kg por t de materia prima</th><th>% sobre salidas (t)</th><th>Corrientes incluidas</th></tr></thead>
+<tbody id="tablaTotales"></tbody>
+</table>
+</div>
+</section>
+
+<section>
+<h2>7. Distribución de corrientes</h2>
+<div class="grid">
+<div>
+<label for="filtroGrafico">Mostrar en el gráfico</label>
+<select id="filtroGrafico" onchange="calcular()">
+<option value="balance">Producto, subproductos y residuos (balance de masa)</option>
+<option value="todas">Subproductos y residuos (sin producto principal)</option>
+<option value="residuos">Solo corrientes clasificadas como residuo</option>
+<option value="subproductos">Solo subproductos</option>
+</select>
+</div>
+</div>
+<p class="explicacion" id="notaGrafico"></p>
+<div class="grafico-contenedor"><canvas id="graficoResiduos" width="460" height="460"></canvas></div>
+<div id="leyendaGrafico" class="leyenda-grafico"></div>
+</section>
+
+<section>
+<h2>8. Descripción de las corrientes</h2>
+<p class="explicacion">Se muestran las corrientes presentes en los procesos seleccionados. En cada tarjeta se indica de qué producto fabricado procede y la cantidad estimada.</p>
+<div id="tarjetas" class="tarjetas-residuos"></div>
+<details style="margin-top:16px">
+<summary>Qué es cada corriente</summary>
+<p class="explicacion"><strong>Raspón:</strong> estructura del racimo separada en la despalilladora<br>
+<strong>Orujo:</strong> hollejos y pepitas tras el prensado; va a destilería<br>
+<strong>Lías:</strong> sedimentos de levaduras y tartratos de los trasiegos<br>
+<strong>Tartratos:</strong> cristales de la estabilización por frío<br>
+<strong>Tierras de filtración:</strong> kieselguhr, perlita y placas con vino retenido</p>
+</details>
+</section>
+
+<section>
+<h2>9. Opciones de valorización</h2>
+<p class="explicacion">Opciones ordenadas según la jerarquía de residuos y el principio de cascada: <span class="nivel n1">Prevención / alimentación humana</span><span class="nivel n2">Alimentación animal</span><span class="nivel n3">Material y bioproductos</span><span class="nivel n4">Energía y biogás</span><span class="nivel n5">Suelo / compost</span>. Cada opción incluye enlaces a estudios, industrias, proyectos o normativa.</p>
+<div class="grid">
+<div>
+<label for="filtroVal">Mostrar opciones para</label>
+<select id="filtroVal" onchange="pintarValorizacion()">
+<option value="presentes">Solo las corrientes de los procesos seleccionados</option>
+<option value="todas">Todas las corrientes de 11.02</option>
+</select>
+</div>
+</div>
+<div id="valorizacion" style="margin-top:14px"></div>
+<h3>Marco para decidir si es subproducto o residuo</h3>
+<ul class="enlaces" id="enlacesMarco"></ul>
+</section>
+
+<section>
+<h2>10. Referencia de códigos CER/LER utilizados</h2>
+<p class="explicacion">Lista Europea de Residuos (Decisión 2014/955/UE). El subcapítulo 02 07 corresponde a la elaboración de bebidas alcohólicas; algunas bodegas declaran sus lodos o mermas en 02 03. Los códigos con asterisco son peligrosos.</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Código</th><th>Descripción oficial</th><th>Corrientes de este CNAE a las que puede aplicarse</th></tr></thead>
+<tbody id="tablaCER"></tbody>
+</table>
+</div>
+<div id="bloqueObservados"></div>
+</section>
+
+<section>
+<h2>11. Precios de referencia PRODCOM</h2>
+<p class="explicacion">Precio implícito = valor de producción vendida / cantidad vendida (precio neto de fábrica, sin IVA, sin impuestos especiales), en €/l. Datos de Eurostat PRODCOM (DS-059358) para España (ES). Se considera 1 hl ≈ 0,1 t.</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Producto</th><th>PRODCOM</th><th>ES 2021</th><th>ES 2022</th><th>ES 2023</th><th>ES 2024</th><th>UE 2024</th><th>Valor inicial</th><th>Origen del valor inicial</th></tr></thead>
+<tbody id="tablaPrecios"></tbody>
+</table>
+</div>
+<p class="fuente">Fuente: <a href="https://ec.europa.eu/eurostat/databrowser/view/ds-059358/default/table?lang=en" target="_blank">Eurostat PRODCOM, Sold production, exports and imports (DS-059358)</a>, consulta septiembre 2026.</p>
+</section>
+
+<section>
+<h2>12. Factores técnicos editables</h2>
+<p class="explicacion">Cantidad de cada corriente por tonelada de uva (hl/t para el vino, t/t para los sólidos y m³/t para los efluentes). Valores provisionales basados en bibliografía y datos de bodegas reales; se pueden modificar y el cálculo se actualiza al instante.</p>
+<button class="secundario" onclick="restablecerFactores()">Restablecer valores iniciales</button>
+<div id="factores"></div>
+</section>
+
+<section>
+<h2>13. Fuentes y supuestos</h2>
+<ul id="listaFuentes" style="line-height:1.6"></ul>
+<p class="fuente">PRODCOM utiliza el valor de producción vendida a precio neto de fábrica. No descuenta los costes de producción ni representa el beneficio. Las producciones estimadas a partir de la facturación son orientativas.</p>
+</section>
+
+</main>
+
+<script>
+const PRECIOS_PRODCOM = {"11021190": {"2021": {"es": 3.21, "ue": 3.453}, "2022": {"es": 3.695, "ue": 3.435}, "2023": {"es": 3.74, "ue": 3.688}, "2024": {"es": 3.429, "ue": 3.756}}, "11021211": {"2021": {"es": null, "ue": 2.083}, "2022": {"es": 1.614, "ue": 2.323}, "2023": {"es": 2.046, "ue": 2.252}, "2024": {"es": 1.975, "ue": 2.227}}, "11021217": {"2021": {"es": 2.597, "ue": 2.496}, "2022": {"es": 2.866, "ue": 2.752}, "2023": {"es": 3.247, "ue": 2.753}, "2024": {"es": 3.341, "ue": 2.657}}, "11021220": {"2021": {"es": null, "ue": 0.843}, "2022": {"es": 0.556, "ue": 0.94}, "2023": {"es": 0.537, "ue": 0.943}, "2024": {"es": 0.627, "ue": 0.985}}, "11021215": {"2021": {"es": 1.932, "ue": 1.158}, "2022": {"es": 2.016, "ue": 1.414}, "2023": {"es": 2.165, "ue": 1.493}, "2024": {"es": 2.608, "ue": 1.276}}, "11021231": {"2021": {"es": 2.247, "ue": 3.336}, "2022": {"es": 2.531, "ue": 3.416}, "2023": {"es": 2.69, "ue": 3.666}, "2024": {"es": 2.633, "ue": 3.716}}, "11021250": {"2021": {"es": 0.306, "ue": 0.66}, "2022": {"es": 0.401, "ue": 0.681}, "2023": {"es": 0.555, "ue": 0.689}, "2024": {"es": 0.656, "ue": 0.745}}};
+const CANT_PRODCOM = {"10611100": {"es": {"2021": 15148000.0, "2022": 59082000.0, "2023": 11346000.0, "2024": 66290000.0}, "ue": {"2021": 150000000.0, "2022": 234000000.0, "2023": 152000000.0, "2024": 189000000.0}}, "10611230": {"es": {"2021": 908547000.0, "2022": 984225000.0}, "ue": {"2021": 2820000000.0, "2022": 2769264834.0, "2023": 2100000000.0, "2024": 2100000000.0}}, "10612200": {"es": {"2021": 148416000.0, "2022": 100376000.0, "2023": 81207000.0, "2024": 152882000.0}, "ue": {"2021": 2820588456.0, "2022": 2520000000.0, "2023": 2400000000.0, "2024": 2340000000.0}}, "10612400": {"es": {"2021": 77909000.0, "2022": 88951000.0, "2023": 121986000.0, "2024": 133016000.0}, "ue": {"2021": 1800000000.0, "2022": 1816681145.0, "2023": 1890000000.0, "2024": 1901052510.0}}, "10613133": {"es": {"2021": 367953000.0, "2022": 367543000.0, "2023": 403485000.0, "2024": 348107000.0}, "ue": {"2021": 3330000000.0, "2022": 2850000000.0, "2023": 3502762589.0, "2024": 4489224759.0}}, "10613230": {"es": {"2021": 124486000.0, "2022": 295421000.0, "2023": 175522000.0, "2024": 204326000.0}, "ue": {"2021": 840000000.0, "2022": 950000000.0, "2023": 960000000.0, "2024": 1080000000.0}}, "10613333": {"es": {"2023": 182124000.0, "2024": 205025000.0}, "ue": {"2021": 1697681389.0, "2022": 1975684781.0, "2023": 2214979205.0, "2024": 1893243243.0}}, "10621111": {"es": {"2021": 0.0, "2022": 0.0, "2023": 0.0, "2024": 0.0}, "ue": {"2021": 1531665564.0, "2022": 1419958089.0, "2023": 1389520668.0, "2024": 1520892735.0}}, "10621113": {"es": {"2021": 505868632.0, "2022": 475284355.0, "2023": 400117803.0, "2024": 371350013.0}, "ue": {"2021": 1710000000.0, "2022": 1800000000.0, "2023": 1260000000.0, "2024": 1400000000.0}}, "10621115": {"es": {"2024": 0.0}, "ue": {"2021": 1200000000.0, "2022": 1260000000.0, "2023": 1000000000.0, "2024": 1130000000.0}}, "10621150": {"es": {"2021": 0.0, "2022": 0.0, "2023": 0.0, "2024": 0.0}, "ue": {"2021": 742604585.0, "2022": 658925008.0, "2023": 567258325.0, "2024": 671469087.0}}, "10621170": {"es": {"2021": 50683223.0, "2022": 57250905.0, "2024": 45160124.0}, "ue": {"2021": 2000000000.0, "2022": 2083453680.0, "2023": 2000000000.0, "2024": 1800000000.0}}, "10621310": {"es": {"2021": 272402098.0, "2022": 286789448.0, "2023": 257957425.0}, "ue": {"2021": 3788849286.0, "2022": 3508701373.0, "2023": 2800000000.0, "2024": 3200000000.0}}, "10621320": {"es": {"2021": 50020943.0, "2022": 64442866.0, "2023": 55679407.0, "2024": 66004872.0}, "ue": {"2021": 1031371669.0, "2022": 940080330.0, "2023": 806843793.0, "2024": 844433296.0}}, "10711200": {"es": {"2021": 799154000.0, "2022": 783733000.0, "2023": 806133000.0, "2024": 812645000.0}, "ue": {"2021": 6600000000.0, "2022": 6859886141.0, "2023": 7080000000.0, "2024": 7470000000.0}}, "10721130": {"es": {"2021": 350000.0, "2022": 197000.0}, "ue": {"2021": 180000000.0, "2022": 180000000.0, "2023": 180000000.0, "2024": 160000000.0}}, "10721150": {"es": {"2021": 234672000.0, "2022": 244208000.0, "2023": 256511000.0, "2024": 259668000.0}, "ue": {"2021": 860000000.0, "2022": 978000000.0, "2023": 1000000000.0, "2024": 1000000000.0}}, "10721230": {"es": {"2021": 1640000.0, "2022": 995000.0, "2023": 1488000.0, "2024": 1002000.0}, "ue": {"2021": 210769024.0, "2022": 212125474.0, "2023": 214430678.0, "2024": 201559801.0}}, "10721253": {"es": {"2021": 200803000.0, "2022": 155051000.0, "2023": 158437000.0, "2024": 150031000.0}, "ue": {"2021": 1600000000.0, "2022": 1617934003.0, "2023": 1600000000.0, "2024": 1594615459.0}}, "10721255": {"es": {"2021": 309205000.0, "2022": 303555000.0, "2023": 309879000.0, "2024": 307023000.0}, "ue": {"2021": 1766835637.0, "2022": 1799226880.0, "2023": 1766832947.0, "2024": 1765117554.0}}, "10721257": {"es": {"2021": 2250511.0, "2022": 4878295.0, "2023": 5349563.0, "2024": 5711449.0}, "ue": {"2021": 102629517.0, "2022": 101646704.0, "2023": 118455453.0, "2024": 118817348.0}}, "10721259": {"es": {"2021": 28046000.0, "2022": 41228000.0, "2023": 91927000.0, "2024": 99549000.0}, "ue": {"2021": 407272041.0, "2022": 459553021.0, "2023": 523260665.0, "2024": 564512015.0}}, "10721940": {"es": {"2021": 11054233.0, "2022": 9984133.0, "2023": 8852931.0, "2024": 9071526.0}, "ue": {"2021": 251609667.0, "2022": 258863213.0, "2023": 268570713.0, "2024": 311357724.0}}, "10721950": {"es": {"2021": 64493864.0, "2022": 75512159.0, "2023": 60007589.0, "2024": 69556623.0}, "ue": {"2021": 800000000.0, "2022": 819084910.0, "2023": 848212142.0, "2024": 820500546.0}}, "10721990": {"es": {"2021": 598019757.0, "2022": 605890354.0, "2023": 643675134.0, "2024": 700882724.0}, "ue": {"2021": 2080000000.0, "2022": 2400000000.0, "2023": 2204961237.0, "2024": 2400000000.0}}, "10821100": {"es": {"2021": 19460000.0, "2022": 20542000.0, "2023": 20975000.0, "2024": 20202000.0}, "ue": {"2021": 319237143.0, "2022": 332689247.0, "2023": 346837111.0, "2024": 354345260.0}}, "10821200": {"es": {"2021": 19533000.0, "2022": 19825000.0, "2023": 19061000.0, "2024": 23281000.0}, "ue": {"2021": 600000000.0, "2022": 400000000.0, "2023": 400000000.0, "2024": 450000000.0}}, "10821300": {"es": {"2021": 112113000.0, "2022": 103353000.0, "2023": 103237000.0, "2024": 116199000.0}, "ue": {"2021": 553877221.0, "2022": 400000000.0, "2023": 400000000.0, "2024": 527618089.0}}, "10821400": {"es": {"2021": 52258000.0, "2022": 55158000.0, "2023": 51899000.0, "2024": 53816000.0}, "ue": {"2021": 128000000.0, "2022": 140000000.0, "2023": 128000000.0, "2024": 119000000.0}}, "10822130": {"es": {"2021": 70203000.0, "2022": 56580000.0, "2023": 55456000.0, "2024": 59119000.0}, "ue": {"2021": 1320000000.0, "2022": 1291173275.0, "2023": 1260000000.0, "2024": 1400000000.0}}, "10822170": {"es": {"2021": 53741000.0, "2022": 49548000.0, "2023": 45153000.0, "2024": 44900000.0}, "ue": {"2021": 120000000.0, "2022": 154964832.0, "2023": 162949906.0, "2024": 157463152.0}}, "10822239": {"es": {"2021": 68604000.0, "2022": 65924000.0, "2023": 68268000.0, "2024": 49558000.0}, "ue": {"2021": 490161617.0, "2022": 488415972.0, "2023": 501994823.0, "2024": 466616020.0}}, "10822245": {"es": {"2021": 13111000.0, "2022": 12523000.0, "2023": 14294000.0, "2024": 13327000.0}, "ue": {"2021": 360000000.0, "2022": 381028282.0, "2023": 397898019.0, "2024": 360000000.0}}, "10822255": {"es": {"2021": 4554000.0, "2022": 4301000.0, "2023": 4976000.0, "2024": 5188000.0}, "ue": {"2021": 276967520.0, "2022": 300000000.0, "2023": 283774884.0, "2024": 279834565.0}}, "10822260": {"es": {"2021": 8244000.0, "2022": 13410000.0, "2023": 8218000.0, "2024": 8414000.0}, "ue": {"2021": 194600000.0, "2022": 202000000.0, "2023": 224000000.0, "2024": 216000000.0}}, "10822270": {"es": {"2021": 11438000.0, "2022": 11102000.0, "2023": 7517000.0, "2024": 11110000.0}, "ue": {"2021": 616042096.0, "2022": 540000000.0, "2023": 800000000.0, "2024": 636515614.0}}, "10822310": {"es": {"2021": 5852000.0, "2022": 6271000.0, "2023": 8970000.0, "2024": 8125000.0}, "ue": {"2021": 50281959.0, "2022": 47153694.0, "2023": 50000925.0, "2024": 46510406.0}}, "10822320": {"es": {"2021": 39055000.0, "2022": 45818000.0, "2023": 42659000.0, "2024": 46371000.0}, "ue": {"2021": 90000000.0, "2022": 96000000.0, "2023": 82698067.0, "2024": 86371693.0}}, "10822330": {"es": {"2021": 8931000.0, "2022": 11859000.0, "2023": 9831000.0, "2024": 11294000.0}, "ue": {"2021": 138000000.0, "2022": 130400000.0, "2023": 161000000.0, "2024": 155000000.0}}, "10822363": {"es": {"2021": 10192000.0, "2022": 10609000.0, "2023": 10899000.0, "2024": 10232000.0}, "ue": {"2021": 150000000.0, "2022": 154000000.0, "2023": 150000000.0, "2024": 152000000.0}}, "10822365": {"es": {"2021": 226662000.0, "2022": 264273000.0, "2023": 270110000.0, "2024": 256625000.0}, "ue": {"2021": 1011000000.0, "2022": 1060000000.0, "2023": 1081523367.0, "2024": 1096627391.0}}, "10822375": {"es": {"2021": 2637000.0, "2022": 3361000.0, "2023": 4529000.0, "2024": 4416000.0}, "ue": {"2021": 200000000.0, "2022": 207000000.0, "2023": 240000000.0, "2024": 240000000.0}}, "10822391": {"es": {"2022": 706000.0, "2024": 933000.0}, "ue": {"2022": 280000000.0, "2023": 330822669.0, "2024": 331275447.0}}, "10822400": {"es": {"2021": 8806000.0, "2022": 7931000.0, "2023": 8586000.0, "2024": 10079000.0}, "ue": {"2021": 95000000.0, "2022": 90000000.0, "2023": 88000000.0, "2024": 96000000.0}}, "11051000": {"es": {"2021": 3658490000.0, "2022": 3934860000.0, "2023": 4025402000.0, "2024": 4037001000.0}, "ue": {"2021": 32000000000.0, "2022": 34205238969.0, "2023": 32472673759.0, "2024": 32617044821.0}}, "11051010": {"es": {"2021": 264697000.0, "2022": 298692000.0, "2023": 253598000.0, "2024": 267418000.0}, "ue": {"2021": 1600000000.0, "2022": 1600000000.0, "2023": 1817127425.0, "2024": 1979766261.0}}, "11061030": {"es": {"2024": 439559000.0}, "ue": {"2021": 7200000000.0, "2022": 7443338107.0, "2023": 7459710258.0, "2024": 7558254505.0}}, "10612100": {"ue": {"2021": 26000000000.0, "2022": 25000000000.0, "2023": 26479206462.0, "2024": 30000000000.0}}, "10711100": {"ue": {"2021": 18000000000.0, "2022": 20000000000.0, "2023": 20262501428.0, "2024": 17537576583.0}}, "11061050": {"ue": {"2021": 243381990.0, "2022": 242470164.0, "2023": 241377641.0, "2024": 244760549.0}}, "10321100": {"es": {"2021": 4504681.0, "2022": 6296599.0, "2023": 5437751.0, "2024": 9912304.0}, "ue": {"2021": 120000000.0, "2022": 150000000.0, "2023": 120000000.0, "2024": 100000000.0}}, "10321210": {"es": {"2021": 666265.0, "2022": 1150589.0, "2023": 684081.0, "2024": 783187.0}, "ue": {"2021": 7440000000.0, "2022": 120000000.0, "2023": 90000000.0, "2024": 60000000.0}}, "10321220": {"es": {"2021": 360220781.0, "2024": 333056681.0}, "ue": {"2021": 2100000000.0, "2022": 2129101054.0, "2023": 1875102365.0, "2024": 1550000000.0}}, "10321230": {"es": {"2021": 33214121.0, "2022": 48054334.0}, "ue": {"2021": 120000000.0, "2022": 168976434.0, "2023": 120000000.0, "2024": 100000000.0}}, "10321300": {"es": {"2021": 9152649.0}, "ue": {"2021": 68360162.0, "2022": 66414868.0, "2023": 56261694.0, "2024": 55620355.0}}, "10321400": {"es": {"2021": 36389213.0, "2022": 36947806.0}, "ue": {"2021": 172000000.0, "2022": 180000000.0, "2023": 174608493.0, "2024": 156829726.0}}, "10321500": {"es": {}, "ue": {"2021": 1500000000.0, "2022": 1500000000.0, "2023": 1200000000.0, "2024": 1057129807.0}}, "10321600": {"es": {"2021": 124389276.0, "2022": 137019302.0, "2024": 161238021.0}, "ue": {"2021": 1950246284.0, "2022": 2142961940.0, "2023": 2170149205.0, "2024": 1920000000.0}}, "10321700": {"es": {"2024": 298013260.0}, "ue": {"2021": 1735045338.0, "2022": 1834124530.0, "2023": 1600000000.0, "2024": 1742964981.0}}, "10321910": {"es": {"2021": 126566878.0}, "ue": {"2021": 233375715.0, "2022": 265807197.0, "2023": 251303526.0, "2024": 258680318.0}}, "10321920": {"es": {"2021": 148394439.0, "2022": 155248268.0, "2023": 165879715.0, "2024": 199324503.0}, "ue": {"2021": 815181779.0, "2022": 876672028.0, "2023": 850817230.0, "2024": 878694041.0}}, "10321930": {"es": {"2021": 199362192.0, "2022": 255607726.0, "2024": 226162154.0}, "ue": {"2021": 1785415646.0, "2022": 1743522869.0, "2023": 1400000000.0, "2024": 1360000000.0}}, "10412210": {"es": {"2021": 1756881000.0, "2022": 1569669000.0, "2023": 968966000.0, "2024": 998790000.0}, "ue": {"2021": 2434779588.0, "2022": 2694483039.0, "2023": 1897402929.0, "2024": 1803300000.0}}, "10412220": {"es": {}, "ue": {"2021": 200000000.0}}, "10412221": {"es": {}, "ue": {"2022": 300000000.0, "2023": 210000000.0, "2024": 270000000.0}}, "10415310": {"es": {}, "ue": {"2021": 400000000.0, "2022": 800000000.0, "2023": 600000000.0, "2024": 450000000.0}}, "10415330": {"es": {}, "ue": {"2021": 200000000.0}}, "10415331": {"es": {"2022": 193452000.0, "2023": 128749000.0, "2024": 72329000.0}, "ue": {"2022": 244000000.0, "2023": 188400000.0, "2024": 116100000.0}}, "10414190": {"es": {"2021": 3886988000.0, "2023": 7167192000.0, "2024": 8617081000.0}, "ue": {"2021": 5588265593.0, "2022": 5848210235.0, "2023": 8920000000.0, "2024": 10094369558.0}}, "10414130": {"ue": {"2021": 4000000000.0, "2022": 4000000000.0, "2023": 5600000000.0, "2024": 5743589869.0}, "es": {"2024": 66235000.0}}, "10415100": {"es": {"2021": 98487000.0, "2022": 126060000.0, "2023": 79093000.0, "2024": 104907000.0}, "ue": {"2021": 1163662249.0, "2022": 1120698818.0, "2023": 1013644533.0, "2024": 1000000000.0}}, "10421030": {"es": {"2021": 47665975.0, "2022": 25313045.0, "2023": 28344840.0, "2024": 28551277.0}, "ue": {"2021": 1400000000.0, "2022": 1200000000.0, "2023": 1480888783.0, "2024": 1488427447.0}}, "10421050": {"es": {"2021": 10481668.0, "2022": 13778394.0, "2023": 14873449.0, "2024": 15180396.0}, "ue": {"2021": 880000000.0, "2022": 800000000.0, "2023": 914749402.0, "2024": 987204391.0}}, "10411200": {"es": {"2021": 32265394.0, "2022": 34247146.0, "2023": 37675618.0, "2024": 44561650.0}, "ue": {"2021": 180000000.0, "2022": 160000000.0, "2023": 160000000.0, "2024": 160000000.0}}, "10411100": {"ue": {"2021": 34191685.0, "2022": 28857550.0, "2023": 60000000.0, "2024": 47647086.0}}, "10412300": {"es": {"2021": 88316000.0}, "ue": {"2021": 2841047868.0, "2022": 3015932152.0, "2023": 4371992706.0, "2024": 2400000000.0}}, "10412410": {"es": {"2021": 10729000.0, "2022": 12624000.0, "2023": 20881000.0}, "ue": {"2021": 5041440087.0, "2022": 4614198155.0, "2023": 5120553656.0, "2024": 5644427270.0}}, "10412510": {"es": {"2021": 82793000.0, "2022": 84187000.0, "2023": 84611000.0}, "ue": {"2021": 86835700.0, "2022": 100000000.0, "2023": 116033640.0, "2024": 140000000.0}}, "10414150": {"ue": {"2021": 3425307594.0, "2022": 4003590873.0, "2023": 4010524939.0, "2024": 3870000000.0}}, "10414170": {"ue": {"2021": 11000000000.0, "2022": 10260041051.0, "2023": 10800646043.0, "2024": 12000000000.0}}, "10414200": {"es": {"2021": 3167726000.0, "2023": 2939460000.0, "2024": 3118165000.0}, "ue": {"2021": 8400000000.0, "2022": 8000000000.0, "2023": 6674693996.0, "2024": 6000000000.0}}, "10415400": {"es": {"2021": 984251000.0}, "ue": {"2021": 4251534941.0, "2022": 4140162966.0, "2023": 4138850452.0, "2024": 4718427891.0}}, "10415600": {"es": {"2021": 25203000.0}, "ue": {"2021": 3784393657.0, "2022": 3354183529.0, "2023": 3612061759.0, "2024": 3584049546.0}}, "10415700": {"ue": {"2021": 2352297273.0, "2022": 2076560743.0, "2023": 2278255772.0, "2024": 1621082123.0}, "es": {"2023": 338402000.0, "2024": 243801000.0}}, "10415800": {"ue": {"2021": 500000000.0, "2022": 500000000.0, "2023": 400000000.0, "2024": 250000000.0}}, "10415900": {"ue": {"2021": 679142045.0, "2022": 522043062.0, "2023": 493563602.0, "2024": 542090762.0}, "es": {"2022": 80205000.0, "2023": 65641000.0}}, "10416030": {"ue": {"2021": 300000000.0, "2022": 210000000.0, "2023": 150000000.0, "2024": 217000000.0}, "es": {"2023": 24280000.0, "2024": 33860000.0}}, "10416050": {"es": {"2021": 83074000.0, "2022": 85881000.0, "2023": 65637000.0, "2024": 99050000.0}, "ue": {"2021": 800000000.0, "2022": 650000000.0, "2023": 660000000.0, "2024": 680000000.0}}, "10417200": {"es": {"2021": 14236463.0, "2024": 14272454.0}, "ue": {"2021": 208802367.0, "2022": 120000000.0, "2023": 189000000.0, "2024": 180000000.0}}, "10831150": {"es": {"2021": 133682000.0, "2024": 151191000.0}, "ue": {"2021": 1863850766.0, "2022": 1990149536.0, "2023": 1827710121.0, "2024": 1832481263.0}}, "10831170": {"es": {"2021": 20049000.0, "2022": 18370000.0, "2023": 18079000.0, "2024": 17227000.0}, "ue": {"2021": 98366923.0, "2022": 82420341.0, "2023": 71893744.0, "2024": 65091398.0}}, "10831130": {"es": {"2021": 22075000.0, "2022": 22558000.0, "2023": 105000.0, "2024": 81000.0}, "ue": {"2021": 400000000.0, "2022": 400000000.0, "2023": 300000000.0, "2024": 180000000.0}}, "10831240": {"es": {"2021": 58359000.0, "2022": 62628000.0, "2023": 54908000.0, "2024": 50163000.0}, "ue": {"2021": 340000000.0, "2022": 360000000.0, "2023": 280000000.0, "2024": 300000000.0}}, "10831270": {"es": {"2021": 1101306.0, "2022": 479362.0, "2023": 420797.0, "2024": 290011.0}, "ue": {"2021": 80000000.0, "2022": 60000000.0, "2023": 45000000.0, "2024": 49000000.0}}, "10831210": {"ue": {"2021": 34042940.0, "2022": 34187489.0, "2023": 39066995.0, "2024": 36905508.0}, "es": {"2022": 3000.0, "2023": 3000.0, "2024": 9000.0}}, "10831300": {"es": {"2021": 843142.0, "2022": 872620.0, "2023": 745091.0, "2024": 653790.0}, "ue": {"2021": 90000000.0, "2022": 80000000.0, "2023": 50000000.0, "2024": 100076105.0}}, "10831400": {"ue": {"2021": 2000000000.0, "2022": 2700000000.0, "2023": 8000000000.0, "2024": 44000000.0}, "es": {"2022": 49516.0, "2023": 46849.0, "2024": 516791.0}}, "10831500": {"es": {"2021": 4329533.0, "2022": 4546964.0, "2023": 9762524.0, "2024": 9401389.0}, "ue": {"2021": 134692450.0, "2022": 135000000.0, "2023": 140000000.0, "2024": 153000000.0}}, "11021190": {"es": {"2021": 209361400.0, "2022": 199160900.0, "2023": 205098100.0, "2024": 216513400.0}, "ue": {"2021": 1202000000.0, "2022": 1380000000.0, "2023": 1269000000.0, "2024": 1358000000.0}}, "11021211": {"ue": {"2021": 2400000000.0, "2022": 2497200000.0, "2023": 3114800000.0, "2024": 2847759253.0}, "es": {"2022": 605876300.0, "2023": 504483400.0, "2024": 558279700.0}}, "11021217": {"es": {"2021": 1042776300.0, "2022": 929458500.0, "2023": 792284300.0, "2024": 760935100.0}, "ue": {"2021": 3488000000.0, "2022": 3387728778.0, "2023": 2910000000.0, "2024": 2905000000.0}}, "11021220": {"ue": {"2021": 7200000000.0, "2022": 6952000000.0, "2023": 6785636886.0, "2024": 6174828662.0}, "es": {"2022": 2867047500.0, "2023": 2828503100.0, "2024": 2469988900.0}}, "11021215": {"es": {"2021": 6156400.0, "2022": 7968000.0, "2023": 6555500.0, "2024": 5421800.0}, "ue": {"2021": 959700000.0, "2022": 945700000.0, "2023": 1104000000.0, "2024": 1179900000.0}}, "11021231": {"es": {"2021": 40315700.0, "2022": 48538300.0, "2023": 33541900.0, "2024": 42573700.0}, "ue": {"2021": 190075039.0, "2022": 192772972.0, "2023": 162300000.0, "2024": 165500000.0}}, "11021250": {"es": {"2021": 121699200.0, "2022": 137400200.0, "2023": 103683300.0, "2024": 124475900.0}, "ue": {"2021": 648000000.0, "2022": 705000000.0, "2023": 610000000.0, "2024": 640000000.0}}, "11031000": {"es": {"2021": 65586900.0, "2022": 57585400.0, "2023": 77433800.0, "2024": 81712600.0}, "ue": {"2021": 1669255845.0, "2022": 1498858442.0, "2023": 1600000000.0, "2024": 1500000000.0}}, "10521000": {"es": {"2021": 320199000.0, "2022": 321712000.0, "2023": 403738000.0, "2024": 446924000.0}, "ue": {"2021": 3037499095.0, "2022": 3264505082.0, "2023": 3162095893.0, "2024": 3376833824.0}}, "10311110": {"es": {"2021": 7176360.0, "2022": 10093723.0, "2024": 17953521.0}, "ue": {"2021": 210000000.0, "2022": 220000000.0, "2023": 220000000.0, "2024": 172000000.0}}, "10311130": {"es": {"2021": 222526.0, "2022": 353711.0}, "ue": {"2021": 5600000000.0, "2022": 5451694557.0, "2023": 7800000000.0, "2024": 7500000000.0}}, "10311200": {"ue": {"2021": 12594508.0, "2022": 37707604.0, "2023": 40000000.0, "2024": 40216426.0}}, "10311300": {"ue": {"2021": 500000000.0, "2022": 480000000.0, "2023": 450000000.0, "2024": 540000000.0}}, "10311430": {"ue": {"2021": 79015836.0, "2022": 81933868.0, "2023": 150000000.0, "2024": 180000000.0}}, "10311460": {"es": {"2021": 106119993.0, "2022": 132091364.0, "2023": 133341497.0, "2024": 137265582.0}, "ue": {"2021": 2018373983.0, "2022": 2192572837.0, "2023": 2366343472.0, "2024": 2259407091.0}}, "10911010": {"es": {"2021": 1686029000.0, "2022": 1459396000.0}, "ue": {"2021": 8100000000.0, "2022": 8000000000.0, "2023": 10000000000.0, "2024": 8319756443.0}}, "10911033": {"ue": {"2021": 45000000000.0, "2022": 46000000000.0, "2023": 60000000000.0, "2024": 45000000000.0}, "es": {"2022": 13652019000.0, "2024": 13152280000.0}}, "10911035": {"ue": {"2021": 45000000000.0, "2022": 42000000000.0, "2023": 45000000000.0, "2024": 39000000000.0}, "es": {"2022": 9916899000.0, "2023": 9466214000.0, "2024": 9983842000.0}}, "10911037": {"es": {"2021": 4706675000.0, "2022": 4874378000.0, "2023": 4729964000.0, "2024": 4924814000.0}, "ue": {"2021": 47000000000.0, "2022": 42000000000.0, "2023": 56000000000.0, "2024": 46000000000.0}}, "10911039": {"ue": {"2021": 7257662323.0, "2022": 7505637690.0, "2023": 7327483859.0, "2024": 7200000000.0}, "es": {"2023": 159791000.0, "2024": 183839000.0}}, "10912000": {"es": {"2021": 744066372.0, "2022": 670481351.0, "2023": 421924191.0, "2024": 498271876.0}, "ue": {"2021": 1561297190.0, "2022": 1600000000.0, "2023": 1257255893.0, "2024": 1344000000.0}}, "10514030": {"ue": {"2021": 4131609515.0, "2022": 4124820162.0, "2023": 4166245030.0, "2024": 4483278315.0}}, "10514050": {"es": {"2021": 338404000.0, "2024": 499243000.0}, "ue": {"2021": 6818445996.0, "2022": 6909541406.0, "2023": 7210744104.0, "2024": 6600000000.0}}, "10514070": {"ue": {"2021": 840000000.0, "2022": 600000000.0, "2023": 700019732.0, "2024": 690545889.0}, "es": {"2024": 51934000.0}}, "10921030": {"es": {"2021": 1188479000.0, "2022": 994067000.0, "2023": 1032114000.0, "2024": 959117000.0}, "ue": {"2021": 9912610459.0, "2022": 10104827302.0, "2023": 9531906836.0, "2024": 10110738375.0}}, "10921060": {"es": {"2021": 24815000.0, "2022": 37069000.0, "2023": 27733000.0, "2024": 28101000.0}, "ue": {"2021": 1161265478.0, "2022": 1064232893.0, "2023": 1261208245.0, "2024": 1398000000.0}}};
+const L = (t,u,tipo)=>({t,u,tipo});
+const MARCO_COMUN = [
+  L("Ley 7/2022 de residuos y suelos contaminados (art. 4, subproductos; art. 8, jerarquía)","https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809","Normativa"),
+  L("Ley 1/2025 de prevención de las pérdidas y el desperdicio alimentario (jerarquía de prioridades obligatoria)","https://www.boe.es/buscar/act.php?id=BOE-A-2025-6597","Normativa"),
+  L("MITECO: procedimiento de evaluación de subproductos","https://www.miteco.gob.es/va/calidad-y-evaluacion-ambiental/temas/prevencion-y-gestion-residuos/comision-coordinacion/procedimiento-evaluacion-subproducto.html","Normativa"),
+  L("Reglamento (UE) 68/2013, catálogo de materias primas para piensos","https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:02013R0068-20220724","Normativa"),
+  L("Decisión 2014/955/UE, Lista Europea de Residuos","https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32014D0955","Normativa"),
+  L("Borsa de Subproductes de Catalunya","https://www.residuosprofesional.com/bolsa-de-subproductos-catalunya-porta-residurecurs/","Herramienta"),
+  L("BREF de alimentación, bebidas y leche (FDM, 2019): MTD por sector","https://fenix.isa.ulisboa.pt/downloadFile/281547991178956/JRC118627_FDM_Bref_2019_published.pdf","Normativa")
+];
+const CER_COMUN = {
+  "15 01 01":"Envases de papel y cartón","15 01 02":"Envases de plástico","15 01 03":"Envases de madera","15 01 04":"Envases metálicos",
+  "15 01 05":"Envases compuestos","15 01 06":"Envases mezclados","15 01 07":"Envases de vidrio","15 01 10*":"Envases que contienen restos de sustancias peligrosas o están contaminados por ellas",
+  "13 02 05*":"Aceites minerales no clorados de motor, de transmisión mecánica y lubricantes","15 02 02*":"Absorbentes, materiales de filtración, trapos y ropas contaminados por sustancias peligrosas",
+  "17 04 05":"Hierro y acero","20 01 01":"Papel y cartón (fracción municipal)","20 03 01":"Mezclas de residuos municipales"
+};
+const FUENTES_COMUNES = [
+  ["Eurostat PRODCOM DS-059358 (precios implícitos ES y UE-27, 2021–2024)","https://ec.europa.eu/eurostat/databrowser/view/ds-059358/default/table?lang=en"],
+  ["INE: CNAE-2025, estructura y notas explicativas","https://ine.es/daco/daco42/clasificaciones/cnae25/CNAE_2025.pdf"],
+  ["Decisión 2014/955/UE, Lista Europea de Residuos","https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32014D0955"],
+  ["Orden MAM/304/2002, operaciones de valorización y eliminación","https://www.boe.es/buscar/act.php?id=BOE-A-2002-3285"],
+  ["Ley 7/2022 de residuos y suelos contaminados","https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809"],
+  ["BREF FDM 2019 (JRC)","https://fenix.isa.ulisboa.pt/downloadFile/281547991178956/JRC118627_FDM_Bref_2019_published.pdf"]
+];
+
+const CORR = {
+  vino:{nombre:"Vino, cava o mosto",tipo:"producto",unidad:"hl"},
+  raspon:{nombre:"Raspón (escobajo)",tipo:"residuo",sub:true,cer:["02 07 01","02 03 04","02 07 99"],val:"raspon",
+    desc:"Estructura del racimo separada en la despalilladora. Sale al inicio de la vendimia, con humedad alta y poco valor. Se composta, se usa como biomasa o se aporta al viñedo.",
+    obs:"Freixenet (Sant Sadurní) declara 919 t/año de 02 07 01 (residuos de lavado, limpieza y reducción mecánica) a reciclado R3 en 2024."},
+  orujo:{nombre:"Orujo de uva (hollejos y pepitas)",tipo:"subproducto",cer:["02 07 01","02 07 04","02 03 04"],val:"orujo",
+    desc:"Hollejos, pepitas y restos de pulpa tras el prensado. Es la corriente principal. En la UE los productores deben entregar orujos y lías a destilería (prestaciones vínicas) o retirarlos bajo control; la destilería obtiene alcohol, aceite de pepita, tartratos y biomasa.",
+    obs:"Félix Solís (Valdepeñas) envía orujos, lías y bitartrato a destilación; no figuran en sus 3.417 t de residuos de 2024."},
+  lias:{nombre:"Lías y heces de vino",tipo:"subproducto",cer:["02 07 04","02 07 99"],val:"lias",
+    desc:"Levaduras muertas, tartratos y sólidos que sedimentan tras la fermentación y los trasiegos (lías gruesas y finas). En el cava incluyen las lías de tiraje y degüelle. Van a destilería para alcohol y ácido tartárico.",
+    obs:"Freixenet: 427 t/año de 02 07 99 a R3 en 2024."},
+  tartratos:{nombre:"Tartratos (bitartrato potásico) de la estabilización",tipo:"subproducto",cer:["02 07 99"],val:"lias",
+    desc:"Cristales que precipitan en la estabilización por frío y en las paredes de los depósitos. Se venden para obtener ácido tartárico."},
+  vino_res:{nombre:"Vino no conforme, mermas y restos de limpieza",tipo:"residuo",sub:true,cer:["02 07 04","02 07 99"],val:"lias",
+    desc:"Vino de fondos, lotes rechazados, pérdidas en embotellado y primeras aguas de limpieza. Se destilan o se reprocesan cuando es posible."},
+  tierras:{nombre:"Tierras y placas de filtración agotadas",tipo:"residuo",inorg:true,cer:["15 02 03","02 07 99"],val:"tierras",
+    desc:"Kieselguhr, perlita, bentonita y placas de celulosa del clarificado y la filtración, con vino y lías retenidos."},
+  lodos:{nombre:"Lodos de depuradora propia",tipo:"residuo",cer:["02 07 05"],val:"lodos",
+    desc:"Lodos del tratamiento de las aguas de limpieza de la vendimia y los trasiegos. Se aplican en agricultura o se compostan.",
+    obs:"Freixenet: 1.081 t/año de 02 07 05 a R3; Bodegas 1890 (Jumilla) declara sus lodos como 02 03 05 (854 t). Félix Solís destina los lodos a uso agrícola."},
+  efluente:{nombre:"Aguas residuales (limpieza de prensas, depósitos, barricas y botellas)",tipo:"efluente",unidad:"m³",cer:[],val:"lodos",
+    desc:"Muy estacionales: se concentran en vendimia y trasiegos. Llevan azúcares, etanol, polifenoles y tartratos, con DQO alta y pH ácido. Se expresa en m³ por tonelada de uva.",
+    obs:"Félix Solís: 190.425 m³ de vertido en 2024 para 161,7 millones de kg de uva (≈ 1,2 m³/t) y 367.585 m³ de biogás en su depuradora."}
+};
+const E_T=["Recepción y control de la uva","Despalillado y estrujado","Encubado y maceración","Fermentación alcohólica y maloláctica","Descube y prensado del orujo","Trasiegos y separación de lías","Clarificación, estabilización y filtración","Crianza (si procede)","Embotellado o expedición a granel"];
+const RUTAS = {
+  tinto:{nombre:"Bodega de tinto y rosado",cnae:"11.02",mp:"uva",etapas:E_T,
+    f:{vino:7.0,raspon:0.04,orujo:0.13,lias:0.04,tartratos:0.0015,vino_res:0.004,tierras:0.001,lodos:0.008,efluente:1.2},
+    conf:{vino:"Alta",raspon:"Media",orujo:"Media",lias:"Media",tartratos:"Baja",vino_res:"Baja",tierras:"Baja",lodos:"Media",efluente:"Media"}},
+  blanco:{nombre:"Bodega de blanco (y vino de aguja)",cnae:"11.02",mp:"uva",
+    etapas:["Recepción de la uva","Despalillado (o prensado de racimo entero)","Prensado neumático","Desfangado del mosto","Fermentación controlada","Trasiegos y separación de lías","Estabilización por frío y filtración","Embotellado (con gasificación en vinos de aguja)"],
+    f:{vino:6.8,raspon:0.035,orujo:0.15,lias:0.045,tartratos:0.0015,vino_res:0.004,tierras:0.0012,lodos:0.008,efluente:1.2},
+    conf:{vino:"Alta",raspon:"Media",orujo:"Media",lias:"Media",tartratos:"Baja",vino_res:"Baja",tierras:"Baja",lodos:"Media",efluente:"Media"}},
+  granel:{nombre:"Bodega de granel y vino sin DOP (cooperativa)",cnae:"11.02",mp:"uva",etapas:E_T,
+    f:{vino:7.2,raspon:0.04,orujo:0.13,lias:0.04,tartratos:0.001,vino_res:0.003,tierras:0.0005,lodos:0.006,efluente:1.0},
+    conf:{vino:"Alta",raspon:"Media",orujo:"Media",lias:"Media",tartratos:"Baja",vino_res:"Baja",tierras:"Baja",lodos:"Baja",efluente:"Baja"}},
+  espumoso:{nombre:"Cava y espumosos (método tradicional)",cnae:"11.02",mp:"uva",
+    etapas:["Recepción de uva","Prensado suave (fracciones de mosto)","Fermentación del vino base","Coupage y estabilización","Tiraje con licor de tiraje","Segunda fermentación y crianza en rima","Removido y degüelle","Licor de expedición y taponado"],
+    f:{vino:6.2,raspon:0.02,orujo:0.2,lias:0.05,tartratos:0.0015,vino_res:0.006,tierras:0.0015,lodos:0.01,efluente:1.8},
+    conf:{vino:"Media",raspon:"Baja",orujo:"Media",lias:"Media",tartratos:"Baja",vino_res:"Baja",tierras:"Baja",lodos:"Media",efluente:"Baja"}},
+  generoso:{nombre:"Vinos generosos y de licor (crianza biológica u oxidativa)",cnae:"11.02",mp:"uva",
+    etapas:["Recepción de uva","Estrujado y prensado","Fermentación","Encabezado con alcohol vínico","Crianza en criaderas y soleras","Clarificación y filtración","Embotellado"],
+    f:{vino:7.2,raspon:0.035,orujo:0.15,lias:0.05,tartratos:0.002,vino_res:0.004,tierras:0.001,lodos:0.008,efluente:1.2},
+    conf:{vino:"Media",raspon:"Media",orujo:"Media",lias:"Baja",tartratos:"Baja",vino_res:"Baja",tierras:"Baja",lodos:"Baja",efluente:"Baja"}},
+  mosto:{nombre:"Mosto de uva (apagado, concentrado o rectificado)",cnae:"11.02",mp:"uva",
+    etapas:["Recepción de uva","Despalillado y estrujado","Prensado","Desfangado","Sulfitado o apagado","Concentración (si procede)","Almacenamiento y expedición"],
+    f:{vino:7.5,raspon:0.04,orujo:0.15,lias:0.02,vino_res:0.003,tierras:0.001,lodos:0.006,efluente:1.0},
+    conf:{vino:"Media",raspon:"Media",orujo:"Media",lias:"Baja",vino_res:"Baja",tierras:"Baja",lodos:"Baja",efluente:"Baja"}}
+};
+const PRODUCTOS = {
+  tinto_dop:{nombre:"Vino tinto y rosado con DOP",cnae:"11.02",prodcom:"11.02.12.17",ruta:"tinto",principal:"vino",unidad:"hl",precio:3.341,anio:"2024",fuente:"PRODCOM España"},
+  blanco_dop:{nombre:"Vino blanco con DOP",cnae:"11.02",prodcom:"11.02.12.11",ruta:"blanco",principal:"vino",unidad:"hl",precio:1.975,anio:"2024",fuente:"PRODCOM España"},
+  sin_dop:{nombre:"Vino sin DOP (con IGP, varietal o de mesa)",cnae:"11.02",prodcom:"11.02.12.20",ruta:"granel",principal:"vino",unidad:"hl",precio:0.627,anio:"2024",fuente:"PRODCOM España"},
+  espumoso:{nombre:"Cava y otros vinos espumosos",cnae:"11.02",prodcom:"11.02.11.90",ruta:"espumoso",principal:"vino",unidad:"hl",precio:3.429,anio:"2024",fuente:"PRODCOM España"},
+  aguja:{nombre:"Vino de aguja (1–3 bar)",cnae:"11.02",prodcom:"11.02.12.15",ruta:"blanco",principal:"vino",unidad:"hl",precio:2.608,anio:"2024",fuente:"PRODCOM España"},
+  generoso:{nombre:"Vinos generosos y de licor (> 15 % vol)",cnae:"11.02",prodcom:"11.02.12.31",ruta:"generoso",principal:"vino",unidad:"hl",precio:2.633,anio:"2024",fuente:"PRODCOM España"},
+  mosto:{nombre:"Mosto de uva",cnae:"11.02",prodcom:"11.02.12.50",ruta:"mosto",principal:"vino",unidad:"hl",precio:0.656,anio:"2024",fuente:"PRODCOM España"}
+};
+const AUX = [
+  {n:"Papel y cartón",o:"Cajas, etiquetas y embalajes",kg:5.5,cer:["20 01 01","15 01 01"],g:"Reciclado (R3)"},
+  {n:"Vidrio (botellas rotas o rechazadas)",o:"Embotellado",kg:3,cer:["15 01 07","20 01 02"],g:"Reciclado (R5)"},
+  {n:"Plásticos y films",o:"Embalajes, bag-in-box y cápsulas",kg:1.5,cer:["15 01 02"],g:"Reciclado (R3)"},
+  {n:"Madera (palés, barricas y duelas)",o:"Recepción, crianza y expedición",kg:1.5,cer:["20 01 38","15 01 03"],g:"Reciclado o biomasa"},
+  {n:"Metales y chatarra",o:"Mantenimiento, bozales y cápsulas",kg:1.8,cer:["17 04 05","20 01 40"],g:"Reciclado (R4)"},
+  {n:"Mezcla de residuos municipales",o:"Oficinas, enoturismo y vestuarios",kg:1.1,cer:["20 03 01"],g:"Gestor autorizado"},
+  {n:"Aceites minerales",o:"Mantenimiento",kg:0.05,cer:["13 02 05*"],g:"Regeneración (R9)"},
+  {n:"Envases contaminados (limpieza, productos enológicos)",o:"Limpieza y bodega",kg:null,cer:["15 01 10*"],g:"Gestor autorizado"},
+  {n:"Productos de laboratorio",o:"Laboratorio enológico",kg:null,cer:["16 05 06*"],g:"Gestor autorizado"}
+];
+const CER_DESC = Object.assign({
+  "02 07 01":"Residuos de lavado, limpieza y reducción mecánica de materias primas",
+  "02 07 04":"Materiales inadecuados para el consumo o la elaboración",
+  "02 07 05":"Lodos del tratamiento in situ de efluentes",
+  "02 07 99":"Residuos no especificados en otra categoría",
+  "02 03 04":"Materiales inadecuados para el consumo o la elaboración (conservas y vegetales)",
+  "02 03 05":"Lodos del tratamiento in situ de efluentes (vegetales)",
+  "15 02 03":"Absorbentes, materiales de filtración, trapos y ropas distintos de 15 02 02",
+  "20 01 38":"Madera distinta de la especificada en 20 01 37",
+  "20 01 02":"Vidrio","20 01 40":"Metales",
+  "16 05 06*":"Productos químicos de laboratorio que contienen sustancias peligrosas"},CER_COMUN);
+const U_PRTR="https://prtr-es.miteco.gob.es/informes/descargasResiduos.aspx";
+const U_FS="https://felixsolisavantis.com/app/uploads/2025/07/MEMORIA_SOSTENIBILIDAD_2024_FELIX_SOLIS_ES_comp.pdf";
+const VAL = {
+  orujo:{titulo:"Orujo de uva",principal:"Entrega a destilería (alcohol, aceite de pepita, tartratos)",opciones:[
+    {n:1,nivel:"Alimentación humana",txt:"Harinas de hollejo, extractos de polifenoles y aceite de pepita de uva.",l:[
+      L("Biomket: orujo de uva, lías y raspón","https://biomket.com/blog-es/orujo-de-uva-lias-de-vino-y-raspon-es/","Estudio")]},
+    {n:3,nivel:"Material y bioproductos",txt:"Destilación para alcohol vínico y ácido tartárico; extracción de enocianinas y polifenoles; materiales para envases.",l:[
+      L("Destilerías San Valero: proceso de la fábrica","https://destilerias-sanvalero.com/la-fabrica/","Empresa"),
+      L("UPV: raspones, sarmientos y orujos convertidos en cajas","https://aplicat.upv.es/exploraupv/ficha-prensa/noticia/14838","Proyecto")]},
+    {n:4,nivel:"Energía y biogás",txt:"El orujo agotado de la destilería se quema como biomasa o va a digestión anaerobia.",l:[
+      L("CTAEX: subproductos generados en las bodegas","https://ctaex.com/transferencia-tecnologica/subproductos_innoace/subproductos-generados-en-las-bodegas","Estudio")]},
+    {n:5,nivel:"Suelo / compost",txt:"Compost de orujo agotado para el viñedo.",l:[
+      L("Hoy: residuos de bodega para fortalecer viñas","https://www.hoy.es/agro/201606/15/residuos-bodega-para-fortalecer-20160601002809-v.html","Proyecto")]}]},
+  lias:{titulo:"Lías, tartratos y vino no conforme",principal:"Destilería (alcohol y ácido tartárico)",opciones:[
+    {n:3,nivel:"Material y bioproductos",txt:"Recuperación de ácido tartárico, manoproteínas y compuestos nitrogenados de las lías.",l:[
+      L("UPNA: caracterización de lías de vino para su revalorización","https://academica-e.unavarra.es/entities/publication/b86b2923-1186-4894-843a-0966244769e8","Estudio"),
+      L("UCA: aprovechamiento de las lías de fermentación","https://rodin.uca.es/bitstream/handle/10498/27167/TFG.%20Sancho-Gal%C3%A1n.%20Pau.pdf?sequence=1&isAllowed=y","Estudio")]},
+    {n:4,nivel:"Energía y biogás",txt:"Digestión anaerobia de lías y vinos no destilables.",l:[
+      L("CITOLIVA: digestión anaerobia de subproductos agroalimentarios","https://proyectos.citoliva.es/wp-content/uploads/2024/09/DIGESTION-ANAEROBIA.pdf","Estudio")]}]},
+  raspon:{titulo:"Raspón",principal:"Compost o biomasa",opciones:[
+    {n:3,nivel:"Material y bioproductos",txt:"Fibras para materiales y envases, extracción de taninos.",l:[
+      L("UPV: raspones y orujos convertidos en cajas","https://aplicat.upv.es/exploraupv/ficha-prensa/noticia/14838","Proyecto")]},
+    {n:5,nivel:"Suelo / compost",txt:"Compostaje junto con orujo y lodos para devolver materia orgánica al viñedo.",l:[
+      L("Winetech SUDOE: revalorización de residuos vitivinícolas","https://www.winetech-sudoe.eu/files/5_JMSALGADO_UMINHO.pdf","Estudio"),
+      L("Gobierno de Navarra: gestión de residuos de bodega","https://www.navarra.es/NR/rdonlyres/AC7B9305-CBEE-41AB-8C37-2D6E0C30C4F7/208585/0509ORE7.doc","Normativa")]}]},
+  tierras:{titulo:"Tierras y placas de filtración",principal:"Compost o gestor",opciones:[
+    {n:1,nivel:"Prevención",txt:"Filtración tangencial o flotación, que eliminan o reducen las tierras.",l:[
+      L("BREF FDM 2019 (JRC): MTD para vino","https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries","Normativa")]},
+    {n:5,nivel:"Suelo / compost",txt:"Las tierras con lías se pueden compostar si el gestor lo admite.",l:[]}]},
+  lodos:{titulo:"Lodos y aguas residuales",principal:"Valorización agrícola o compostaje (R3/R10)",opciones:[
+    {n:1,nivel:"Prevención",txt:"Limpieza en seco, recogida de lías antes del lavado y reutilización de agua.",l:[
+      L("BREF FDM 2019 (JRC)","https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries","Normativa")]},
+    {n:4,nivel:"Energía y biogás",txt:"Depuración anaerobia con producción de biogás, como en Félix Solís (367.585 m³ en 2024).",l:[
+      L("Félix Solís Avantis: memoria de sostenibilidad 2024",U_FS,"Empresa")]},
+    {n:5,nivel:"Suelo / compost",txt:"Aplicación agrícola si cumplen el RD 1310/1990.",l:[
+      L("Real Decreto 1310/1990, lodos de depuración en el sector agrario","https://www.boe.es/buscar/act.php?id=BOE-A-1990-26744","Normativa")]}]}
+};
+const MARCO = MARCO_COMUN.slice().concat([
+  L("Reglamento Delegado (UE) 2019/934: prácticas enológicas y eliminación de subproductos de la vinificación","https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32019R0934","Normativa")]);
+const FUENTES = FUENTES_COMUNES.concat([
+  ["INE: correspondencia CNAE-2009 / CNAE-2025 (11.02 → 11.02, 1:1)","https://www.ine.es/daco/daco42/clasificaciones/cnae25/Correspondencia_CNAE09_CNAE25_conContenido.xlsx"],
+  ["BOE: Real Decreto 10/2025, CNAE-2025","https://www.boe.es/buscar/act.php?id=BOE-A-2025-587"],
+  ["PRTR-España: descarga de residuos transferidos por complejo, 2024",U_PRTR],
+  ["Félix Solís Avantis: memoria de sostenibilidad 2024",U_FS]]);
+const a=(t,u)=>`<a href="${u}" target="_blank" rel="noopener">${t}</a>`;
+const CFG = {
+  grupos:[["11.02","CNAE 11.02 · Elaboración de vinos"]],
+  filaInicial:{prod:"tinto_dop",valor:5000000},
+  textoZona:"Añade una fila por tipo de vino con el total de la zona (facturación, hectolitros o toneladas de uva). Para una DO o comarca, las toneladas de uva vendimiada son el dato más fiable.",
+  sub:{mp:"Uva",co:"—",sub:"Orujo, lías y tartratos (a destilería)",aux:"Vidrio, cartón, madera, cápsulas",efl:"Aguas de limpieza de vendimia y trasiegos"},
+  mensajes:(res,g)=>{let m=`<div class="aviso">Los residuos de bodega son muy estacionales: el raspón, el orujo y buena parte del agua residual se generan en las 6–8 semanas de vendimia.</div>`;
+    if(res.prod.some(x=>x.rk==="espumoso")) m+=`<div class="aviso">En el cava solo se aprovecha la primera fracción de prensado (≈ 62 l por 100 kg), por eso la producción por tonelada de uva es menor y el orujo mayor.</div>`;
+    return m;},
+  sumaMsg:(r,s)=>"El vino se mide en hl y no entra en esta suma (≈ 0,1 t/hl); el resto es CO2 de la fermentación y agua evaporada.",
+  preciosExtra:[],
+  obs:[
+   {titulo:"Bodegas reales en PRTR (2024)",intro:"Residuos transferidos declarados por grandes bodegas. Los orujos y lías que van a destilería como subproducto no suelen aparecer.",cols:["Bodega","LER","Residuo · t/año · operación"],cer:1,
+    filas:[["Freixenet (Sant Sadurní d'Anoia), cava","02 07 05","Lodos de depuradora · 1.081 · R3"],["Freixenet","02 07 01","Residuos de limpieza y reducción mecánica · 919 · R3"],["Freixenet","02 07 99","Otros (lías, tierras) · 427 · R3"],["Freixenet","15 01 07","Vidrio · 214"],["Félix Solís (Valdepeñas)","20 01 01","Papel y cartón · 914"],["Félix Solís","15 01 07","Vidrio · 632"],["Félix Solís","17 04 05","Hierro y acero · 296"],["Félix Solís","20 01 38","Madera · 232"],["J. García Carrión (Daimiel)","15 01 01","Papel y cartón · 539"],["Bodegas 1890 (Jumilla)","02 03 05","Lodos de depuradora · 854"]],
+    fuente:"Fuentes: "+a("PRTR-España, residuos 2024",U_PRTR)+" y "+a("Félix Solís, memoria 2024",U_FS)+"."}],
+  notasFuentes:`<li>Rendimiento: 6,8–7,5 hl de vino por t de uva (cava ≈ 6,2 hl/t por el prensado fraccionado).</li>
+  <li>Orujo 13–20 %, raspón 3–5 %, lías 4–5 % del volumen de vino; valores de bibliografía (CTAEX, Biomket, Winetech).</li>
+  <li>Agua residual ≈ 1,2 m³/t de uva, calibrada con Félix Solís (190.425 m³ para 161,7 millones de kg de uva en 2024).</li>
+  <li>Auxiliares por t de uva calculados con los datos PRTR 2024 de Félix Solís (cartón 5,6 kg/t, vidrio 3,9, metales 1,8, madera 1,4, mezcla municipal 1,1).</li>
+  <li>Correspondencia CNAE-2009 → CNAE-2025: 11.02 se mantiene 1:1 (INE).</li>`,
+  csv:"residuos_cnae_1102.csv"
+};
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/4.2.1/jspdf.umd.min.js"></script>
+<script>
+// ================== MOTOR GENÉRICO (usa CFG, CORR, RUTAS, PRODUCTOS, AUX, CER_DESC, VAL, MARCO, FUENTES, PRECIOS_PRODCOM) ==================
+const FACTORES_INICIALES = JSON.parse(JSON.stringify(Object.fromEntries(Object.entries(RUTAS).map(([k,r])=>[k,r.f]))));
+const fmt=(v,d=1)=>isFinite(v)?v.toLocaleString("es-ES",{minimumFractionDigits:d,maximumFractionDigits:d,useGrouping:"always"}):"—";
+const fmtP=v=>isFinite(v)?(v*100).toLocaleString("es-ES",{maximumFractionDigits:2})+" %":"—";
+const fmtF=(k,v)=>CORR[k].unidad?fmt(v,v<10?2:1)+" "+CORR[k].unidad+"/t":fmtP(v);
+const cerHTML=a=>a.map(c=>`<span class="cer${c.includes("*")?" pel":""}" title="${CER_DESC[c]||""}">${c}</span>`).join(" ");
+const COLORES=["#2f7d52","#5c8da5","#d3971b","#9b4a3c","#7a6fb0","#8fb84a","#c7663a","#3d9ea0","#b58bb5","#6b7a3a","#e0b84e","#4f6d8a","#a3a3a3","#d17b9b"];
+const uProd=p=>p.unidad||"t";
+const uPrecio=p=>p.unidad==="hl"?"€/l":"€/kg";
+const multP=p=>p.unidad==="hl"?100:1000;
+const T_HL=0.1; // t por hl (densidad ≈ 1)
+const aT=(q,u)=>u==="hl"?q*T_HL:q;
+let filas=[];let ultimo=null;let sigId=1;let reparto={activo:false};
+
+// ---------- Pesos de producción (PRODCOM España) y producto medio "Lo desconocemos" ----------
+const codP=c=>(c||"").replace(/\./g,"");
+const PESOS={};
+(function(){
+  const cods={};Object.entries(PRODUCTOS).forEach(([k,p])=>{(cods[p.prodcom]=cods[p.prodcom]||[]).push(k);});
+  const Y=["2024","2023","2022","2021"];
+  CFG.grupos.forEach(([cn])=>{
+    const ks=Object.keys(PRODUCTOS).filter(k=>PRODUCTOS[k].cnae===cn);
+    const rat=[];
+    ks.forEach(k=>{const d=CANT_PRODCOM[codP(PRODUCTOS[k].prodcom)];if(!d||!d.es||!d.ue)return;
+      for(const y of Y){if(d.es[y]>0&&d.ue[y]>0){rat.push(d.es[y]/d.ue[y]);break;}}});
+    rat.sort((a,b)=>a-b);const med=rat.length?rat[Math.floor(rat.length/2)]:null;
+    ks.forEach(k=>{const p=PRODUCTOS[k];const d=CANT_PRODCOM[codP(p.prodcom)];let q=null,txt="Sin dato de producción";
+      if(d&&d.es){for(const y of Y){if(d.es[y]!=null){q=d.es[y]/1000;txt=`PRODCOM España ${y}`;break;}}}
+      if(q===null&&d&&d.ue&&med){for(const y of Y){if(d.ue[y]!=null){q=d.ue[y]*med/1000;txt=`estimada con UE-27 ${y} × proporción España/UE del grupo (dato español confidencial)`;break;}}}
+      const n=(cods[p.prodcom]||[k]).length;if(q!==null&&n>1){if(p.cuota!=null){q=q*p.cuota;txt+=`, ${fmt(p.cuota*100,0)} % del código (${p.cuotaTxt||"cuota estimada"})`;}else{q=q/n;txt+=`, repartida entre ${n} productos con el mismo código`;}}
+      PESOS[k]={q,txt};});
+    const pos=ks.map(k=>PESOS[k].q).filter(q=>q>0);const mn=pos.length?Math.min(...pos):1;
+    ks.forEach(k=>{const w=PESOS[k];w.usar=w.q>0?w.q:mn;if(!(w.q>0))w.txt+=" · sin producción publicada en España: para el reparto se usa el valor mínimo del grupo";});
+    // producto medio del grupo
+    const cand=ks.filter(k=>PESOS[k].q>0);if(!cand.length)return;
+    const uMax=uProd(PRODUCTOS[cand.reduce((a,b)=>PESOS[a].q>=PESOS[b].q?a:b)]);
+    const comp=cand.filter(k=>uProd(PRODUCTOS[k])===uMax);const Q=comp.reduce((s,k)=>s+PESOS[k].q,0);
+    const mezcla=comp.map(k=>({k,s:PESOS[k].q/Q})).sort((a,b)=>b.s-a.s);
+    const precio=mezcla.reduce((s,c)=>s+c.s*PRODUCTOS[c.k].precio,0);
+    PRODUCTOS["_desc_"+cn.replace(".","")]={nombre:`Lo desconocemos (producto medio del CNAE ${cn})`,cnae:cn,prodcom:"—",mezcla,qTotal:Q,unidad:uMax==="t"?undefined:uMax,
+      precio:Math.round(precio*1000)/1000,anio:"2024",fuente:"precio medio ponderado por la producción española PRODCOM de los productos del grupo"};
+  });
+})();
+const esMezcla=k=>!!PRODUCTOS[k].mezcla;
+function componentes(k){return esMezcla(k)?PRODUCTOS[k].mezcla:[{k,s:1}];}
+function pesoFila(f){const p=PRODUCTOS[f.prod];return p.mezcla?p.qTotal:(PESOS[f.prod]?PESOS[f.prod].usar:1);}
+function notaPesos(){
+  return `<li>Producto «Lo desconocemos» y reparto de la facturación total: se usa el peso de cada producto en la producción española (cantidad PRODCOM, t/año o miles de litros). ${Object.entries(PRODUCTOS).filter(([k,p])=>p.mezcla).map(([k,p])=>`<br><b>CNAE ${p.cnae}:</b> ${p.mezcla.map(c=>`${PRODUCTOS[c.k].nombre} ${fmt(c.s*100,1)} %`).join("; ")}. Precio medio ponderado: ${fmt(p.precio,3)} ${uPrecio(p)}.`).join("")}</li>`;
+}
+
+function clasif(key){
+  const c=CORR[key];const g=document.getElementById("gestionSub").value;
+  if(c.tipo==="subproducto") return g==="residuo"?"residuo":"subproducto";
+  if(c.tipo==="residuo" && c.sub && g==="subproducto") return "subproducto";
+  return c.tipo;
+}
+function opcionesProducto(sel){
+  let h="";CFG.grupos.forEach(([cn,et])=>{
+    h+=`<optgroup label="${et}">`;
+    Object.entries(PRODUCTOS).filter(([k,p])=>p.cnae===cn).sort((a,b)=>(b[1].mezcla?1:0)-(a[1].mezcla?1:0)).forEach(([k,p])=>h+=`<option value="${k}" ${k===sel?"selected":""}>${p.nombre}</option>`);
+    h+="</optgroup>";});
+  return h;
+}
+function anadirFila(prod=CFG.filaInicial.prod,modo="facturacion",valor=""){
+  filas.push({id:sigId++,prod,modo,valor,precio:PRODUCTOS[prod].precio});
+  pintarFilas();calcular();
+}
+function quitarFila(id){filas=filas.filter(f=>f.id!==id);pintarFilas();calcular();}
+function cambiarFila(id,campo,val){
+  const f=filas.find(x=>x.id===id);if(!f)return;
+  if(campo==="prod"){f.prod=val;f.precio=PRODUCTOS[val].precio;f.pctManual=false;pintarFilas();}
+  else if(campo==="modo"){f.modo=val;f.factManual=false;pintarFilas();}
+  else if(campo==="valor"){f.valor=val;if(reparto.activo&&f.modo==="facturacion")f.factManual=val!=="";}
+  else f[campo]=val;
+  calcular();
+}
+function cambiarPct(id,val){const f=filas.find(x=>x.id===id);if(!f)return;f.pct=val;f.pctManual=val!=="";calcular();}
+function soltarPct(id){const f=filas.find(x=>x.id===id);if(!f)return;f.pctManual=false;calcular();refrescarReparto(true);}
+function soltarFact(id){const f=filas.find(x=>x.id===id);if(!f)return;f.factManual=false;calcular();refrescarReparto(true);}
+function composicionTxt(p){return p.mezcla.slice(0,8).map(c=>`${PRODUCTOS[c.k].nombre} ${fmt(c.s*100,1)} %`).join(", ")+(p.mezcla.length>8?`… (${p.mezcla.length} productos)`:"");}
+function pintarFilas(){
+  const terr=document.getElementById("ambito").value==="territorio";
+  const act=reparto.activo;
+  const c=document.getElementById("filasProductos");
+  c.innerHTML=filas.map(f=>{
+    const p=PRODUCTOS[f.prod];const mz=!!p.mezcla;const r=mz?null:RUTAS[p.ruta];
+    const mpTxt=mz?"materia prima (media del grupo)":r.mp;
+    const lab=f.modo==="facturacion"?(act?"Facturación asignada (€)":`Facturación ${terr?"total de la zona":"anual"} (€)`):f.modo==="producto"?`Producción de ${mz?"producto":p.nombre.toLowerCase()} (${uProd(p)}/año)`:`Materia prima: ${mpTxt} (t/año)`;
+    const rep=act&&f.modo==="facturacion"?`<div class="reparto" id="rep_${f.id}"></div>`:"";
+    const meta=mz?`CNAE ${p.cnae} · producto desconocido: se calcula con la composición media de la producción española (PRODCOM): ${composicionTxt(p)} · precio medio ponderado ${fmt(p.precio,3)} ${uPrecio(p)}`
+      :`CNAE ${p.cnae} · PRODCOM ${p.prodcom} · precio inicial ${fmt(p.precio,3)} ${uPrecio(p)} (${p.anio}; ${p.fuente}) · proceso: ${r.nombre}`;
+    return `<div class="fila-producto">
+      <div><label>Producto</label><select onchange="cambiarFila(${f.id},'prod',this.value)">${opcionesProducto(f.prod)}</select></div>
+      <div><label>Dato disponible</label><select onchange="cambiarFila(${f.id},'modo',this.value)">
+        <option value="facturacion" ${f.modo==="facturacion"?"selected":""}>Facturación + precio</option>
+        <option value="producto" ${f.modo==="producto"?"selected":""}>${p.unidad==="hl"?"Hectolitros de producto":"Toneladas de producto"}</option>
+        <option value="mp" ${f.modo==="mp"?"selected":""}>Toneladas de materia prima</option></select></div>
+      <div><label>${lab}</label><input id="v_${f.id}" type="number" min="0" step="any" value="${f.valor}" oninput="cambiarFila(${f.id},'valor',this.value)"></div>
+      <div class="${f.modo==="facturacion"?"":"oculto"}"><label>Precio (${uPrecio(p)})</label><input type="number" min="0" step="0.001" value="${f.precio}" oninput="cambiarFila(${f.id},'precio',this.value)"></div>
+      <div><button class="peligro" onclick="quitarFila(${f.id})" title="Eliminar fila">Quitar</button></div>
+      ${rep}
+      <div class="meta">${meta}</div>
+    </div>`;}).join("");
+  refrescarReparto(true);
+}
+function refrescarReparto(forzar){
+  const ae=document.activeElement;
+  filas.forEach(f=>{
+    const v=document.getElementById("v_"+f.id);
+    if(v&&(forzar||v!==ae)&&reparto.activo&&f.modo==="facturacion"&&!f.factManual) v.value=f.valor;
+    const b=document.getElementById("rep_"+f.id);if(!b)return;
+    const pc=document.getElementById("pct_"+f.id);
+    if(pc&&pc===ae&&!forzar){ // no repintar la casilla que se está editando
+      const s=document.getElementById("pfs_"+f.id);if(s)s.innerHTML=textoRepartoFila(f);return;}
+    b.innerHTML=f.factManual
+      ?`<span>Facturación fijada a mano: se descuenta del total y el resto se reparte entre los demás productos.</span> <span id="pfs_${f.id}">${textoRepartoFila(f)}</span> <button class="enlace-boton" onclick="soltarFact(${f.id})">Volver al reparto automático</button>`
+      :`<label style="margin:0">% de la producción</label><input id="pct_${f.id}" type="number" min="0" max="100" step="0.1" value="${isFinite(parseFloat(f.pct))?Math.round(parseFloat(f.pct)*10)/10:""}" oninput="cambiarPct(${f.id},this.value)">
+        <span>${f.pctManual?"valor introducido":"valor medio (producción española PRODCOM)"}</span>
+        ${f.pctManual?`<button class="enlace-boton" onclick="soltarPct(${f.id})">Volver al valor medio</button>`:""}
+        <span id="pfs_${f.id}">${textoRepartoFila(f)}</span>`;
+  });
+  const av=document.getElementById("avisoReparto");
+  if(av) av.innerHTML=reparto.activo?`<div class="aviso">Reparto de la facturación total (${fmt(reparto.T,0)} €): ${reparto.lineas.join(" · ")}${reparto.avisos.length?"<br>"+reparto.avisos.join("<br>"):""}</div>`:"";
+}
+function textoRepartoFila(f){const v=parseFloat(f.valor)||0;return `→ <b>${fmt(v,0)} €</b> (${reparto.T>0?fmt(v/reparto.T*100,1):"—"} % de la facturación)`;}
+function actualizarInterfaz(){
+  const terr=document.getElementById("ambito").value==="territorio";
+  document.getElementById("campoNumInstalaciones").classList.toggle("oculto",!terr);
+  document.getElementById("tituloEntrada").textContent=terr?"2. Productos de la comarca o zona":"2. Productos de la instalación";
+  document.getElementById("etiquetaFactTotal").textContent=terr?"Facturación total de la zona (€/año, opcional)":"Facturación total de la empresa (€/año, opcional)";
+  document.getElementById("textoEntrada").textContent=terr?CFG.textoZona
+    :"Añade una fila por cada producto que fabrique la instalación. En cada fila puedes introducir la facturación, la cantidad de producto o las toneladas de materia prima procesada. Si no sabes qué producto fabrica, elige «Lo desconocemos» y se usará el producto medio del CNAE.";
+  pintarFilas();calcular();
+}
+// cálculo de un producto concreto (componente)
+function calcUno(res,f,k,modo,v,precio,s){
+  const p=PRODUCTOS[k];const r=RUTAS[p.ruta];const fm=r.f[p.principal];const incl=document.getElementById("incluirSub").checked;
+  if(!(v>0)||!(fm>0)) return 0;
+  let tmain=0;
+  if(modo==="facturacion"){
+    if(!(precio>0)){res.msgs.push(`Falta el precio de ${p.nombre}.`);return 0;}
+    let denom=precio*multP(p);
+    if(incl){Object.entries(r.f).forEach(([kk,fk])=>{if(kk===p.principal)return;const c=CORR[kk];
+      if((c.tipo==="producto"||c.tipo==="subproducto")&&c.precio>0&&!c.unidad) denom+=(fk/fm)*c.precio*1000;});}
+    tmain=v/denom;res.fact+=v;
+  } else if(modo==="producto") tmain=v; else tmain=v*fm;
+  const tmp=tmain/fm;const fila=PRODUCTOS[f.prod];const mz=!!fila.mezcla;
+  const origen=mz?`${p.nombre} (en «Lo desconocemos» ${fila.cnae})`:p.nombre;
+  res.tmp+=tmp;res.tmain[uProd(p)]=(res.tmain[uProd(p)]||0)+tmain;
+  res.prod.push({p,f,r,tmain,tmp,fm,precio,rk:p.ruta,mz,s,origen,fid:f.id});
+  Object.entries(r.f).forEach(([kk,fk])=>{
+    if(kk===p.principal)return;
+    const c=CORR[kk];const cl=c.tipo==="producto"?"coproducto":clasif(kk);
+    res.corr.push({k:kk,c,ruta:r.nombre,cl,q:tmp*fk,pct:fk,conf:r.conf[kk]||"Baja",unidad:c.unidad||"t",origen,fid:f.id,mz});
+  });
+  return tmain*precio*multP(p);
+}
+// expande una fila (producto o "Lo desconocemos") en componentes
+function calcFila(res,f){
+  const p=PRODUCTOS[f.prod];const v=parseFloat(f.valor);if(!(v>0))return 0;const precio=parseFloat(f.precio);
+  if(!p.mezcla) return calcUno(res,f,f.prod,f.modo,v,precio,1);
+  const esc=p.precio>0&&precio>0?precio/p.precio:1;let ing=0;
+  if(f.modo==="facturacion"){
+    if(!(precio>0)){res.msgs.push(`Falta el precio de ${p.nombre}.`);return 0;}
+    const D=p.mezcla.reduce((a,c)=>a+c.s*PRODUCTOS[c.k].precio,0);
+    p.mezcla.forEach(c=>{const pc=PRODUCTOS[c.k];ing+=calcUno(res,f,c.k,"facturacion",v*c.s*pc.precio/D,pc.precio*esc,c.s);});
+  } else if(f.modo==="producto"){
+    p.mezcla.forEach(c=>{ing+=calcUno(res,f,c.k,"producto",v*c.s,PRODUCTOS[c.k].precio*esc,c.s);});
+  } else {
+    const fmOf=k=>{const q=PRODUCTOS[k];return RUTAS[q.ruta].f[q.principal]||1;};
+    const D=p.mezcla.reduce((a,c)=>a+c.s/fmOf(c.k),0);
+    p.mezcla.forEach(c=>{ing+=calcUno(res,f,c.k,"mp",v*(c.s/fmOf(c.k))/D,PRODUCTOS[c.k].precio*esc,c.s);});
+  }
+  return ing;
+}
+function repartir(ingOtros){
+  const T=parseFloat(document.getElementById("factTotal").value);
+  const antes=reparto.activo;
+  reparto={activo:T>0,T,avisos:[],lineas:[]};
+  const R=filas.filter(f=>f.modo==="facturacion");
+  if(!(T>0)) return antes!==reparto.activo;
+  const man=R.filter(f=>f.factManual),auto=R.filter(f=>!f.factManual);
+  const fijo=man.reduce((s,f)=>s+(parseFloat(f.valor)||0),0);
+  let rem=T-fijo-ingOtros;
+  if(ingOtros>0) reparto.avisos.push(`Las filas introducidas en toneladas no entran en el reparto; su facturación estimada (${fmt(ingOtros,0)} €) se descuenta del total.`);
+  if(fijo>0) reparto.lineas.push(`fijada a mano ${fmt(fijo,0)} €`);
+  if(rem<0){reparto.avisos.push(`La facturación fijada a mano o estimada (${fmt(fijo+ingOtros,0)} €) supera el total indicado.`);rem=0;}
+  const pm=auto.filter(f=>f.pctManual),libres=auto.filter(f=>!f.pctManual);
+  const sm=pm.reduce((s,f)=>s+(parseFloat(f.pct)||0),0);
+  let resto=100-sm;if(resto<0){reparto.avisos.push(`Los % de producción introducidos suman ${fmt(sm,1)} %; se reescalan a 100 %.`);resto=0;}
+  const W=libres.reduce((s,f)=>s+pesoFila(f),0);
+  libres.forEach(f=>{f.pct=W>0?resto*pesoFila(f)/W:0;});
+  if(!libres.length&&pm.length&&Math.abs(sm-100)>0.05&&sm<=100) reparto.avisos.push(`Los % de producción introducidos suman ${fmt(sm,1)} %; se reescalan a 100 %.`);
+  const pT=f=>(parseFloat(f.precio)||0)*1000; // €/t (en cerveza €/l × 1000 l ≈ €/t)
+  const D=auto.reduce((s,f)=>s+(parseFloat(f.pct)||0)*pT(f),0);
+  auto.forEach(f=>{f.valor=D>0?String(Math.round(rem*(parseFloat(f.pct)||0)*pT(f)/D)):"0";});
+  if(auto.length) reparto.lineas.push(`${fmt(rem,0)} € repartidos entre ${auto.length} producto(s) según su % de producción y su precio`);
+  else if(Math.abs(rem)>1) reparto.avisos.push(`Queda ${fmt(rem,0)} € del total sin asignar a ningún producto.`);
+  if(!R.length) reparto.avisos.push("Ninguna fila usa «Facturación + precio»: el total no se aplica.");
+  return antes!==reparto.activo;
+}
+function calcular(){
+  const res={prod:[],corr:[],tmp:0,tmain:{},fact:0,msgs:[]};
+  let ingOtros=0;
+  filas.filter(f=>f.modo!=="facturacion").forEach(f=>{ingOtros+=calcFila(res,f);});
+  const cambio=repartir(ingOtros);
+  filas.filter(f=>f.modo==="facturacion").forEach(f=>calcFila(res,f));
+  const orden=new Map(filas.map((f,i)=>[f.id,i]));
+  res.prod.sort((a,b)=>orden.get(a.fid)-orden.get(b.fid));res.corr.sort((a,b)=>orden.get(a.fid)-orden.get(b.fid));
+  ultimo=res;
+  if(cambio) pintarFilas(); else refrescarReparto(false);
+  pintarResultados(res);pintarCroquis();pintarTarjetas();pintarValorizacion();
+}
+function tAuxItem(res,a){if(!a.kg)return null;return res.prod.filter(x=>!a.rutas||a.rutas.includes(x.rk)).reduce((s,x)=>s+x.tmp,0)*a.kg/1000;}
+function totales(res){
+  const t=res.corr.filter(x=>x.unidad==="t");
+  const grupo=fn=>{const xs=t.filter(fn);const agg={};xs.forEach(x=>agg[x.c.nombre]=(agg[x.c.nombre]||0)+x.q);return {q:xs.reduce((a,b)=>a+b.q,0),det:Object.entries(agg).sort((a,b)=>b[1]-a[1])};};
+  const prodT=Object.entries(res.tmain).reduce((s,[u,v])=>s+aT(v,u),0);
+  const auxDet=AUX.map(a=>[a.n,tAuxItem(res,a)]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);
+  const aux=auxDet.reduce((s,x)=>s+x[1],0);
+  const m3=res.corr.filter(x=>x.unidad==="m³").reduce((a,b)=>a+b.q,0);
+  return {prodT,co:grupo(x=>x.cl==="coproducto"),sub:grupo(x=>x.cl==="subproducto"),resOrg:grupo(x=>x.cl==="residuo"&&!x.c.inorg),resInorg:grupo(x=>x.cl==="residuo"&&x.c.inorg),aux:{q:aux,det:auxDet},m3};
+}
+function pintarResultados(res){
+  const terr=document.getElementById("ambito").value==="territorio";
+  const nI=parseInt(document.getElementById("numInstalaciones").value)||0;
+  const T=totales(res);
+  const tSub=T.sub.q,tRes=T.resOrg.q+T.resInorg.q,tCo=T.co.q,m3=T.m3,tAux=T.aux.q;
+  const pm=Object.entries(res.tmain).map(([u,v])=>fmt(v,0)+" "+u+"/año").join(" + ")||"0 t/año";
+  let ind=[
+    ["Materia prima procesada",fmt(res.tmp,0)+" t/año",CFG.sub.mp||""],
+    ["Productos principales",pm,""],
+    ["Coproductos vendidos",fmt(tCo,0)+" t/año",CFG.sub.co],
+    ["Subproductos",fmt(tSub,0)+" t/año",CFG.sub.sub],
+    ["Residuos de proceso",fmt(tRes,1)+" t/año",res.tmp>0?fmt(tRes/res.tmp*1000,1)+" kg/t materia prima":""],
+    ["Residuos auxiliares estimados",fmt(tAux,1)+" t/año",CFG.sub.aux],
+    ["Efluentes líquidos",fmt(m3,0)+" m³/año",CFG.sub.efl]
+  ];
+  if(res.fact>0) ind.unshift(["Facturación analizada",fmt(res.fact,0)+" €",""]);
+  if(terr&&nI>0){ind.push(["Media por instalación",fmt(res.tmp/nI,0)+" t materia prima",fmt(tRes/nI,1)+" t residuos de proceso"]);}
+  document.getElementById("indicadores").innerHTML=ind.map(i=>`<div class="indicador"><div>${i[0]}</div><div class="valor">${i[1]}</div><div class="pequeno">${i[2]}</div></div>`).join("");
+  let m="";
+  if(!res.prod.length) m+=`<div class="advertencia">Introduce al menos un producto con un valor mayor que cero.</div>`;
+  res.msgs.forEach(x=>m+=`<div class="advertencia">${x}</div>`);
+  if(res.prod.some(x=>x.mz)) m+=`<div class="aviso">Hay filas con «Lo desconocemos»: se calculan con la composición media de la producción española del CNAE (PRODCOM). Es una aproximación; si conoces el producto real, selecciónalo.</div>`;
+  if(res.prod.length) m+=CFG.mensajes(res,document.getElementById("gestionSub").value);
+  document.getElementById("mensajes").innerHTML=m;
+  const totP=T.prodT;
+  document.getElementById("tablaProduccion").innerHTML=res.prod.map(x=>`<tr><td>${x.mz?`${x.p.nombre}<div class="pequeno">Parte de «Lo desconocemos» (${fmt(x.s*100,1)} % de la producción media)</div>`:x.p.nombre}</td><td>${x.p.cnae}</td><td>${x.p.prodcom}</td><td>${{facturacion:"Facturación + precio",producto:uProd(x.p)+" de producto",mp:"t de materia prima"}[x.f.modo]}</td><td class="num">${x.f.modo==="facturacion"?fmt(x.precio,3)+" "+uPrecio(x.p):"—"}</td><td class="num">${fmt(x.tmain,1)} ${uProd(x.p)}</td><td class="num">${fmt(x.tmp,1)}</td><td class="num">${fmtF(x.p.principal,x.fm)}</td><td class="num">${totP>0?fmt(aT(x.tmain,uProd(x.p))/totP*100,1)+" %":"—"}</td></tr>`).join("")||`<tr><td colspan="9">Sin datos</td></tr>`;
+  const et={coproducto:"Coproducto",subproducto:"Subproducto",residuo:"Residuo",efluente:"Efluente"};
+  document.getElementById("tablaResultados").innerHTML=res.corr.map(x=>{
+    const cer=x.cl==="coproducto"?"— (producto)":cerHTML(x.c.cer||[])+(x.cl==="subproducto"?`<div class="pequeno">Subproducto (art. 4 Ley 7/2022): no se declara como residuo. Códigos si se gestiona como residuo.</div>`:"")+(x.c.obs?`<div class="pequeno">Observado: ${x.c.obs}</div>`:"");
+    const v=x.c.val&&VAL[x.c.val]?VAL[x.c.val].principal:(x.cl==="coproducto"?"Venta":"—");
+    return `<tr><td>${x.c.nombre}<div class="origen"><span>${x.origen}</span></div></td><td>${x.ruta}</td><td>${et[x.cl]}</td><td class="num">${fmt(x.q,x.q<10?2:1)} ${x.unidad}</td><td class="num">${fmtF(x.k,x.pct)}</td><td>${cer}</td><td>${v}</td><td>${x.conf}</td></tr>`;}).join("")||`<tr><td colspan="8">Sin datos</td></tr>`;
+  document.getElementById("tablaAuxiliares").innerHTML=AUX.map(a=>{const q=tAuxItem(res,a);return `<tr><td>${a.n}</td><td>${a.o}</td><td class="num">${q!==null?fmt(q,2)+" t/año":"Según inventario"}</td><td>${cerHTML(a.cer)}</td><td>${a.g}</td></tr>`;}).join("");
+  pintarTotales(res,T);
+  pintarGrafico(res,T);
+}
+function filasTotales(res,T){
+  const salidas=T.prodT+T.co.q+T.sub.q+T.resOrg.q+T.resInorg.q+T.aux.q;
+  const kg=q=>res.tmp>0?fmt(q/res.tmp*1000,1):"—";const pc=q=>salidas>0?fmt(q/salidas*100,1)+" %":"—";
+  const det=d=>d.length?d.slice(0,6).map(([n,q])=>`${n} (${fmt(q,q<10?2:0)} t)`).join("; ")+(d.length>6?"…":""):"—";
+  const q=v=>fmt(v,v<10?2:1)+" t/año";
+  const pmTxt=Object.entries(res.tmain).map(([u,v])=>u==="hl"?`${fmt(v,0)} hl/año (≈ ${fmt(aT(v,u),0)} t)`:`${fmt(v,v<10?2:1)} t/año`).join(" + ")||"0 t/año";
+  const prods=[...new Set(res.prod.map(x=>x.p.nombre))];
+  const rows=[
+    ["Materia prima procesada",fmt(res.tmp,res.tmp<10?2:1)+" t/año","1.000","—",CFG.sub.mp||"",""],
+    ["Producto principal",pmTxt,kg(T.prodT),pc(T.prodT),prods.slice(0,6).join("; ")+(prods.length>6?"…":""),""],
+    ["Coproductos",q(T.co.q),kg(T.co.q),pc(T.co.q),det(T.co.det),""],
+    ["Subproductos",q(T.sub.q),kg(T.sub.q),pc(T.sub.q),det(T.sub.det),""],
+    ["Residuos de proceso orgánicos",q(T.resOrg.q),kg(T.resOrg.q),pc(T.resOrg.q),det(T.resOrg.det),""],
+    ["Residuos de proceso inorgánicos",q(T.resInorg.q),kg(T.resInorg.q),pc(T.resInorg.q),det(T.resInorg.det),""],
+    ["Residuos auxiliares (estimados)",q(T.aux.q),kg(T.aux.q),pc(T.aux.q),det(T.aux.det),""],
+    ["Total subproductos y residuos",q(T.sub.q+T.resOrg.q+T.resInorg.q+T.aux.q),kg(T.sub.q+T.resOrg.q+T.resInorg.q+T.aux.q),pc(T.sub.q+T.resOrg.q+T.resInorg.q+T.aux.q),"Subproductos + residuos de proceso + auxiliares","subtotal"],
+    ["Total residuos (proceso + auxiliares)",q(T.resOrg.q+T.resInorg.q+T.aux.q),kg(T.resOrg.q+T.resInorg.q+T.aux.q),pc(T.resOrg.q+T.resInorg.q+T.aux.q),"Lo que se declararía como residuo con la gestión seleccionada","subtotal"],
+    ["Total de salidas en toneladas",q(salidas),kg(salidas),salidas>0?"100 %":"—","Producto + coproductos + subproductos + residuos. Puede diferir de la materia prima por el agua y los ingredientes incorporados o las pérdidas de humedad.","total"],
+    ["Efluentes líquidos",fmt(T.m3,0)+" m³/año",res.tmp>0?fmt(T.m3/res.tmp,2)+" m³/t":"—","No se suman",CFG.sub.efl||"",""]
+  ];
+  return rows;
+}
+function pintarTotales(res,T){
+  const rows=filasTotales(res,T);
+  document.getElementById("tablaTotales").innerHTML=rows.map(r=>`<tr class="${r[5]}"><td>${r[0]}</td><td class="num">${r[1]}</td><td class="num">${r[2]}</td><td class="num">${r[3]}</td><td class="pequeno">${r[4]}</td></tr>`).join("");
+}
+function pintarGrafico(res,T){
+  T=T||totales(res);
+  const filtro=document.getElementById("filtroGrafico").value;
+  let d,notaU="t";
+  const nota=document.getElementById("notaGrafico");
+  if(filtro==="balance"){
+    d=[["Producto principal",T.prodT],["Coproductos",T.co.q],["Subproductos",T.sub.q],["Residuos de proceso",T.resOrg.q+T.resInorg.q],["Residuos auxiliares (estimados)",T.aux.q]].filter(e=>e[1]>0);
+    if(nota) nota.innerHTML="Balance de masa de las salidas en toneladas: producto principal, coproductos, subproductos y residuos (incluidos los inorgánicos y los auxiliares estimados). No incluye efluentes líquidos (m³)."+(res.tmain.hl?" Los productos medidos en hectolitros se convierten a toneladas con 0,1 t/hl.":"")+" La clasificación entre subproducto y residuo depende de la gestión seleccionada en el apartado 1.";
+  } else {
+    const agg={};
+    res.corr.filter(x=>x.unidad==="t"&&!x.c.inorg&&x.cl!=="coproducto"&&(filtro==="todas"?(x.cl==="subproducto"||x.cl==="residuo"):filtro==="residuos"?x.cl==="residuo":x.cl==="subproducto"))
+      .forEach(x=>agg[x.c.nombre]=(agg[x.c.nombre]||0)+x.q);
+    d=Object.entries(agg).filter(e=>e[1]>0).sort((a,b)=>b[1]-a[1]);
+    if(nota) nota.innerHTML="Gráfico de quesito basado en las toneladas calculadas. No incluye productos principales ni coproductos vendidos, efluentes líquidos (m³), residuos inorgánicos ni residuos auxiliares.";
+  }
+  const cv=document.getElementById("graficoResiduos");const ctx=cv.getContext("2d");
+  ctx.clearRect(0,0,cv.width,cv.height);
+  const tot=d.reduce((a,b)=>a+b[1],0);
+  const cx=230,cy=230,R=200;
+  const col=filtro==="balance"?["#2f7d52","#7a6fb0","#5c8da5","#9b4a3c","#d3971b"]:COLORES;
+  if(!tot){ctx.fillStyle="#64786c";ctx.font="15px Arial";ctx.textAlign="center";ctx.fillText("Sin datos para el gráfico",cx,cy);document.getElementById("leyendaGrafico").innerHTML="";return;}
+  let a0=-Math.PI/2;
+  d.forEach((e,i)=>{const a1=a0+e[1]/tot*2*Math.PI;ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,R,a0,a1);ctx.closePath();ctx.fillStyle=col[i%col.length];ctx.fill();ctx.strokeStyle="#fff";ctx.lineWidth=2;ctx.stroke();
+    const p=e[1]/tot;if(p>0.04){const am=(a0+a1)/2;ctx.fillStyle="#fff";ctx.font="bold 14px Arial";ctx.textAlign="center";ctx.fillText(fmt(p*100,1)+" %",cx+Math.cos(am)*R*0.65,cy+Math.sin(am)*R*0.65);}
+    a0=a1;});
+  document.getElementById("leyendaGrafico").innerHTML=d.map((e,i)=>`<span><b style="color:${col[i%col.length]}">■</b> ${e[0]}: ${fmt(e[1],e[1]<10?2:0)} ${notaU} (${fmt(e[1]/tot*100,1)} %)</span>`).join("");
+}
+function rutasUsadas(){const s=new Set();filas.forEach(f=>componentes(f.prod).forEach(c=>s.add(PRODUCTOS[c.k].ruta)));return [...s];}
+function corrientesPresentes(){const s=new Set();rutasUsadas().forEach(r=>Object.keys(RUTAS[r].f).forEach(k=>s.add(k)));return s;}
+function pintarCroquis(){
+  document.getElementById("croquis").innerHTML=rutasUsadas().map(rk=>{
+    const r=RUTAS[rk];
+    const nodos=[`<div class="nodo"><b>Entrada:</b> ${r.mp}</div>`].concat(r.etapas.map(e=>`<div class="nodo">${e}</div>`)).join('<span class="flecha">→</span>');
+    const sal=Object.keys(r.f).map(k=>{const c=CORR[k];const cl=c.tipo==="producto"?"producto":clasif(k);return `<span class="chip ${cl}">${c.nombre} · ${fmtF(k,r.f[k])}</span>`;}).join("");
+    return `<div class="croquis-ruta"><h3>${r.nombre} <span class="pequeno">(CNAE ${r.cnae})</span></h3><div class="flujo">${nodos}</div><div class="salidas">${sal}</div></div>`;}).join("")||"<p>Añade un producto para ver el croquis.</p>";
+}
+function origenesCorriente(k){
+  const out=[];const vistos=new Set();
+  filas.forEach(f=>{const p=PRODUCTOS[f.prod];
+    if(p.mezcla){const via=p.mezcla.filter(c=>k in RUTAS[PRODUCTOS[c.k].ruta].f).map(c=>PRODUCTOS[c.k].nombre);
+      if(via.length){const t=`${p.nombre}`;if(!vistos.has(t)){vistos.add(t);out.push({t,via});}}}
+    else if(k in RUTAS[p.ruta].f&&!vistos.has(p.nombre)){vistos.add(p.nombre);out.push({t:p.nombre});}});
+  return out;
+}
+function pintarTarjetas(){
+  const s=[...corrientesPresentes()].filter(k=>CORR[k].tipo!=="producto");
+  const cant={};(ultimo?ultimo.corr:[]).forEach(x=>{cant[x.k]=(cant[x.k]||0)+x.q;});
+  document.getElementById("tarjetas").innerHTML=s.map(k=>{const c=CORR[k];const o=origenesCorriente(k);const u=c.unidad||"t";
+    return `<div class="tarjeta-residuo"><h3>${c.nombre}</h3>
+    <div class="pequeno"><b>Procede de:</b></div><div class="origen">${o.map(x=>`<span title="${x.via?"Productos del grupo que la generan: "+x.via.join(", "):""}">${x.t}</span>`).join("")}</div>
+    ${o.some(x=>x.via)?`<p class="pequeno">En «Lo desconocemos» la generan: ${o.filter(x=>x.via).map(x=>x.via.join(", ")).join("; ")}.</p>`:""}
+    ${cant[k]>0?`<span class="cantidad-tarjeta">Cantidad estimada: <b>${fmt(cant[k],cant[k]<10?2:1)} ${u}/año</b></span>`:""}
+    <p>${c.desc}</p><p><b>Clasificación actual:</b> ${clasif(k)}</p><p><b>CER/LER candidatos:</b> ${cerHTML(c.cer||[])||"—"}</p>${c.obs?`<p class="pequeno">${c.obs}</p>`:""}</div>`;}).join("");
+}
+function pintarValorizacion(){
+  const todas=document.getElementById("filtroVal").value==="todas";
+  const pres=corrientesPresentes();
+  const claves=todas?Object.keys(VAL):[...new Set([...pres].map(k=>CORR[k].val).filter(Boolean))];
+  const clase={1:"n1",2:"n2",3:"n3",4:"n4",5:"n5"};
+  document.getElementById("valorizacion").innerHTML=claves.map(v=>{const o=VAL[v];if(!o)return"";
+    return `<div class="tarjeta-val"><h3>${o.titulo}</h3><p class="pequeno"><b>Destino más habitual:</b> ${o.principal}</p>${o.opciones.map(op=>`<div class="opcion"><span class="nivel ${clase[op.n]}">${op.nivel}</span>${op.txt}${op.l.length?`<ul class="enlaces">${op.l.map(x=>`<li><span class="tipo-enlace ${x.tipo}">${x.tipo}</span><a href="${x.u}" target="_blank" rel="noopener">${x.t}</a></li>`).join("")}</ul>`:""}</div>`).join("")}</div>`;}).join("")||"<p>Añade un producto para ver las opciones.</p>";
+}
+function pintarEstaticas(){
+  document.getElementById("enlacesMarco").innerHTML=MARCO.map(x=>`<li><span class="tipo-enlace ${x.tipo}">${x.tipo}</span><a href="${x.u}" target="_blank" rel="noopener">${x.t}</a></li>`).join("");
+  const uso={};Object.values(CORR).forEach(c=>(c.cer||[]).forEach(k=>{(uso[k]=uso[k]||[]).push(c.nombre);}));AUX.forEach(a=>a.cer.forEach(k=>{(uso[k]=uso[k]||[]).push(a.n);}));
+  document.getElementById("tablaCER").innerHTML=Object.keys(CER_DESC).map(k=>`<tr><td>${cerHTML([k])}</td><td>${CER_DESC[k]}</td><td>${[...new Set(uso[k]||[])].join("; ")||"Observado en instalaciones reales"}</td></tr>`).join("");
+  document.getElementById("bloqueObservados").innerHTML=CFG.obs.map(o=>`<h3 style="margin-top:22px">${o.titulo}</h3><p class="explicacion">${o.intro}</p><div class="tabla-contenedor"><table><thead><tr>${o.cols.map(c=>`<th>${c}</th>`).join("")}</tr></thead><tbody>${o.filas.map(f=>`<tr>${f.map((v,i)=>`<td${typeof v==="number"?' class="num"':""}>${o.cer===i?cerHTML(String(v).split("|")):typeof v==="number"?fmt(v,v<10?3:0):v}</td>`).join("")}</tr>`).join("")}</tbody></table></div><p class="fuente">${o.fuente}</p>`).join("");
+  const filasP=[];const vistos=new Set();
+  Object.values(PRODUCTOS).filter(p=>!p.mezcla).forEach(p=>{if(vistos.has(p.prodcom))return;vistos.add(p.prodcom);filasP.push([p.nombre,p.prodcom,p.precio,uPrecio(p)+" · "+p.anio+" · "+p.fuente]);});
+  Object.values(CORR).filter(c=>c.tipo!=="producto"&&c.precio>0).forEach(c=>{if(vistos.has(c.prodcom))return;vistos.add(c.prodcom);filasP.push([c.nombre,c.prodcom,c.precio,"€/kg · PRODCOM"]);});
+  (CFG.preciosExtra||[]).forEach(x=>{if(!vistos.has(x[1])){vistos.add(x[1]);filasP.push(x);}});
+  document.getElementById("tablaPrecios").innerHTML=filasP.map(x=>{const d=PRECIOS_PRODCOM[x[1].replace(/\./g,"")]||{};const g=(y,z)=>d[y]&&d[y][z]!=null?fmt(d[y][z],3):"—";
+    return `<tr><td>${x[0]}</td><td>${x[1]}</td><td class="num">${g("2021","es")}</td><td class="num">${g("2022","es")}</td><td class="num">${g("2023","es")}</td><td class="num">${g("2024","es")}</td><td class="num">${g("2024","ue")}</td><td class="num"><b>${fmt(x[2],3)}</b></td><td class="pequeno">${x[3]}</td></tr>`;}).join("");
+  document.getElementById("listaFuentes").innerHTML=FUENTES.map(f=>`<li><a href="${f[1]}" target="_blank" rel="noopener">${f[0]}</a></li>`).join("")+CFG.notasFuentes+notaPesos();
+}
+function pintarFactores(){
+  document.getElementById("factores").innerHTML=Object.entries(RUTAS).map(([rk,r])=>`<details><summary>${r.nombre} (CNAE ${r.cnae}) · materia prima: ${r.mp}</summary><div class="tabla-contenedor"><table><thead><tr><th>Corriente</th><th>Tipo</th><th>Factor</th><th>Confianza</th></tr></thead><tbody>${
+    Object.entries(r.f).map(([k,v])=>`<tr><td>${CORR[k].nombre}</td><td>${CORR[k].tipo}</td><td><input class="factor-input" type="number" step="0.001" min="0" value="${v}" oninput="RUTAS['${rk}'].f['${k}']=parseFloat(this.value)||0;sumaRuta('${rk}');calcular()"> ${CORR[k].unidad?CORR[k].unidad+"/t":"t/t"}</td><td>${r.conf[k]||""}</td></tr>`).join("")
+  }</tbody></table></div><p class="pequeno" id="suma_${rk}"></p></details>`).join("");
+  Object.keys(RUTAS).forEach(sumaRuta);
+}
+function sumaRuta(rk){const r=RUTAS[rk];const s=Object.entries(r.f).filter(([k])=>!CORR[k].unidad).reduce((a,[k,v])=>a+v,0);
+  const el=document.getElementById("suma_"+rk);if(el)el.textContent=`Suma de corrientes en toneladas: ${fmtP(s)}. ${CFG.sumaMsg(r,s)}`;}
+function restablecerFactores(){Object.keys(RUTAS).forEach(k=>RUTAS[k].f=JSON.parse(JSON.stringify(FACTORES_INICIALES[k])));pintarFactores();calcular();}
+function etCl(cl){return {coproducto:"Coproducto",subproducto:"Subproducto",residuo:"Residuo",efluente:"Efluente"}[cl]||cl;}
+function valPrincipal(c){return c.c.val&&VAL[c.c.val]?VAL[c.c.val].principal:(c.cl==="coproducto"?"Venta":"—");}
+function anchoCols(filas){
+  return filas[0].map((_,i)=>({wch:Math.min(50,Math.max(10,...filas.map(r=>String(r[i]??"").length)))}));
+}
+function generarHojaDetalle(){
+  const r=ultimo;
+  const rows=[["Producto","Tipo de proceso","Producto obtenido","Corriente (residuo / coproducto)","CER/LER candidatos","Clasificación","Cantidad","Unidad","Factor s/ materia prima","Valorización principal","Confianza"]];
+  r.prod.forEach(p=>{
+    const obtenido=`${fmt(p.tmain,p.tmain<10?2:1)} ${uProd(p.p)}`;
+    const corrs=r.corr.filter(c=>c.fid===p.fid);
+    if(!corrs.length){
+      rows.push([p.p.nombre,p.r.nombre,obtenido,"","","Producto principal",Number(p.tmain.toFixed(2)),uProd(p.p),"","Venta",""]);
+      return;
+    }
+    corrs.forEach(c=>{
+      rows.push([p.p.nombre,p.r.nombre,obtenido,c.c.nombre,(c.c.cer||[]).join(" / "),etCl(c.cl),Number(c.q.toFixed(3)),c.unidad,fmtF(c.k,c.pct),valPrincipal(c),c.conf]);
+    });
+  });
+  return rows;
+}
+function generarHojaAuxiliares(){
+  const r=ultimo;
+  const rows=[["Residuo auxiliar","Origen / procedencia","Cantidad estimada","Unidad","CER/LER candidatos","Gestión habitual"]];
+  AUX.forEach(a=>{const q=tAuxItem(r,a);rows.push([a.n,a.o,q!==null?Number(q.toFixed(3)):"Según inventario",q!==null?"t":"",a.cer.join(" / "),a.g]);});
+  return rows;
+}
+function generarHojaTotales(){
+  const r=ultimo;const T=totales(r);
+  const header=["Concepto","Cantidad","kg por t de materia prima","% sobre salidas (t)","Corrientes incluidas"];
+  return [header,...filasTotales(r,T).map(x=>x.slice(0,5))];
+}
+function nombreArchivo(ext){
+  const base=(CFG.csv||"resultados.csv").replace(/\.csv$/i,"");
+  return `${base}.${ext}`;
+}
+function tituloInforme(){
+  return (CFG.grupos||[]).map(g=>g[1]).join(" + ")||document.querySelector("h1").textContent;
+}
+let descargaEnCurso=false;
+function estadoDescarga(msg){
+  const el=document.getElementById("descargaEstado");
+  if(el) el.textContent=msg||"";
+}
+async function obtenerDescargas(){
+  try{
+    if(typeof claude==="undefined"||!claude.use) return null;
+    return await claude.use("downloads");
+  }catch(e){return null;}
+}
+async function generarExcelBlob(){
+  const detalle=generarHojaDetalle(),aux=generarHojaAuxiliares(),tot=generarHojaTotales();
+  const wb=XLSX.utils.book_new();
+  const wsD=XLSX.utils.aoa_to_sheet(detalle);wsD['!cols']=anchoCols(detalle);
+  const wsA=XLSX.utils.aoa_to_sheet(aux);wsA['!cols']=anchoCols(aux);
+  const wsT=XLSX.utils.aoa_to_sheet(tot);wsT['!cols']=anchoCols(tot);
+  XLSX.utils.book_append_sheet(wb,wsD,"Detalle por producto");
+  XLSX.utils.book_append_sheet(wb,wsA,"Auxiliares");
+  XLSX.utils.book_append_sheet(wb,wsT,"Totales");
+  const buf=XLSX.write(wb,{type:"array",bookType:"xlsx"});
+  return new Blob([buf],{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});
+}
+async function generarPdfBlob(){
+  const nodo=document.querySelector("main");
+  const fondo=getComputedStyle(document.body).backgroundColor||"#ffffff";
+  const canvas=await html2canvas(nodo,{scale:2,backgroundColor:fondo,useCORS:true,windowWidth:nodo.scrollWidth});
+  const doc=new jspdf.jsPDF({orientation:"portrait",unit:"pt",format:"a4"});
+  const pageW=doc.internal.pageSize.getWidth(),pageH=doc.internal.pageSize.getHeight();
+  const margin=24,headerH=34,footerH=16;
+  const imgW=pageW-margin*2;
+  const ratio=imgW/canvas.width;
+  const hPag1=Math.max(40,Math.floor((pageH-margin*2-headerH-footerH)/ratio));
+  const hPagN=Math.max(40,Math.floor((pageH-margin*2-footerH)/ratio));
+  const slices=[];let y=0,first=true;
+  while(y<canvas.height){
+    const h=Math.min(first?hPag1:hPagN,canvas.height-y);
+    slices.push({y,h});
+    y+=h;first=false;
+  }
+  const fecha=new Date().toLocaleDateString("es-ES");
+  slices.forEach((s,i)=>{
+    if(i>0) doc.addPage();
+    let top=margin;
+    if(i===0){
+      doc.setFontSize(13);doc.setTextColor(30);
+      doc.text(tituloInforme(),margin,margin+12);
+      doc.setFontSize(8);doc.setTextColor(120);
+      doc.text(`Copia de la calculadora con los datos introducidos, generada el ${fecha}. Estimación orientativa, no un dato medido.`,margin,margin+26);
+      top=margin+headerH;
+    }
+    const c2=document.createElement("canvas");
+    c2.width=canvas.width;c2.height=s.h;
+    c2.getContext("2d").drawImage(canvas,0,s.y,canvas.width,s.h,0,0,canvas.width,s.h);
+    doc.addImage(c2.toDataURL("image/jpeg",0.85),"JPEG",margin,top,imgW,s.h*ratio);
+  });
+  const total=slices.length;
+  for(let i=0;i<total;i++){
+    doc.setPage(i+1);
+    doc.setFontSize(8);doc.setTextColor(140);
+    doc.text(`Página ${i+1} de ${total}`,pageW-margin,pageH-8,{align:"right"});
+  }
+  return doc.output("blob");
+}
+async function descargarArchivo(tipo){
+  if(!ultimo||descargaEnCurso) return;
+  descargaEnCurso=true;
+  estadoDescarga("Generando…");
+  try{
+    const downloads=await obtenerDescargas();
+    if(!downloads){estadoDescarga("La descarga no está disponible en esta vista.");return;}
+    let filename,blob;
+    if(tipo==="xlsx"){
+      if(typeof XLSX==="undefined"){estadoDescarga("No se ha podido cargar el generador de Excel.");return;}
+      blob=await generarExcelBlob();
+      filename=nombreArchivo("xlsx");
+    } else {
+      if(typeof jspdf==="undefined"||typeof html2canvas==="undefined"){estadoDescarga("No se ha podido cargar el generador de PDF.");return;}
+      blob=await generarPdfBlob();
+      filename=nombreArchivo("pdf");
+    }
+    const res=await downloads.save({filename,data:blob});
+    estadoDescarga(res.status==="saved"?"Archivo descargado.":"Archivo enviado.");
+  }catch(err){
+    const code=err&&err.code;
+    if(code==="declined"){estadoDescarga("");}
+    else if(code==="rate_limited"){estadoDescarga("Espera un momento y vuelve a intentarlo.");}
+    else if(code==="too_large"){estadoDescarga("El archivo es demasiado grande para descargarlo aquí.");}
+    else{estadoDescarga("No se ha podido generar el archivo. Inténtalo de nuevo.");}
+  }finally{
+    descargaEnCurso=false;
+  }
+}
+pintarEstaticas();pintarFactores();
+filas.push({id:sigId++,prod:CFG.filaInicial.prod,modo:"facturacion",valor:String(CFG.filaInicial.valor),precio:PRODUCTOS[CFG.filaInicial.prod].precio});
+actualizarInterfaz();
+
+</script>
+
+</body></html>

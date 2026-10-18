@@ -1,0 +1,1859 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>html{color-scheme:light}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif;background:#fafaf8}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Fuentes Zumos de Fruta</title>
+<style>
+:root{
+  --c-bg:#f3f7f4;--c-surface:#fff;--c-shadow:rgba(0,0,0,.08);--c-text:#18322a;
+  --c-h1:#225c40;--c-h2:#2c704d;--c-h3:#397b59;--c-border:#b7cabe;--c-focus:#8fc19b;
+  --c-input-bg:#fff;
+  --c-btn-bg:#28734d;--c-btn-bg-hover:#1e593b;--c-btn-secondary-bg:#64786c;
+  --c-explicacion-text:#50675a;--c-fuente-text:#64786c;
+  --c-pequeno-text:#5c6c62;
+  --c-card-bg:#fffdfa;--c-card-border:#ded8ca;
+  --c-th-bg:#e7f1ea;--c-tr-border:#d8e4dc;
+  --c-badge-normativa:#8a6d1a;--c-badge-estudio:#5c8da5;--c-badge-empresa:#28734d;--c-badge-proyecto:#7a6fb0;--c-badge-herramienta:#9b4a3c;
+  --c-chip-bg:#e5f2e8;--c-chip-border:#9dc4a5;--c-chip-text:#225c40;
+  --c-nivel-n1-bg:#d7efe0;--c-nivel-n1-text:#225c40;
+  --c-nivel-n2-bg:#e3eef5;--c-nivel-n2-text:#2e5b73;
+  --c-nivel-n3-bg:#f1ecd9;--c-nivel-n3-text:#6d5a14;
+  --c-nivel-n4-bg:#fbe6d6;--c-nivel-n4-text:#8a4a1a;
+  --c-nivel-n5-bg:#eee;--c-nivel-n5-text:#555;
+  --c-link:#1f6a8a;
+  --c-tab-bg:#e7f1ea;--c-tab-active-bg:#28734d;--c-tab-active-text:#fff;
+  --c-cer-bg:#f1f5f2;--c-cer-border:#c9d8ce;--c-cer-pel-border:#c0392b;--c-cer-pel-text:#8e2a1f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+    --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+    --c-input-bg:#182720;
+    --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;
+    --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+    --c-pequeno-text:#93a49a;
+    --c-card-bg:#182720;--c-card-border:#33362a;
+    --c-th-bg:#1c3227;--c-tr-border:#26392f;
+    --c-badge-normativa:#c9a94f;--c-badge-estudio:#6fa8c4;--c-badge-empresa:#4caf7c;--c-badge-proyecto:#a79bea;--c-badge-herramienta:#c98a76;
+    --c-chip-bg:#1b3226;--c-chip-border:#3a5c48;--c-chip-text:#a6e3c4;
+    --c-nivel-n1-bg:#204331;--c-nivel-n1-text:#a6e3c4;
+    --c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+    --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;
+    --c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;
+    --c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+    --c-link:#6cc2e8;
+    --c-tab-bg:#1c3227;--c-tab-active-bg:#2f8055;--c-tab-active-text:#fff;
+    --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+  --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+  --c-input-bg:#182720;
+  --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;
+  --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+  --c-pequeno-text:#93a49a;
+  --c-card-bg:#182720;--c-card-border:#33362a;
+  --c-th-bg:#1c3227;--c-tr-border:#26392f;
+  --c-badge-normativa:#c9a94f;--c-badge-estudio:#6fa8c4;--c-badge-empresa:#4caf7c;--c-badge-proyecto:#a79bea;--c-badge-herramienta:#c98a76;
+  --c-chip-bg:#1b3226;--c-chip-border:#3a5c48;--c-chip-text:#a6e3c4;
+  --c-nivel-n1-bg:#204331;--c-nivel-n1-text:#a6e3c4;
+  --c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+  --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;
+  --c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;
+  --c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+  --c-link:#6cc2e8;
+  --c-tab-bg:#1c3227;--c-tab-active-bg:#2f8055;--c-tab-active-text:#fff;
+  --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+}
+body{font-family:Arial,sans-serif;margin:0;background:var(--c-bg);color:var(--c-text)}
+main{max-width:1180px;margin:auto;padding:24px}
+section{background:var(--c-surface);padding:22px;margin-bottom:18px;border-radius:14px;box-shadow:0 2px 10px var(--c-shadow)}
+h1{margin-top:0;color:var(--c-h1);font-size:26px}
+h2{color:var(--c-h2);font-size:19px}
+h3{color:var(--c-h3);margin-bottom:6px;font-size:15px}
+p{line-height:1.5}
+.explicacion{color:var(--c-explicacion-text);font-size:14px;line-height:1.5;margin-top:6px}
+.pequeno{font-size:12px;color:var(--c-pequeno-text)}
+.fuente{color:var(--c-fuente-text);font-size:12px}
+label{display:block;font-weight:bold;margin:0 0 5px;font-size:13px}
+input,select{width:100%;box-sizing:border-box;padding:9px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-size:14px}
+input:focus,select:focus{outline:2px solid var(--c-focus)}
+.grid-filtros{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:12px;align-items:end}
+@media(max-width:800px){.grid-filtros{grid-template-columns:1fr}}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tab-btn{padding:9px 16px;border-radius:20px;border:1px solid var(--c-border);background:var(--c-tab-bg);color:var(--c-text);cursor:pointer;font-size:13px;font-weight:bold}
+.tab-btn.activa{background:var(--c-tab-active-bg);color:var(--c-tab-active-text);border-color:transparent}
+.panel{display:none}
+.panel.activa{display:block}
+.resultado-contador{margin:10px 0;font-size:13px;color:var(--c-pequeno-text)}
+.tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.tarjeta{background:var(--c-card-bg);border:1px solid var(--c-card-border);border-radius:10px;padding:14px 16px;line-height:1.45}
+.tarjeta h3{margin-bottom:4px}
+.tarjeta h3 a{color:var(--c-h3);text-decoration:none}
+.tarjeta h3 a:hover{text-decoration:underline}
+.badge{display:inline-block;font-size:11px;font-weight:bold;color:#fff;border-radius:8px;padding:2px 8px;margin-right:6px}
+.badge.Normativa{background:var(--c-badge-normativa)}
+.badge.Estudio{background:var(--c-badge-estudio)}
+.badge.Empresa{background:var(--c-badge-empresa)}
+.badge.Proyecto{background:var(--c-badge-proyecto)}
+.badge.Herramienta{background:var(--c-badge-herramienta)}
+.meta-linea{font-size:12px;color:var(--c-pequeno-text);margin:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
+.chip{font-size:11px;background:var(--c-chip-bg);color:var(--c-chip-text);border:1px solid var(--c-chip-border);border-radius:10px;padding:2px 8px}
+.nota{font-size:12px;color:var(--c-pequeno-text);margin-top:6px;font-style:italic}
+.tabla-contenedor{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+th,td{padding:8px;border-bottom:1px solid var(--c-tr-border);text-align:left;vertical-align:top}
+th{background:var(--c-th-bg)}
+td.num{text-align:right;white-space:nowrap}
+a{color:var(--c-link)}
+.nivel{display:inline-block;font-size:11px;font-weight:bold;padding:3px 8px;border-radius:10px;margin-right:6px}
+.nivel.n1{background:var(--c-nivel-n1-bg);color:var(--c-nivel-n1-text)}
+.nivel.n2{background:var(--c-nivel-n2-bg);color:var(--c-nivel-n2-text)}
+.nivel.n3{background:var(--c-nivel-n3-bg);color:var(--c-nivel-n3-text)}
+.nivel.n4{background:var(--c-nivel-n4-bg);color:var(--c-nivel-n4-text)}
+.nivel.n5{background:var(--c-nivel-n5-bg);color:var(--c-nivel-n5-text)}
+.opcion-val{padding:10px 0;border-bottom:1px dashed var(--c-tr-border)}
+.opcion-val:last-child{border-bottom:0}
+.bloque-real{border:1px solid var(--c-card-border);border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.cer{display:inline-block;background:var(--c-cer-bg);border:1px solid var(--c-cer-border);border-radius:6px;padding:1px 6px;margin:1px 2px;font-size:12px;white-space:nowrap}
+.cer.pel{border-color:var(--c-cer-pel-border);color:var(--c-cer-pel-text)}
+button{padding:9px 15px;color:#fff;background:var(--c-btn-bg);border:0;border-radius:8px;cursor:pointer;font-size:13px}
+button:hover{background:var(--c-btn-bg-hover)}
+button.secundario{background:var(--c-btn-secondary-bg)}
+.oculto{display:none!important}
+textarea{width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-family:monospace;font-size:12px;margin-top:8px}
+</style>
+
+<main>
+
+<section>
+<h1>Fuentes de residuos · CNAE 10.32</h1>
+<p><strong>Base de fuentes, coeficientes y datos reales de planta</strong> para la elaboración de zumos de frutas y hortalizas (cítricos, pomáceas, uva, tropicales, fruta de hueso, tomate, hortalizas y reconstitución desde concentrado). Consulta interna, sin relación con los datos que introduzcas en la calculadora de estimación.</p>
+<p class="explicacion">Extraída de la investigación de fuentes oficiales (normativa, estudios, permisos ambientales de planta real) que respalda la <a href="10.32_zumos_de_frutas_calculadora.html" target="_blank" rel="noopener">calculadora de residuos CNAE 10.32</a>. La misma información, en formato de tabla, está disponible como Excel para reutilizar en otros entornos.</p>
+</section>
+
+<section>
+<h2>Filtrar fuentes</h2>
+<div class="grid-filtros">
+<div>
+<label for="fBusqueda">Buscar (título, organismo, corriente, nota)</label>
+<input id="fBusqueda" type="text" placeholder="p. ej. alperujo, MITECO, Andalucía..." oninput="pintarFuentes()">
+</div>
+<div>
+<label for="fTipo">Tipo de fuente</label>
+<select id="fTipo" onchange="pintarFuentes()"><option value="">Todos</option></select>
+</div>
+<div>
+<label for="fZona">Zona</label>
+<select id="fZona" onchange="pintarFuentes()"><option value="">Todas</option></select>
+</div>
+<div>
+<label for="fCorriente">Corriente</label>
+<select id="fCorriente" onchange="pintarFuentes()"><option value="">Todas</option></select>
+</div>
+</div>
+</section>
+
+<section>
+<div class="tabs">
+<button class="tab-btn activa" data-panel="panelFuentes" onclick="cambiarTab('panelFuentes',this)">Fuentes</button>
+<button class="tab-btn" data-panel="panelCoef" onclick="cambiarTab('panelCoef',this)">Coeficientes</button>
+<button class="tab-btn" data-panel="panelReal" onclick="cambiarTab('panelReal',this)">Datos reales de planta</button>
+<button class="tab-btn" data-panel="panelVal" onclick="cambiarTab('panelVal',this)">Valorización</button>
+<button class="tab-btn" data-panel="panelCer" onclick="cambiarTab('panelCer',this)">CER/LER</button>
+</div>
+
+<div id="panelFuentes" class="panel activa">
+<div class="resultado-contador" id="contadorFuentes"></div>
+<div id="tarjetasFuentes" class="tarjetas"></div>
+<div style="margin-top:14px">
+<button class="secundario" onclick="copiarFuentes()">Copiar resultados filtrados (texto)</button>
+<textarea id="areaFuentes" class="oculto" rows="6" onclick="this.select()"></textarea>
+<span id="estadoFuentes" class="pequeno"></span>
+</div>
+</div>
+
+<div id="panelCoef" class="panel">
+<p class="explicacion">Factor de generación de cada corriente por tonelada de materia prima (fruta u hortaliza), por cada una de las ~10 rutas de proceso, tal y como se usan en la calculadora. Haz clic en un identificador de fuente para verla en la pestaña «Fuentes».</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Proceso</th><th>Corriente</th><th>Factor</th><th>Unidad</th><th>Confianza</th><th>CER/LER candidatos</th><th>Fuentes</th></tr></thead>
+<tbody id="tablaCoef"></tbody>
+</table>
+</div>
+</div>
+
+<div id="panelReal" class="panel">
+<p class="explicacion">Balances de masa reales declarados en autorizaciones ambientales y estudios de campo.</p>
+<div id="bloquesReal"></div>
+</div>
+
+<div id="panelVal" class="panel">
+<p class="explicacion">Opciones de valorización por corriente, ordenadas según la jerarquía de residuos: <span class="nivel n1">1 · Alimentación humana</span><span class="nivel n2">2 · Alimentación animal</span><span class="nivel n3">3 · Material y bioproductos</span><span class="nivel n4">4 · Energía y biogás</span><span class="nivel n5">5 · Suelo / compost</span></p>
+<div id="bloquesVal"></div>
+</div>
+
+<div id="panelCer" class="panel">
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Código</th><th>Descripción oficial</th><th>Corrientes de este CNAE</th></tr></thead>
+<tbody id="tablaCer"></tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Notas</h2>
+<ul style="line-height:1.6">
+<li>Esta base cubre de momento el CNAE 10.32 (zumos de frutas y hortalizas). La columna CNAE de cada hoja/tabla está pensada para apilar aquí los próximos CNAEs sin cambiar la estructura.</li>
+<li>Los identificadores de fuente (F01, F02...) son los mismos en esta página y en el Excel «Base_fuentes_residuos_CNAE_1043.xlsx», para poder cruzar ambos.</li>
+<li>Un coeficiente con confianza «Baja» o marcado como extrapolación no está verificado con un dato de planta real: trátalo como orientativo.</li>
+</ul>
+</section>
+
+</main>
+
+<script>
+const DATA = {
+"cnae": "10.32",
+"fuentes": [
+{
+"id": "F01",
+"titulo": "Ley 7/2022 de residuos y suelos contaminados (art. 4, subproductos; art. 8, jerarquía)",
+"organismo": "Marco legal general",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General",
+"General (marco legal, subproducto vs. residuo)"
+],
+"url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809",
+"nota": ""
+},
+{
+"id": "F02",
+"titulo": "Ley 1/2025 de prevención de las pérdidas y el desperdicio alimentario (jerarquía de prioridades obligatoria)",
+"organismo": "Marco legal general",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General (marco legal, subproducto vs. residuo)"
+],
+"url": "https://www.boe.es/buscar/act.php?id=BOE-A-2025-6597",
+"nota": ""
+},
+{
+"id": "F03",
+"titulo": "MITECO: procedimiento de evaluación de subproductos",
+"organismo": "Marco legal general",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General (marco legal, subproducto vs. residuo)"
+],
+"url": "https://www.miteco.gob.es/va/calidad-y-evaluacion-ambiental/temas/prevencion-y-gestion-residuos/comision-coordinacion/procedimiento-evaluacion-subproducto.html",
+"nota": ""
+},
+{
+"id": "F04",
+"titulo": "Reglamento (UE) 68/2013, catálogo de materias primas para piensos",
+"organismo": "Marco legal general",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General (marco legal, subproducto vs. residuo)"
+],
+"url": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:02013R0068-20220724",
+"nota": ""
+},
+{
+"id": "F05",
+"titulo": "Decisión 2014/955/UE, Lista Europea de Residuos",
+"organismo": "Marco legal general",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General",
+"General (marco legal, subproducto vs. residuo)"
+],
+"url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32014D0955",
+"nota": ""
+},
+{
+"id": "F06",
+"titulo": "Borsa de Subproductes de Catalunya",
+"organismo": "Marco legal general",
+"zona": "España",
+"tipo": "Herramienta",
+"corrientes": [
+"General (marco legal, subproducto vs. residuo)"
+],
+"url": "https://www.residuosprofesional.com/bolsa-de-subproductos-catalunya-porta-residurecurs/",
+"nota": ""
+},
+{
+"id": "F07",
+"titulo": "BREF de alimentación, bebidas y leche (FDM, 2019): MTD por sector",
+"organismo": "Marco legal general",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General",
+"General (marco legal, subproducto vs. residuo)"
+],
+"url": "https://fenix.isa.ulisboa.pt/downloadFile/281547991178956/JRC118627_FDM_Bref_2019_published.pdf",
+"nota": ""
+},
+{
+"id": "F08",
+"titulo": "Eurostat PRODCOM DS-059358 (precios implícitos ES y UE-27, 2021–2024)",
+"organismo": "—",
+"zona": "España",
+"tipo": "Herramienta",
+"corrientes": [
+"General"
+],
+"url": "https://ec.europa.eu/eurostat/databrowser/view/ds-059358/default/table?lang=en",
+"nota": ""
+},
+{
+"id": "F09",
+"titulo": "INE: CNAE-2025, estructura y notas explicativas",
+"organismo": "—",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General"
+],
+"url": "https://ine.es/daco/daco42/clasificaciones/cnae25/CNAE_2025.pdf",
+"nota": ""
+},
+{
+"id": "F10",
+"titulo": "Orden MAM/304/2002, operaciones de valorización y eliminación",
+"organismo": "—",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General"
+],
+"url": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-3285",
+"nota": ""
+},
+{
+"id": "F11",
+"titulo": "INE: correspondencia CNAE-2009 / CNAE-2025 con contenido",
+"organismo": "INE",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)"
+],
+"url": "https://www.ine.es/daco/daco42/clasificaciones/cnae25/Correspondencia_CNAE09_CNAE25_conContenido.xlsx",
+"nota": ""
+},
+{
+"id": "F12",
+"titulo": "Lista PRODCOM 2026 (CBS): códigos 10.32",
+"organismo": "CBS (Países Bajos) / Eurostat",
+"zona": "España",
+"tipo": "Herramienta",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)"
+],
+"url": "https://www.cbs.nl/-/media/_excel/2026/04/prodcom_list_en.xlsx",
+"nota": ""
+},
+{
+"id": "F13",
+"titulo": "INE: lista PRODCOM 2025",
+"organismo": "INE",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)"
+],
+"url": "https://www.ine.es/metodologia/t05/PRODCOM2025.xlsx",
+"nota": ""
+},
+{
+"id": "F14",
+"titulo": "AAI AMC Juices y Fruit Tech Natural, Espinardo (CARM)",
+"organismo": "CARM (Región de Murcia)",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)"
+],
+"url": "https://www.carm.es/web/descarga?ARCHIVO=Res%20IIA%20%28COPIA%29%20%282%29.pdf&ALIAS=ARCH&IDCONTENIDO=174297",
+"nota": ""
+},
+{
+"id": "F15",
+"titulo": "AAI García Carrión Jumilla (CARM)",
+"organismo": "CARM (Región de Murcia)",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)"
+],
+"url": "https://www.carm.es/web/pagina?IDCONTENIDO=16911&IDTIPO=100&RASTRO=c511$m4688,5180",
+"nota": ""
+},
+{
+"id": "F16",
+"titulo": "DOGV: modificación de la AAI de Zumos Valencianos del Mediterráneo (Sagunt)",
+"organismo": "DOGV / Generalitat Valenciana",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)"
+],
+"url": "https://dogv.gva.es/datos/2024/05/15/pdf/2024_3775.pdf",
+"nota": ""
+},
+{
+"id": "F17",
+"titulo": "Nutrinews: 30–50 % del fruto de cítricos acaba como residuo",
+"organismo": "Nutrinews (portal sectorial)",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)"
+],
+"url": "https://nutrinews.com/materias-primas-pulpa-de-citricos-2/",
+"nota": ""
+},
+{
+"id": "F18",
+"titulo": "MDPI: finishing de cítricos",
+"organismo": "MDPI (revista científica)",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Corteza de cítricos",
+"General (clasificación / PRODCOM / plantas reales)"
+],
+"url": "https://www.mdpi.com/2673-8783/4/1/6",
+"nota": ""
+},
+{
+"id": "F19",
+"titulo": "Revisión: aguas residuales de la industria de cítricos",
+"organismo": "Universidad Mediterranea di Reggio Calabria",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Aguas residuales, lodos y rechazos",
+"General (clasificación / PRODCOM / plantas reales)"
+],
+"url": "https://iris.unirc.it//retrieve/handle/20.500.12318/51688/62826/Zema_2019_Water_Wastewater.pdf",
+"nota": ""
+},
+{
+"id": "F20",
+"titulo": "Zuvamesa (Sagunt): aceites esenciales, d-limoneno y celdillas como coproductos",
+"organismo": "—",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"Corteza de cítricos"
+],
+"url": "https://www.zuvamesa.com/es/productos/",
+"nota": ""
+},
+{
+"id": "F21",
+"titulo": "Revisión: aceites esenciales, pectina y nutracéuticos de residuos cítricos (Food Science and Biotechnology)",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Corteza de cítricos"
+],
+"url": "https://link.springer.com/article/10.1007/s10068-021-00984-y",
+"nota": ""
+},
+{
+"id": "F22",
+"titulo": "Zuvamesa: pellets de cítricos a partir de cáscaras, pulpa y destrío",
+"organismo": "—",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"Corteza de cítricos"
+],
+"url": "https://www.zuvamesa.com/es/pellets/",
+"nota": ""
+},
+{
+"id": "F23",
+"titulo": "FEDNA: ficha de la pulpa de cítricos como ingrediente de piensos",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Corteza de cítricos"
+],
+"url": "https://www.fundacionfedna.org/ingredientes_para_piensos/pulpa-de-c%C3%ADtricos",
+"nota": ""
+},
+{
+"id": "F24",
+"titulo": "UPM: subproductos deshidratados en alimentación animal",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Corteza de cítricos"
+],
+"url": "https://oa.upm.es/56899/1/INVE_MEM_2019_306041.pdf",
+"nota": ""
+},
+{
+"id": "F25",
+"titulo": "UPA, Anuario 2023: la pulpa de cítricos en ganadería",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Corteza de cítricos"
+],
+"url": "https://www.upa.es/Anuario2023/025-Anuario-2023-Carro-Molina.pdf",
+"nota": ""
+},
+{
+"id": "F26",
+"titulo": "Revisión: valorización biológica de la corteza de cítricos en combustibles y químicos (Bioresource Technology)",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Corteza de cítricos"
+],
+"url": "https://www.sciencedirect.com/science/article/pii/S0960852420318770",
+"nota": ""
+},
+{
+"id": "F27",
+"titulo": "Revisión: valorización del orujo de manzana por extracción de compuestos (Comprehensive Reviews in Food Science)",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Orujo de manzana, pera, hortalizas y fruta de hueso; finos y destrío"
+],
+"url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1541-4337.12290",
+"nota": ""
+},
+{
+"id": "F28",
+"titulo": "ScienceDirect: orujo de manzana como ingrediente",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Orujo de manzana, pera, hortalizas y fruta de hueso; finos y destrío"
+],
+"url": "https://www.sciencedirect.com/science/article/pii/S002364381730600X",
+"nota": ""
+},
+{
+"id": "F29",
+"titulo": "MDPI: subproductos de pera",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Orujo de manzana, pera, hortalizas y fruta de hueso; finos y destrío"
+],
+"url": "https://www.mdpi.com/2304-8158/12/23/4325",
+"nota": ""
+},
+{
+"id": "F30",
+"titulo": "MDPI: subproductos de melocotón",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Huesos de fruta",
+"Orujo de manzana, pera, hortalizas y fruta de hueso; finos y destrío"
+],
+"url": "https://www.mdpi.com/2071-1050/16/3/1289",
+"nota": ""
+},
+{
+"id": "F31",
+"titulo": "MDPI: revisión de subproductos de frutas y hortalizas",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Orujo de manzana, pera, hortalizas y fruta de hueso; finos y destrío",
+"Orujo de uva y raspón"
+],
+"url": "https://www.mdpi.com/1420-3049/26/2/515",
+"nota": ""
+},
+{
+"id": "F32",
+"titulo": "CSIC: multivalorización del orujo de manzana en materiales y químicos",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Orujo de manzana, pera, hortalizas y fruta de hueso; finos y destrío"
+],
+"url": "https://digital.csic.es/bitstream/10261/141921/1/Multivalorization_of_apple_pomace_towards_materials_and_chemicals.pdf",
+"nota": ""
+},
+{
+"id": "F33",
+"titulo": "MDPI Sustainability: orujo de manzana como materia prima",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Orujo de manzana, pera, hortalizas y fruta de hueso; finos y destrío"
+],
+"url": "https://www.mdpi.com/2071-1050/15/1/830",
+"nota": ""
+},
+{
+"id": "F34",
+"titulo": "Indulleida (Alguaire): reactor de biogás y aprovechamiento de fruta no apta",
+"organismo": "—",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"Orujo de manzana, pera, hortalizas y fruta de hueso; finos y destrío"
+],
+"url": "https://www.indulleida.com/",
+"nota": ""
+},
+{
+"id": "F35",
+"titulo": "PMC: recuperación de bromelina de subproductos de piña",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Cáscara y corazón de piña, piel y hueso de mango"
+],
+"url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10888004/",
+"nota": ""
+},
+{
+"id": "F36",
+"titulo": "Revisión: usos de los residuos de mango (Biomass Conversion and Biorefinery)",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Cáscara y corazón de piña, piel y hueso de mango"
+],
+"url": "https://link.springer.com/article/10.1007/s13399-026-07087-w",
+"nota": ""
+},
+{
+"id": "F37",
+"titulo": "PMC: cáscara de piña con bromelina para mejorar piensos",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Cáscara y corazón de piña, piel y hueso de mango"
+],
+"url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12878712/",
+"nota": ""
+},
+{
+"id": "F38",
+"titulo": "Natural Product Communications: aplicaciones de los residuos de piña",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Cáscara y corazón de piña, piel y hueso de mango"
+],
+"url": "https://journals.sagepub.com/doi/10.1177/1934578X251348402",
+"nota": ""
+},
+{
+"id": "F39",
+"titulo": "Revisión: valorización sostenible del orujo de tomate (Trends in Food Science & Technology)",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Orujo de tomate"
+],
+"url": "https://www.sciencedirect.com/science/article/abs/pii/S0924224418304485",
+"nota": ""
+},
+{
+"id": "F40",
+"titulo": "MDPI Molecules: subproductos de tomate como fuente de licopeno",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Orujo de tomate"
+],
+"url": "https://www.mdpi.com/1420-3049/31/15/2589",
+"nota": ""
+},
+{
+"id": "F41",
+"titulo": "Tratamiento de aguas de zumo de cítricos con UASB y biogás",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Aguas residuales, lodos y rechazos"
+],
+"url": "https://dergipark.org.tr/tr/download/article-file/2883180",
+"nota": ""
+}
+],
+"coeficientes": [
+{
+"proceso": "Zumo de cítricos exprimido (NFC)",
+"corriente": "Zumo, mosto o néctar",
+"factor": 4.8,
+"unidad": "hl/t naranja",
+"confianza": "Alta",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Zumo de cítricos exprimido (NFC)",
+"corriente": "Aceite esencial y d-limoneno",
+"factor": 0.003,
+"unidad": "t/t naranja",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Zumo de cítricos exprimido (NFC)",
+"corriente": "Celdillas (pulpa de zumo) vendidas",
+"factor": 0.02,
+"unidad": "t/t naranja",
+"confianza": "Baja",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Zumo de cítricos exprimido (NFC)",
+"corriente": "Corteza de cítricos (piel, membranas y semillas)",
+"factor": 0.4,
+"unidad": "t/t naranja",
+"confianza": "Alta",
+"cer": "02 03 04; 02 01 03; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Zumo de cítricos exprimido (NFC)",
+"corriente": "Destrío (fruta rechazada en recepción y selección)",
+"factor": 0.02,
+"unidad": "t/t naranja",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Zumo de cítricos exprimido (NFC)",
+"corriente": "Finos de proceso (pulpa de finisher, fondos de centrífuga y clarificación)",
+"factor": 0.03,
+"unidad": "t/t naranja",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Zumo de cítricos exprimido (NFC)",
+"corriente": "Hojas, ramas y restos vegetales de recepción",
+"factor": 0.003,
+"unidad": "t/t naranja",
+"confianza": "Baja",
+"cer": "02 01 03; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Zumo de cítricos exprimido (NFC)",
+"corriente": "Lodos de depuradora (EDAR propia)",
+"factor": 0.015,
+"unidad": "t/t naranja",
+"confianza": "Baja",
+"cer": "02 03 05; 02 07 05",
+"fuentes": []
+},
+{
+"proceso": "Zumo de cítricos exprimido (NFC)",
+"corriente": "Aguas residuales (lavado de fruta, CIP, limpiezas)",
+"factor": 2,
+"unidad": "m³/t naranja",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Concentrado de cítricos",
+"corriente": "Zumo concentrado",
+"factor": 0.67,
+"unidad": "hl/t naranja",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Concentrado de cítricos",
+"corriente": "Aceite esencial y d-limoneno",
+"factor": 0.003,
+"unidad": "t/t naranja",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Concentrado de cítricos",
+"corriente": "Celdillas (pulpa de zumo) vendidas",
+"factor": 0.02,
+"unidad": "t/t naranja",
+"confianza": "Baja",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Concentrado de cítricos",
+"corriente": "Corteza de cítricos (piel, membranas y semillas)",
+"factor": 0.4,
+"unidad": "t/t naranja",
+"confianza": "Alta",
+"cer": "02 03 04; 02 01 03; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Concentrado de cítricos",
+"corriente": "Destrío (fruta rechazada en recepción y selección)",
+"factor": 0.02,
+"unidad": "t/t naranja",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Concentrado de cítricos",
+"corriente": "Finos de proceso (pulpa de finisher, fondos de centrífuga y clarificación)",
+"factor": 0.03,
+"unidad": "t/t naranja",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Concentrado de cítricos",
+"corriente": "Hojas, ramas y restos vegetales de recepción",
+"factor": 0.003,
+"unidad": "t/t naranja",
+"confianza": "Baja",
+"cer": "02 01 03; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Concentrado de cítricos",
+"corriente": "Lodos de depuradora (EDAR propia)",
+"factor": 0.015,
+"unidad": "t/t naranja",
+"confianza": "Baja",
+"cer": "02 03 05; 02 07 05",
+"fuentes": []
+},
+{
+"proceso": "Concentrado de cítricos",
+"corriente": "Condensados de evaporación",
+"factor": 0.41,
+"unidad": "m³/t naranja",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Concentrado de cítricos",
+"corriente": "Aguas residuales (lavado de fruta, CIP, limpiezas)",
+"factor": 2,
+"unidad": "m³/t naranja",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Zumo de manzana (prensado)",
+"corriente": "Zumo, mosto o néctar",
+"factor": 7,
+"unidad": "hl/t manzana",
+"confianza": "Alta",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Zumo de manzana (prensado)",
+"corriente": "Orujo o pomaza de prensado (manzana, pera, hortalizas)",
+"factor": 0.25,
+"unidad": "t/t manzana",
+"confianza": "Alta",
+"cer": "02 03 04; 02 03 99; 02 01 03",
+"fuentes": []
+},
+{
+"proceso": "Zumo de manzana (prensado)",
+"corriente": "Destrío (fruta rechazada en recepción y selección)",
+"factor": 0.02,
+"unidad": "t/t manzana",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Zumo de manzana (prensado)",
+"corriente": "Finos de proceso (pulpa de finisher, fondos de centrífuga y clarificación)",
+"factor": 0.02,
+"unidad": "t/t manzana",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Zumo de manzana (prensado)",
+"corriente": "Lodos de depuradora (EDAR propia)",
+"factor": 0.02,
+"unidad": "t/t manzana",
+"confianza": "Baja",
+"cer": "02 03 05; 02 07 05",
+"fuentes": []
+},
+{
+"proceso": "Zumo de manzana (prensado)",
+"corriente": "Aguas residuales (lavado de fruta, CIP, limpiezas)",
+"factor": 1.5,
+"unidad": "m³/t manzana",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Zumo de pera (prensado)",
+"corriente": "Zumo, mosto o néctar",
+"factor": 6.3,
+"unidad": "hl/t pera",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Zumo de pera (prensado)",
+"corriente": "Orujo o pomaza de prensado (manzana, pera, hortalizas)",
+"factor": 0.33,
+"unidad": "t/t pera",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99; 02 01 03",
+"fuentes": []
+},
+{
+"proceso": "Zumo de pera (prensado)",
+"corriente": "Destrío (fruta rechazada en recepción y selección)",
+"factor": 0.02,
+"unidad": "t/t pera",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Zumo de pera (prensado)",
+"corriente": "Finos de proceso (pulpa de finisher, fondos de centrífuga y clarificación)",
+"factor": 0.02,
+"unidad": "t/t pera",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Zumo de pera (prensado)",
+"corriente": "Lodos de depuradora (EDAR propia)",
+"factor": 0.02,
+"unidad": "t/t pera",
+"confianza": "Baja",
+"cer": "02 03 05; 02 07 05",
+"fuentes": []
+},
+{
+"proceso": "Zumo de pera (prensado)",
+"corriente": "Aguas residuales (lavado de fruta, CIP, limpiezas)",
+"factor": 1.5,
+"unidad": "m³/t pera",
+"confianza": "Baja",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Mosto y zumo de uva",
+"corriente": "Zumo, mosto o néctar",
+"factor": 8.1,
+"unidad": "hl/t uva",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Mosto y zumo de uva",
+"corriente": "Orujo de uva (hollejos y pepitas)",
+"factor": 0.12,
+"unidad": "t/t uva",
+"confianza": "Media",
+"cer": "02 03 04; 02 07 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Mosto y zumo de uva",
+"corriente": "Raspón (escobajo)",
+"factor": 0.04,
+"unidad": "t/t uva",
+"confianza": "Media",
+"cer": "02 01 03; 02 07 01",
+"fuentes": []
+},
+{
+"proceso": "Mosto y zumo de uva",
+"corriente": "Finos de proceso (pulpa de finisher, fondos de centrífuga y clarificación)",
+"factor": 0.03,
+"unidad": "t/t uva",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Mosto y zumo de uva",
+"corriente": "Lodos de depuradora (EDAR propia)",
+"factor": 0.015,
+"unidad": "t/t uva",
+"confianza": "Baja",
+"cer": "02 03 05; 02 07 05",
+"fuentes": []
+},
+{
+"proceso": "Mosto y zumo de uva",
+"corriente": "Aguas residuales (lavado de fruta, CIP, limpiezas)",
+"factor": 1,
+"unidad": "m³/t uva",
+"confianza": "Baja",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Zumo de piña, mango y otras tropicales",
+"corriente": "Zumo, mosto o néctar",
+"factor": 4.8,
+"unidad": "hl/t fruta tropical",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Zumo de piña, mango y otras tropicales",
+"corriente": "Cáscara, corazón y hueso de frutas tropicales",
+"factor": 0.45,
+"unidad": "t/t fruta tropical",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99; 02 01 03",
+"fuentes": []
+},
+{
+"proceso": "Zumo de piña, mango y otras tropicales",
+"corriente": "Destrío (fruta rechazada en recepción y selección)",
+"factor": 0.02,
+"unidad": "t/t fruta tropical",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Zumo de piña, mango y otras tropicales",
+"corriente": "Finos de proceso (pulpa de finisher, fondos de centrífuga y clarificación)",
+"factor": 0.03,
+"unidad": "t/t fruta tropical",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Zumo de piña, mango y otras tropicales",
+"corriente": "Lodos de depuradora (EDAR propia)",
+"factor": 0.015,
+"unidad": "t/t fruta tropical",
+"confianza": "Baja",
+"cer": "02 03 05; 02 07 05",
+"fuentes": []
+},
+{
+"proceso": "Zumo de piña, mango y otras tropicales",
+"corriente": "Aguas residuales (lavado de fruta, CIP, limpiezas)",
+"factor": 2,
+"unidad": "m³/t fruta tropical",
+"confianza": "Baja",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Néctar y puré de fruta de hueso",
+"corriente": "Zumo, mosto o néctar",
+"factor": 7.3,
+"unidad": "hl/t melocotón",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Néctar y puré de fruta de hueso",
+"corriente": "Huesos de melocotón y albaricoque",
+"factor": 0.08,
+"unidad": "t/t melocotón",
+"confianza": "Media",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Néctar y puré de fruta de hueso",
+"corriente": "Piel y restos de refinado (fruta de hueso)",
+"factor": 0.13,
+"unidad": "t/t melocotón",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Néctar y puré de fruta de hueso",
+"corriente": "Destrío (fruta rechazada en recepción y selección)",
+"factor": 0.02,
+"unidad": "t/t melocotón",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Néctar y puré de fruta de hueso",
+"corriente": "Finos de proceso (pulpa de finisher, fondos de centrífuga y clarificación)",
+"factor": 0.02,
+"unidad": "t/t melocotón",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Néctar y puré de fruta de hueso",
+"corriente": "Lodos de depuradora (EDAR propia)",
+"factor": 0.015,
+"unidad": "t/t melocotón",
+"confianza": "Baja",
+"cer": "02 03 05; 02 07 05",
+"fuentes": []
+},
+{
+"proceso": "Néctar y puré de fruta de hueso",
+"corriente": "Aguas residuales (lavado de fruta, CIP, limpiezas)",
+"factor": 1.5,
+"unidad": "m³/t melocotón",
+"confianza": "Baja",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Zumo de tomate",
+"corriente": "Zumo, mosto o néctar",
+"factor": 9,
+"unidad": "hl/t tomate",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Zumo de tomate",
+"corriente": "Orujo de tomate (piel y semillas)",
+"factor": 0.05,
+"unidad": "t/t tomate",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Zumo de tomate",
+"corriente": "Destrío (fruta rechazada en recepción y selección)",
+"factor": 0.03,
+"unidad": "t/t tomate",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Zumo de tomate",
+"corriente": "Tierra y piedras de lavado",
+"factor": 0.005,
+"unidad": "t/t tomate",
+"confianza": "Baja",
+"cer": "02 03 01; 20 02 02",
+"fuentes": []
+},
+{
+"proceso": "Zumo de tomate",
+"corriente": "Lodos de depuradora (EDAR propia)",
+"factor": 0.015,
+"unidad": "t/t tomate",
+"confianza": "Baja",
+"cer": "02 03 05; 02 07 05",
+"fuentes": []
+},
+{
+"proceso": "Zumo de tomate",
+"corriente": "Aguas residuales (lavado de fruta, CIP, limpiezas)",
+"factor": 2.5,
+"unidad": "m³/t tomate",
+"confianza": "Baja",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Zumo de zanahoria y otras hortalizas",
+"corriente": "Zumo, mosto o néctar",
+"factor": 6.3,
+"unidad": "hl/t zanahoria u hortaliza",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Zumo de zanahoria y otras hortalizas",
+"corriente": "Orujo o pomaza de prensado (manzana, pera, hortalizas)",
+"factor": 0.33,
+"unidad": "t/t zanahoria u hortaliza",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99; 02 01 03",
+"fuentes": []
+},
+{
+"proceso": "Zumo de zanahoria y otras hortalizas",
+"corriente": "Destrío (fruta rechazada en recepción y selección)",
+"factor": 0.02,
+"unidad": "t/t zanahoria u hortaliza",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Zumo de zanahoria y otras hortalizas",
+"corriente": "Tierra y piedras de lavado",
+"factor": 0.01,
+"unidad": "t/t zanahoria u hortaliza",
+"confianza": "Baja",
+"cer": "02 03 01; 20 02 02",
+"fuentes": []
+},
+{
+"proceso": "Zumo de zanahoria y otras hortalizas",
+"corriente": "Lodos de depuradora (EDAR propia)",
+"factor": 0.015,
+"unidad": "t/t zanahoria u hortaliza",
+"confianza": "Baja",
+"cer": "02 03 05; 02 07 05",
+"fuentes": []
+},
+{
+"proceso": "Zumo de zanahoria y otras hortalizas",
+"corriente": "Aguas residuales (lavado de fruta, CIP, limpiezas)",
+"factor": 2,
+"unidad": "m³/t zanahoria u hortaliza",
+"confianza": "Baja",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Reconstitución y mezclas desde concentrado",
+"corriente": "Zumo, mosto o néctar",
+"factor": 54,
+"unidad": "hl/t zumo concentrado y purés",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Reconstitución y mezclas desde concentrado",
+"corriente": "Finos de proceso (pulpa de finisher, fondos de centrífuga y clarificación)",
+"factor": 0.03,
+"unidad": "t/t zumo concentrado y purés",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Reconstitución y mezclas desde concentrado",
+"corriente": "Zumo rechazado y producto fuera de especificación",
+"factor": 0.1,
+"unidad": "t/t zumo concentrado y purés",
+"confianza": "Baja",
+"cer": "02 03 04; 02 07 04",
+"fuentes": []
+},
+{
+"proceso": "Reconstitución y mezclas desde concentrado",
+"corriente": "Lodos de depuradora (EDAR propia)",
+"factor": 0.2,
+"unidad": "t/t zumo concentrado y purés",
+"confianza": "Baja",
+"cer": "02 03 05; 02 07 05",
+"fuentes": []
+},
+{
+"proceso": "Reconstitución y mezclas desde concentrado",
+"corriente": "Aguas residuales (lavado de fruta, CIP, limpiezas)",
+"factor": 10,
+"unidad": "m³/t zumo concentrado y purés",
+"confianza": "Baja",
+"cer": "-",
+"fuentes": []
+}
+],
+"datos_reales": [
+{
+"bloque": "Planta real: AMC Juices y Fruit Tech Natural (Espinardo, Murcia)",
+"intro": "Autorización ambiental integrada de 2021 para envasado de zumos y tratamiento de materia prima vegetal.",
+"fuente_id": "F14",
+"fuentes_extra": [],
+"filas": [
+[
+"Capacidad de producción",
+"1.221 t/día (721 AMC + 400 FTN)",
+"Umbral IPPC: > 300 t/día de materia prima vegetal"
+],
+[
+"Capacidad de envasado AMC",
+"225.000 t/año de producto acabado",
+"—"
+],
+[
+"Depuradora propia",
+"140.000 habitantes-equivalentes",
+"Genera lodos 02 03 05"
+],
+[
+"Residuos",
+"> 1.000 t/año no peligrosos y < 10 t/año peligrosos por planta",
+"—"
+]
+]
+},
+{
+"bloque": "Planta real: García Carrión Jumilla (Murcia)",
+"intro": "AAI de planta de vinos, zumos y refrescos.",
+"fuente_id": "F15",
+"fuentes_extra": [],
+"filas": [
+[
+"Capacidad máxima de producción",
+"761,12 t/día"
+],
+[
+"Depuradora propia",
+"72.500 habitantes-equivalentes"
+]
+]
+},
+{
+"bloque": "Planta real: Zumos Valencianos del Mediterráneo (Sagunt, Valencia)",
+"intro": "Industria de extracción y envasado de zumos cítricos con AAI. Aprovecha todas las fracciones del fruto.",
+"fuente_id": "F16",
+"fuentes_extra": [
+"F20",
+"F22"
+],
+"filas": [
+[
+"Zumo NFC de naranja y mandarina",
+"Producto (aséptico refrigerado)"
+],
+[
+"Celdillas",
+"Coproducto"
+],
+[
+"Aceites esenciales (prensado de piel, winterizado)",
+"Coproducto"
+],
+[
+"D-limoneno (licores de prensado)",
+"Coproducto"
+],
+[
+"Piel, pulpa y membranas deshidratadas",
+"Pellets para pienso"
+]
+]
+},
+{
+"bloque": "Códigos observados",
+"intro": "Codificación habitual en autorizaciones y declaraciones.",
+"fuente_id": "",
+"fuentes_extra": [],
+"filas": [
+[
+"Corteza, orujo y restos vegetales (DARI Cataluña)",
+"02 01 03"
+],
+[
+"Materiales inadecuados (fruta, orujo, finos)",
+"02 03 04"
+],
+[
+"Lodos de depuradora",
+"02 03 05"
+],
+[
+"Envases de papel, plástico, brik",
+"15 01 01 / 15 01 02 / 15 01 05"
+],
+[
+"Envases contaminados",
+"15 01 10*"
+]
+]
+}
+],
+"valorizacion": [
+{
+"corriente": "Corteza de cítricos",
+"nivel": 1,
+"texto": "Extracción de pectina, fibra dietética, flavonoides (hesperidina) y aceites esenciales; el d-limoneno se recupera ya en muchas plantas.",
+"fuentes": [
+"F20",
+"F21",
+"F18"
+]
+},
+{
+"corriente": "Corteza de cítricos",
+"nivel": 2,
+"texto": "Destino mayoritario en España. La pulpa se seca y granula; la fresca se usa en vacuno cercano.",
+"fuentes": [
+"F22",
+"F23",
+"F24",
+"F25"
+]
+},
+{
+"corriente": "Corteza de cítricos",
+"nivel": 3,
+"texto": "Biorrefinería de la corteza: bioetanol, ácido láctico, biopolímeros y enzimas.",
+"fuentes": [
+"F26"
+]
+},
+{
+"corriente": "Corteza de cítricos",
+"nivel": 4,
+"texto": "Digestión anaerobia tras eliminar el limoneno, que inhibe a las bacterias.",
+"fuentes": []
+},
+{
+"corriente": "Corteza de cítricos",
+"nivel": 5,
+"texto": "Compostaje con estructurante cuando no hay salida ganadera.",
+"fuentes": []
+},
+{
+"corriente": "Orujo de manzana, pera, hortalizas y fruta de hueso; finos y destrío",
+"nivel": 1,
+"texto": "Harina de orujo de manzana como fibra alimentaria y extracción de pectina y polifenoles.",
+"fuentes": [
+"F27",
+"F28",
+"F29",
+"F30"
+]
+},
+{
+"corriente": "Orujo de manzana, pera, hortalizas y fruta de hueso; finos y destrío",
+"nivel": 2,
+"texto": "Orujo fresco o ensilado para vacuno y porcino.",
+"fuentes": [
+"F31"
+]
+},
+{
+"corriente": "Orujo de manzana, pera, hortalizas y fruta de hueso; finos y destrío",
+"nivel": 3,
+"texto": "Materiales y químicos a partir del orujo de manzana (carbones, biopolímeros).",
+"fuentes": [
+"F32",
+"F33"
+]
+},
+{
+"corriente": "Orujo de manzana, pera, hortalizas y fruta de hueso; finos y destrío",
+"nivel": 4,
+"texto": "Biogás en la propia planta.",
+"fuentes": [
+"F34"
+]
+},
+{
+"corriente": "Orujo de uva y raspón",
+"nivel": 1,
+"texto": "Aceite de pepita de uva, polifenoles y fibra de hollejo.",
+"fuentes": [
+"F31"
+]
+},
+{
+"corriente": "Orujo de uva y raspón",
+"nivel": 4,
+"texto": "El orujo agotado y el raspón se usan como biomasa en las alcoholeras.",
+"fuentes": []
+},
+{
+"corriente": "Orujo de uva y raspón",
+"nivel": 5,
+"texto": "Compostaje del raspón.",
+"fuentes": []
+},
+{
+"corriente": "Cáscara y corazón de piña, piel y hueso de mango",
+"nivel": 1,
+"texto": "Extracción de bromelina de cáscara y corazón de piña; polifenoles y grasa de la almendra de mango.",
+"fuentes": [
+"F35",
+"F36"
+]
+},
+{
+"corriente": "Cáscara y corazón de piña, piel y hueso de mango",
+"nivel": 2,
+"texto": "Cáscara de piña ensilada para rumiantes.",
+"fuentes": [
+"F37"
+]
+},
+{
+"corriente": "Cáscara y corazón de piña, piel y hueso de mango",
+"nivel": 4,
+"texto": "Nutrición, medicina y bioenergía a partir de residuos de piña.",
+"fuentes": [
+"F38"
+]
+},
+{
+"corriente": "Huesos de fruta",
+"nivel": 3,
+"texto": "Aceite y amigdalina de la almendra; carbón activo de la cáscara.",
+"fuentes": [
+"F30"
+]
+},
+{
+"corriente": "Huesos de fruta",
+"nivel": 4,
+"texto": "Combustible sólido en calderas, similar al hueso de aceituna.",
+"fuentes": []
+},
+{
+"corriente": "Orujo de tomate",
+"nivel": 1,
+"texto": "Licopeno, fibra y aceite de semilla de tomate.",
+"fuentes": [
+"F39",
+"F40"
+]
+},
+{
+"corriente": "Orujo de tomate",
+"nivel": 2,
+"texto": "Orujo fresco o seco en piensos.",
+"fuentes": []
+},
+{
+"corriente": "Aguas residuales, lodos y rechazos",
+"nivel": 1,
+"texto": "Reutilizar condensados de evaporación y agua de lavado, recuperar zumo de arranques y fondos.",
+"fuentes": [
+"F19"
+]
+},
+{
+"corriente": "Aguas residuales, lodos y rechazos",
+"nivel": 4,
+"texto": "Depuración anaerobia (UASB) de las aguas de zumería con aprovechamiento del biogás.",
+"fuentes": [
+"F41"
+]
+},
+{
+"corriente": "Aguas residuales, lodos y rechazos",
+"nivel": 5,
+"texto": "Aplicación agrícola o compostaje de lodos que cumplan la normativa.",
+"fuentes": []
+}
+],
+"niveles": {
+"1": "Alimentación humana / prevención",
+"2": "Alimentación animal",
+"3": "Material y bioproductos",
+"4": "Energía y biogás",
+"5": "Suelo / compost"
+},
+"cer": [
+{
+"codigo": "15 01 01",
+"desc": "Envases de papel y cartón",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 01 02",
+"desc": "Envases de plástico",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 01 03",
+"desc": "Envases de madera",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 01 04",
+"desc": "Envases metálicos",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 01 05",
+"desc": "Envases compuestos",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 01 06",
+"desc": "Envases mezclados",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 01 07",
+"desc": "Envases de vidrio",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 01 10*",
+"desc": "Envases que contienen restos de sustancias peligrosas o están contaminados por ellas",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "13 02 05*",
+"desc": "Aceites minerales no clorados de motor, de transmisión mecánica y lubricantes",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 02 02*",
+"desc": "Absorbentes, materiales de filtración, trapos y ropas contaminados por sustancias peligrosas",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "17 04 05",
+"desc": "Hierro y acero",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "20 01 01",
+"desc": "Papel y cartón (fracción municipal)",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "20 03 01",
+"desc": "Mezclas de residuos municipales",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "02 01 03",
+"desc": "Residuos de tejidos de vegetales",
+"corrientes": "Corteza de cítricos (piel, membranas y semillas); Orujo o pomaza de prensado (manzana, pera, hortalizas); Raspón (escobajo); Cáscara, corazón y hueso de frutas tropicales; Hojas, ramas y restos vegetales de recepción"
+},
+{
+"codigo": "02 03 01",
+"desc": "Lodos de lavado, limpieza, pelado, centrifugado y separación",
+"corrientes": "Destrío (fruta rechazada en recepción y selección); Hojas, ramas y restos vegetales de recepción; Tierra y piedras de lavado"
+},
+{
+"codigo": "02 03 04",
+"desc": "Materiales inadecuados para el consumo o la elaboración",
+"corrientes": "Corteza de cítricos (piel, membranas y semillas); Orujo o pomaza de prensado (manzana, pera, hortalizas); Orujo de uva (hollejos y pepitas); Cáscara, corazón y hueso de frutas tropicales; Huesos de melocotón y albaricoque; Piel y restos de refinado (fruta de hueso); Orujo de tomate (piel y semillas); Destrío (fruta rechazada en recepción y selección); Finos de proceso (pulpa de finisher, fondos de centrífuga y clarificación); Zumo rechazado y producto fuera de especificación"
+},
+{
+"codigo": "02 03 05",
+"desc": "Lodos del tratamiento in situ de efluentes",
+"corrientes": "Lodos de depuradora (EDAR propia)"
+},
+{
+"codigo": "02 03 99",
+"desc": "Residuos no especificados en otra categoría (frutas, hortalizas)",
+"corrientes": "Corteza de cítricos (piel, membranas y semillas); Orujo o pomaza de prensado (manzana, pera, hortalizas); Orujo de uva (hollejos y pepitas); Cáscara, corazón y hueso de frutas tropicales; Huesos de melocotón y albaricoque; Piel y restos de refinado (fruta de hueso); Orujo de tomate (piel y semillas); Finos de proceso (pulpa de finisher, fondos de centrífuga y clarificación)"
+},
+{
+"codigo": "02 07 01",
+"desc": "Residuos de lavado, limpieza y reducción mecánica de materias primas (bebidas)",
+"corrientes": "Raspón (escobajo)"
+},
+{
+"codigo": "02 07 04",
+"desc": "Materiales inadecuados para el consumo o la elaboración (bebidas)",
+"corrientes": "Orujo de uva (hollejos y pepitas); Zumo rechazado y producto fuera de especificación"
+},
+{
+"codigo": "02 07 05",
+"desc": "Lodos del tratamiento in situ de efluentes (bebidas)",
+"corrientes": "Lodos de depuradora (EDAR propia)"
+},
+{
+"codigo": "20 02 02",
+"desc": "Tierra y piedras",
+"corrientes": "Tierra y piedras de lavado"
+},
+{
+"codigo": "15 02 03",
+"desc": "Absorbentes, materiales de filtración, trapos y ropas distintos de 15 02 02",
+"corrientes": "Auxiliar / transversal"
+}
+]
+};
+
+function cambiarTab(id, btn){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("activa"));
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("activa"));
+  document.getElementById(id).classList.add("activa");
+  btn.classList.add("activa");
+}
+
+function poblarSelect(id, valores){
+  const sel=document.getElementById(id);
+  [...new Set(valores)].sort((a,b)=>a.localeCompare(b,"es")).forEach(v=>{
+    const o=document.createElement("option");o.value=v;o.textContent=v;sel.appendChild(o);
+  });
+}
+
+function iniciarFiltros(){
+  poblarSelect("fTipo", DATA.fuentes.map(f=>f.tipo));
+  poblarSelect("fZona", DATA.fuentes.map(f=>f.zona));
+  const corrientes=new Set();
+  DATA.fuentes.forEach(f=>f.corrientes.forEach(c=>corrientes.add(c)));
+  poblarSelect("fCorriente",[...corrientes]);
+}
+
+function pintarFuentes(){
+  const q=document.getElementById("fBusqueda").value.trim().toLowerCase();
+  const tipo=document.getElementById("fTipo").value;
+  const zona=document.getElementById("fZona").value;
+  const corr=document.getElementById("fCorriente").value;
+  const res=DATA.fuentes.filter(f=>{
+    if(tipo&&f.tipo!==tipo)return false;
+    if(zona&&f.zona!==zona)return false;
+    if(corr&&!f.corrientes.includes(corr))return false;
+    if(q){
+      const txt=(f.titulo+" "+f.organismo+" "+f.zona+" "+f.corrientes.join(" ")+" "+(f.nota||"")).toLowerCase();
+      if(!txt.includes(q))return false;
+    }
+    return true;
+  });
+  document.getElementById("contadorFuentes").textContent=`${res.length} de ${DATA.fuentes.length} fuentes`;
+  document.getElementById("tarjetasFuentes").innerHTML=res.map(f=>`
+    <div class="tarjeta">
+      <span class="badge ${f.tipo}">${f.tipo}</span>
+      <h3><a href="${f.url}" target="_blank" rel="noopener">${f.titulo}</a></h3>
+      <div class="meta-linea"><b>${f.id}</b> · ${f.organismo} · ${f.zona}</div>
+      <div class="chips">${f.corrientes.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
+      ${f.nota?`<div class="nota">${f.nota}</div>`:""}
+    </div>`).join("")||"<p class='pequeno'>No hay fuentes que coincidan con el filtro.</p>";
+}
+
+function copiarFuentes(){
+  const q=document.getElementById("fBusqueda").value.trim().toLowerCase();
+  const tipo=document.getElementById("fTipo").value;
+  const zona=document.getElementById("fZona").value;
+  const corr=document.getElementById("fCorriente").value;
+  const res=DATA.fuentes.filter(f=>{
+    if(tipo&&f.tipo!==tipo)return false;
+    if(zona&&f.zona!==zona)return false;
+    if(corr&&!f.corrientes.includes(corr))return false;
+    if(q){
+      const txt=(f.titulo+" "+f.organismo+" "+f.zona+" "+f.corrientes.join(" ")+" "+(f.nota||"")).toLowerCase();
+      if(!txt.includes(q))return false;
+    }
+    return true;
+  });
+  const rows=[["id","titulo","tipo","organismo","zona","corrientes","enlace","nota"]];
+  res.forEach(f=>rows.push([f.id,f.titulo,f.tipo,f.organismo,f.zona,f.corrientes.join(" / "),f.url,f.nota||""]));
+  const txt=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(";")).join("\n");
+  const area=document.getElementById("areaFuentes");
+  area.value=txt;area.classList.remove("oculto");area.focus();area.select();
+  const estado=document.getElementById("estadoFuentes");
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(()=>estado.textContent="Copiado al portapapeles.").catch(()=>estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.");
+  } else estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.";
+}
+
+function pintarCoef(){
+  document.getElementById("tablaCoef").innerHTML=DATA.coeficientes.map(c=>`
+    <tr><td>${c.proceso}</td><td>${c.corriente}</td><td class="num">${c.factor}</td><td>${c.unidad}</td><td>${c.confianza}</td><td>${c.cer}</td>
+    <td>${c.fuentes.map(id=>`<span class="chip" style="cursor:pointer" onclick="irAFuente('${id}')">${id}</span>`).join(" ")||"—"}</td></tr>`).join("");
+}
+
+function irAFuente(id){
+  document.querySelector('.tab-btn[data-panel="panelFuentes"]').click();
+  document.getElementById("fBusqueda").value=id;
+  const f=DATA.fuentes.find(x=>x.id===id);
+  document.getElementById("fBusqueda").value=f?f.titulo.slice(0,30):id;
+  pintarFuentes();
+}
+
+function pintarReal(){
+  document.getElementById("bloquesReal").innerHTML=DATA.datos_reales.map(b=>{
+    const fid=b.fuente_id;const f=DATA.fuentes.find(x=>x.id===fid);
+    const extra=(b.fuentes_extra||[]).map(id=>{const g=DATA.fuentes.find(x=>x.id===id);return g?`, <a href="${g.url}" target="_blank" rel="noopener">${id}</a>`:"";}).join("");
+    return `<div class="bloque-real">
+      <h3>${b.bloque}</h3>
+      <p class="explicacion">${b.intro}</p>
+      <div class="tabla-contenedor"><table><thead><tr><th>Dato</th><th>Cantidad declarada</th><th>Ratio</th></tr></thead>
+      <tbody>${b.filas.map(([d,c,r])=>`<tr><td>${d}</td><td>${c}</td><td>${r}</td></tr>`).join("")}</tbody></table></div>
+      <p class="fuente">Fuente: ${f?`<a href="${f.url}" target="_blank" rel="noopener">${f.id} — ${f.titulo}</a>`:""}${extra}</p>
+    </div>`;
+  }).join("");
+}
+
+function pintarVal(){
+  const porCorriente={};
+  DATA.valorizacion.forEach(v=>{(porCorriente[v.corriente]=porCorriente[v.corriente]||[]).push(v);});
+  document.getElementById("bloquesVal").innerHTML=Object.entries(porCorriente).map(([corr,ops])=>`
+    <div class="bloque-real"><h3>${corr}</h3>
+    ${ops.sort((a,b)=>a.nivel-b.nivel).map(o=>`<div class="opcion-val"><span class="nivel n${o.nivel}">${o.nivel} · ${DATA.niveles[o.nivel]}</span>${o.texto}
+      ${o.fuentes.length?`<div class="chips">${o.fuentes.map(id=>{const f=DATA.fuentes.find(x=>x.id===id);return f?`<a class="chip" style="text-decoration:none" href="${f.url}" target="_blank" rel="noopener">${id}</a>`:"";}).join("")}</div>`:""}
+    </div>`).join("")}</div>`).join("");
+}
+
+function pintarCer(){
+  document.getElementById("tablaCer").innerHTML=DATA.cer.map(c=>`
+    <tr><td><span class="cer${c.codigo.includes("*")?" pel":""}">${c.codigo}</span></td><td>${c.desc}</td><td>${c.corrientes}</td></tr>`).join("");
+}
+
+iniciarFiltros();
+pintarFuentes();
+pintarCoef();
+pintarReal();
+pintarVal();
+pintarCer();
+</script>
+
+</body></html>

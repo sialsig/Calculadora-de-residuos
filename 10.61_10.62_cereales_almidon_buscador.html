@@ -1,0 +1,2234 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>html{color-scheme:light}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif;background:#fafaf8}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Fuentes Molinería y Almidones</title>
+<style>
+:root{
+  --c-bg:#f3f7f4;--c-surface:#fff;--c-shadow:rgba(0,0,0,.08);--c-text:#18322a;
+  --c-h1:#225c40;--c-h2:#2c704d;--c-h3:#397b59;--c-border:#b7cabe;--c-focus:#8fc19b;
+  --c-input-bg:#fff;
+  --c-btn-bg:#28734d;--c-btn-bg-hover:#1e593b;--c-btn-secondary-bg:#64786c;
+  --c-explicacion-text:#50675a;--c-fuente-text:#64786c;
+  --c-pequeno-text:#5c6c62;
+  --c-card-bg:#fffdfa;--c-card-border:#ded8ca;
+  --c-th-bg:#e7f1ea;--c-tr-border:#d8e4dc;
+  --c-badge-normativa:#8a6d1a;--c-badge-estudio:#5c8da5;--c-badge-empresa:#28734d;--c-badge-proyecto:#7a6fb0;--c-badge-herramienta:#9b4a3c;
+  --c-chip-bg:#e5f2e8;--c-chip-border:#9dc4a5;--c-chip-text:#225c40;
+  --c-nivel-n1-bg:#d7efe0;--c-nivel-n1-text:#225c40;
+  --c-nivel-n2-bg:#e3eef5;--c-nivel-n2-text:#2e5b73;
+  --c-nivel-n3-bg:#f1ecd9;--c-nivel-n3-text:#6d5a14;
+  --c-nivel-n4-bg:#fbe6d6;--c-nivel-n4-text:#8a4a1a;
+  --c-nivel-n5-bg:#eee;--c-nivel-n5-text:#555;
+  --c-link:#1f6a8a;
+  --c-tab-bg:#e7f1ea;--c-tab-active-bg:#28734d;--c-tab-active-text:#fff;
+  --c-cer-bg:#f1f5f2;--c-cer-border:#c9d8ce;--c-cer-pel-border:#c0392b;--c-cer-pel-text:#8e2a1f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+    --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+    --c-input-bg:#182720;
+    --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;
+    --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+    --c-pequeno-text:#93a49a;
+    --c-card-bg:#182720;--c-card-border:#33362a;
+    --c-th-bg:#1c3227;--c-tr-border:#26392f;
+    --c-badge-normativa:#c9a94f;--c-badge-estudio:#6fa8c4;--c-badge-empresa:#4caf7c;--c-badge-proyecto:#a79bea;--c-badge-herramienta:#c98a76;
+    --c-chip-bg:#1b3226;--c-chip-border:#3a5c48;--c-chip-text:#a6e3c4;
+    --c-nivel-n1-bg:#204331;--c-nivel-n1-text:#a6e3c4;
+    --c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+    --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;
+    --c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;
+    --c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+    --c-link:#6cc2e8;
+    --c-tab-bg:#1c3227;--c-tab-active-bg:#2f8055;--c-tab-active-text:#fff;
+    --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --c-bg:#0f1a15;--c-surface:#16241d;--c-shadow:rgba(0,0,0,.4);--c-text:#dce9e1;
+  --c-h1:#6fd19c;--c-h2:#5cc28e;--c-h3:#7fcf9e;--c-border:#2c4438;--c-focus:#4f9c6d;
+  --c-input-bg:#182720;
+  --c-btn-bg:#2f8055;--c-btn-bg-hover:#3c9c68;--c-btn-secondary-bg:#47594e;
+  --c-explicacion-text:#aebfb4;--c-fuente-text:#8fa198;
+  --c-pequeno-text:#93a49a;
+  --c-card-bg:#182720;--c-card-border:#33362a;
+  --c-th-bg:#1c3227;--c-tr-border:#26392f;
+  --c-badge-normativa:#c9a94f;--c-badge-estudio:#6fa8c4;--c-badge-empresa:#4caf7c;--c-badge-proyecto:#a79bea;--c-badge-herramienta:#c98a76;
+  --c-chip-bg:#1b3226;--c-chip-border:#3a5c48;--c-chip-text:#a6e3c4;
+  --c-nivel-n1-bg:#204331;--c-nivel-n1-text:#a6e3c4;
+  --c-nivel-n2-bg:#182b38;--c-nivel-n2-text:#8fc2da;
+  --c-nivel-n3-bg:#332c14;--c-nivel-n3-text:#e0c977;
+  --c-nivel-n4-bg:#3a2717;--c-nivel-n4-text:#eeae7d;
+  --c-nivel-n5-bg:#2c2c2c;--c-nivel-n5-text:#bbb;
+  --c-link:#6cc2e8;
+  --c-tab-bg:#1c3227;--c-tab-active-bg:#2f8055;--c-tab-active-text:#fff;
+  --c-cer-bg:#1c2b22;--c-cer-border:#33493c;--c-cer-pel-border:#d9695a;--c-cer-pel-text:#e08a7d;
+}
+body{font-family:Arial,sans-serif;margin:0;background:var(--c-bg);color:var(--c-text)}
+main{max-width:1180px;margin:auto;padding:24px}
+section{background:var(--c-surface);padding:22px;margin-bottom:18px;border-radius:14px;box-shadow:0 2px 10px var(--c-shadow)}
+h1{margin-top:0;color:var(--c-h1);font-size:26px}
+h2{color:var(--c-h2);font-size:19px}
+h3{color:var(--c-h3);margin-bottom:6px;font-size:15px}
+p{line-height:1.5}
+.explicacion{color:var(--c-explicacion-text);font-size:14px;line-height:1.5;margin-top:6px}
+.pequeno{font-size:12px;color:var(--c-pequeno-text)}
+.fuente{color:var(--c-fuente-text);font-size:12px}
+label{display:block;font-weight:bold;margin:0 0 5px;font-size:13px}
+input,select{width:100%;box-sizing:border-box;padding:9px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-size:14px}
+input:focus,select:focus{outline:2px solid var(--c-focus)}
+.grid-filtros{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:12px;align-items:end}
+@media(max-width:800px){.grid-filtros{grid-template-columns:1fr}}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tab-btn{padding:9px 16px;border-radius:20px;border:1px solid var(--c-border);background:var(--c-tab-bg);color:var(--c-text);cursor:pointer;font-size:13px;font-weight:bold}
+.tab-btn.activa{background:var(--c-tab-active-bg);color:var(--c-tab-active-text);border-color:transparent}
+.panel{display:none}
+.panel.activa{display:block}
+.resultado-contador{margin:10px 0;font-size:13px;color:var(--c-pequeno-text)}
+.tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.tarjeta{background:var(--c-card-bg);border:1px solid var(--c-card-border);border-radius:10px;padding:14px 16px;line-height:1.45}
+.tarjeta h3{margin-bottom:4px}
+.tarjeta h3 a{color:var(--c-h3);text-decoration:none}
+.tarjeta h3 a:hover{text-decoration:underline}
+.badge{display:inline-block;font-size:11px;font-weight:bold;color:#fff;border-radius:8px;padding:2px 8px;margin-right:6px}
+.badge.Normativa{background:var(--c-badge-normativa)}
+.badge.Estudio{background:var(--c-badge-estudio)}
+.badge.Empresa{background:var(--c-badge-empresa)}
+.badge.Proyecto{background:var(--c-badge-proyecto)}
+.badge.Herramienta{background:var(--c-badge-herramienta)}
+.meta-linea{font-size:12px;color:var(--c-pequeno-text);margin:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
+.chip{font-size:11px;background:var(--c-chip-bg);color:var(--c-chip-text);border:1px solid var(--c-chip-border);border-radius:10px;padding:2px 8px}
+.nota{font-size:12px;color:var(--c-pequeno-text);margin-top:6px;font-style:italic}
+.tabla-contenedor{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+th,td{padding:8px;border-bottom:1px solid var(--c-tr-border);text-align:left;vertical-align:top}
+th{background:var(--c-th-bg)}
+td.num{text-align:right;white-space:nowrap}
+a{color:var(--c-link)}
+.nivel{display:inline-block;font-size:11px;font-weight:bold;padding:3px 8px;border-radius:10px;margin-right:6px}
+.nivel.n1{background:var(--c-nivel-n1-bg);color:var(--c-nivel-n1-text)}
+.nivel.n2{background:var(--c-nivel-n2-bg);color:var(--c-nivel-n2-text)}
+.nivel.n3{background:var(--c-nivel-n3-bg);color:var(--c-nivel-n3-text)}
+.nivel.n4{background:var(--c-nivel-n4-bg);color:var(--c-nivel-n4-text)}
+.nivel.n5{background:var(--c-nivel-n5-bg);color:var(--c-nivel-n5-text)}
+.opcion-val{padding:10px 0;border-bottom:1px dashed var(--c-tr-border)}
+.opcion-val:last-child{border-bottom:0}
+.bloque-real{border:1px solid var(--c-card-border);border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.cer{display:inline-block;background:var(--c-cer-bg);border:1px solid var(--c-cer-border);border-radius:6px;padding:1px 6px;margin:1px 2px;font-size:12px;white-space:nowrap}
+.cer.pel{border-color:var(--c-cer-pel-border);color:var(--c-cer-pel-text)}
+button{padding:9px 15px;color:#fff;background:var(--c-btn-bg);border:0;border-radius:8px;cursor:pointer;font-size:13px}
+button:hover{background:var(--c-btn-bg-hover)}
+button.secundario{background:var(--c-btn-secondary-bg)}
+.oculto{display:none!important}
+textarea{width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--c-border);border-radius:7px;background:var(--c-input-bg);color:var(--c-text);font-family:monospace;font-size:12px;margin-top:8px}
+</style>
+
+<main>
+
+<section>
+<h1>Fuentes de residuos · CNAE 10.61 / 10.62</h1>
+<p><strong>Base de fuentes, coeficientes y datos reales de planta</strong> para la molinería y la fabricación de almidones y productos amiláceos (harinas y sémolas de trigo, maíz y otros cereales, arroz, copos de avena, almidón de maíz y de trigo, glucosa, gluten y fécula de patata). Consulta interna, sin relación con los datos que introduzcas en la calculadora de estimación.</p>
+<p class="explicacion">Extraída de la investigación de fuentes oficiales (normativa, estudios, permisos ambientales de planta real) que respalda la <a href="10.61_10.62_cereales_almidon_calculadora.html" target="_blank" rel="noopener">calculadora de residuos CNAE 10.61 / 10.62</a>. La misma información, en formato de tabla, está disponible como Excel para reutilizar en otros entornos.</p>
+</section>
+
+<section>
+<h2>Filtrar fuentes</h2>
+<div class="grid-filtros">
+<div>
+<label for="fBusqueda">Buscar (título, organismo, corriente, nota)</label>
+<input id="fBusqueda" type="text" placeholder="p. ej. alperujo, MITECO, Andalucía..." oninput="pintarFuentes()">
+</div>
+<div>
+<label for="fTipo">Tipo de fuente</label>
+<select id="fTipo" onchange="pintarFuentes()"><option value="">Todos</option></select>
+</div>
+<div>
+<label for="fZona">Zona</label>
+<select id="fZona" onchange="pintarFuentes()"><option value="">Todas</option></select>
+</div>
+<div>
+<label for="fCorriente">Corriente</label>
+<select id="fCorriente" onchange="pintarFuentes()"><option value="">Todas</option></select>
+</div>
+</div>
+</section>
+
+<section>
+<div class="tabs">
+<button class="tab-btn activa" data-panel="panelFuentes" onclick="cambiarTab('panelFuentes',this)">Fuentes</button>
+<button class="tab-btn" data-panel="panelCoef" onclick="cambiarTab('panelCoef',this)">Coeficientes</button>
+<button class="tab-btn" data-panel="panelReal" onclick="cambiarTab('panelReal',this)">Datos reales de planta</button>
+<button class="tab-btn" data-panel="panelVal" onclick="cambiarTab('panelVal',this)">Valorización</button>
+<button class="tab-btn" data-panel="panelCer" onclick="cambiarTab('panelCer',this)">CER/LER</button>
+</div>
+
+<div id="panelFuentes" class="panel activa">
+<div class="resultado-contador" id="contadorFuentes"></div>
+<div id="tarjetasFuentes" class="tarjetas"></div>
+<div style="margin-top:14px">
+<button class="secundario" onclick="copiarFuentes()">Copiar resultados filtrados (texto)</button>
+<textarea id="areaFuentes" class="oculto" rows="6" onclick="this.select()"></textarea>
+<span id="estadoFuentes" class="pequeno"></span>
+</div>
+</div>
+
+<div id="panelCoef" class="panel">
+<p class="explicacion">Factor de generación de cada corriente por tonelada de materia prima (cereal, patata o almidón nativo, según la ruta), por cada una de las 12 rutas de proceso de 10.61 y 10.62, tal y como se usan en la calculadora. Haz clic en un identificador de fuente para verla en la pestaña «Fuentes».</p>
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Proceso</th><th>Corriente</th><th>Factor</th><th>Unidad</th><th>Confianza</th><th>CER/LER candidatos</th><th>Fuentes</th></tr></thead>
+<tbody id="tablaCoef"></tbody>
+</table>
+</div>
+</div>
+
+<div id="panelReal" class="panel">
+<p class="explicacion">Balances de masa reales declarados en autorizaciones ambientales y estudios de campo.</p>
+<div id="bloquesReal"></div>
+</div>
+
+<div id="panelVal" class="panel">
+<p class="explicacion">Opciones de valorización por corriente, ordenadas según la jerarquía de residuos: <span class="nivel n1">1 · Alimentación humana</span><span class="nivel n2">2 · Alimentación animal</span><span class="nivel n3">3 · Material y bioproductos</span><span class="nivel n4">4 · Energía y biogás</span><span class="nivel n5">5 · Suelo / compost</span></p>
+<div id="bloquesVal"></div>
+</div>
+
+<div id="panelCer" class="panel">
+<div class="tabla-contenedor">
+<table>
+<thead><tr><th>Código</th><th>Descripción oficial</th><th>Corrientes de este CNAE</th></tr></thead>
+<tbody id="tablaCer"></tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Notas</h2>
+<ul style="line-height:1.6">
+<li>Esta base cubre de momento los CNAE 10.61 y 10.62 (molinería y almidones). La columna CNAE de cada hoja/tabla está pensada para apilar aquí los próximos CNAEs sin cambiar la estructura.</li>
+<li>Los identificadores de fuente (F01, F02...) son los mismos en esta página y en el Excel «Base_fuentes_residuos_CNAE_1043.xlsx», para poder cruzar ambos.</li>
+<li>Un coeficiente con confianza «Baja» o marcado como extrapolación no está verificado con un dato de planta real: trátalo como orientativo.</li>
+</ul>
+</section>
+
+</main>
+
+<script>
+const DATA = {
+"cnae": "10.61 / 10.62",
+"fuentes": [
+{
+"id": "F01",
+"titulo": "Ley 7/2022 de residuos y suelos contaminados (art. 4, subproductos; art. 8, jerarquía)",
+"organismo": "Marco legal general",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General",
+"General (clasificación / PRODCOM / plantas reales)",
+"General (marco legal, subproducto vs. residuo)"
+],
+"url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809",
+"nota": ""
+},
+{
+"id": "F02",
+"titulo": "Ley 1/2025 de prevención de las pérdidas y el desperdicio alimentario (jerarquía de prioridades obligatoria)",
+"organismo": "Marco legal general",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General (marco legal, subproducto vs. residuo)"
+],
+"url": "https://www.boe.es/buscar/act.php?id=BOE-A-2025-6597",
+"nota": ""
+},
+{
+"id": "F03",
+"titulo": "MITECO: procedimiento de evaluación de subproductos",
+"organismo": "Marco legal general",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General (marco legal, subproducto vs. residuo)"
+],
+"url": "https://www.miteco.gob.es/va/calidad-y-evaluacion-ambiental/temas/prevencion-y-gestion-residuos/comision-coordinacion/procedimiento-evaluacion-subproducto.html",
+"nota": ""
+},
+{
+"id": "F04",
+"titulo": "Reglamento (UE) 68/2013, catálogo de materias primas para piensos",
+"organismo": "Marco legal general",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General (marco legal, subproducto vs. residuo)",
+"Germen de trigo",
+"Impurezas de limpieza (cribas)",
+"Salvado de arroz",
+"Salvado, moyuelo, harinillas y finos"
+],
+"url": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:02013R0068-20220724",
+"nota": ""
+},
+{
+"id": "F05",
+"titulo": "Decisión 2014/955/UE, Lista Europea de Residuos",
+"organismo": "Marco legal general",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General",
+"General (clasificación / PRODCOM / plantas reales)",
+"General (marco legal, subproducto vs. residuo)"
+],
+"url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32014D0955",
+"nota": ""
+},
+{
+"id": "F06",
+"titulo": "Borsa de Subproductes de Catalunya",
+"organismo": "Marco legal general",
+"zona": "España",
+"tipo": "Herramienta",
+"corrientes": [
+"General (marco legal, subproducto vs. residuo)",
+"Producto fuera de especificación, derrames y barreduras"
+],
+"url": "https://www.residuosprofesional.com/bolsa-de-subproductos-catalunya-porta-residurecurs/",
+"nota": ""
+},
+{
+"id": "F07",
+"titulo": "BREF de alimentación, bebidas y leche (FDM, 2019): MTD por sector",
+"organismo": "Marco legal general",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General",
+"General (clasificación / PRODCOM / plantas reales)",
+"General (marco legal, subproducto vs. residuo)",
+"Polvo de aspiración y filtros",
+"Salvado, moyuelo, harinillas y finos"
+],
+"url": "https://fenix.isa.ulisboa.pt/downloadFile/281547991178956/JRC118627_FDM_Bref_2019_published.pdf",
+"nota": ""
+},
+{
+"id": "F08",
+"titulo": "Eurostat PRODCOM DS-059358 (precios implícitos ES y UE-27, 2021–2024)",
+"organismo": "—",
+"zona": "España",
+"tipo": "Herramienta",
+"corrientes": [
+"General"
+],
+"url": "https://ec.europa.eu/eurostat/databrowser/view/ds-059358/default/table?lang=en",
+"nota": ""
+},
+{
+"id": "F09",
+"titulo": "INE: CNAE-2025, estructura y notas explicativas",
+"organismo": "—",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General"
+],
+"url": "https://ine.es/daco/daco42/clasificaciones/cnae25/CNAE_2025.pdf",
+"nota": ""
+},
+{
+"id": "F10",
+"titulo": "Orden MAM/304/2002, operaciones de valorización y eliminación",
+"organismo": "—",
+"zona": "España",
+"tipo": "Normativa",
+"corrientes": [
+"General"
+],
+"url": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-3285",
+"nota": ""
+},
+{
+"id": "F11",
+"titulo": "CIHEAM: rendimiento en sémola del trigo duro",
+"organismo": "CIHEAM (Centre International de Hautes Études Agronomiques Méditerranéennes)",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)"
+],
+"url": "https://om.ciheam.org/om/pdf/a22/95605352.pdf",
+"nota": ""
+},
+{
+"id": "F12",
+"titulo": "Alimentos Argentinos: rendimientos de la molienda de arroz",
+"organismo": "Alimentos Argentinos (Ministerio de Agricultura, Argentina)",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)",
+"Salvado de arroz"
+],
+"url": "https://alimentosargentinos.magyp.gob.ar/HomeAlimentos/Aceites%20y%20Oleaginosas/productos/AceiteArroz_06Jun.pdf",
+"nota": ""
+},
+{
+"id": "F13",
+"titulo": "Alimentos Argentinos: productos de la molienda de maíz",
+"organismo": "Alimentos Argentinos (Ministerio de Agricultura, Argentina)",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)"
+],
+"url": "https://alimentosargentinos.magyp.gob.ar/HomeAlimentos/Farinaceos/farinaceos/Productos/ProductosMaiz_1ra_2012_05May.pdf",
+"nota": ""
+},
+{
+"id": "F14",
+"titulo": "British Journal of Nutrition: procesado de la avena (rendimiento en grano descascarillado)",
+"organismo": "British Journal of Nutrition / Cambridge University Press",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)"
+],
+"url": "https://www.cambridge.org/core/journals/british-journal-of-nutrition/article/processing-of-oats-and-the-impact-of-processing-operations-on-nutrition-and-health-benefits/12103B74748A0B4FFD8ABC1B5699786F",
+"nota": ""
+},
+{
+"id": "F15",
+"titulo": "Balance de la molienda húmeda de maíz (almidón, germen, gluten feed, gluten meal)",
+"organismo": "PubMed Central (NIH)",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)",
+"Germen de maíz",
+"Gluten feed, gluten meal y agua de maceración"
+],
+"url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2633287/",
+"nota": ""
+},
+{
+"id": "F16",
+"titulo": "Witt: balance del proceso de almidón y gluten de trigo",
+"organismo": "Polskie Towarzystwo Technologów Żywności (Polonia)",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Almidón B, fibra y pentosanas de trigo",
+"General (clasificación / PRODCOM / plantas reales)"
+],
+"url": "https://wydawnictwo.pttz.org/wp-content/uploads/2017/12/23_Witt.pdf",
+"nota": ""
+},
+{
+"id": "F17",
+"titulo": "LCA Food: balance de la producción de fécula de patata",
+"organismo": "LCA Food Database (Dinamarca)",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)",
+"Pulpa de patata"
+],
+"url": "https://www.lcafood.dk/processes/industry/potatoflourproduction.htm",
+"nota": ""
+},
+{
+"id": "F18",
+"titulo": "BOA: AAI Harinas Villamayor (residuos declarados y proceso)",
+"organismo": "Boletín Oficial de Aragón",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)",
+"Impurezas de limpieza (cribas)",
+"Salvado, moyuelo, harinillas y finos"
+],
+"url": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?CMD=VEROBJ&MLKOB=1259323880707&type=pdf",
+"nota": ""
+},
+{
+"id": "F19",
+"titulo": "DOG: Reyes Hermanos, harinera sin aguas residuales industriales",
+"organismo": "Xunta de Galicia",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)"
+],
+"url": "https://www.xunta.gal/dog/Publicados/2022/20220628/AnuncioG0532-010622-0003_es.html",
+"nota": ""
+},
+{
+"id": "F20",
+"titulo": "BOA: AAI Tereos Starch & Sweeteners Iberia (Zaragoza)",
+"organismo": "Boletín Oficial de Aragón",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"General (clasificación / PRODCOM / plantas reales)",
+"Gluten feed, gluten meal y agua de maceración"
+],
+"url": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?CMD=VEROBJ&MLKOB=1127189162525&type=pdf",
+"nota": ""
+},
+{
+"id": "F21",
+"titulo": "Revisión: arabinoxilanos del salvado de trigo, extracción y aplicaciones",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Salvado, moyuelo, harinillas y finos"
+],
+"url": "https://agris.fao.org/search/en/providers/122436/records/67599396c7a957febdfce914",
+"nota": ""
+},
+{
+"id": "F22",
+"titulo": "Revisión: salvado y germen de cereales como ingredientes y fuente de bioactivos",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Germen de trigo",
+"Salvado, moyuelo, harinillas y finos"
+],
+"url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13115163/",
+"nota": ""
+},
+{
+"id": "F23",
+"titulo": "Universidad de Valladolid: biorrefinería del salvado de trigo",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Salvado, moyuelo, harinillas y finos"
+],
+"url": "https://portaldelaciencia.uva.es/documentos/619ca05ba08dbd1b8f9efc6b",
+"nota": ""
+},
+{
+"id": "F24",
+"titulo": "Biotrem: platos y cubiertos de salvado de trigo",
+"organismo": "—",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"Salvado, moyuelo, harinillas y finos"
+],
+"url": "https://biotrem.pl/en/",
+"nota": ""
+},
+{
+"id": "F25",
+"titulo": "Bio Base Europe Pilot Plant: proyectos con residuos agrícolas",
+"organismo": "—",
+"zona": "España",
+"tipo": "Proyecto",
+"corrientes": [
+"Almidón B, fibra y pentosanas de trigo",
+"Salvado, moyuelo, harinillas y finos"
+],
+"url": "https://www.bbeu.org/projects/agricultural-waste/",
+"nota": ""
+},
+{
+"id": "F26",
+"titulo": "Cargill Martorell: almidones, glucosas y proteínas de maíz",
+"organismo": "—",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"Germen de maíz"
+],
+"url": "https://www.cargill.com/worldwide/spain-portugal-es",
+"nota": ""
+},
+{
+"id": "F27",
+"titulo": "Revisión: valorización de subproductos del arroz",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Cascarilla de arroz",
+"Salvado de arroz"
+],
+"url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13184422/",
+"nota": ""
+},
+{
+"id": "F28",
+"titulo": "Revisión: sílice y silicio a partir de cascarilla de arroz",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Cascarilla de arroz"
+],
+"url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11872444/",
+"nota": ""
+},
+{
+"id": "F29",
+"titulo": "Ricehouse: aislamiento de edificios con subproductos del arroz (EUKI)",
+"organismo": "—",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"Cascarilla de arroz"
+],
+"url": "https://www.euki.de/en/insulating-buildings-with-by-products-of-rice-cultivation/",
+"nota": ""
+},
+{
+"id": "F30",
+"titulo": "Universitat Jaume I: valorización de paja y cascarilla de arroz",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Cascarilla de arroz"
+],
+"url": "https://repositori.uji.es/xmlui/handle/10234/197131",
+"nota": ""
+},
+{
+"id": "F31",
+"titulo": "IDAE – DACSA: caldera de lecho fluido con cascarilla de arroz",
+"organismo": "—",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"Cascarilla de arroz"
+],
+"url": "https://www.idae.es/tecnologias/energias-renovables/uso-termico/biomasa/ute-idae-maicerias-espanolas-sa-dacsa",
+"nota": ""
+},
+{
+"id": "F32",
+"titulo": "Revisión: cascarilla de arroz para energía y bio-sílice",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Cascarilla de arroz"
+],
+"url": "https://ideas.repec.org/a/eee/rensus/v149y2021ics1364032121006158.html",
+"nota": ""
+},
+{
+"id": "F33",
+"titulo": "UNED: gasificación de cascarilla de arroz",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Cascarilla de arroz"
+],
+"url": "https://e-spacio.uned.es/entities/publication/634106db-e16d-47c2-8751-8a218566690a/full",
+"nota": ""
+},
+{
+"id": "F34",
+"titulo": "Vida Rural (MAPA): la cascarilla de arroz como biocombustible",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Cascarilla de arroz"
+],
+"url": "https://www.mapa.gob.es/ministerio/pags/Biblioteca/Revistas/pdf_Vrural%2FVrural_2006_233_14_18.pdf",
+"nota": ""
+},
+{
+"id": "F35",
+"titulo": "Fermentación en estado sólido de cáscara de avena",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Cáscara de avena"
+],
+"url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12653450/",
+"nota": ""
+},
+{
+"id": "F36",
+"titulo": "Luke (Finlandia): xilano y xilitol a partir de cáscara de avena",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Cáscara de avena"
+],
+"url": "https://jukuri.luke.fi/server/api/core/bitstreams/3103cae8-3036-4200-97ae-8079f3a7cb5e/content",
+"nota": ""
+},
+{
+"id": "F37",
+"titulo": "Hidrólisis enzimática de cáscara de avena",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Cáscara de avena"
+],
+"url": "https://www.mdpi.com/1422-0067/27/16/7148",
+"nota": ""
+},
+{
+"id": "F38",
+"titulo": "PAMI: uso de cribas de grano en alimentación animal",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Impurezas de limpieza (cribas)"
+],
+"url": "https://pami.ca/app/uploads/2026/05/748.PDF",
+"nota": ""
+},
+{
+"id": "F39",
+"titulo": "Revisión: corn steep liquor como medio de fermentación",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Gluten feed, gluten meal y agua de maceración"
+],
+"url": "https://pdfs.semanticscholar.org/0b3e/b75e87794aa7572d98cfa627df1d21bcbf0c.pdf",
+"nota": ""
+},
+{
+"id": "F40",
+"titulo": "Digestión anaerobia de aguas de almidonería",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Aguas residuales de proceso",
+"Almidón B, fibra y pentosanas de trigo",
+"Lodos de depuradora propia"
+],
+"url": "https://www.mdpi.com/2076-3417/11/21/10482",
+"nota": ""
+},
+{
+"id": "F41",
+"titulo": "SLU: aprovechamiento de subproductos de fécula de patata",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Pulpa de patata"
+],
+"url": "https://pub.epsilon.slu.se/29575/1/bartek-l-et-al-20221114.pdf",
+"nota": ""
+},
+{
+"id": "F42",
+"titulo": "Avebe: proteínas y almidones de patata",
+"organismo": "—",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"Jugo de patata y proteína"
+],
+"url": "https://www.avebe.com/products/",
+"nota": ""
+},
+{
+"id": "F43",
+"titulo": "Solanic (Avebe): proteína de patata para alimentación",
+"organismo": "—",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"Jugo de patata y proteína"
+],
+"url": "https://www.upfront-dk.com/images/sampledata/Articles/10.pdf",
+"nota": ""
+},
+{
+"id": "F44",
+"titulo": "Revisión: proteínas del jugo de patata",
+"organismo": "—",
+"zona": "España",
+"tipo": "Estudio",
+"corrientes": [
+"Jugo de patata y proteína"
+],
+"url": "http://www.globalsciencebooks.info/Online/GSBOnline/images/0906/FOOD_3(SI1)/FOOD_3(SI1)88-95o.pdf",
+"nota": ""
+},
+{
+"id": "F45",
+"titulo": "GEA: tecnología de almidón de trigo",
+"organismo": "—",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"Aguas residuales de proceso"
+],
+"url": "https://www.gea.com/assets/170241/",
+"nota": ""
+},
+{
+"id": "F46",
+"titulo": "Cargill: estado de información no financiera (España)",
+"organismo": "—",
+"zona": "España",
+"tipo": "Empresa",
+"corrientes": [
+"Aguas residuales de proceso"
+],
+"url": "https://www.cargill.com/worldwide/doc/1451378575450/estado-de-informaci%C3%B3n-no-financiera-mayo-25.pdf",
+"nota": ""
+}
+],
+"coeficientes": [
+{
+"proceso": "Molienda de trigo blando (harinera)",
+"corriente": "Harina de trigo blando",
+"factor": 0.75,
+"unidad": "t/t trigo blando",
+"confianza": "Alta",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Molienda de trigo blando (harinera)",
+"corriente": "Salvado y moyuelo de trigo",
+"factor": 0.227,
+"unidad": "t/t trigo blando",
+"confianza": "Alta",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molienda de trigo blando (harinera)",
+"corriente": "Germen de trigo",
+"factor": 0.002,
+"unidad": "t/t trigo blando",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molienda de trigo blando (harinera)",
+"corriente": "Impurezas de limpieza (cribas)",
+"factor": 0.015,
+"unidad": "t/t trigo blando",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99; 02 01 03",
+"fuentes": []
+},
+{
+"proceso": "Molienda de trigo blando (harinera)",
+"corriente": "Piedras, tierra, arena y metales",
+"factor": 0.003,
+"unidad": "t/t trigo blando",
+"confianza": "Media",
+"cer": "02 03 99; 02 03 01; 02 03 04; 20 01 40; 17 04 07",
+"fuentes": []
+},
+{
+"proceso": "Molienda de trigo blando (harinera)",
+"corriente": "Polvo de aspiración y filtros",
+"factor": 0.002,
+"unidad": "t/t trigo blando",
+"confianza": "Media",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Molienda de trigo blando (harinera)",
+"corriente": "Producto fuera de especificación, derrames y barreduras",
+"factor": 0.001,
+"unidad": "t/t trigo blando",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molienda de trigo duro (semolera)",
+"corriente": "Sémola de trigo duro",
+"factor": 0.65,
+"unidad": "t/t trigo duro",
+"confianza": "Alta",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Molienda de trigo duro (semolera)",
+"corriente": "Harina / semolina fina de trigo duro",
+"factor": 0.08,
+"unidad": "t/t trigo duro",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Molienda de trigo duro (semolera)",
+"corriente": "Salvado y moyuelo de trigo",
+"factor": 0.214,
+"unidad": "t/t trigo duro",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molienda de trigo duro (semolera)",
+"corriente": "Salvado de descortezado (pelado)",
+"factor": 0.03,
+"unidad": "t/t trigo duro",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molienda de trigo duro (semolera)",
+"corriente": "Impurezas de limpieza (cribas)",
+"factor": 0.02,
+"unidad": "t/t trigo duro",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99; 02 01 03",
+"fuentes": []
+},
+{
+"proceso": "Molienda de trigo duro (semolera)",
+"corriente": "Piedras, tierra, arena y metales",
+"factor": 0.003,
+"unidad": "t/t trigo duro",
+"confianza": "Media",
+"cer": "02 03 99; 02 03 01; 02 03 04; 20 01 40; 17 04 07",
+"fuentes": []
+},
+{
+"proceso": "Molienda de trigo duro (semolera)",
+"corriente": "Polvo de aspiración y filtros",
+"factor": 0.002,
+"unidad": "t/t trigo duro",
+"confianza": "Media",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Molienda de trigo duro (semolera)",
+"corriente": "Producto fuera de especificación, derrames y barreduras",
+"factor": 0.001,
+"unidad": "t/t trigo duro",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molienda de otros cereales (centeno, cebada, espelta…)",
+"corriente": "Harina de otros cereales",
+"factor": 0.7,
+"unidad": "t/t cereal",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Molienda de otros cereales (centeno, cebada, espelta…)",
+"corriente": "Salvado de otros cereales",
+"factor": 0.271,
+"unidad": "t/t cereal",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molienda de otros cereales (centeno, cebada, espelta…)",
+"corriente": "Impurezas de limpieza (cribas)",
+"factor": 0.02,
+"unidad": "t/t cereal",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99; 02 01 03",
+"fuentes": []
+},
+{
+"proceso": "Molienda de otros cereales (centeno, cebada, espelta…)",
+"corriente": "Piedras, tierra, arena y metales",
+"factor": 0.003,
+"unidad": "t/t cereal",
+"confianza": "Baja",
+"cer": "02 03 99; 02 03 01; 02 03 04; 20 01 40; 17 04 07",
+"fuentes": []
+},
+{
+"proceso": "Molienda de otros cereales (centeno, cebada, espelta…)",
+"corriente": "Polvo de aspiración y filtros",
+"factor": 0.003,
+"unidad": "t/t cereal",
+"confianza": "Baja",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Molienda de otros cereales (centeno, cebada, espelta…)",
+"corriente": "Producto fuera de especificación, derrames y barreduras",
+"factor": 0.003,
+"unidad": "t/t cereal",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molienda seca de maíz",
+"corriente": "Sémolas, grañones y harinas de maíz",
+"factor": 0.62,
+"unidad": "t/t maíz",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Molienda seca de maíz",
+"corriente": "Germen de maíz",
+"factor": 0.12,
+"unidad": "t/t maíz",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molienda seca de maíz",
+"corriente": "Salvado y harinillas de maíz (hominy)",
+"factor": 0.235,
+"unidad": "t/t maíz",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molienda seca de maíz",
+"corriente": "Impurezas de limpieza (cribas)",
+"factor": 0.015,
+"unidad": "t/t maíz",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99; 02 01 03",
+"fuentes": []
+},
+{
+"proceso": "Molienda seca de maíz",
+"corriente": "Piedras, tierra, arena y metales",
+"factor": 0.003,
+"unidad": "t/t maíz",
+"confianza": "Baja",
+"cer": "02 03 99; 02 03 01; 02 03 04; 20 01 40; 17 04 07",
+"fuentes": []
+},
+{
+"proceso": "Molienda seca de maíz",
+"corriente": "Polvo de aspiración y filtros",
+"factor": 0.002,
+"unidad": "t/t maíz",
+"confianza": "Baja",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Molienda seca de maíz",
+"corriente": "Producto fuera de especificación, derrames y barreduras",
+"factor": 0.005,
+"unidad": "t/t maíz",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molinería de arroz (arroz blanco)",
+"corriente": "Arroz blanco entero",
+"factor": 0.57,
+"unidad": "t/t arroz cáscara",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Molinería de arroz (arroz blanco)",
+"corriente": "Arroz partido",
+"factor": 0.12,
+"unidad": "t/t arroz cáscara",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Molinería de arroz (arroz blanco)",
+"corriente": "Cascarilla de arroz",
+"factor": 0.2,
+"unidad": "t/t arroz cáscara",
+"confianza": "Alta",
+"cer": "02 03 99; 02 01 03; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Molinería de arroz (arroz blanco)",
+"corriente": "Salvado de arroz (con germen)",
+"factor": 0.09,
+"unidad": "t/t arroz cáscara",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molinería de arroz (arroz blanco)",
+"corriente": "Impurezas de limpieza (cribas)",
+"factor": 0.015,
+"unidad": "t/t arroz cáscara",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99; 02 01 03",
+"fuentes": []
+},
+{
+"proceso": "Molinería de arroz (arroz blanco)",
+"corriente": "Piedras, tierra, arena y metales",
+"factor": 0.002,
+"unidad": "t/t arroz cáscara",
+"confianza": "Baja",
+"cer": "02 03 99; 02 03 01; 02 03 04; 20 01 40; 17 04 07",
+"fuentes": []
+},
+{
+"proceso": "Molinería de arroz (arroz blanco)",
+"corriente": "Polvo de aspiración y filtros",
+"factor": 0.003,
+"unidad": "t/t arroz cáscara",
+"confianza": "Baja",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Molinería de arroz (integral / descascarillado)",
+"corriente": "Arroz descascarillado (integral)",
+"factor": 0.76,
+"unidad": "t/t arroz cáscara",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Molinería de arroz (integral / descascarillado)",
+"corriente": "Arroz partido",
+"factor": 0.02,
+"unidad": "t/t arroz cáscara",
+"confianza": "Baja",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Molinería de arroz (integral / descascarillado)",
+"corriente": "Cascarilla de arroz",
+"factor": 0.2,
+"unidad": "t/t arroz cáscara",
+"confianza": "Alta",
+"cer": "02 03 99; 02 01 03; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Molinería de arroz (integral / descascarillado)",
+"corriente": "Impurezas de limpieza (cribas)",
+"factor": 0.015,
+"unidad": "t/t arroz cáscara",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99; 02 01 03",
+"fuentes": []
+},
+{
+"proceso": "Molinería de arroz (integral / descascarillado)",
+"corriente": "Piedras, tierra, arena y metales",
+"factor": 0.002,
+"unidad": "t/t arroz cáscara",
+"confianza": "Baja",
+"cer": "02 03 99; 02 03 01; 02 03 04; 20 01 40; 17 04 07",
+"fuentes": []
+},
+{
+"proceso": "Molinería de arroz (integral / descascarillado)",
+"corriente": "Polvo de aspiración y filtros",
+"factor": 0.003,
+"unidad": "t/t arroz cáscara",
+"confianza": "Baja",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Copos y cereales laminados (avena)",
+"corriente": "Copos y granos laminados / perlados",
+"factor": 0.68,
+"unidad": "t/t avena con cáscara",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Copos y cereales laminados (avena)",
+"corriente": "Cáscara de avena",
+"factor": 0.25,
+"unidad": "t/t avena con cáscara",
+"confianza": "Alta",
+"cer": "02 03 99; 02 01 03; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Copos y cereales laminados (avena)",
+"corriente": "Finos y harinillas de avena",
+"factor": 0.045,
+"unidad": "t/t avena con cáscara",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Copos y cereales laminados (avena)",
+"corriente": "Impurezas de limpieza (cribas)",
+"factor": 0.02,
+"unidad": "t/t avena con cáscara",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99; 02 01 03",
+"fuentes": []
+},
+{
+"proceso": "Copos y cereales laminados (avena)",
+"corriente": "Piedras, tierra, arena y metales",
+"factor": 0.002,
+"unidad": "t/t avena con cáscara",
+"confianza": "Baja",
+"cer": "02 03 99; 02 03 01; 02 03 04; 20 01 40; 17 04 07",
+"fuentes": []
+},
+{
+"proceso": "Copos y cereales laminados (avena)",
+"corriente": "Polvo de aspiración y filtros",
+"factor": 0.003,
+"unidad": "t/t avena con cáscara",
+"confianza": "Baja",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Mezclas y masas preparadas para panadería",
+"corriente": "Mezclas y masas para panadería",
+"factor": 0.993,
+"unidad": "t/t ingredientes (harinas y aditivos)",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Mezclas y masas preparadas para panadería",
+"corriente": "Polvo de aspiración y filtros",
+"factor": 0.002,
+"unidad": "t/t ingredientes (harinas y aditivos)",
+"confianza": "Baja",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Mezclas y masas preparadas para panadería",
+"corriente": "Producto fuera de especificación, derrames y barreduras",
+"factor": 0.005,
+"unidad": "t/t ingredientes (harinas y aditivos)",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz (almidón)",
+"corriente": "Almidón de maíz",
+"factor": 0.56,
+"unidad": "t/t maíz",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz (almidón)",
+"corriente": "Germen de maíz",
+"factor": 0.065,
+"unidad": "t/t maíz",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz (almidón)",
+"corriente": "Gluten feed de maíz (con agua de maceración)",
+"factor": 0.16,
+"unidad": "t/t maíz",
+"confianza": "Media",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz (almidón)",
+"corriente": "Gluten meal de maíz (proteína 60 %)",
+"factor": 0.052,
+"unidad": "t/t maíz",
+"confianza": "Media",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz (almidón)",
+"corriente": "Impurezas de limpieza (cribas)",
+"factor": 0.02,
+"unidad": "t/t maíz",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 99; 02 01 03",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz (almidón)",
+"corriente": "Lodos de depuradora propia (EDAR)",
+"factor": 0.008,
+"unidad": "t/t maíz",
+"confianza": "Baja",
+"cer": "02 03 05; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz (almidón)",
+"corriente": "Aguas residuales de proceso",
+"factor": 1,
+"unidad": "m³/t maíz",
+"confianza": "Baja",
+"cer": "(vertido autorizado); 02 03 05 si se gestiona como lodo",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz + hidrólisis (glucosa / isoglucosa)",
+"corriente": "Glucosa, jarabes e isoglucosa (materia seca)",
+"factor": 0.6,
+"unidad": "t/t maíz",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz + hidrólisis (glucosa / isoglucosa)",
+"corriente": "Germen de maíz",
+"factor": 0.065,
+"unidad": "t/t maíz",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz + hidrólisis (glucosa / isoglucosa)",
+"corriente": "Gluten feed de maíz (con agua de maceración)",
+"factor": 0.16,
+"unidad": "t/t maíz",
+"confianza": "Media",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz + hidrólisis (glucosa / isoglucosa)",
+"corriente": "Gluten meal de maíz (proteína 60 %)",
+"factor": 0.052,
+"unidad": "t/t maíz",
+"confianza": "Media",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz + hidrólisis (glucosa / isoglucosa)",
+"corriente": "Impurezas de limpieza (cribas)",
+"factor": 0.02,
+"unidad": "t/t maíz",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 99; 02 01 03",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz + hidrólisis (glucosa / isoglucosa)",
+"corriente": "Tierras filtrantes y carbón activo agotado",
+"factor": 0.004,
+"unidad": "t/t maíz",
+"confianza": "Baja",
+"cer": "02 03 99; 19 09 04; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz + hidrólisis (glucosa / isoglucosa)",
+"corriente": "Lodos de depuradora propia (EDAR)",
+"factor": 0.01,
+"unidad": "t/t maíz",
+"confianza": "Baja",
+"cer": "02 03 05; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Molienda húmeda de maíz + hidrólisis (glucosa / isoglucosa)",
+"corriente": "Aguas residuales de proceso",
+"factor": 1.2,
+"unidad": "m³/t maíz",
+"confianza": "Baja",
+"cer": "(vertido autorizado); 02 03 05 si se gestiona como lodo",
+"fuentes": []
+},
+{
+"proceso": "Almidón y gluten de trigo (a partir de harina)",
+"corriente": "Almidón de trigo (almidón A)",
+"factor": 0.6,
+"unidad": "t/t harina de trigo",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Almidón y gluten de trigo (a partir de harina)",
+"corriente": "Gluten de trigo",
+"factor": 0.11,
+"unidad": "t/t harina de trigo",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Almidón y gluten de trigo (a partir de harina)",
+"corriente": "Almidón B, fibra y pentosanas de trigo",
+"factor": 0.185,
+"unidad": "t/t harina de trigo",
+"confianza": "Media",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Almidón y gluten de trigo (a partir de harina)",
+"corriente": "Polvo de aspiración y filtros",
+"factor": 0.003,
+"unidad": "t/t harina de trigo",
+"confianza": "Baja",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Almidón y gluten de trigo (a partir de harina)",
+"corriente": "Lodos de depuradora propia (EDAR)",
+"factor": 0.01,
+"unidad": "t/t harina de trigo",
+"confianza": "Baja",
+"cer": "02 03 05; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Almidón y gluten de trigo (a partir de harina)",
+"corriente": "Aguas residuales de proceso",
+"factor": 2,
+"unidad": "m³/t harina de trigo",
+"confianza": "Media",
+"cer": "(vertido autorizado); 02 03 05 si se gestiona como lodo",
+"fuentes": []
+},
+{
+"proceso": "Fécula de patata",
+"corriente": "Fécula de patata",
+"factor": 0.19,
+"unidad": "t/t patata",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Fécula de patata",
+"corriente": "Pulpa de patata",
+"factor": 0.16,
+"unidad": "t/t patata",
+"confianza": "Media",
+"cer": "02 03 04; 02 03 99; 02 01 03",
+"fuentes": []
+},
+{
+"proceso": "Fécula de patata",
+"corriente": "Proteína de patata recuperada",
+"factor": 0.008,
+"unidad": "t/t patata",
+"confianza": "Baja",
+"cer": "02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Fécula de patata",
+"corriente": "Tierra y lodos de lavado de patata",
+"factor": 0.03,
+"unidad": "t/t patata",
+"confianza": "Baja",
+"cer": "02 03 01; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Fécula de patata",
+"corriente": "Piedras, tierra, arena y metales",
+"factor": 0.005,
+"unidad": "t/t patata",
+"confianza": "Baja",
+"cer": "02 03 99; 02 03 01; 02 03 04; 20 01 40; 17 04 07",
+"fuentes": []
+},
+{
+"proceso": "Fécula de patata",
+"corriente": "Lodos de depuradora propia (EDAR)",
+"factor": 0.01,
+"unidad": "t/t patata",
+"confianza": "Baja",
+"cer": "02 03 05; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Fécula de patata",
+"corriente": "Jugo de patata y aguas de proceso",
+"factor": 1.5,
+"unidad": "m³/t patata",
+"confianza": "Media",
+"cer": "(vertido / riego autorizado); 02 03 99 si se entrega a gestor",
+"fuentes": []
+},
+{
+"proceso": "Almidones modificados y dextrinas",
+"corriente": "Almidones modificados y dextrinas",
+"factor": 0.97,
+"unidad": "t/t almidón nativo",
+"confianza": "Media",
+"cer": "-",
+"fuentes": []
+},
+{
+"proceso": "Almidones modificados y dextrinas",
+"corriente": "Producto fuera de especificación, derrames y barreduras",
+"factor": 0.01,
+"unidad": "t/t almidón nativo",
+"confianza": "Baja",
+"cer": "02 03 04; 02 03 99",
+"fuentes": []
+},
+{
+"proceso": "Almidones modificados y dextrinas",
+"corriente": "Polvo de aspiración y filtros",
+"factor": 0.005,
+"unidad": "t/t almidón nativo",
+"confianza": "Baja",
+"cer": "02 03 99; 02 03 04",
+"fuentes": []
+},
+{
+"proceso": "Almidones modificados y dextrinas",
+"corriente": "Lodos de depuradora propia (EDAR)",
+"factor": 0.01,
+"unidad": "t/t almidón nativo",
+"confianza": "Baja",
+"cer": "02 03 05; 02 03 01",
+"fuentes": []
+},
+{
+"proceso": "Almidones modificados y dextrinas",
+"corriente": "Aguas residuales de proceso",
+"factor": 1,
+"unidad": "m³/t almidón nativo",
+"confianza": "Baja",
+"cer": "(vertido autorizado); 02 03 05 si se gestiona como lodo",
+"fuentes": []
+}
+],
+"datos_reales": [
+{
+"bloque": "Códigos observados en una instalación real",
+"intro": "Autorización ambiental integrada de Harinas Villamayor (La Sotonera, Huesca; CNAE 10.61; 920 t/día; ~254.800 t/año de cereal). Muestra que la mayor parte de impurezas y salvado no se declaran como residuo.",
+"fuente_id": "F18",
+"fuentes_extra": [],
+"filas": [
+[
+"Materiales inadecuados para el consumo o la elaboración (tierras y restos vegetales)",
+"02 03 04",
+240.54,
+0.944,
+"R3"
+],
+[
+"Mezcla de residuos municipales",
+"20 03 01",
+182.74,
+0.717,
+"R3"
+],
+[
+"Madera (palés rotos)",
+"15 01 03",
+15,
+0.059,
+"R3"
+],
+[
+"Envases de papel y cartón",
+"15 01 01",
+14.48,
+0.057,
+"R3"
+],
+[
+"Metales mezclados (chatarra)",
+"17 04 07",
+9.938,
+0.039,
+"R4"
+],
+[
+"Lodos de fosa séptica",
+"20 03 04",
+2.55,
+0.01,
+"R3/D8"
+],
+[
+"Envases de plástico",
+"15 01 02",
+0.78,
+0.003,
+"R3"
+]
+]
+}
+],
+"valorizacion": [
+{
+"corriente": "Salvado, moyuelo, harinillas y finos",
+"nivel": 1,
+"texto": "Fibra alimentaria, salvado para panes integrales y extracción de arabinoxilanos y compuestos fenólicos (ácido ferúlico) como ingredientes funcionales.",
+"fuentes": [
+"F21",
+"F22"
+]
+},
+{
+"corriente": "Salvado, moyuelo, harinillas y finos",
+"nivel": 2,
+"texto": "Destino mayoritario. Figura en el catálogo de materias primas para piensos; se vende a granel o granulado (la granulación reduce volumen y desmezcla).",
+"fuentes": [
+"F04",
+"F18"
+]
+},
+{
+"corriente": "Salvado, moyuelo, harinillas y finos",
+"nivel": 3,
+"texto": "Biorrefinería (azúcares fermentables, xilooligosacáridos, bioetanol) y materiales como vajilla desechable compostable prensada.",
+"fuentes": [
+"F23",
+"F24",
+"F25"
+]
+},
+{
+"corriente": "Salvado, moyuelo, harinillas y finos",
+"nivel": 4,
+"texto": "Digestión anaerobia de salvado deteriorado o no apto para pienso.",
+"fuentes": [
+"F07"
+]
+},
+{
+"corriente": "Germen de trigo",
+"nivel": 1,
+"texto": "Aceite de germen de trigo (vitamina E), germen tostado y concentrados proteicos.",
+"fuentes": [
+"F22"
+]
+},
+{
+"corriente": "Germen de trigo",
+"nivel": 2,
+"texto": "Se incorpora al moyuelo o se vende por separado como pienso.",
+"fuentes": [
+"F04"
+]
+},
+{
+"corriente": "Germen de maíz",
+"nivel": 1,
+"texto": "Aceite de maíz refinado (actividad incluida en el propio CNAE 10.62).",
+"fuentes": [
+"F26"
+]
+},
+{
+"corriente": "Germen de maíz",
+"nivel": 2,
+"texto": "La torta o harina de germen desengrasado se incorpora al gluten feed.",
+"fuentes": [
+"F15"
+]
+},
+{
+"corriente": "Salvado de arroz",
+"nivel": 1,
+"texto": "Aceite de salvado de arroz (gamma-orizanol), salvado estabilizado, proteínas y fibra.",
+"fuentes": [
+"F12",
+"F27"
+]
+},
+{
+"corriente": "Salvado de arroz",
+"nivel": 2,
+"texto": "Pienso energético; requiere estabilización para evitar el enranciamiento.",
+"fuentes": [
+"F04"
+]
+},
+{
+"corriente": "Cascarilla de arroz",
+"nivel": 2,
+"texto": "Uso limitado como cama de ganado o fibra; bajo valor nutritivo.",
+"fuentes": [
+"F27"
+]
+},
+{
+"corriente": "Cascarilla de arroz",
+"nivel": 3,
+"texto": "Sílice biogénica y silicio a partir de cenizas, aislamiento y paneles de construcción, sustratos de cultivo.",
+"fuentes": [
+"F28",
+"F29",
+"F30"
+]
+},
+{
+"corriente": "Cascarilla de arroz",
+"nivel": 4,
+"texto": "Combustión o gasificación para producir vapor y secar el arroz; la ceniza puede venderse como fuente de sílice.",
+"fuentes": [
+"F31",
+"F32",
+"F33",
+"F34"
+]
+},
+{
+"corriente": "Cáscara de avena",
+"nivel": 2,
+"texto": "Fibra para rumiantes, a menudo peletizada; mejora con fermentación o tratamientos enzimáticos.",
+"fuentes": [
+"F35"
+]
+},
+{
+"corriente": "Cáscara de avena",
+"nivel": 3,
+"texto": "Xilanos, xilitol y oligosacáridos por hidrólisis de la hemicelulosa.",
+"fuentes": [
+"F36",
+"F37"
+]
+},
+{
+"corriente": "Cáscara de avena",
+"nivel": 4,
+"texto": "Combustible sólido (pellets) para calderas de la propia planta.",
+"fuentes": []
+},
+{
+"corriente": "Impurezas de limpieza (cribas)",
+"nivel": 1,
+"texto": "Mejorar la prelimpia en origen y la clasificación del grano recibido; separar granos partidos aprovechables.",
+"fuentes": []
+},
+{
+"corriente": "Impurezas de limpieza (cribas)",
+"nivel": 2,
+"texto": "Las cribas de grano se usan en piensos y pellets si cumplen límites de micotoxinas y cornezuelo.",
+"fuentes": [
+"F38",
+"F04"
+]
+},
+{
+"corriente": "Impurezas de limpieza (cribas)",
+"nivel": 4,
+"texto": "Digestión anaerobia o compostaje si no son aptas para pienso.",
+"fuentes": []
+},
+{
+"corriente": "Impurezas de limpieza (cribas)",
+"nivel": 5,
+"texto": "Compostaje de la fracción vegetal (operación R3). Es la vía declarada en el caso real consultado.",
+"fuentes": [
+"F18"
+]
+},
+{
+"corriente": "Polvo de aspiración y filtros",
+"nivel": 1,
+"texto": "Reintroducir el polvo de filtros en la corriente de salvado o moyuelo; control ATEX.",
+"fuentes": [
+"F07"
+]
+},
+{
+"corriente": "Polvo de aspiración y filtros",
+"nivel": 2,
+"texto": "Mezclado con salvado para piensos.",
+"fuentes": []
+},
+{
+"corriente": "Polvo de aspiración y filtros",
+"nivel": 4,
+"texto": "Digestión anaerobia si está contaminado con tierra fina.",
+"fuentes": []
+},
+{
+"corriente": "Piedras, tierra y metales",
+"nivel": 3,
+"texto": "La fracción mineral puede usarse como árido o en restauración; los metales van a reciclado (R4).",
+"fuentes": []
+},
+{
+"corriente": "Piedras, tierra y metales",
+"nivel": 5,
+"texto": "Tierra limpia devuelta a uso agrario o restauración con autorización.",
+"fuentes": []
+},
+{
+"corriente": "Producto fuera de especificación, derrames y barreduras",
+"nivel": 1,
+"texto": "Reproceso o donación cuando el rechazo es solo comercial (envase, etiquetado).",
+"fuentes": []
+},
+{
+"corriente": "Producto fuera de especificación, derrames y barreduras",
+"nivel": 2,
+"texto": "Harinas y barreduras sanas a fabricantes de pienso.",
+"fuentes": [
+"F06"
+]
+},
+{
+"corriente": "Producto fuera de especificación, derrames y barreduras",
+"nivel": 4,
+"texto": "Digestión anaerobia si hay micotoxinas o plagas (no apto para pienso).",
+"fuentes": []
+},
+{
+"corriente": "Gluten feed, gluten meal y agua de maceración",
+"nivel": 2,
+"texto": "Gluten feed para rumiantes y gluten meal (60 % proteína) para aves, acuicultura y mascotas.",
+"fuentes": [
+"F15",
+"F20"
+]
+},
+{
+"corriente": "Gluten feed, gluten meal y agua de maceración",
+"nivel": 3,
+"texto": "El agua de maceración (corn steep liquor) es un medio de fermentación barato para antibióticos, ácidos orgánicos y enzimas.",
+"fuentes": [
+"F39"
+]
+},
+{
+"corriente": "Almidón B, fibra y pentosanas de trigo",
+"nivel": 2,
+"texto": "Pienso líquido para porcino y vacuno.",
+"fuentes": [
+"F16"
+]
+},
+{
+"corriente": "Almidón B, fibra y pentosanas de trigo",
+"nivel": 3,
+"texto": "Fermentación a bioetanol, jarabes o ácidos orgánicos en biorrefinerías integradas.",
+"fuentes": [
+"F25"
+]
+},
+{
+"corriente": "Almidón B, fibra y pentosanas de trigo",
+"nivel": 4,
+"texto": "Digestión anaerobia de solubles y aguas cargadas.",
+"fuentes": [
+"F40"
+]
+},
+{
+"corriente": "Pulpa de patata",
+"nivel": 2,
+"texto": "Pulpa prensada o ensilada para vacuno.",
+"fuentes": [
+"F17"
+]
+},
+{
+"corriente": "Pulpa de patata",
+"nivel": 3,
+"texto": "Fibra alimentaria, pectinas y sustrato de fermentación.",
+"fuentes": [
+"F41"
+]
+},
+{
+"corriente": "Pulpa de patata",
+"nivel": 4,
+"texto": "Codigestión anaerobia.",
+"fuentes": []
+},
+{
+"corriente": "Jugo de patata y proteína",
+"nivel": 1,
+"texto": "Proteína de patata nativa para alimentos veganos, sustitutos de huevo y gelatina.",
+"fuentes": [
+"F42",
+"F43",
+"F44"
+]
+},
+{
+"corriente": "Jugo de patata y proteína",
+"nivel": 5,
+"texto": "El jugo desproteinizado, rico en potasio, se aplica como fertilizante líquido con autorización.",
+"fuentes": []
+},
+{
+"corriente": "Lodos de depuradora propia",
+"nivel": 4,
+"texto": "Digestión anaerobia de lodos y aguas de alta carga.",
+"fuentes": [
+"F40"
+]
+},
+{
+"corriente": "Lodos de depuradora propia",
+"nivel": 5,
+"texto": "Compostaje o aplicación agrícola (R10) si cumplen los límites de metales y patógenos.",
+"fuentes": []
+},
+{
+"corriente": "Tierra de lavado de patata",
+"nivel": 5,
+"texto": "Devolución a fincas o uso en restauración tras decantación.",
+"fuentes": []
+},
+{
+"corriente": "Tierras filtrantes y carbón activo",
+"nivel": 3,
+"texto": "Regeneración térmica del carbón activo; tierras de diatomeas en cementeras o como enmienda.",
+"fuentes": []
+},
+{
+"corriente": "Tierras filtrantes y carbón activo",
+"nivel": 4,
+"texto": "Coprocesado en cementera.",
+"fuentes": []
+},
+{
+"corriente": "Aguas residuales de proceso",
+"nivel": 1,
+"texto": "Recirculación a contracorriente (reduce agua fresca a ~2,5–2,7 m³/t de harina en almidón de trigo).",
+"fuentes": [
+"F45"
+]
+},
+{
+"corriente": "Aguas residuales de proceso",
+"nivel": 4,
+"texto": "Reactores anaerobios (UASB, EGSB) con valorización del biogás en calderas.",
+"fuentes": [
+"F40",
+"F46"
+]
+}
+],
+"niveles": {
+"1": "Alimentación humana / prevención",
+"2": "Alimentación animal",
+"3": "Material y bioproductos",
+"4": "Energía y biogás",
+"5": "Suelo / compost"
+},
+"cer": [
+{
+"codigo": "15 01 01",
+"desc": "Envases de papel y cartón",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 01 02",
+"desc": "Envases de plástico",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 01 03",
+"desc": "Envases de madera",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 01 04",
+"desc": "Envases metálicos",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 01 05",
+"desc": "Envases compuestos",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 01 06",
+"desc": "Envases mezclados",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 01 07",
+"desc": "Envases de vidrio",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 01 10*",
+"desc": "Envases que contienen restos de sustancias peligrosas o están contaminados por ellas",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "13 02 05*",
+"desc": "Aceites minerales no clorados de motor, de transmisión mecánica y lubricantes",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 02 02*",
+"desc": "Absorbentes, materiales de filtración, trapos de limpieza y ropas protectoras contaminados por sustancias peligrosas",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "17 04 05",
+"desc": "Hierro y acero",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "20 01 01",
+"desc": "Papel y cartón (fracción municipal)",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "20 03 01",
+"desc": "Mezclas de residuos municipales",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "02 01 03",
+"desc": "Residuos de tejidos de vegetales",
+"corrientes": "Cascarilla de arroz; Cáscara de avena; Pulpa de patata; Impurezas de limpieza (cribas)"
+},
+{
+"codigo": "02 03 01",
+"desc": "Lodos de lavado, limpieza, pelado, centrifugado y separación",
+"corrientes": "Piedras, tierra, arena y metales; Lodos de depuradora propia (EDAR); Tierra y lodos de lavado de patata"
+},
+{
+"codigo": "02 03 04",
+"desc": "Materiales inadecuados para el consumo o la elaboración",
+"corrientes": "Salvado y moyuelo de trigo; Salvado de descortezado (pelado); Germen de trigo; Salvado de arroz (con germen); Cascarilla de arroz; Salvado y harinillas de maíz (hominy); Germen de maíz; Salvado de otros cereales; Cáscara de avena; Finos y harinillas de avena; Gluten feed de maíz (con agua de maceración); Gluten meal de maíz (proteína 60 %); Almidón B, fibra y pentosanas de trigo; Pulpa de patata; Impurezas de limpieza (cribas); Piedras, tierra, arena y metales; Polvo de aspiración y filtros; Producto fuera de especificación, derrames y barreduras; Tierras filtrantes y carbón activo agotado"
+},
+{
+"codigo": "02 03 05",
+"desc": "Lodos del tratamiento in situ de efluentes",
+"corrientes": "Lodos de depuradora propia (EDAR)"
+},
+{
+"codigo": "02 03 99",
+"desc": "Residuos no especificados en otra categoría (preparación y elaboración de cereales, almidón…)",
+"corrientes": "Salvado y moyuelo de trigo; Salvado de descortezado (pelado); Germen de trigo; Salvado de arroz (con germen); Cascarilla de arroz; Salvado y harinillas de maíz (hominy); Germen de maíz; Salvado de otros cereales; Cáscara de avena; Finos y harinillas de avena; Gluten feed de maíz (con agua de maceración); Gluten meal de maíz (proteína 60 %); Almidón B, fibra y pentosanas de trigo; Pulpa de patata; Proteína de patata recuperada; Impurezas de limpieza (cribas); Piedras, tierra, arena y metales; Polvo de aspiración y filtros; Producto fuera de especificación, derrames y barreduras; Tierra y lodos de lavado de patata; Tierras filtrantes y carbón activo agotado"
+},
+{
+"codigo": "10 01 01",
+"desc": "Cenizas del hogar, escorias y polvo de caldera",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "10 01 03",
+"desc": "Cenizas volantes de turba y de madera (no tratada)",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "15 02 03",
+"desc": "Absorbentes, materiales de filtración, trapos de limpieza y ropas protectoras no peligrosos",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "16 05 07*",
+"desc": "Productos químicos inorgánicos desechados que consisten en sustancias peligrosas o las contienen",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "17 04 07",
+"desc": "Metales mezclados",
+"corrientes": "Piedras, tierra, arena y metales"
+},
+{
+"codigo": "19 09 04",
+"desc": "Carbón activo usado",
+"corrientes": "Tierras filtrantes y carbón activo agotado"
+},
+{
+"codigo": "19 09 05",
+"desc": "Resinas intercambiadoras de iones saturadas o usadas",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "20 01 19*",
+"desc": "Plaguicidas",
+"corrientes": "Auxiliar / transversal"
+},
+{
+"codigo": "20 01 40",
+"desc": "Metales",
+"corrientes": "Piedras, tierra, arena y metales"
+},
+{
+"codigo": "20 03 04",
+"desc": "Lodos de fosas sépticas",
+"corrientes": "Auxiliar / transversal"
+}
+]
+};
+
+function cambiarTab(id, btn){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("activa"));
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("activa"));
+  document.getElementById(id).classList.add("activa");
+  btn.classList.add("activa");
+}
+
+function poblarSelect(id, valores){
+  const sel=document.getElementById(id);
+  [...new Set(valores)].sort((a,b)=>a.localeCompare(b,"es")).forEach(v=>{
+    const o=document.createElement("option");o.value=v;o.textContent=v;sel.appendChild(o);
+  });
+}
+
+function iniciarFiltros(){
+  poblarSelect("fTipo", DATA.fuentes.map(f=>f.tipo));
+  poblarSelect("fZona", DATA.fuentes.map(f=>f.zona));
+  const corrientes=new Set();
+  DATA.fuentes.forEach(f=>f.corrientes.forEach(c=>corrientes.add(c)));
+  poblarSelect("fCorriente",[...corrientes]);
+}
+
+function pintarFuentes(){
+  const q=document.getElementById("fBusqueda").value.trim().toLowerCase();
+  const tipo=document.getElementById("fTipo").value;
+  const zona=document.getElementById("fZona").value;
+  const corr=document.getElementById("fCorriente").value;
+  const res=DATA.fuentes.filter(f=>{
+    if(tipo&&f.tipo!==tipo)return false;
+    if(zona&&f.zona!==zona)return false;
+    if(corr&&!f.corrientes.includes(corr))return false;
+    if(q){
+      const txt=(f.titulo+" "+f.organismo+" "+f.zona+" "+f.corrientes.join(" ")+" "+(f.nota||"")).toLowerCase();
+      if(!txt.includes(q))return false;
+    }
+    return true;
+  });
+  document.getElementById("contadorFuentes").textContent=`${res.length} de ${DATA.fuentes.length} fuentes`;
+  document.getElementById("tarjetasFuentes").innerHTML=res.map(f=>`
+    <div class="tarjeta">
+      <span class="badge ${f.tipo}">${f.tipo}</span>
+      <h3><a href="${f.url}" target="_blank" rel="noopener">${f.titulo}</a></h3>
+      <div class="meta-linea"><b>${f.id}</b> · ${f.organismo} · ${f.zona}</div>
+      <div class="chips">${f.corrientes.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
+      ${f.nota?`<div class="nota">${f.nota}</div>`:""}
+    </div>`).join("")||"<p class='pequeno'>No hay fuentes que coincidan con el filtro.</p>";
+}
+
+function copiarFuentes(){
+  const q=document.getElementById("fBusqueda").value.trim().toLowerCase();
+  const tipo=document.getElementById("fTipo").value;
+  const zona=document.getElementById("fZona").value;
+  const corr=document.getElementById("fCorriente").value;
+  const res=DATA.fuentes.filter(f=>{
+    if(tipo&&f.tipo!==tipo)return false;
+    if(zona&&f.zona!==zona)return false;
+    if(corr&&!f.corrientes.includes(corr))return false;
+    if(q){
+      const txt=(f.titulo+" "+f.organismo+" "+f.zona+" "+f.corrientes.join(" ")+" "+(f.nota||"")).toLowerCase();
+      if(!txt.includes(q))return false;
+    }
+    return true;
+  });
+  const rows=[["id","titulo","tipo","organismo","zona","corrientes","enlace","nota"]];
+  res.forEach(f=>rows.push([f.id,f.titulo,f.tipo,f.organismo,f.zona,f.corrientes.join(" / "),f.url,f.nota||""]));
+  const txt=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(";")).join("\n");
+  const area=document.getElementById("areaFuentes");
+  area.value=txt;area.classList.remove("oculto");area.focus();area.select();
+  const estado=document.getElementById("estadoFuentes");
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(()=>estado.textContent="Copiado al portapapeles.").catch(()=>estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.");
+  } else estado.textContent="Selecciona el texto (ya está seleccionado) y copia con Ctrl/Cmd+C.";
+}
+
+function pintarCoef(){
+  document.getElementById("tablaCoef").innerHTML=DATA.coeficientes.map(c=>`
+    <tr><td>${c.proceso}</td><td>${c.corriente}</td><td class="num">${c.factor}</td><td>${c.unidad}</td><td>${c.confianza}</td><td>${c.cer}</td>
+    <td>${c.fuentes.map(id=>`<span class="chip" style="cursor:pointer" onclick="irAFuente('${id}')">${id}</span>`).join(" ")||"—"}</td></tr>`).join("");
+}
+
+function irAFuente(id){
+  document.querySelector('.tab-btn[data-panel="panelFuentes"]').click();
+  document.getElementById("fBusqueda").value=id;
+  const f=DATA.fuentes.find(x=>x.id===id);
+  document.getElementById("fBusqueda").value=f?f.titulo.slice(0,30):id;
+  pintarFuentes();
+}
+
+function pintarReal(){
+  document.getElementById("bloquesReal").innerHTML=DATA.datos_reales.map(b=>{
+    const fid=b.fuente_id;const f=DATA.fuentes.find(x=>x.id===fid);
+    const extra=(b.fuentes_extra||[]).map(id=>{const g=DATA.fuentes.find(x=>x.id===id);return g?`, <a href="${g.url}" target="_blank" rel="noopener">${id}</a>`:"";}).join("");
+    return `<div class="bloque-real">
+      <h3>${b.bloque}</h3>
+      <p class="explicacion">${b.intro}</p>
+      <div class="tabla-contenedor"><table><thead><tr><th>Dato</th><th>Cantidad declarada</th><th>Ratio</th></tr></thead>
+      <tbody>${b.filas.map(([d,c,r])=>`<tr><td>${d}</td><td>${c}</td><td>${r}</td></tr>`).join("")}</tbody></table></div>
+      <p class="fuente">Fuente: ${f?`<a href="${f.url}" target="_blank" rel="noopener">${f.id} — ${f.titulo}</a>`:""}${extra}</p>
+    </div>`;
+  }).join("");
+}
+
+function pintarVal(){
+  const porCorriente={};
+  DATA.valorizacion.forEach(v=>{(porCorriente[v.corriente]=porCorriente[v.corriente]||[]).push(v);});
+  document.getElementById("bloquesVal").innerHTML=Object.entries(porCorriente).map(([corr,ops])=>`
+    <div class="bloque-real"><h3>${corr}</h3>
+    ${ops.sort((a,b)=>a.nivel-b.nivel).map(o=>`<div class="opcion-val"><span class="nivel n${o.nivel}">${o.nivel} · ${DATA.niveles[o.nivel]}</span>${o.texto}
+      ${o.fuentes.length?`<div class="chips">${o.fuentes.map(id=>{const f=DATA.fuentes.find(x=>x.id===id);return f?`<a class="chip" style="text-decoration:none" href="${f.url}" target="_blank" rel="noopener">${id}</a>`:"";}).join("")}</div>`:""}
+    </div>`).join("")}</div>`).join("");
+}
+
+function pintarCer(){
+  document.getElementById("tablaCer").innerHTML=DATA.cer.map(c=>`
+    <tr><td><span class="cer${c.codigo.includes("*")?" pel":""}">${c.codigo}</span></td><td>${c.desc}</td><td>${c.corrientes}</td></tr>`).join("");
+}
+
+iniciarFiltros();
+pintarFuentes();
+pintarCoef();
+pintarReal();
+pintarVal();
+pintarCer();
+</script>
+
+</body></html>
